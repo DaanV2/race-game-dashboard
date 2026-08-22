@@ -74,6 +74,7 @@ type struct_template_context struct {
 
 func structNameToFilename(name string) string {
 	return strings.Trim(strings.NewReplacer(
+		"DRS", "drs",
 		"A", "_a",
 		"B", "_b",
 		"C", "_c",
