@@ -17,27 +17,25 @@ func NewLittleEndianReader(buf []byte) LittleEndianReader {
 	}
 }
 
-func (r *LittleEndianReader) ReadUInt8() uint8 {
+func (r *LittleEndianReader) ReadUint8() uint8 {
 	v := r.buf[r.index]
 	r.index++
 
 	return v
 }
-
 func (r *LittleEndianReader) ReadByte() byte {
 	v := r.buf[r.index]
 	r.index++
 
 	return v
 }
-
 func (r *LittleEndianReader) ReadInt8() int8 {
 	v := r.buf[r.index]
 	r.index++
 
 	return int8(v)
 }
-func (r *LittleEndianReader) ReadUInt16() uint16 {
+func (r *LittleEndianReader) ReadUint16() uint16 {
 	v := binary.LittleEndian.Uint16(r.buf[r.index:])
 	r.index += int(unsafe.Sizeof(v))
 
@@ -49,7 +47,7 @@ func (r *LittleEndianReader) ReadInt16() int16 {
 
 	return v
 }
-func (r *LittleEndianReader) ReadUInt32() uint32 {
+func (r *LittleEndianReader) ReadUint32() uint32 {
 	v := binary.LittleEndian.Uint32(r.buf[r.index:])
 	r.index += int(unsafe.Sizeof(v))
 
@@ -67,7 +65,7 @@ func (r *LittleEndianReader) ReadFloat64() float64 {
 
 	return v
 }
-func (r *LittleEndianReader) ReadUInt64() uint64 {
+func (r *LittleEndianReader) ReadUint64() uint64 {
 	v := binary.LittleEndian.Uint64(r.buf[r.index:])
 	r.index += int(unsafe.Sizeof(v))
 
