@@ -37,11 +37,12 @@ type parsable interface {
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
-func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
+func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) { // nolint:cyclop // Not needed here
 	data.Header = *header
 
-	esc := reader.ReadUint8x4()
-	escStr := string(esc[:])
+	var buf [CS_EVENT_STRING_CODE_LEN]byte
+	reader.Read(buf[:])
+	escStr := string(buf[:])
 	data.EventStringCode = EventCode(escStr)
 
 	var event parsable = nil
@@ -49,38 +50,26 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 	switch data.EventStringCode {
 	case EVENT_CODE_BUTTON_STATUS:
 		event = &EventDataButtons{}
-	case EVENT_CODE_CHEQUERED_FLAG:
-		event = nil
 	case EVENT_CODE_COLLISION:
 		event = &EventDataCollision{}
 	case EVENT_CODE_DRIVE_THROUGH_SERVED:
 		event = &EventDataDriveThroughPenaltyServed{}
 	case EVENT_CODE_DRS_DISABLED:
 		event = &EventDataDRSDisabled{}
-	case EVENT_CODE_DRS_ENABLED:
-		event = nil
 	case EVENT_CODE_FASTEST_LAP:
 		event = &EventDataFastestLap{}
 	case EVENT_CODE_FLASHBACK:
 		event = &EventDataFlashback{}
-	case EVENT_CODE_LIGHTS_OUT:
-		event = nil
 	case EVENT_CODE_OVERTAKE:
 		event = &EventDataOvertake{}
 	case EVENT_CODE_PENALTY_ISSUED:
 		event = &EventDataPenalty{}
 	case EVENT_CODE_RACE_WINNER:
 		event = &EventDataRaceWinner{}
-	case EVENT_CODE_RED_FLAG:
-		event = nil
 	case EVENT_CODE_RETIREMENT:
 		event = &EventDataRetirement{}
 	case EVENT_CODE_SAFETY_CAR:
 		event = &EventDataSafetyCar{}
-	case EVENT_CODE_SESSION_ENDED:
-		event = nil
-	case EVENT_CODE_SESSION_STARTED:
-		event = nil
 	case EVENT_CODE_SPEED_TRAP_TRIGGERED:
 		event = &EventDataSpeedTrap{}
 	case EVENT_CODE_START_LIGHTS:
@@ -89,6 +78,14 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 		event = &EventDataStopGoPenaltyServed{}
 	case EVENT_CODE_TEAM_MATE_IN_PITS:
 		event = &EventDataTeamMateInPits{}
+
+		// nill
+	case EVENT_CODE_CHEQUERED_FLAG:
+	case EVENT_CODE_DRS_ENABLED:
+	case EVENT_CODE_LIGHTS_OUT:
+	case EVENT_CODE_RED_FLAG:
+	case EVENT_CODE_SESSION_ENDED:
+	case EVENT_CODE_SESSION_STARTED:
 	}
 
 	if event != nil {

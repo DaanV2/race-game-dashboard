@@ -37,11 +37,12 @@ type parsable interface {
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
-func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
+func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) { // nolint:cyclop // Not needed here
 	data.Header = *header
 
-	esc := reader.ReadUint8x4()
-	escStr := string(esc[:])
+	var buf [CS_EVENT_STRING_CODE_LEN]byte
+	reader.Read(buf[:])
+	escStr := string(buf[:])
 	data.EventStringCode = EventCode(escStr)
 
 	var event parsable = nil

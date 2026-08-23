@@ -1,12 +1,12 @@
-package f12026s
+package f12026s // nolint:dupl // Don't care about dupl here
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
 type PacketFinalClassificationData struct {
-	Header             PacketHeader                // Header
-	NumCars            uint8                       // Number of cars in the final classification
+	Header             PacketHeader                             // Header
+	NumCars            uint8                                    // Number of cars in the final classification
 	ClassificationData [CS_MAX_NUM_CARS]FinalClassificationData //
 }
 
@@ -23,13 +23,13 @@ func (data *PacketFinalClassificationData) GetNumCars() uint8 { return data.NumC
 func (data *PacketFinalClassificationData) SetNumCars(v uint8) { data.NumCars = v }
 
 // GetClassificationData returns the ClassificationData of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) GetClassificationData() [CS_MAX_NUM_CARS]FinalClassificationData {
-	return data.ClassificationData
+func (data *PacketFinalClassificationData) GetClassificationData(car int) FinalClassificationData {
+	return data.ClassificationData[car]
 }
 
 // SetClassificationData stores the ClassificationData of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) SetClassificationData(v [CS_MAX_NUM_CARS]FinalClassificationData) {
-	data.ClassificationData = v
+func (data *PacketFinalClassificationData) SetClassificationData(car int, v FinalClassificationData) {
+	data.ClassificationData[car] = v
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

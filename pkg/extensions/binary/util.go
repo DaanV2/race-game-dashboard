@@ -100,7 +100,6 @@ func Readx24[T any](callbf func() T) [24]T {
 	}
 }
 
-//go:fix inline
 func Readx32[T any](callbf func() T) [32]T {
 	return [32]T{
 		callbf(),

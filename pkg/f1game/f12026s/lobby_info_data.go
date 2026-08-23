@@ -89,7 +89,7 @@ func (data *LobbyInfoData) Parse(reader *xbinary.LittleEndianReader) {
 	data.TeamId = reader.ReadUint16()
 	data.Nationality = reader.ReadUint8()
 	data.Platform = reader.ReadUint8()
-	data.Name = xbinary.Readx32(reader.ReadByte)
+	reader.Read(data.Name[:])
 	data.CarNumber = reader.ReadUint8()
 	data.YourTelemetry = reader.ReadUint8()
 	data.ShowOnlineNames = reader.ReadUint8()

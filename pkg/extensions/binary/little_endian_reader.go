@@ -35,13 +35,6 @@ func (r *LittleEndianReader) ReadUint8x4() [4]uint8 {
 	return result
 }
 
-func (r *LittleEndianReader) ReadByte() byte {
-	v := r.buf[r.index]
-	r.index++
-
-	return v
-}
-
 func (r *LittleEndianReader) Read(receiver []byte) {
 	copy(receiver, r.buf[r.index:])
 	r.index += len(receiver)

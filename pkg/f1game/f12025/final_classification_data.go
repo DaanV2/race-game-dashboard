@@ -137,7 +137,7 @@ func (data *FinalClassificationData) Parse(reader *xbinary.LittleEndianReader) {
 	data.PenaltiesTime = reader.ReadUint8()
 	data.NumPenalties = reader.ReadUint8()
 	data.NumTyreStints = reader.ReadUint8()
-	data.TyreStintsActual = xbinary.Readx8(reader.ReadUint8)
-	data.TyreStintsVisual = xbinary.Readx8(reader.ReadUint8)
-	data.TyreStintsEndLaps = xbinary.Readx8(reader.ReadUint8)
+	reader.Read(data.TyreStintsActual[:])
+	reader.Read(data.TyreStintsVisual[:])
+	reader.Read(data.TyreStintsEndLaps[:])
 }

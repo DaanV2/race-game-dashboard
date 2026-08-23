@@ -5,11 +5,11 @@ import (
 )
 
 type PacketCarTelemetryData struct {
-	Header                       PacketHeader         // Header
+	Header                       PacketHeader                      // Header
 	CarTelemetryData             [CS_MAX_NUM_CARS]CarTelemetryData //
-	MfdPanelIndex                uint8                // Index of MFD panel open - 255 = MFD closed  Single player, race – 0 = Car setup, 1 = Pits  2 = Damage, 3 =  Engine, 4 = Temperatures  May vary depending on game mode
-	MfdPanelIndexSecondaryPlayer uint8                // See above
-	SuggestedGear                int8                 // Suggested gear for the player (1-8)  0 if no gear suggested
+	MfdPanelIndex                uint8                             // Index of MFD panel open - 255 = MFD closed  Single player, race – 0 = Car setup, 1 = Pits  2 = Damage, 3 =  Engine, 4 = Temperatures  May vary depending on game mode
+	MfdPanelIndexSecondaryPlayer uint8                             // See above
+	SuggestedGear                int8                              // Suggested gear for the player (1-8)  0 if no gear suggested
 }
 
 // GetHeader returns the Header of *PacketCarTelemetryData
@@ -19,13 +19,13 @@ func (data *PacketCarTelemetryData) GetHeader() PacketHeader { return data.Heade
 func (data *PacketCarTelemetryData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarTelemetryData returns the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) GetCarTelemetryData() [CS_MAX_NUM_CARS]CarTelemetryData {
-	return data.CarTelemetryData
+func (data *PacketCarTelemetryData) GetCarTelemetryData(car int) CarTelemetryData {
+	return data.CarTelemetryData[car]
 }
 
 // SetCarTelemetryData stores the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) SetCarTelemetryData(v [CS_MAX_NUM_CARS]CarTelemetryData) {
-	data.CarTelemetryData = v
+func (data *PacketCarTelemetryData) SetCarTelemetryData(car int, v CarTelemetryData) {
+	data.CarTelemetryData[car] = v
 }
 
 // GetMfdPanelIndex returns the MfdPanelIndex of *PacketCarTelemetryData

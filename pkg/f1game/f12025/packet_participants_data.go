@@ -1,4 +1,4 @@
-package f12025
+package f12025 // nolint:dupl // Don't care about dupl here
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"

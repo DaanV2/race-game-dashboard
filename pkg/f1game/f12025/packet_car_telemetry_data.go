@@ -19,13 +19,13 @@ func (data *PacketCarTelemetryData) GetHeader() PacketHeader { return data.Heade
 func (data *PacketCarTelemetryData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarTelemetryData returns the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) GetCarTelemetryData() [CS_MAX_NUM_CARS]CarTelemetryData {
-	return data.CarTelemetryData
+func (data *PacketCarTelemetryData) GetCarTelemetryData(car int) CarTelemetryData {
+	return data.CarTelemetryData[car]
 }
 
 // SetCarTelemetryData stores the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) SetCarTelemetryData(v [CS_MAX_NUM_CARS]CarTelemetryData) {
-	data.CarTelemetryData = v
+func (data *PacketCarTelemetryData) SetCarTelemetryData(car int, v CarTelemetryData) {
+	data.CarTelemetryData[car] = v
 }
 
 // GetMfdPanelIndex returns the MfdPanelIndex of *PacketCarTelemetryData

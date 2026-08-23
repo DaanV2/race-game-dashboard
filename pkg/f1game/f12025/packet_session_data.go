@@ -189,10 +189,14 @@ func (data *PacketSessionData) GetNumMarshalZones() uint8 { return data.NumMarsh
 func (data *PacketSessionData) SetNumMarshalZones(v uint8) { data.NumMarshalZones = v }
 
 // GetMarshalZones returns the MarshalZones of *PacketSessionData
-func (data *PacketSessionData) GetMarshalZones() [21]MarshalZone { return data.MarshalZones }
+func (data *PacketSessionData) GetMarshalZones(marshal int) MarshalZone {
+	return data.MarshalZones[marshal]
+}
 
 // SetMarshalZones stores the MarshalZones of *PacketSessionData
-func (data *PacketSessionData) SetMarshalZones(v [21]MarshalZone) { data.MarshalZones = v }
+func (data *PacketSessionData) SetMarshalZones(marshal int, v MarshalZone) {
+	data.MarshalZones[marshal] = v
+}
 
 // GetSafetyCarStatus returns the SafetyCarStatus of *PacketSessionData
 func (data *PacketSessionData) GetSafetyCarStatus() uint8 { return data.SafetyCarStatus }
@@ -217,13 +221,13 @@ func (data *PacketSessionData) SetNumWeatherForecastSamples(v uint8) {
 }
 
 // GetWeatherForecastSamples returns the WeatherForecastSamples of *PacketSessionData
-func (data *PacketSessionData) GetWeatherForecastSamples() [64]WeatherForecastSample {
-	return data.WeatherForecastSamples
+func (data *PacketSessionData) GetWeatherForecastSamples(sample int) WeatherForecastSample {
+	return data.WeatherForecastSamples[sample]
 }
 
 // SetWeatherForecastSamples stores the WeatherForecastSamples of *PacketSessionData
-func (data *PacketSessionData) SetWeatherForecastSamples(v [64]WeatherForecastSample) {
-	data.WeatherForecastSamples = v
+func (data *PacketSessionData) SetWeatherForecastSamples(sample int, v WeatherForecastSample) {
+	data.WeatherForecastSamples[sample] = v
 }
 
 // GetForecastAccuracy returns the ForecastAccuracy of *PacketSessionData
@@ -680,7 +684,7 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.AffectsLicenceLevelSolo = reader.ReadUint8()
 	data.AffectsLicenceLevelMP = reader.ReadUint8()
 	data.NumSessionsInWeekend = reader.ReadUint8()
-	data.WeekendStructure = xbinary.Readx12(reader.ReadUint8)
+	reader.Read(data.WeekendStructure[:])
 	data.Sector2LapDistanceStart = reader.ReadFloat32()
 	data.Sector3LapDistanceStart = reader.ReadFloat32()
 

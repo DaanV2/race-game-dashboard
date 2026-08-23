@@ -120,7 +120,7 @@ func (data *ParticipantData) Parse(reader *xbinary.LittleEndianReader) {
 	data.MyTeam = reader.ReadUint8()
 	data.RaceNumber = reader.ReadUint8()
 	data.Nationality = reader.ReadUint8()
-	data.Name = xbinary.Readx32(reader.ReadByte)
+	reader.Read(data.Name[:])
 	data.YourTelemetry = reader.ReadUint8()
 	data.ShowOnlineNames = reader.ReadUint8()
 	data.TechLevel = reader.ReadUint16()

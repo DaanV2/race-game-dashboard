@@ -5,7 +5,7 @@ import (
 )
 
 type PacketMotionData struct {
-	Header        PacketHeader      // Header
+	Header        PacketHeader                   // Header
 	CarMotionData [CS_MAX_NUM_CARS]CarMotionData // Data for all cars on track
 }
 

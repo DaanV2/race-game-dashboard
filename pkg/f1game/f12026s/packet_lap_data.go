@@ -5,10 +5,10 @@ import (
 )
 
 type PacketLapData struct {
-	Header               PacketHeader // Header
-	LapData              [CS_MAX_NUM_CARS]LapData  // Lap data for all cars on track
-	TimeTrialPBCarIdx    uint8        // Index of Personal Best car in time trial (255 if invalid)
-	TimeTrialRivalCarIdx uint8        // Index of Rival car in time trial (255 if invalid)
+	Header               PacketHeader             // Header
+	LapData              [CS_MAX_NUM_CARS]LapData // Lap data for all cars on track
+	TimeTrialPBCarIdx    uint8                    // Index of Personal Best car in time trial (255 if invalid)
+	TimeTrialRivalCarIdx uint8                    // Index of Rival car in time trial (255 if invalid)
 }
 
 // GetHeader returns the Header of *PacketLapData

@@ -17,10 +17,14 @@ func (data *PacketCarSetupData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketCarSetupData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarSetups returns the CarSetups of *PacketCarSetupData
-func (data *PacketCarSetupData) GetCarSetups() [CS_MAX_NUM_CARS]CarSetupData { return data.CarSetups }
+func (data *PacketCarSetupData) GetCarSetups(car int) CarSetupData {
+	return data.CarSetups[car]
+}
 
 // SetCarSetups stores the CarSetups of *PacketCarSetupData
-func (data *PacketCarSetupData) SetCarSetups(v [CS_MAX_NUM_CARS]CarSetupData) { data.CarSetups = v }
+func (data *PacketCarSetupData) SetCarSetups(car int, v CarSetupData) {
+	data.CarSetups[car] = v
+}
 
 // GetNextFrontWingValue returns the NextFrontWingValue of *PacketCarSetupData
 func (data *PacketCarSetupData) GetNextFrontWingValue() float32 { return data.NextFrontWingValue }

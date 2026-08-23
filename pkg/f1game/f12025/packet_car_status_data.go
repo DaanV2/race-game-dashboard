@@ -16,13 +16,13 @@ func (data *PacketCarStatusData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketCarStatusData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarStatusData returns the CarStatusData of *PacketCarStatusData
-func (data *PacketCarStatusData) GetCarStatusData() [CS_MAX_NUM_CARS]CarStatusData {
-	return data.CarStatusData
+func (data *PacketCarStatusData) GetCarStatusData(car int) CarStatusData {
+	return data.CarStatusData[car]
 }
 
 // SetCarStatusData stores the CarStatusData of *PacketCarStatusData
-func (data *PacketCarStatusData) SetCarStatusData(v [CS_MAX_NUM_CARS]CarStatusData) {
-	data.CarStatusData = v
+func (data *PacketCarStatusData) SetCarStatusData(car int, v CarStatusData) {
+	data.CarStatusData[car] = v
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

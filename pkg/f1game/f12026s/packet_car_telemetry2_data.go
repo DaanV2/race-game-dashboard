@@ -5,7 +5,7 @@ import (
 )
 
 type PacketCarTelemetry2Data struct {
-	Header            PacketHeader          // Header
+	Header            PacketHeader                       // Header
 	CarTelemetry2Data [CS_MAX_NUM_CARS]CarTelemetry2Data //
 }
 
@@ -16,13 +16,13 @@ func (data *PacketCarTelemetry2Data) GetHeader() PacketHeader { return data.Head
 func (data *PacketCarTelemetry2Data) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarTelemetry2Data returns the CarTelemetry2Data of *PacketCarTelemetry2Data
-func (data *PacketCarTelemetry2Data) GetCarTelemetry2Data() [CS_MAX_NUM_CARS]CarTelemetry2Data {
-	return data.CarTelemetry2Data
+func (data *PacketCarTelemetry2Data) GetCarTelemetry2Data(car int) CarTelemetry2Data {
+	return data.CarTelemetry2Data[car]
 }
 
 // SetCarTelemetry2Data stores the CarTelemetry2Data of *PacketCarTelemetry2Data
-func (data *PacketCarTelemetry2Data) SetCarTelemetry2Data(v [CS_MAX_NUM_CARS]CarTelemetry2Data) {
-	data.CarTelemetry2Data = v
+func (data *PacketCarTelemetry2Data) SetCarTelemetry2Data(car int, v CarTelemetry2Data) {
+	data.CarTelemetry2Data[car] = v
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

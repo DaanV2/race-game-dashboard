@@ -5,10 +5,10 @@ import (
 )
 
 type PacketTyreSetsData struct {
-	Header      PacketHeader    // Header
-	CarIdx      uint8           // Index of the car this data relates to
-	TyreSetData [20]TyreSetData // 13 (dry) + 7 (wet)
-	FittedIdx   uint8           // Index into array of fitted tyre
+	Header      PacketHeader                      // Header
+	CarIdx      uint8                             // Index of the car this data relates to
+	TyreSetData [CS_MAX_NUM_TYRE_SETS]TyreSetData // 13 (dry) + 7 (wet)
+	FittedIdx   uint8                             // Index into array of fitted tyre
 }
 
 // GetHeader returns the Header of *PacketTyreSetsData
@@ -24,10 +24,14 @@ func (data *PacketTyreSetsData) GetCarIdx() uint8 { return data.CarIdx }
 func (data *PacketTyreSetsData) SetCarIdx(v uint8) { data.CarIdx = v }
 
 // GetTyreSetData returns the TyreSetData of *PacketTyreSetsData
-func (data *PacketTyreSetsData) GetTyreSetData() [20]TyreSetData { return data.TyreSetData }
+func (data *PacketTyreSetsData) GetTyreSetData(tyreSet int) TyreSetData {
+	return data.TyreSetData[tyreSet]
+}
 
 // SetTyreSetData stores the TyreSetData of *PacketTyreSetsData
-func (data *PacketTyreSetsData) SetTyreSetData(v [20]TyreSetData) { data.TyreSetData = v }
+func (data *PacketTyreSetsData) SetTyreSetData(tyreSet int, v TyreSetData) {
+	data.TyreSetData[tyreSet] = v
+}
 
 // GetFittedIdx returns the FittedIdx of *PacketTyreSetsData
 func (data *PacketTyreSetsData) GetFittedIdx() uint8 { return data.FittedIdx }

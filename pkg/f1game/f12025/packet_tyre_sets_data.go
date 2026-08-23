@@ -24,13 +24,13 @@ func (data *PacketTyreSetsData) GetCarIdx() uint8 { return data.CarIdx }
 func (data *PacketTyreSetsData) SetCarIdx(v uint8) { data.CarIdx = v }
 
 // GetTyreSetData returns the TyreSetData of *PacketTyreSetsData
-func (data *PacketTyreSetsData) GetTyreSetData() [CS_MAX_NUM_TYRE_SETS]TyreSetData {
-	return data.TyreSetData
+func (data *PacketTyreSetsData) GetTyreSetData(tyreSet int) TyreSetData {
+	return data.TyreSetData[tyreSet]
 }
 
 // SetTyreSetData stores the TyreSetData of *PacketTyreSetsData
-func (data *PacketTyreSetsData) SetTyreSetData(v [CS_MAX_NUM_TYRE_SETS]TyreSetData) {
-	data.TyreSetData = v
+func (data *PacketTyreSetsData) SetTyreSetData(tyreSet int, v TyreSetData) {
+	data.TyreSetData[tyreSet] = v
 }
 
 // GetFittedIdx returns the FittedIdx of *PacketTyreSetsData
