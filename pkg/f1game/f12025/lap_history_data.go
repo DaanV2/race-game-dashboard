@@ -72,5 +72,4 @@ func (data *LapHistoryData) Parse(reader *xbinary.LittleEndianReader) {
 	data.Sector3TimeMSPart = reader.ReadUint16()
 	data.Sector3TimeMinutesPart = reader.ReadUint8()
 	data.LapValidBitFlags = reader.ReadUint8()
-
 }

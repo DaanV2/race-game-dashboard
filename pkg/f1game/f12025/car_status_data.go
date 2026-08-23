@@ -28,7 +28,6 @@ type CarStatusData struct {
 	ErsDeployMode           uint8   // ERS deployment mode, 0 = none, 1 = medium  2 = hotlap, 3 = boost
 	ErsHarvestedThisLapMGUK float32 // ERS energy harvested this lap by MGU-K
 	ErsHarvestedThisLapMGUH float32 // ERS energy harvested this lap by MGU-H
-	ErsHarvestedLimitPerLap float32 // ERS energy harvest limit for this lap
 	ErsDeployedThisLap      float32 // ERS energy deployed this lap
 	NetworkPaused           uint8   // Whether the car is paused in a network game
 }
@@ -171,12 +170,6 @@ func (data *CarStatusData) GetErsHarvestedThisLapMGUH() float32 { return data.Er
 // SetErsHarvestedThisLapMGUH stores the ErsHarvestedThisLapMGUH of *CarStatusData
 func (data *CarStatusData) SetErsHarvestedThisLapMGUH(v float32) { data.ErsHarvestedThisLapMGUH = v }
 
-// GetErsHarvestedLimitPerLap returns the ErsHarvestedLimitPerLap of *CarStatusData
-func (data *CarStatusData) GetErsHarvestedLimitPerLap() float32 { return data.ErsHarvestedLimitPerLap }
-
-// SetErsHarvestedLimitPerLap stores the ErsHarvestedLimitPerLap of *CarStatusData
-func (data *CarStatusData) SetErsHarvestedLimitPerLap(v float32) { data.ErsHarvestedLimitPerLap = v }
-
 // GetErsDeployedThisLap returns the ErsDeployedThisLap of *CarStatusData
 func (data *CarStatusData) GetErsDeployedThisLap() float32 { return data.ErsDeployedThisLap }
 
@@ -213,7 +206,6 @@ func (data *CarStatusData) Parse(reader *xbinary.LittleEndianReader) {
 	data.ErsDeployMode = reader.ReadUint8()
 	data.ErsHarvestedThisLapMGUK = reader.ReadFloat32()
 	data.ErsHarvestedThisLapMGUH = reader.ReadFloat32()
-	data.ErsHarvestedLimitPerLap = reader.ReadFloat32()
 	data.ErsDeployedThisLap = reader.ReadFloat32()
 	data.NetworkPaused = reader.ReadUint8()
 

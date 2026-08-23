@@ -138,11 +138,11 @@ func (data *CarTelemetryData) Parse(reader *xbinary.LittleEndianReader) {
 	data.DRS = reader.ReadUint8()
 	data.RevLightsPercent = reader.ReadUint8()
 	data.RevLightsBitValue = reader.ReadUint16()
-	data.BrakesTemperature = xbinary.Readx4(reader.ReadUint16)
-	data.TyresSurfaceTemperature = xbinary.Readx4(reader.ReadUint8)
-	data.TyresInnerTemperature = xbinary.Readx4(reader.ReadUint8)
+	data.BrakesTemperature = reader.ReadUint16x4()
+	reader.Read(data.TyresSurfaceTemperature[:])
+	reader.Read(data.TyresInnerTemperature[:])
 	data.EngineTemperature = reader.ReadUint8()
-	data.TyresPressure = xbinary.Readx4(reader.ReadFloat32)
-	data.SurfaceType = xbinary.Readx4(reader.ReadUint8)
+	data.TyresPressure = reader.ReadFloat32x4()
+	reader.Read(data.SurfaceType[:])
 
 }

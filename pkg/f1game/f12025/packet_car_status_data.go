@@ -5,8 +5,8 @@ import (
 )
 
 type PacketCarStatusData struct {
-	Header        PacketHeader      // Header
-	CarStatusData [24]CarStatusData //
+	Header        PacketHeader                   // Header
+	CarStatusData [CS_MAX_NUM_CARS]CarStatusData //
 }
 
 // GetHeader returns the Header of *PacketCarStatusData
@@ -16,10 +16,14 @@ func (data *PacketCarStatusData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketCarStatusData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarStatusData returns the CarStatusData of *PacketCarStatusData
-func (data *PacketCarStatusData) GetCarStatusData() [24]CarStatusData { return data.CarStatusData }
+func (data *PacketCarStatusData) GetCarStatusData() [CS_MAX_NUM_CARS]CarStatusData {
+	return data.CarStatusData
+}
 
 // SetCarStatusData stores the CarStatusData of *PacketCarStatusData
-func (data *PacketCarStatusData) SetCarStatusData(v [24]CarStatusData) { data.CarStatusData = v }
+func (data *PacketCarStatusData) SetCarStatusData(v [CS_MAX_NUM_CARS]CarStatusData) {
+	data.CarStatusData = v
+}
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketCarStatusData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

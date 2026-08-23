@@ -5,16 +5,17 @@ import (
 )
 
 type PacketSessionHistoryData struct {
-	Header                PacketHeader            // Header
-	CarIdx                uint8                   // Index of the car this lap data relates to
-	NumLaps               uint8                   // Num laps in the data (including current partial lap)
-	NumTyreStints         uint8                   // Number of tyre stints in the data
-	BestLapTimeLapNum     uint8                   // Lap the best lap time was achieved on
-	BestSector1LapNum     uint8                   // Lap the best Sector 1 time was achieved on
-	BestSector2LapNum     uint8                   // Lap the best Sector 2 time was achieved on
-	BestSector3LapNum     uint8                   // Lap the best Sector 3 time was achieved on
-	LapHistoryData        [100]LapHistoryData     // 100 laps of data max
-	TyreStintsHistoryData [8]TyreStintHistoryData //
+	Header PacketHeader // Header
+
+	CarIdx                uint8                                      // Index of the car this lap data relates to
+	NumLaps               uint8                                      // Num laps in the data (including current partial lap)
+	NumTyreStints         uint8                                      // Number of tyre stints in the data
+	BestLapTimeLapNum     uint8                                      // Lap the best lap time was achieved on
+	BestSector1LapNum     uint8                                      // Lap the best Sector 1 time was achieved on
+	BestSector2LapNum     uint8                                      // Lap the best Sector 2 time was achieved on
+	BestSector3LapNum     uint8                                      // Lap the best Sector 3 time was achieved on
+	LapHistoryData        [CS_MAX_NUM_LAPS_IN_HISTORY]LapHistoryData // 100 laps of data max
+	TyreStintsHistoryData [CS_MAX_TYRE_STINTS]TyreStintHistoryData   //
 }
 
 // GetHeader returns the Header of *PacketSessionHistoryData

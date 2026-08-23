@@ -6,7 +6,7 @@ import (
 
 type PacketMotionData struct {
 	Header        PacketHeader      // Header
-	CarMotionData [24]CarMotionData // Data for all cars on track
+	CarMotionData [CS_MAX_NUM_CARS]CarMotionData // Data for all cars on track
 }
 
 // GetHeader returns the Header of *PacketMotionData

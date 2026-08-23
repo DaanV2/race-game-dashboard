@@ -5,9 +5,9 @@ import (
 )
 
 type PacketParticipantsData struct {
-	Header        PacketHeader        // Header
-	NumActiveCars uint8               // Number of active cars in the data – should match number of  cars on HUD
-	Participants  [24]ParticipantData //
+	Header        PacketHeader                     // Header
+	NumActiveCars uint8                            // Number of active cars in the data – should match number of  cars on HUD
+	Participants  [CS_MAX_NUM_CARS]ParticipantData //
 }
 
 // GetHeader returns the Header of *PacketParticipantsData

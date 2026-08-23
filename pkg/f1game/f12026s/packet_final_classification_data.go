@@ -7,7 +7,7 @@ import (
 type PacketFinalClassificationData struct {
 	Header             PacketHeader                // Header
 	NumCars            uint8                       // Number of cars in the final classification
-	ClassificationData [24]FinalClassificationData //
+	ClassificationData [CS_MAX_NUM_CARS]FinalClassificationData //
 }
 
 // GetHeader returns the Header of *PacketFinalClassificationData
@@ -23,12 +23,12 @@ func (data *PacketFinalClassificationData) GetNumCars() uint8 { return data.NumC
 func (data *PacketFinalClassificationData) SetNumCars(v uint8) { data.NumCars = v }
 
 // GetClassificationData returns the ClassificationData of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) GetClassificationData() [24]FinalClassificationData {
+func (data *PacketFinalClassificationData) GetClassificationData() [CS_MAX_NUM_CARS]FinalClassificationData {
 	return data.ClassificationData
 }
 
 // SetClassificationData stores the ClassificationData of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) SetClassificationData(v [24]FinalClassificationData) {
+func (data *PacketFinalClassificationData) SetClassificationData(v [CS_MAX_NUM_CARS]FinalClassificationData) {
 	data.ClassificationData = v
 }
 

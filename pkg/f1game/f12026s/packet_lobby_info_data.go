@@ -7,7 +7,7 @@ import (
 type PacketLobbyInfoData struct {
 	Header       PacketHeader      // Header  Packet specific data
 	NumPlayers   uint8             // Number of players in the lobby data
-	LobbyPlayers [24]LobbyInfoData //
+	LobbyPlayers [CS_MAX_NUM_CARS]LobbyInfoData //
 }
 
 // GetHeader returns the Header of *PacketLobbyInfoData

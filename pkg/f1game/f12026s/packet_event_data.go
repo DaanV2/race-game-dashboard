@@ -40,7 +40,7 @@ type parsable interface {
 func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header
 
-	esc := xbinary.Readx4(reader.ReadUint8)
+	esc := reader.ReadUint8x4()
 	escStr := string(esc[:])
 	data.EventStringCode = EventCode(escStr)
 
@@ -66,7 +66,7 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 	case EVENT_CODE_LIGHTS_OUT:
 		event = nil
 	case EVENT_CODE_OVERTAKE:
-		event = nil
+		event = &EventDataOvertake{}
 	case EVENT_CODE_PENALTY_ISSUED:
 		event = &EventDataPenalty{}
 	case EVENT_CODE_RACE_WINNER:

@@ -6,7 +6,7 @@ import (
 
 type PacketCarTelemetryData struct {
 	Header                       PacketHeader         // Header
-	CarTelemetryData             [24]CarTelemetryData //
+	CarTelemetryData             [CS_MAX_NUM_CARS]CarTelemetryData //
 	MfdPanelIndex                uint8                // Index of MFD panel open - 255 = MFD closed  Single player, race – 0 = Car setup, 1 = Pits  2 = Damage, 3 =  Engine, 4 = Temperatures  May vary depending on game mode
 	MfdPanelIndexSecondaryPlayer uint8                // See above
 	SuggestedGear                int8                 // Suggested gear for the player (1-8)  0 if no gear suggested
@@ -19,12 +19,12 @@ func (data *PacketCarTelemetryData) GetHeader() PacketHeader { return data.Heade
 func (data *PacketCarTelemetryData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarTelemetryData returns the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) GetCarTelemetryData() [24]CarTelemetryData {
+func (data *PacketCarTelemetryData) GetCarTelemetryData() [CS_MAX_NUM_CARS]CarTelemetryData {
 	return data.CarTelemetryData
 }
 
 // SetCarTelemetryData stores the CarTelemetryData of *PacketCarTelemetryData
-func (data *PacketCarTelemetryData) SetCarTelemetryData(v [24]CarTelemetryData) {
+func (data *PacketCarTelemetryData) SetCarTelemetryData(v [CS_MAX_NUM_CARS]CarTelemetryData) {
 	data.CarTelemetryData = v
 }
 

@@ -5,7 +5,8 @@ import (
 )
 
 type PacketMotionExData struct {
-	Header                 PacketHeader      // Header  Extra player car ONLY data
+	Header PacketHeader // Header  Extra player car ONLY data
+
 	SuspensionPosition     WheelMap[float32] // Note: All wheel arrays have the following order:
 	SuspensionVelocity     WheelMap[float32] // RL, RR, FL, FR
 	SuspensionAcceleration WheelMap[float32] // RL, RR, FL, FR
@@ -227,14 +228,15 @@ func (data *PacketMotionExData) SetWheelCamberGain(v WheelMap[float32]) { data.W
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketMotionExData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header
-	data.SuspensionPosition = xbinary.Readx4(reader.ReadFloat32)
-	data.SuspensionVelocity = xbinary.Readx4(reader.ReadFloat32)
-	data.SuspensionAcceleration = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelSpeed = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelSlipRatio = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelSlipAngle = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelLatForce = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelLongForce = xbinary.Readx4(reader.ReadFloat32)
+
+	data.SuspensionPosition = reader.ReadFloat32x4()
+	data.SuspensionVelocity = reader.ReadFloat32x4()
+	data.SuspensionAcceleration = reader.ReadFloat32x4()
+	data.WheelSpeed = reader.ReadFloat32x4()
+	data.WheelSlipRatio = reader.ReadFloat32x4()
+	data.WheelSlipAngle = reader.ReadFloat32x4()
+	data.WheelLatForce = reader.ReadFloat32x4()
+	data.WheelLongForce = reader.ReadFloat32x4()
 	data.HeightOfCOGAboveGround = reader.ReadFloat32()
 	data.LocalVelocityX = reader.ReadFloat32()
 	data.LocalVelocityY = reader.ReadFloat32()
@@ -246,14 +248,13 @@ func (data *PacketMotionExData) Parse(header *PacketHeader, reader *xbinary.Litt
 	data.AngularAccelerationY = reader.ReadFloat32()
 	data.AngularAccelerationZ = reader.ReadFloat32()
 	data.FrontWheelsAngle = reader.ReadFloat32()
-	data.WheelVertForce = xbinary.Readx4(reader.ReadFloat32)
+	data.WheelVertForce = reader.ReadFloat32x4()
 	data.FrontAeroHeight = reader.ReadFloat32()
 	data.RearAeroHeight = reader.ReadFloat32()
 	data.FrontRollAngle = reader.ReadFloat32()
 	data.RearRollAngle = reader.ReadFloat32()
 	data.ChassisYaw = reader.ReadFloat32()
 	data.ChassisPitch = reader.ReadFloat32()
-	data.WheelCamber = xbinary.Readx4(reader.ReadFloat32)
-	data.WheelCamberGain = xbinary.Readx4(reader.ReadFloat32)
-
+	data.WheelCamber = reader.ReadFloat32x4()
+	data.WheelCamberGain = reader.ReadFloat32x4()
 }

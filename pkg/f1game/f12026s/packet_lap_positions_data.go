@@ -8,7 +8,7 @@ type PacketLapPositionsData struct {
 	Header                PacketHeader  // Header  Packet specific data
 	NumLaps               uint8         // Number of laps in the data
 	LapStart              uint8         // Index of the lap where the data starts, 0 indexed  Array holding the position of the car in a given lap, 0 if no record
-	PositionForVehicleIdx [50][24]uint8 //
+	PositionForVehicleIdx [50][CS_MAX_NUM_CARS]uint8 //
 }
 
 // GetHeader returns the Header of *PacketLapPositionsData
@@ -30,12 +30,12 @@ func (data *PacketLapPositionsData) GetLapStart() uint8 { return data.LapStart }
 func (data *PacketLapPositionsData) SetLapStart(v uint8) { data.LapStart = v }
 
 // GetPositionForVehicleIdx returns the PositionForVehicleIdx of *PacketLapPositionsData
-func (data *PacketLapPositionsData) GetPositionForVehicleIdx() [50][24]uint8 {
+func (data *PacketLapPositionsData) GetPositionForVehicleIdx() [50][CS_MAX_NUM_CARS]uint8 {
 	return data.PositionForVehicleIdx
 }
 
 // SetPositionForVehicleIdx stores the PositionForVehicleIdx of *PacketLapPositionsData
-func (data *PacketLapPositionsData) SetPositionForVehicleIdx(v [50][24]uint8) {
+func (data *PacketLapPositionsData) SetPositionForVehicleIdx(v [50][CS_MAX_NUM_CARS]uint8) {
 	data.PositionForVehicleIdx = v
 }
 

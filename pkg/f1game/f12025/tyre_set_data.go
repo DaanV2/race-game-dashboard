@@ -80,5 +80,4 @@ func (data *TyreSetData) Parse(reader *xbinary.LittleEndianReader) {
 	data.UsableLife = reader.ReadUint8()
 	data.LapDeltaTime = reader.ReadInt16()
 	data.Fitted = reader.ReadUint8()
-
 }

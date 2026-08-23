@@ -162,10 +162,10 @@ func (data *CarDamageData) GetEngineSeized() uint8 { return data.EngineSeized }
 func (data *CarDamageData) SetEngineSeized(v uint8) { data.EngineSeized = v }
 
 func (data *CarDamageData) Parse(reader *xbinary.LittleEndianReader) {
-	data.TyresWear = xbinary.Readx4(reader.ReadFloat32)
-	data.TyresDamage = xbinary.Readx4(reader.ReadUint8)
-	data.BrakesDamage = xbinary.Readx4(reader.ReadUint8)
-	data.TyreBlisters = xbinary.Readx4(reader.ReadUint8)
+	data.TyresWear = reader.ReadFloat32x4()
+	data.TyresDamage = reader.ReadUint8x4()
+	data.BrakesDamage = reader.ReadUint8x4()
+	data.TyreBlisters = reader.ReadUint8x4()
 	data.FrontLeftWingDamage = reader.ReadUint8()
 	data.FrontRightWingDamage = reader.ReadUint8()
 	data.RearWingDamage = reader.ReadUint8()

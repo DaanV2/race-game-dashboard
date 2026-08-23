@@ -5,21 +5,21 @@ import (
 )
 
 type FinalClassificationData struct {
-	Position          uint8    // Finishing position
-	NumLaps           uint8    // Number of laps completed
-	GridPosition      uint8    // Grid position of the car
-	Points            uint8    // Number of points scored
-	NumPitStops       uint8    // Number of pit stops made
-	ResultStatus      uint8    // Result status - 0 = invalid, 1 = inactive, 2 = active  3 = finished, 4 = didnotfinish, 5 = disqualified  6 = not classified, 7 = retired
-	ResultReason      uint8    // Result reason - 0 = invalid, 1 = retired, 2 = finished  3 = terminal damage, 4 = inactive, 5 = not enough laps completed  6 = black flagged, 7 = red flagged, 8 = mechanical failure  9 = session skipped, 10 = session simulated
-	BestLapTimeInMS   uint32   // Best lap time of the session in milliseconds
-	TotalRaceTime     float64  // Total race time in seconds without penalties
-	PenaltiesTime     uint8    // Total penalties accumulated in seconds
-	NumPenalties      uint8    // Number of penalties applied to this driver
-	NumTyreStints     uint8    // Number of tyres stints up to maximum
-	TyreStintsActual  [8]uint8 // Actual tyres used by this driver
-	TyreStintsVisual  [8]uint8 // Visual tyres used by this driver
-	TyreStintsEndLaps [8]uint8 // The lap number stints end on
+	Position          uint8                     // Finishing position
+	NumLaps           uint8                     // Number of laps completed
+	GridPosition      uint8                     // Grid position of the car
+	Points            uint8                     // Number of points scored
+	NumPitStops       uint8                     // Number of pit stops made
+	ResultStatus      uint8                     // Result status - 0 = invalid, 1 = inactive, 2 = active, 3 = finished, 4 = didnotfinish, 5 = disqualified, 6 = not classified, 7 = retired
+	ResultReason      uint8                     // Result reason - 0 = invalid, 1 = retired, 2 = finished, 3 = terminal damage, 4 = inactive, 5 = not enough laps completed, 6 = black flagged, 7 = red flagged, 8 = mechanical failure, 9 = session skipped, 10 = session simulated
+	BestLapTimeInMS   uint32                    // Best lap time of the session in milliseconds
+	TotalRaceTime     float64                   // Total race time in seconds without penalties
+	PenaltiesTime     uint8                     // Total penalties accumulated in seconds
+	NumPenalties      uint8                     // Number of penalties applied to this driver
+	NumTyreStints     uint8                     // Number of tyres stints up to maximum
+	TyreStintsActual  [CS_MAX_TYRE_STINTS]uint8 // Actual tyres used by this driver
+	TyreStintsVisual  [CS_MAX_TYRE_STINTS]uint8 // Visual tyres used by this driver
+	TyreStintsEndLaps [CS_MAX_TYRE_STINTS]uint8 // The lap number stints end on
 }
 
 // GetPosition returns the Position of *FinalClassificationData
@@ -95,22 +95,34 @@ func (data *FinalClassificationData) GetNumTyreStints() uint8 { return data.NumT
 func (data *FinalClassificationData) SetNumTyreStints(v uint8) { data.NumTyreStints = v }
 
 // GetTyreStintsActual returns the TyreStintsActual of *FinalClassificationData
-func (data *FinalClassificationData) GetTyreStintsActual() [8]uint8 { return data.TyreStintsActual }
+func (data *FinalClassificationData) GetTyreStintsActual() [CS_MAX_TYRE_STINTS]uint8 {
+	return data.TyreStintsActual
+}
 
 // SetTyreStintsActual stores the TyreStintsActual of *FinalClassificationData
-func (data *FinalClassificationData) SetTyreStintsActual(v [8]uint8) { data.TyreStintsActual = v }
+func (data *FinalClassificationData) SetTyreStintsActual(v [CS_MAX_TYRE_STINTS]uint8) {
+	data.TyreStintsActual = v
+}
 
 // GetTyreStintsVisual returns the TyreStintsVisual of *FinalClassificationData
-func (data *FinalClassificationData) GetTyreStintsVisual() [8]uint8 { return data.TyreStintsVisual }
+func (data *FinalClassificationData) GetTyreStintsVisual() [CS_MAX_TYRE_STINTS]uint8 {
+	return data.TyreStintsVisual
+}
 
 // SetTyreStintsVisual stores the TyreStintsVisual of *FinalClassificationData
-func (data *FinalClassificationData) SetTyreStintsVisual(v [8]uint8) { data.TyreStintsVisual = v }
+func (data *FinalClassificationData) SetTyreStintsVisual(v [CS_MAX_TYRE_STINTS]uint8) {
+	data.TyreStintsVisual = v
+}
 
 // GetTyreStintsEndLaps returns the TyreStintsEndLaps of *FinalClassificationData
-func (data *FinalClassificationData) GetTyreStintsEndLaps() [8]uint8 { return data.TyreStintsEndLaps }
+func (data *FinalClassificationData) GetTyreStintsEndLaps() [CS_MAX_TYRE_STINTS]uint8 {
+	return data.TyreStintsEndLaps
+}
 
 // SetTyreStintsEndLaps stores the TyreStintsEndLaps of *FinalClassificationData
-func (data *FinalClassificationData) SetTyreStintsEndLaps(v [8]uint8) { data.TyreStintsEndLaps = v }
+func (data *FinalClassificationData) SetTyreStintsEndLaps(v [CS_MAX_TYRE_STINTS]uint8) {
+	data.TyreStintsEndLaps = v
+}
 
 func (data *FinalClassificationData) Parse(reader *xbinary.LittleEndianReader) {
 	data.Position = reader.ReadUint8()

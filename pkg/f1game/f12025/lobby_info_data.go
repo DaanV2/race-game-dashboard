@@ -2,19 +2,20 @@ package f12025
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
+	xstrings "github.com/daanv2/race-game-dashboard/pkg/extensions/strings"
 )
 
 type LobbyInfoData struct {
-	AiControlled    uint8    // Whether the vehicle is AI (1) or Human (0) controlled
-	TeamId          uint16   // Team id - see appendix (65535 if no team currently selected)
-	Nationality     uint8    // Nationality of the driver
-	Platform        uint8    // 1 = Steam, 3 = PlayStation, 4 = Xbox, 6 = Origin, 255 = unknown
-	Name            [32]byte // Name of participant in UTF-8 format – null terminated  Will be truncated with ... (U+2026) if too long
-	CarNumber       uint8    // Car number of the player
-	YourTelemetry   uint8    // The player's UDP setting, 0 = restricted, 1 = public
-	ShowOnlineNames uint8    // The player's show online names setting, 0 = off, 1 = on
-	TechLevel       uint16   // F1 World tech level
-	ReadyStatus     uint8    // 0 = not ready, 1 = ready, 2 = spectating
+	AiControlled    uint8                             // Whether the vehicle is AI (1) or Human (0) controlled
+	TeamId          uint16                            // Team id - see appendix (65535 if no team currently selected)
+	Nationality     uint8                             // Nationality of the driver
+	Platform        uint8                             // 1 = Steam, 3 = PlayStation, 4 = Xbox, 6 = Origin, 255 = unknown
+	Name            [CS_MAX_PARTICIPANT_NAME_LEN]byte // Name of participant in UTF-8 format – null terminated  Will be truncated with ... (U+2026) if too long
+	CarNumber       uint8                             // Car number of the player
+	YourTelemetry   uint8                             // The player's UDP setting, 0 = restricted, 1 = public
+	ShowOnlineNames uint8                             // The player's show online names setting, 0 = off, 1 = on
+	TechLevel       uint16                            // F1 World tech level
+	ReadyStatus     uint8                             // 0 = not ready, 1 = ready, 2 = spectating
 }
 
 // GetAiControlled returns the AiControlled of *LobbyInfoData
@@ -42,10 +43,16 @@ func (data *LobbyInfoData) GetPlatform() uint8 { return data.Platform }
 func (data *LobbyInfoData) SetPlatform(v uint8) { data.Platform = v }
 
 // GetName returns the Name of *LobbyInfoData
-func (data *LobbyInfoData) GetName() [32]byte { return data.Name }
+func (data *LobbyInfoData) GetName() string { return xstrings.NullTerminated(data.Name[:]) }
 
 // SetName stores the Name of *LobbyInfoData
-func (data *LobbyInfoData) SetName(v [32]byte) { data.Name = v }
+func (data *LobbyInfoData) SetName(v string) {
+	var result [CS_MAX_PARTICIPANT_NAME_LEN]byte
+	b := []byte(v)
+
+	copy(result[:], b)
+	data.Name = result
+}
 
 // GetCarNumber returns the CarNumber of *LobbyInfoData
 func (data *LobbyInfoData) GetCarNumber() uint8 { return data.CarNumber }
