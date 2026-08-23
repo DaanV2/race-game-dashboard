@@ -23,10 +23,14 @@ func (data *PacketParticipantsData) GetNumActiveCars() uint8 { return data.NumAc
 func (data *PacketParticipantsData) SetNumActiveCars(v uint8) { data.NumActiveCars = v }
 
 // GetParticipants returns the Participants of *PacketParticipantsData
-func (data *PacketParticipantsData) GetParticipants() [24]ParticipantData { return data.Participants }
+func (data *PacketParticipantsData) GetParticipants(participant int) ParticipantData {
+	return data.Participants[participant]
+}
 
 // SetParticipants stores the Participants of *PacketParticipantsData
-func (data *PacketParticipantsData) SetParticipants(v [24]ParticipantData) { data.Participants = v }
+func (data *PacketParticipantsData) SetParticipants(participant int, v ParticipantData) {
+	data.Participants[participant] = v
+}
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketParticipantsData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

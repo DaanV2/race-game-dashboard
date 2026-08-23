@@ -5,22 +5,22 @@ import (
 )
 
 type CarTelemetryData struct {
-	Speed                   uint16     // Speed of car in kilometres per hour
-	Throttle                float32    // Amount of throttle applied (0.0 to 1.0)
-	Steer                   float32    // Steering (-1.0 (full lock left) to 1.0 (full lock right))
-	Brake                   float32    // Amount of brake applied (0.0 to 1.0)
-	Clutch                  uint8      // Amount of clutch applied (0 to 100)
-	Gear                    int8       // Gear selected (1-8, N=0, R=-1)
-	EngineRPM               uint16     // Engine RPM
-	Drs                     uint8      // 0 = off, 1 = on
-	RevLightsPercent        uint8      // Rev lights indicator (percentage)
-	RevLightsBitValue       uint16     // Rev lights (bit 0 = leftmost LED, bit 14 = rightmost LED)
-	BrakesTemperature       [4]uint16  // Brakes temperature (celsius)
-	TyresSurfaceTemperature [4]uint8   // Tyres surface temperature (celsius)
-	TyresInnerTemperature   [4]uint8   // Tyres inner temperature (celsius)
-	EngineTemperature       uint8      // Engine temperature (celsius)
-	TyresPressure           [4]float32 // Tyres pressure (PSI)
-	SurfaceType             [4]uint8   // Driving surface, see appendices
+	Speed                   uint16            // Speed of car in kilometres per hour
+	Throttle                float32           // Amount of throttle applied (0.0 to 1.0)
+	Steer                   float32           // Steering (-1.0 (full lock left) to 1.0 (full lock right))
+	Brake                   float32           // Amount of brake applied (0.0 to 1.0)
+	Clutch                  uint8             // Amount of clutch applied (0 to 100)
+	Gear                    int8              // Gear selected (1-8, N=0, R=-1)
+	EngineRPM               uint16            // Engine RPM
+	DRS                     uint8             // 0 = off, 1 = on
+	RevLightsPercent        uint8             // Rev lights indicator (percentage)
+	RevLightsBitValue       uint16            // Rev lights (bit 0 = leftmost LED, bit 14 = rightmost LED)
+	BrakesTemperature       WheelMap[uint16]  // Brakes temperature (celsius)
+	TyresSurfaceTemperature WheelMap[uint8]   // Tyres surface temperature (celsius)
+	TyresInnerTemperature   WheelMap[uint8]   // Tyres inner temperature (celsius)
+	EngineTemperature       uint8             // Engine temperature (celsius)
+	TyresPressure           WheelMap[float32] // Tyres pressure (PSI)
+	SurfaceType             WheelMap[uint8]   // Driving surface, see appendices
 }
 
 // GetSpeed returns the Speed of *CarTelemetryData
@@ -66,10 +66,10 @@ func (data *CarTelemetryData) GetEngineRPM() uint16 { return data.EngineRPM }
 func (data *CarTelemetryData) SetEngineRPM(v uint16) { data.EngineRPM = v }
 
 // GetDrs returns the Drs of *CarTelemetryData
-func (data *CarTelemetryData) GetDrs() uint8 { return data.Drs }
+func (data *CarTelemetryData) GetDrs() uint8 { return data.DRS }
 
 // SetDrs stores the Drs of *CarTelemetryData
-func (data *CarTelemetryData) SetDrs(v uint8) { data.Drs = v }
+func (data *CarTelemetryData) SetDrs(v uint8) { data.DRS = v }
 
 // GetRevLightsPercent returns the RevLightsPercent of *CarTelemetryData
 func (data *CarTelemetryData) GetRevLightsPercent() uint8 { return data.RevLightsPercent }
@@ -84,26 +84,30 @@ func (data *CarTelemetryData) GetRevLightsBitValue() uint16 { return data.RevLig
 func (data *CarTelemetryData) SetRevLightsBitValue(v uint16) { data.RevLightsBitValue = v }
 
 // GetBrakesTemperature returns the BrakesTemperature of *CarTelemetryData
-func (data *CarTelemetryData) GetBrakesTemperature() [4]uint16 { return data.BrakesTemperature }
+func (data *CarTelemetryData) GetBrakesTemperature() WheelMap[uint16] { return data.BrakesTemperature }
 
 // SetBrakesTemperature stores the BrakesTemperature of *CarTelemetryData
-func (data *CarTelemetryData) SetBrakesTemperature(v [4]uint16) { data.BrakesTemperature = v }
+func (data *CarTelemetryData) SetBrakesTemperature(v WheelMap[uint16]) { data.BrakesTemperature = v }
 
 // GetTyresSurfaceTemperature returns the TyresSurfaceTemperature of *CarTelemetryData
-func (data *CarTelemetryData) GetTyresSurfaceTemperature() [4]uint8 {
+func (data *CarTelemetryData) GetTyresSurfaceTemperature() WheelMap[uint8] {
 	return data.TyresSurfaceTemperature
 }
 
 // SetTyresSurfaceTemperature stores the TyresSurfaceTemperature of *CarTelemetryData
-func (data *CarTelemetryData) SetTyresSurfaceTemperature(v [4]uint8) {
+func (data *CarTelemetryData) SetTyresSurfaceTemperature(v WheelMap[uint8]) {
 	data.TyresSurfaceTemperature = v
 }
 
 // GetTyresInnerTemperature returns the TyresInnerTemperature of *CarTelemetryData
-func (data *CarTelemetryData) GetTyresInnerTemperature() [4]uint8 { return data.TyresInnerTemperature }
+func (data *CarTelemetryData) GetTyresInnerTemperature() WheelMap[uint8] {
+	return data.TyresInnerTemperature
+}
 
 // SetTyresInnerTemperature stores the TyresInnerTemperature of *CarTelemetryData
-func (data *CarTelemetryData) SetTyresInnerTemperature(v [4]uint8) { data.TyresInnerTemperature = v }
+func (data *CarTelemetryData) SetTyresInnerTemperature(v WheelMap[uint8]) {
+	data.TyresInnerTemperature = v
+}
 
 // GetEngineTemperature returns the EngineTemperature of *CarTelemetryData
 func (data *CarTelemetryData) GetEngineTemperature() uint8 { return data.EngineTemperature }
@@ -112,16 +116,16 @@ func (data *CarTelemetryData) GetEngineTemperature() uint8 { return data.EngineT
 func (data *CarTelemetryData) SetEngineTemperature(v uint8) { data.EngineTemperature = v }
 
 // GetTyresPressure returns the TyresPressure of *CarTelemetryData
-func (data *CarTelemetryData) GetTyresPressure() [4]float32 { return data.TyresPressure }
+func (data *CarTelemetryData) GetTyresPressure() WheelMap[float32] { return data.TyresPressure }
 
 // SetTyresPressure stores the TyresPressure of *CarTelemetryData
-func (data *CarTelemetryData) SetTyresPressure(v [4]float32) { data.TyresPressure = v }
+func (data *CarTelemetryData) SetTyresPressure(v WheelMap[float32]) { data.TyresPressure = v }
 
 // GetSurfaceType returns the SurfaceType of *CarTelemetryData
-func (data *CarTelemetryData) GetSurfaceType() [4]uint8 { return data.SurfaceType }
+func (data *CarTelemetryData) GetSurfaceType() WheelMap[uint8] { return data.SurfaceType }
 
 // SetSurfaceType stores the SurfaceType of *CarTelemetryData
-func (data *CarTelemetryData) SetSurfaceType(v [4]uint8) { data.SurfaceType = v }
+func (data *CarTelemetryData) SetSurfaceType(v WheelMap[uint8]) { data.SurfaceType = v }
 
 func (data *CarTelemetryData) Parse(reader *xbinary.LittleEndianReader) {
 	data.Speed = reader.ReadUint16()
@@ -131,7 +135,7 @@ func (data *CarTelemetryData) Parse(reader *xbinary.LittleEndianReader) {
 	data.Clutch = reader.ReadUint8()
 	data.Gear = reader.ReadInt8()
 	data.EngineRPM = reader.ReadUint16()
-	data.Drs = reader.ReadUint8()
+	data.DRS = reader.ReadUint8()
 	data.RevLightsPercent = reader.ReadUint8()
 	data.RevLightsBitValue = reader.ReadUint16()
 	data.BrakesTemperature = xbinary.Readx4(reader.ReadUint16)

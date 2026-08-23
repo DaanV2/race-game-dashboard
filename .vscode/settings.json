@@ -1,11 +1,6 @@
 {
     "editor.formatOnSave": true,
     // Proto
-    "protoc": {
-        "options": [
-            "--proto_path=protos/v1",
-        ]
-    },
     "[markdown]": {
         "editor.wordWrap": "off",
     },

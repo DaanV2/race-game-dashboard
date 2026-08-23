@@ -16,10 +16,10 @@ func (data *PacketMotionData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketMotionData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarMotionData returns the CarMotionData of *PacketMotionData
-func (data *PacketMotionData) GetCarMotionData() [24]CarMotionData { return data.CarMotionData }
+func (data *PacketMotionData) GetCarMotionData(car int) CarMotionData { return data.CarMotionData[car] }
 
 // SetCarMotionData stores the CarMotionData of *PacketMotionData
-func (data *PacketMotionData) SetCarMotionData(v [24]CarMotionData) { data.CarMotionData = v }
+func (data *PacketMotionData) SetCarMotionData(car int, v CarMotionData) { data.CarMotionData[car] = v }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketMotionData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

@@ -5,35 +5,35 @@ import (
 )
 
 type PacketMotionExData struct {
-	Header                 PacketHeader // Header  Extra player car ONLY data
-	SuspensionPosition     [4]float32   // Note: All wheel arrays have the following order:
-	SuspensionVelocity     [4]float32   // RL, RR, FL, FR
-	SuspensionAcceleration [4]float32   // RL, RR, FL, FR
-	WheelSpeed             [4]float32   // Speed of each wheel
-	WheelSlipRatio         [4]float32   // Slip ratio for each wheel
-	WheelSlipAngle         [4]float32   // Slip angles for each wheel
-	WheelLatForce          [4]float32   // Lateral forces for each wheel
-	WheelLongForce         [4]float32   // Longitudinal forces for each wheel
-	HeightOfCOGAboveGround float32      // Height of centre of gravity above ground
-	LocalVelocityX         float32      // Velocity in local space – metres/s
-	LocalVelocityY         float32      // Velocity in local space
-	LocalVelocityZ         float32      // Velocity in local space
-	AngularVelocityX       float32      // Angular velocity x-component – radians/s
-	AngularVelocityY       float32      // Angular velocity y-component
-	AngularVelocityZ       float32      // Angular velocity z-component
-	AngularAccelerationX   float32      // Angular acceleration x-component – radians/s/s
-	AngularAccelerationY   float32      // Angular acceleration y-component
-	AngularAccelerationZ   float32      // Angular acceleration z-component
-	FrontWheelsAngle       float32      // Current front wheels angle in radians
-	WheelVertForce         [4]float32   // Vertical forces for each wheel
-	FrontAeroHeight        float32      // Front plank edge height above road surface
-	RearAeroHeight         float32      // Rear plank edge height above road surface
-	FrontRollAngle         float32      // Roll angle of the front suspension
-	RearRollAngle          float32      // Roll angle of the rear suspension
-	ChassisYaw             float32      // Yaw angle of the chassis relative to the direction  of motion - radians
-	ChassisPitch           float32      // Pitch angle of the chassis relative to the  direction of motion – radians
-	WheelCamber            [4]float32   // Camber of each wheel in radians
-	WheelCamberGain        [4]float32   // Camber gain for each wheel in radians, difference  between active camber and dynamic camber
+	Header                 PacketHeader      // Header  Extra player car ONLY data
+	SuspensionPosition     WheelMap[float32] // Note: All wheel arrays have the following order:
+	SuspensionVelocity     WheelMap[float32] // RL, RR, FL, FR
+	SuspensionAcceleration WheelMap[float32] // RL, RR, FL, FR
+	WheelSpeed             WheelMap[float32] // Speed of each wheel
+	WheelSlipRatio         WheelMap[float32] // Slip ratio for each wheel
+	WheelSlipAngle         WheelMap[float32] // Slip angles for each wheel
+	WheelLatForce          WheelMap[float32] // Lateral forces for each wheel
+	WheelLongForce         WheelMap[float32] // Longitudinal forces for each wheel
+	HeightOfCOGAboveGround float32           // Height of centre of gravity above ground
+	LocalVelocityX         float32           // Velocity in local space – metres/s
+	LocalVelocityY         float32           // Velocity in local space
+	LocalVelocityZ         float32           // Velocity in local space
+	AngularVelocityX       float32           // Angular velocity x-component – radians/s
+	AngularVelocityY       float32           // Angular velocity y-component
+	AngularVelocityZ       float32           // Angular velocity z-component
+	AngularAccelerationX   float32           // Angular acceleration x-component – radians/s/s
+	AngularAccelerationY   float32           // Angular acceleration y-component
+	AngularAccelerationZ   float32           // Angular acceleration z-component
+	FrontWheelsAngle       float32           // Current front wheels angle in radians
+	WheelVertForce         WheelMap[float32] // Vertical forces for each wheel
+	FrontAeroHeight        float32           // Front plank edge height above road surface
+	RearAeroHeight         float32           // Rear plank edge height above road surface
+	FrontRollAngle         float32           // Roll angle of the front suspension
+	RearRollAngle          float32           // Roll angle of the rear suspension
+	ChassisYaw             float32           // Yaw angle of the chassis relative to the direction  of motion - radians
+	ChassisPitch           float32           // Pitch angle of the chassis relative to the  direction of motion – radians
+	WheelCamber            WheelMap[float32] // Camber of each wheel in radians
+	WheelCamberGain        WheelMap[float32] // Camber gain for each wheel in radians, difference  between active camber and dynamic camber
 }
 
 // GetHeader returns the Header of *PacketMotionExData
@@ -43,56 +43,64 @@ func (data *PacketMotionExData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketMotionExData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetSuspensionPosition returns the SuspensionPosition of *PacketMotionExData
-func (data *PacketMotionExData) GetSuspensionPosition() [4]float32 { return data.SuspensionPosition }
+func (data *PacketMotionExData) GetSuspensionPosition() WheelMap[float32] {
+	return data.SuspensionPosition
+}
 
 // SetSuspensionPosition stores the SuspensionPosition of *PacketMotionExData
-func (data *PacketMotionExData) SetSuspensionPosition(v [4]float32) { data.SuspensionPosition = v }
+func (data *PacketMotionExData) SetSuspensionPosition(v WheelMap[float32]) {
+	data.SuspensionPosition = v
+}
 
 // GetSuspensionVelocity returns the SuspensionVelocity of *PacketMotionExData
-func (data *PacketMotionExData) GetSuspensionVelocity() [4]float32 { return data.SuspensionVelocity }
+func (data *PacketMotionExData) GetSuspensionVelocity() WheelMap[float32] {
+	return data.SuspensionVelocity
+}
 
 // SetSuspensionVelocity stores the SuspensionVelocity of *PacketMotionExData
-func (data *PacketMotionExData) SetSuspensionVelocity(v [4]float32) { data.SuspensionVelocity = v }
+func (data *PacketMotionExData) SetSuspensionVelocity(v WheelMap[float32]) {
+	data.SuspensionVelocity = v
+}
 
 // GetSuspensionAcceleration returns the SuspensionAcceleration of *PacketMotionExData
-func (data *PacketMotionExData) GetSuspensionAcceleration() [4]float32 {
+func (data *PacketMotionExData) GetSuspensionAcceleration() WheelMap[float32] {
 	return data.SuspensionAcceleration
 }
 
 // SetSuspensionAcceleration stores the SuspensionAcceleration of *PacketMotionExData
-func (data *PacketMotionExData) SetSuspensionAcceleration(v [4]float32) {
+func (data *PacketMotionExData) SetSuspensionAcceleration(v WheelMap[float32]) {
 	data.SuspensionAcceleration = v
 }
 
 // GetWheelSpeed returns the WheelSpeed of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelSpeed() [4]float32 { return data.WheelSpeed }
+func (data *PacketMotionExData) GetWheelSpeed() WheelMap[float32] { return data.WheelSpeed }
 
 // SetWheelSpeed stores the WheelSpeed of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelSpeed(v [4]float32) { data.WheelSpeed = v }
+func (data *PacketMotionExData) SetWheelSpeed(v WheelMap[float32]) { data.WheelSpeed = v }
 
 // GetWheelSlipRatio returns the WheelSlipRatio of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelSlipRatio() [4]float32 { return data.WheelSlipRatio }
+func (data *PacketMotionExData) GetWheelSlipRatio() WheelMap[float32] { return data.WheelSlipRatio }
 
 // SetWheelSlipRatio stores the WheelSlipRatio of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelSlipRatio(v [4]float32) { data.WheelSlipRatio = v }
+func (data *PacketMotionExData) SetWheelSlipRatio(v WheelMap[float32]) { data.WheelSlipRatio = v }
 
 // GetWheelSlipAngle returns the WheelSlipAngle of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelSlipAngle() [4]float32 { return data.WheelSlipAngle }
+func (data *PacketMotionExData) GetWheelSlipAngle() WheelMap[float32] { return data.WheelSlipAngle }
 
 // SetWheelSlipAngle stores the WheelSlipAngle of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelSlipAngle(v [4]float32) { data.WheelSlipAngle = v }
+func (data *PacketMotionExData) SetWheelSlipAngle(v WheelMap[float32]) { data.WheelSlipAngle = v }
 
 // GetWheelLatForce returns the WheelLatForce of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelLatForce() [4]float32 { return data.WheelLatForce }
+func (data *PacketMotionExData) GetWheelLatForce() WheelMap[float32] { return data.WheelLatForce }
 
 // SetWheelLatForce stores the WheelLatForce of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelLatForce(v [4]float32) { data.WheelLatForce = v }
+func (data *PacketMotionExData) SetWheelLatForce(v WheelMap[float32]) { data.WheelLatForce = v }
 
 // GetWheelLongForce returns the WheelLongForce of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelLongForce() [4]float32 { return data.WheelLongForce }
+func (data *PacketMotionExData) GetWheelLongForce() WheelMap[float32] { return data.WheelLongForce }
 
 // SetWheelLongForce stores the WheelLongForce of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelLongForce(v [4]float32) { data.WheelLongForce = v }
+func (data *PacketMotionExData) SetWheelLongForce(v WheelMap[float32]) { data.WheelLongForce = v }
 
 // GetHeightOfCOGAboveGround returns the HeightOfCOGAboveGround of *PacketMotionExData
 func (data *PacketMotionExData) GetHeightOfCOGAboveGround() float32 {
@@ -163,10 +171,10 @@ func (data *PacketMotionExData) GetFrontWheelsAngle() float32 { return data.Fron
 func (data *PacketMotionExData) SetFrontWheelsAngle(v float32) { data.FrontWheelsAngle = v }
 
 // GetWheelVertForce returns the WheelVertForce of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelVertForce() [4]float32 { return data.WheelVertForce }
+func (data *PacketMotionExData) GetWheelVertForce() WheelMap[float32] { return data.WheelVertForce }
 
 // SetWheelVertForce stores the WheelVertForce of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelVertForce(v [4]float32) { data.WheelVertForce = v }
+func (data *PacketMotionExData) SetWheelVertForce(v WheelMap[float32]) { data.WheelVertForce = v }
 
 // GetFrontAeroHeight returns the FrontAeroHeight of *PacketMotionExData
 func (data *PacketMotionExData) GetFrontAeroHeight() float32 { return data.FrontAeroHeight }
@@ -205,16 +213,16 @@ func (data *PacketMotionExData) GetChassisPitch() float32 { return data.ChassisP
 func (data *PacketMotionExData) SetChassisPitch(v float32) { data.ChassisPitch = v }
 
 // GetWheelCamber returns the WheelCamber of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelCamber() [4]float32 { return data.WheelCamber }
+func (data *PacketMotionExData) GetWheelCamber() WheelMap[float32] { return data.WheelCamber }
 
 // SetWheelCamber stores the WheelCamber of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelCamber(v [4]float32) { data.WheelCamber = v }
+func (data *PacketMotionExData) SetWheelCamber(v WheelMap[float32]) { data.WheelCamber = v }
 
 // GetWheelCamberGain returns the WheelCamberGain of *PacketMotionExData
-func (data *PacketMotionExData) GetWheelCamberGain() [4]float32 { return data.WheelCamberGain }
+func (data *PacketMotionExData) GetWheelCamberGain() WheelMap[float32] { return data.WheelCamberGain }
 
 // SetWheelCamberGain stores the WheelCamberGain of *PacketMotionExData
-func (data *PacketMotionExData) SetWheelCamberGain(v [4]float32) { data.WheelCamberGain = v }
+func (data *PacketMotionExData) SetWheelCamberGain(v WheelMap[float32]) { data.WheelCamberGain = v }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketMotionExData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

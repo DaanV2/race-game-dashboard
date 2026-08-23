@@ -5,53 +5,53 @@ import (
 )
 
 type CarDamageData struct {
-	TyresWear            [4]float32 // Tyre wear (percentage)
-	TyresDamage          [4]uint8   // Tyre damage (percentage)
-	BrakesDamage         [4]uint8   // Brakes damage (percentage)
-	TyreBlisters         [4]uint8   // Tyre blisters value (percentage)
-	FrontLeftWingDamage  uint8      // Front left wing damage (percentage)
-	FrontRightWingDamage uint8      // Front right wing damage (percentage)
-	RearWingDamage       uint8      // Rear wing damage (percentage)
-	FloorDamage          uint8      // Floor damage (percentage)
-	DiffuserDamage       uint8      // Diffuser damage (percentage)
-	SidepodDamage        uint8      // Sidepod damage (percentage)
-	DrsFault             uint8      // Indicator for DRS fault, 0 = OK, 1 = fault
-	ErsFault             uint8      // Indicator for ERS fault, 0 = OK, 1 = fault
-	GearBoxDamage        uint8      // Gear box damage (percentage)
-	EngineDamage         uint8      // Engine damage (percentage)
-	EngineMGUHWear       uint8      // Engine wear MGU-H (percentage)
-	EngineESWear         uint8      // Engine wear ES (percentage)
-	EngineCEWear         uint8      // Engine wear CE (percentage)
-	EngineICEWear        uint8      // Engine wear ICE (percentage)
-	EngineMGUKWear       uint8      // Engine wear MGU-K (percentage)
-	EngineTCWear         uint8      // Engine wear TC (percentage)
-	EngineBlown          uint8      // Engine blown, 0 = OK, 1 = fault
-	EngineSeized         uint8      // Engine seized, 0 = OK, 1 = fault
+	TyresWear            WheelMap[float32] // Tyre wear (percentage)
+	TyresDamage          WheelMap[uint8]   // Tyre damage (percentage)
+	BrakesDamage         WheelMap[uint8]   // Brakes damage (percentage)
+	TyreBlisters         WheelMap[uint8]   // Tyre blisters value (percentage)
+	FrontLeftWingDamage  uint8             // Front left wing damage (percentage)
+	FrontRightWingDamage uint8             // Front right wing damage (percentage)
+	RearWingDamage       uint8             // Rear wing damage (percentage)
+	FloorDamage          uint8             // Floor damage (percentage)
+	DiffuserDamage       uint8             // Diffuser damage (percentage)
+	SidepodDamage        uint8             // Sidepod damage (percentage)
+	DrsFault             uint8             // Indicator for DRS fault, 0 = OK, 1 = fault
+	ErsFault             uint8             // Indicator for ERS fault, 0 = OK, 1 = fault
+	GearBoxDamage        uint8             // Gear box damage (percentage)
+	EngineDamage         uint8             // Engine damage (percentage)
+	EngineMGUHWear       uint8             // Engine wear MGU-H (percentage)
+	EngineESWear         uint8             // Engine wear ES (percentage)
+	EngineCEWear         uint8             // Engine wear CE (percentage)
+	EngineICEWear        uint8             // Engine wear ICE (percentage)
+	EngineMGUKWear       uint8             // Engine wear MGU-K (percentage)
+	EngineTCWear         uint8             // Engine wear TC (percentage)
+	EngineBlown          uint8             // Engine blown, 0 = OK, 1 = fault
+	EngineSeized         uint8             // Engine seized, 0 = OK, 1 = fault
 }
 
 // GetTyresWear returns the TyresWear of *CarDamageData
-func (data *CarDamageData) GetTyresWear() [4]float32 { return data.TyresWear }
+func (data *CarDamageData) GetTyresWear() WheelMap[float32] { return data.TyresWear }
 
 // SetTyresWear stores the TyresWear of *CarDamageData
-func (data *CarDamageData) SetTyresWear(v [4]float32) { data.TyresWear = v }
+func (data *CarDamageData) SetTyresWear(v WheelMap[float32]) { data.TyresWear = v }
 
 // GetTyresDamage returns the TyresDamage of *CarDamageData
-func (data *CarDamageData) GetTyresDamage() [4]uint8 { return data.TyresDamage }
+func (data *CarDamageData) GetTyresDamage() WheelMap[uint8] { return data.TyresDamage }
 
 // SetTyresDamage stores the TyresDamage of *CarDamageData
-func (data *CarDamageData) SetTyresDamage(v [4]uint8) { data.TyresDamage = v }
+func (data *CarDamageData) SetTyresDamage(v WheelMap[uint8]) { data.TyresDamage = v }
 
 // GetBrakesDamage returns the BrakesDamage of *CarDamageData
-func (data *CarDamageData) GetBrakesDamage() [4]uint8 { return data.BrakesDamage }
+func (data *CarDamageData) GetBrakesDamage() WheelMap[uint8] { return data.BrakesDamage }
 
 // SetBrakesDamage stores the BrakesDamage of *CarDamageData
-func (data *CarDamageData) SetBrakesDamage(v [4]uint8) { data.BrakesDamage = v }
+func (data *CarDamageData) SetBrakesDamage(v WheelMap[uint8]) { data.BrakesDamage = v }
 
 // GetTyreBlisters returns the TyreBlisters of *CarDamageData
-func (data *CarDamageData) GetTyreBlisters() [4]uint8 { return data.TyreBlisters }
+func (data *CarDamageData) GetTyreBlisters() WheelMap[uint8] { return data.TyreBlisters }
 
 // SetTyreBlisters stores the TyreBlisters of *CarDamageData
-func (data *CarDamageData) SetTyreBlisters(v [4]uint8) { data.TyreBlisters = v }
+func (data *CarDamageData) SetTyreBlisters(v WheelMap[uint8]) { data.TyreBlisters = v }
 
 // GetFrontLeftWingDamage returns the FrontLeftWingDamage of *CarDamageData
 func (data *CarDamageData) GetFrontLeftWingDamage() uint8 { return data.FrontLeftWingDamage }

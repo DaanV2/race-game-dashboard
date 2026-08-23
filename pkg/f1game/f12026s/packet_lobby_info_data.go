@@ -23,10 +23,14 @@ func (data *PacketLobbyInfoData) GetNumPlayers() uint8 { return data.NumPlayers 
 func (data *PacketLobbyInfoData) SetNumPlayers(v uint8) { data.NumPlayers = v }
 
 // GetLobbyPlayers returns the LobbyPlayers of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) GetLobbyPlayers() [24]LobbyInfoData { return data.LobbyPlayers }
+func (data *PacketLobbyInfoData) GetLobbyPlayers(participant int) LobbyInfoData {
+	return data.LobbyPlayers[participant]
+}
 
 // SetLobbyPlayers stores the LobbyPlayers of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) SetLobbyPlayers(v [24]LobbyInfoData) { data.LobbyPlayers = v }
+func (data *PacketLobbyInfoData) SetLobbyPlayers(participant int, v LobbyInfoData) {
+	data.LobbyPlayers[participant] = v
+}
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketLobbyInfoData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

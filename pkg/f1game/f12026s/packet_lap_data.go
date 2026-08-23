@@ -18,10 +18,10 @@ func (data *PacketLapData) GetHeader() PacketHeader { return data.Header }
 func (data *PacketLapData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetLapData returns the LapData of *PacketLapData
-func (data *PacketLapData) GetLapData() [24]LapData { return data.LapData }
+func (data *PacketLapData) GetLapData(lap int) LapData { return data.LapData[lap] }
 
 // SetLapData stores the LapData of *PacketLapData
-func (data *PacketLapData) SetLapData(v [24]LapData) { data.LapData = v }
+func (data *PacketLapData) SetLapData(lap int, v LapData) { data.LapData[lap] = v }
 
 // GetTimeTrialPBCarIdx returns the TimeTrialPBCarIdx of *PacketLapData
 func (data *PacketLapData) GetTimeTrialPBCarIdx() uint8 { return data.TimeTrialPBCarIdx }

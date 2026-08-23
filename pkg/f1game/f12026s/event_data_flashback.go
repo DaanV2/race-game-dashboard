@@ -10,10 +10,14 @@ type EventDataFlashback struct {
 }
 
 // GetFlashbackFrameIdentifier returns the FlashbackFrameIdentifier of *Flashback
-func (data *EventDataFlashback) GetFlashbackFrameIdentifier() uint32 { return data.FlashbackFrameIdentifier }
+func (data *EventDataFlashback) GetFlashbackFrameIdentifier() uint32 {
+	return data.FlashbackFrameIdentifier
+}
 
 // SetFlashbackFrameIdentifier stores the FlashbackFrameIdentifier of *Flashback
-func (data *EventDataFlashback) SetFlashbackFrameIdentifier(v uint32) { data.FlashbackFrameIdentifier = v }
+func (data *EventDataFlashback) SetFlashbackFrameIdentifier(v uint32) {
+	data.FlashbackFrameIdentifier = v
+}
 
 // GetFlashbackSessionTime returns the FlashbackSessionTime of *Flashback
 func (data *EventDataFlashback) GetFlashbackSessionTime() float32 { return data.FlashbackSessionTime }

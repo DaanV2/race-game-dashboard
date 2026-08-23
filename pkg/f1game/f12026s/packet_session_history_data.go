@@ -66,13 +66,13 @@ func (data *PacketSessionHistoryData) GetBestSector3LapNum() uint8 { return data
 func (data *PacketSessionHistoryData) SetBestSector3LapNum(v uint8) { data.BestSector3LapNum = v }
 
 // GetLapHistoryData returns the LapHistoryData of *PacketSessionHistoryData
-func (data *PacketSessionHistoryData) GetLapHistoryData() [100]LapHistoryData {
-	return data.LapHistoryData
+func (data *PacketSessionHistoryData) GetLapHistoryData(lapIndex int) LapHistoryData {
+	return data.LapHistoryData[lapIndex]
 }
 
 // SetLapHistoryData stores the LapHistoryData of *PacketSessionHistoryData
-func (data *PacketSessionHistoryData) SetLapHistoryData(v [100]LapHistoryData) {
-	data.LapHistoryData = v
+func (data *PacketSessionHistoryData) SetLapHistoryData(lapIndex int, v LapHistoryData) {
+	data.LapHistoryData[lapIndex] = v
 }
 
 // GetTyreStintsHistoryData returns the TyreStintsHistoryData of *PacketSessionHistoryData

@@ -26,22 +26,34 @@ func (data *EventDataSpeedTrap) GetSpeed() float32 { return data.Speed }
 func (data *EventDataSpeedTrap) SetSpeed(v float32) { data.Speed = v }
 
 // GetIsOverallFastestInSession returns the IsOverallFastestInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) GetIsOverallFastestInSession() uint8 { return data.IsOverallFastestInSession }
+func (data *EventDataSpeedTrap) GetIsOverallFastestInSession() uint8 {
+	return data.IsOverallFastestInSession
+}
 
 // SetIsOverallFastestInSession stores the IsOverallFastestInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) SetIsOverallFastestInSession(v uint8) { data.IsOverallFastestInSession = v }
+func (data *EventDataSpeedTrap) SetIsOverallFastestInSession(v uint8) {
+	data.IsOverallFastestInSession = v
+}
 
 // GetIsDriverFastestInSession returns the IsDriverFastestInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) GetIsDriverFastestInSession() uint8 { return data.IsDriverFastestInSession }
+func (data *EventDataSpeedTrap) GetIsDriverFastestInSession() uint8 {
+	return data.IsDriverFastestInSession
+}
 
 // SetIsDriverFastestInSession stores the IsDriverFastestInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) SetIsDriverFastestInSession(v uint8) { data.IsDriverFastestInSession = v }
+func (data *EventDataSpeedTrap) SetIsDriverFastestInSession(v uint8) {
+	data.IsDriverFastestInSession = v
+}
 
 // GetFastestVehicleIdxInSession returns the FastestVehicleIdxInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) GetFastestVehicleIdxInSession() uint8 { return data.FastestVehicleIdxInSession }
+func (data *EventDataSpeedTrap) GetFastestVehicleIdxInSession() uint8 {
+	return data.FastestVehicleIdxInSession
+}
 
 // SetFastestVehicleIdxInSession stores the FastestVehicleIdxInSession of *SpeedTrap
-func (data *EventDataSpeedTrap) SetFastestVehicleIdxInSession(v uint8) { data.FastestVehicleIdxInSession = v }
+func (data *EventDataSpeedTrap) SetFastestVehicleIdxInSession(v uint8) {
+	data.FastestVehicleIdxInSession = v
+}
 
 // GetFastestSpeedInSession returns the FastestSpeedInSession of *SpeedTrap
 func (data *EventDataSpeedTrap) GetFastestSpeedInSession() float32 { return data.FastestSpeedInSession }
