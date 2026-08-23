@@ -10,8 +10,8 @@ type LittleEndianReader struct {
 	buf   []byte
 }
 
-func NewLittleEndianReader(buf []byte) LittleEndianReader {
-	return LittleEndianReader{
+func NewLittleEndianReader(buf []byte) *LittleEndianReader {
+	return &LittleEndianReader{
 		index: 0,
 		buf:   buf,
 	}
