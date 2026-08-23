@@ -8,7 +8,7 @@ var (
 	TRACK_ID_ABU_DHABI           = common.NewTrack(14, "Abu Dhabi")
 	TRACK_ID_AUSTRIA             = common.NewTrack(17, "Austria")
 	TRACK_ID_AUSTRIA_REVERSE     = common.NewTrack(40, "Austria (Reverse)")
-	TRACK_ID_BAKU_               = common.NewTrack(20, "Baku (Azerbaijan)")
+	TRACK_ID_BAKU                = common.NewTrack(20, "Baku (Azerbaijan)")
 	TRACK_ID_BRAZIL              = common.NewTrack(16, "Brazil")
 	TRACK_ID_CATALUNYA           = common.NewTrack(4, "Catalunya")
 	TRACK_ID_HUNGARORING         = common.NewTrack(9, "Hungaroring")
@@ -40,7 +40,7 @@ func TrackData() []common.Track {
 		TRACK_ID_ABU_DHABI,
 		TRACK_ID_AUSTRIA,
 		TRACK_ID_AUSTRIA_REVERSE,
-		TRACK_ID_BAKU_,
+		TRACK_ID_BAKU,
 		TRACK_ID_BRAZIL,
 		TRACK_ID_CATALUNYA,
 		TRACK_ID_HUNGARORING,
