@@ -70,6 +70,10 @@ func (data *ParticipantData) GetName() string { return xstrings.NullTerminated(d
 // SetName stores the Name of *LobbyInfoData
 func (data *ParticipantData) SetName(v string) {
 	var result [CS_MAX_PARTICIPANT_NAME_LEN]byte
+
+	if len(v) >= CS_EVENT_STRING_CODE_LEN {
+		v = v[:CS_EVENT_STRING_CODE_LEN-1] + "…"
+	}
 	b := []byte(v)
 
 	copy(result[:], b)

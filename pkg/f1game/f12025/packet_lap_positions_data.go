@@ -8,7 +8,7 @@ type PacketLapPositionsData struct {
 	Header                PacketHeader                                                            // Header  Packet specific data
 	NumLaps               uint8                                                                   // Number of laps in the data
 	LapStart              uint8                                                                   // Index of the lap where the data starts, 0 indexed  Array holding the position of the car in a given lap, 0 if no record
-	PositionForVehicleIdx [CS_MAX_NUM_LAPS_IN_LAP_POSITIONS_HISTORY_PACKET][CS_MAX_NUM_CARS]uint8 //
+	PositionForVehicleIdx [CS_MAX_NUM_LAPS_IN_LAP_POSITIONS_HISTORY_PACKET][CS_MAX_NUM_CARS]uint8 // Array holding the position of the car in a given lap, 0 if no record
 }
 
 // GetHeader returns the Header of *PacketLapPositionsData

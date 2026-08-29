@@ -13,4 +13,7 @@ const (
 	CS_EVENT_STRING_CODE_LEN                        = 4
 	CS_MAX_NUM_LAPS_IN_HISTORY                      = 100
 	CS_MAX_NUM_LAPS_IN_LAP_POSITIONS_HISTORY_PACKET = 50
+
+	// PACKET_FORMAT can be used to compare against the [PacketHeader.PacketFormat]
+	PACKET_FORMAT uint16 = 2025
 )

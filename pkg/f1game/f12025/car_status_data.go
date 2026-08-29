@@ -24,11 +24,11 @@ type CarStatusData struct {
 	VehicleFiaFlags         int8    // -1 = invalid/unknown, 0 = none, 1 = green  2 = blue, 3 = yellow
 	EnginePowerICE          float32 // Engine power output of ICE (W)
 	EnginePowerMGUK         float32 // Engine power output of MGU-K (W)
-	ErsStoreEnergy          float32 // ERS energy store in Joules
-	ErsDeployMode           uint8   // ERS deployment mode, 0 = none, 1 = medium  2 = hotlap, 3 = boost
-	ErsHarvestedThisLapMGUK float32 // ERS energy harvested this lap by MGU-K
-	ErsHarvestedThisLapMGUH float32 // ERS energy harvested this lap by MGU-H
-	ErsDeployedThisLap      float32 // ERS energy deployed this lap
+	ERSStoreEnergy          float32 // ERS energy store in Joules
+	ERSDeployMode           uint8   // ERS deployment mode, 0 = none, 1 = medium  2 = hotlap, 3 = boost
+	ERSHarvestedThisLapMGUK float32 // ERS energy harvested this lap by MGU-K
+	ERSHarvestedThisLapMGUH float32 // ERS energy harvested this lap by MGU-H
+	ERSDeployedThisLap      float32 // ERS energy deployed this lap
 	NetworkPaused           uint8   // Whether the car is paused in a network game
 }
 
@@ -147,34 +147,34 @@ func (data *CarStatusData) GetEnginePowerMGUK() float32 { return data.EnginePowe
 func (data *CarStatusData) SetEnginePowerMGUK(v float32) { data.EnginePowerMGUK = v }
 
 // GetErsStoreEnergy returns the ErsStoreEnergy of *CarStatusData
-func (data *CarStatusData) GetErsStoreEnergy() float32 { return data.ErsStoreEnergy }
+func (data *CarStatusData) GetErsStoreEnergy() float32 { return data.ERSStoreEnergy }
 
 // SetErsStoreEnergy stores the ErsStoreEnergy of *CarStatusData
-func (data *CarStatusData) SetErsStoreEnergy(v float32) { data.ErsStoreEnergy = v }
+func (data *CarStatusData) SetErsStoreEnergy(v float32) { data.ERSStoreEnergy = v }
 
 // GetErsDeployMode returns the ErsDeployMode of *CarStatusData
-func (data *CarStatusData) GetErsDeployMode() uint8 { return data.ErsDeployMode }
+func (data *CarStatusData) GetErsDeployMode() uint8 { return data.ERSDeployMode }
 
 // SetErsDeployMode stores the ErsDeployMode of *CarStatusData
-func (data *CarStatusData) SetErsDeployMode(v uint8) { data.ErsDeployMode = v }
+func (data *CarStatusData) SetErsDeployMode(v uint8) { data.ERSDeployMode = v }
 
 // GetErsHarvestedThisLapMGUK returns the ErsHarvestedThisLapMGUK of *CarStatusData
-func (data *CarStatusData) GetErsHarvestedThisLapMGUK() float32 { return data.ErsHarvestedThisLapMGUK }
+func (data *CarStatusData) GetErsHarvestedThisLapMGUK() float32 { return data.ERSHarvestedThisLapMGUK }
 
 // SetErsHarvestedThisLapMGUK stores the ErsHarvestedThisLapMGUK of *CarStatusData
-func (data *CarStatusData) SetErsHarvestedThisLapMGUK(v float32) { data.ErsHarvestedThisLapMGUK = v }
+func (data *CarStatusData) SetErsHarvestedThisLapMGUK(v float32) { data.ERSHarvestedThisLapMGUK = v }
 
 // GetErsHarvestedThisLapMGUH returns the ErsHarvestedThisLapMGUH of *CarStatusData
-func (data *CarStatusData) GetErsHarvestedThisLapMGUH() float32 { return data.ErsHarvestedThisLapMGUH }
+func (data *CarStatusData) GetErsHarvestedThisLapMGUH() float32 { return data.ERSHarvestedThisLapMGUH }
 
 // SetErsHarvestedThisLapMGUH stores the ErsHarvestedThisLapMGUH of *CarStatusData
-func (data *CarStatusData) SetErsHarvestedThisLapMGUH(v float32) { data.ErsHarvestedThisLapMGUH = v }
+func (data *CarStatusData) SetErsHarvestedThisLapMGUH(v float32) { data.ERSHarvestedThisLapMGUH = v }
 
 // GetErsDeployedThisLap returns the ErsDeployedThisLap of *CarStatusData
-func (data *CarStatusData) GetErsDeployedThisLap() float32 { return data.ErsDeployedThisLap }
+func (data *CarStatusData) GetErsDeployedThisLap() float32 { return data.ERSDeployedThisLap }
 
 // SetErsDeployedThisLap stores the ErsDeployedThisLap of *CarStatusData
-func (data *CarStatusData) SetErsDeployedThisLap(v float32) { data.ErsDeployedThisLap = v }
+func (data *CarStatusData) SetErsDeployedThisLap(v float32) { data.ERSDeployedThisLap = v }
 
 // GetNetworkPaused returns the NetworkPaused of *CarStatusData
 func (data *CarStatusData) GetNetworkPaused() uint8 { return data.NetworkPaused }
@@ -202,11 +202,11 @@ func (data *CarStatusData) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleFiaFlags = reader.ReadInt8()
 	data.EnginePowerICE = reader.ReadFloat32()
 	data.EnginePowerMGUK = reader.ReadFloat32()
-	data.ErsStoreEnergy = reader.ReadFloat32()
-	data.ErsDeployMode = reader.ReadUint8()
-	data.ErsHarvestedThisLapMGUK = reader.ReadFloat32()
-	data.ErsHarvestedThisLapMGUH = reader.ReadFloat32()
-	data.ErsDeployedThisLap = reader.ReadFloat32()
+	data.ERSStoreEnergy = reader.ReadFloat32()
+	data.ERSDeployMode = reader.ReadUint8()
+	data.ERSHarvestedThisLapMGUK = reader.ReadFloat32()
+	data.ERSHarvestedThisLapMGUH = reader.ReadFloat32()
+	data.ERSDeployedThisLap = reader.ReadFloat32()
 	data.NetworkPaused = reader.ReadUint8()
 
 }

@@ -14,4 +14,7 @@ const (
 	CS_MAX_NUM_LAPS_IN_LAP_POSITIONS_HISTORY_PACKET uint   = 50
 	CS_MAX_SESSIONS_IN_WEEKEND                      uint32 = 12
 	CS_MAX_WEATHER_FORECAST_SAMPLES                 uint32 = 64
+
+	// PACKET_FORMAT can be used to compare against the [PacketHeader.PacketFormat]
+	PACKET_FORMAT uint16 = 2026
 )

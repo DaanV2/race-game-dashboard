@@ -26,7 +26,7 @@ func (data *PacketEventData) GetEventStringCode() EventCode { return data.EventS
 // SetEventStringCode stores the EventStringCode of *PacketEventData
 func (data *PacketEventData) SetEventStringCode(v EventCode) { data.EventStringCode = v }
 
-// GetEventDetails returns the EventDetails of *PacketEventData
+// GetEventDetails returns the EventDetails of *PacketEventData, returns any of the EvenData* structs
 func (data *PacketEventData) GetEventDetails() EventDataDetails { return data.EventDetails }
 
 // SetEventDetails stores the EventDetails of *PacketEventData
