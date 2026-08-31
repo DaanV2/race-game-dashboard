@@ -3,6 +3,7 @@ set windows-shell := ["powershell.exe", "-c"]
 default:
     just --list
 
+alias doc := documentation
 documentation:
     go doc -all -u -http
 
