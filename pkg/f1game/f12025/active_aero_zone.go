@@ -24,5 +24,4 @@ func (data *ActiveAeroZone) SetZoneEnd(v float32) { data.ZoneEnd = v }
 func (data *ActiveAeroZone) Parse(reader *xbinary.LittleEndianReader) {
 	data.ZoneStart = reader.ReadFloat32()
 	data.ZoneEnd = reader.ReadFloat32()
-
 }
