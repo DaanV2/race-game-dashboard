@@ -42,6 +42,7 @@ type PacketHandler struct {
 	Participants        PacketPipeline[*PacketParticipantsData]
 	CarSetups           PacketPipeline[*PacketCarSetupData]
 	CarTelemetry        PacketPipeline[*PacketCarTelemetryData]
+	CarTelemetry2       PacketPipeline[*PacketCarTelemetry2Data]
 	CarStatus           PacketPipeline[*PacketCarStatusData]
 	FinalClassification PacketPipeline[*PacketFinalClassificationData]
 	LobbyInfo           PacketPipeline[*PacketLobbyInfoData]
@@ -74,6 +75,8 @@ func (h *PacketHandler) Ingest(data []byte) {
 		h.CarSetups.handlePacket(&header, reader)
 	case PACKET_ID_CAR_TELEMETRY:
 		h.CarTelemetry.handlePacket(&header, reader)
+	case PACKET_ID_CAR_TELEMETRY_2:
+		h.CarTelemetry2.handlePacket(&header, reader)
 	case PACKET_ID_CAR_STATUS:
 		h.CarStatus.handlePacket(&header, reader)
 	case PACKET_ID_FINAL_CLASSIFICATION:
