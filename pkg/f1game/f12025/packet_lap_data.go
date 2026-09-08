@@ -11,6 +11,9 @@ type PacketLapData struct {
 	TimeTrialRivalCarIdx uint8                    // Index of Rival car in time trial (255 if invalid)
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketLapData) GetPacketID() PacketID { return PACKET_ID_LAP_DATA }
+
 // GetHeader returns the Header of *PacketLapData
 func (data *PacketLapData) GetHeader() PacketHeader { return data.Header }
 

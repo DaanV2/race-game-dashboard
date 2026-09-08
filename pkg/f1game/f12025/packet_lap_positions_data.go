@@ -11,6 +11,9 @@ type PacketLapPositionsData struct {
 	PositionForVehicleIdx [CS_MAX_NUM_LAPS_IN_LAP_POSITIONS_HISTORY_PACKET][CS_MAX_NUM_CARS]uint8 // Array holding the position of the car in a given lap, 0 if no record
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketLapPositionsData) GetPacketID() PacketID { return PACKET_ID_LAP_POSITIONS }
+
 // GetHeader returns the Header of *PacketLapPositionsData
 func (data *PacketLapPositionsData) GetHeader() PacketHeader { return data.Header }
 

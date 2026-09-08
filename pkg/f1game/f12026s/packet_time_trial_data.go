@@ -11,6 +11,9 @@ type PacketTimeTrialData struct {
 	RivalDataSet             TimeTrialDataSet // Rival data set
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketTimeTrialData) GetPacketID() PacketID { return PACKET_ID_TIME_TRIAL }
+
 // GetHeader returns the Header of *PacketTimeTrialData
 func (data *PacketTimeTrialData) GetHeader() PacketHeader { return data.Header }
 

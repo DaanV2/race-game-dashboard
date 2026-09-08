@@ -9,6 +9,9 @@ type PacketMotionData struct {
 	CarMotionData [CS_MAX_NUM_CARS]CarMotionData // Data for all cars on track
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketMotionData) GetPacketID() PacketID { return PACKET_ID_MOTION }
+
 // GetHeader returns the Header of *PacketMotionData
 func (data *PacketMotionData) GetHeader() PacketHeader { return data.Header }
 

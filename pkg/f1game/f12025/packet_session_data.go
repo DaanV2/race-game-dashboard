@@ -86,6 +86,9 @@ type PacketSessionData struct {
 	Sector3LapDistanceStart         float32                                                // Distance in m around track where sector 3 starts
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketSessionData) GetPacketID() PacketID { return PACKET_ID_SESSION }
+
 // GetHeader returns the Header of *PacketSessionData
 func (data *PacketSessionData) GetHeader() PacketHeader { return data.Header }
 

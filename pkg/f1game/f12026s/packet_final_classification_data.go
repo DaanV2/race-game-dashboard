@@ -10,6 +10,9 @@ type PacketFinalClassificationData struct {
 	ClassificationData [CS_MAX_NUM_CARS]FinalClassificationData //
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketFinalClassificationData) GetPacketID() PacketID { return PACKET_ID_FINAL_CLASSIFICATION }
+
 // GetHeader returns the Header of *PacketFinalClassificationData
 func (data *PacketFinalClassificationData) GetHeader() PacketHeader { return data.Header }
 

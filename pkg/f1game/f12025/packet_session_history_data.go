@@ -18,6 +18,9 @@ type PacketSessionHistoryData struct {
 	TyreStintsHistoryData [CS_MAX_TYRE_STINTS]TyreStintHistoryData   //
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketSessionHistoryData) GetPacketID() PacketID { return PACKET_ID_SESSION_HISTORY }
+
 // GetHeader returns the Header of *PacketSessionHistoryData
 func (data *PacketSessionHistoryData) GetHeader() PacketHeader { return data.Header }
 

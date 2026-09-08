@@ -14,6 +14,9 @@ type EventDataDetails interface {
 	Parse(reader *xbinary.LittleEndianReader)
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketEventData) GetPacketID() PacketID { return PACKET_ID_EVENT }
+
 // GetHeader returns the Header of *PacketEventData
 func (data *PacketEventData) GetHeader() PacketHeader { return data.Header }
 

@@ -1,6 +1,9 @@
 package f12026s
 
 import (
+	"encoding/base64"
+	"fmt"
+
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 	"github.com/daanv2/race-game-dashboard/pkg/generics"
 )
@@ -34,6 +37,15 @@ func (pp *PacketPipeline[T]) handlePacket(header *PacketHeader, reader *xbinary.
 	pp.invoke(data)
 }
 
+func parsePacket[T Packet](header *PacketHeader, reader *xbinary.LittleEndianReader) T {
+	data := generics.New[T]()
+	data.Parse(header, reader)
+
+	return data
+}
+
+// Example:
+//	hand := &f12026s.PacketHandler{}
 type PacketHandler struct {
 	Motion              PacketPipeline[*PacketMotionData]
 	Session             PacketPipeline[*PacketSessionData]
@@ -55,6 +67,17 @@ type PacketHandler struct {
 }
 
 func (h *PacketHandler) Ingest(data []byte) {
+	defer func() {
+		if r := recover(); r != nil {
+			packet := base64.RawStdEncoding.EncodeToString(data)
+			if err, ok := r.(error); ok {
+				fmt.Printf("error with package: %s\nerror: %v\n", packet, err)
+			} else {
+				fmt.Printf("unknown error with package: %s\nerror: %v\n", packet, r)
+			}
+		}
+	}()
+
 	reader := NewByteReader(data)
 
 	var header PacketHeader
@@ -96,4 +119,61 @@ func (h *PacketHandler) Ingest(data []byte) {
 	case PACKET_ID_LAP_POSITIONS:
 		h.LapPositions.handlePacket(&header, reader)
 	}
+}
+
+func (h *PacketHandler) ParsePacket(data []byte) Packet {
+	defer func() {
+		if r := recover(); r != nil {
+			packet := base64.RawStdEncoding.EncodeToString(data)
+			if err, ok := r.(error); ok {
+				fmt.Printf("error with package: %s\nerror: %v\n", packet, err)
+			} else {
+				fmt.Printf("unknown error with package: %s\nerror: %v\n", packet, r)
+			}
+		}
+	}()
+
+	reader := NewByteReader(data)
+
+	var header PacketHeader
+	header.Parse(reader)
+
+	switch header.PacketId {
+	case PACKET_ID_MOTION:
+		return parsePacket[*PacketMotionData](&header, reader)
+	case PACKET_ID_SESSION:
+		return parsePacket[*PacketSessionData](&header, reader)
+	case PACKET_ID_LAP_DATA:
+		return parsePacket[*PacketLapData](&header, reader)
+	case PACKET_ID_EVENT:
+		return parsePacket[*PacketEventData](&header, reader)
+	case PACKET_ID_PARTICIPANTS:
+		return parsePacket[*PacketParticipantsData](&header, reader)
+	case PACKET_ID_CAR_SETUPS:
+		return parsePacket[*PacketCarSetupData](&header, reader)
+	case PACKET_ID_CAR_TELEMETRY:
+		return parsePacket[*PacketCarTelemetryData](&header, reader)
+	case PACKET_ID_CAR_TELEMETRY_2:
+		return parsePacket[*PacketCarTelemetry2Data](&header, reader)
+	case PACKET_ID_CAR_STATUS:
+		return parsePacket[*PacketCarStatusData](&header, reader)
+	case PACKET_ID_FINAL_CLASSIFICATION:
+		return parsePacket[*PacketFinalClassificationData](&header, reader)
+	case PACKET_ID_LOBBY_INFO:
+		return parsePacket[*PacketLobbyInfoData](&header, reader)
+	case PACKET_ID_CAR_DAMAGE:
+		return parsePacket[*PacketCarDamageData](&header, reader)
+	case PACKET_ID_SESSION_HISTORY:
+		return parsePacket[*PacketSessionHistoryData](&header, reader)
+	case PACKET_ID_TYRE_SETS:
+		return parsePacket[*PacketTyreSetsData](&header, reader)
+	case PACKET_ID_MOTION_EX:
+		return parsePacket[*PacketMotionExData](&header, reader)
+	case PACKET_ID_TIME_TRIAL:
+		return parsePacket[*PacketTimeTrialData](&header, reader)
+	case PACKET_ID_LAP_POSITIONS:
+		return parsePacket[*PacketLapPositionsData](&header, reader)
+	}
+
+	return nil
 }

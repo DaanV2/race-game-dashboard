@@ -20,3 +20,63 @@ const (
 	PACKET_ID_TIME_TRIAL           PacketID = 14 // Time Trial specific data
 	PACKET_ID_LAP_POSITIONS        PacketID = 15 // Lap positions on each lap so a chart can be constructed
 )
+
+func (p PacketID) String() string {
+	switch p {
+	case PACKET_ID_MOTION:
+		return "PacketMotion"
+	case PACKET_ID_SESSION:
+		return "PacketSession"
+	case PACKET_ID_LAP_DATA:
+		return "PacketLapData"
+	case PACKET_ID_EVENT:
+		return "PacketEvent"
+	case PACKET_ID_PARTICIPANTS:
+		return "PacketParticipants"
+	case PACKET_ID_CAR_SETUPS:
+		return "PacketCarSetups"
+	case PACKET_ID_CAR_TELEMETRY:
+		return "PacketCarTelemetry"
+	case PACKET_ID_CAR_STATUS:
+		return "PacketCaStatus"
+	case PACKET_ID_FINAL_CLASSIFICATION:
+		return "PacketFinalClassification"
+	case PACKET_ID_LOBBY_INFO:
+		return "PacketLobbyInfo"
+	case PACKET_ID_CAR_DAMAGE:
+		return "PacketCarDamage"
+	case PACKET_ID_SESSION_HISTORY:
+		return "PacketSessionHistory"
+	case PACKET_ID_TYRE_SETS:
+		return "PacketTyreSets"
+	case PACKET_ID_MOTION_EX:
+		return "PacketMotionEx"
+	case PACKET_ID_TIME_TRIAL:
+		return "PacketTimeTrial"
+	case PACKET_ID_LAP_POSITIONS:
+		return "PacketLapPositions"
+	}
+
+	return "unknown"
+}
+
+func PacketIds() []PacketID {
+	return []PacketID{
+		PACKET_ID_MOTION,
+		PACKET_ID_SESSION,
+		PACKET_ID_LAP_DATA,
+		PACKET_ID_EVENT,
+		PACKET_ID_PARTICIPANTS,
+		PACKET_ID_CAR_SETUPS,
+		PACKET_ID_CAR_TELEMETRY,
+		PACKET_ID_CAR_STATUS,
+		PACKET_ID_FINAL_CLASSIFICATION,
+		PACKET_ID_LOBBY_INFO,
+		PACKET_ID_CAR_DAMAGE,
+		PACKET_ID_SESSION_HISTORY,
+		PACKET_ID_TYRE_SETS,
+		PACKET_ID_MOTION_EX,
+		PACKET_ID_TIME_TRIAL,
+		PACKET_ID_LAP_POSITIONS,
+	}
+}

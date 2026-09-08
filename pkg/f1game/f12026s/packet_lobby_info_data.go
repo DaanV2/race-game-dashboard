@@ -10,6 +10,9 @@ type PacketLobbyInfoData struct {
 	LobbyPlayers [CS_MAX_NUM_CARS]LobbyInfoData //
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketLobbyInfoData) GetPacketID() PacketID { return PACKET_ID_LOBBY_INFO }
+
 // GetHeader returns the Header of *PacketLobbyInfoData
 func (data *PacketLobbyInfoData) GetHeader() PacketHeader { return data.Header }
 

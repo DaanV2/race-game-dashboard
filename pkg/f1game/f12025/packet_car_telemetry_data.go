@@ -12,6 +12,9 @@ type PacketCarTelemetryData struct {
 	SuggestedGear                int8                              // Suggested gear for the player (1-8)  0 if no gear suggested
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketCarTelemetryData) GetPacketID() PacketID { return PACKET_ID_CAR_TELEMETRY }
+
 // GetHeader returns the Header of *PacketCarTelemetryData
 func (data *PacketCarTelemetryData) GetHeader() PacketHeader { return data.Header }
 

@@ -10,6 +10,9 @@ type PacketCarSetupData struct {
 	NextFrontWingValue float32                       // Value of front wing after next pit stop - player only
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketCarSetupData) GetPacketID() PacketID { return PACKET_ID_CAR_SETUPS }
+
 // GetHeader returns the Header of *PacketCarSetupData
 func (data *PacketCarSetupData) GetHeader() PacketHeader { return data.Header }
 

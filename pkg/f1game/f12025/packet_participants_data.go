@@ -10,6 +10,9 @@ type PacketParticipantsData struct {
 	Participants  [CS_MAX_NUM_CARS]ParticipantData //
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketParticipantsData) GetPacketID() PacketID { return PACKET_ID_PARTICIPANTS }
+
 // GetHeader returns the Header of *PacketParticipantsData
 func (data *PacketParticipantsData) GetHeader() PacketHeader { return data.Header }
 

@@ -37,6 +37,9 @@ type PacketMotionExData struct {
 	WheelCamberGain        WheelMap[float32] // Camber gain for each wheel in radians, difference  between active camber and dynamic camber
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketMotionExData) GetPacketID() PacketID { return PACKET_ID_MOTION_EX }
+
 // GetHeader returns the Header of *PacketMotionExData
 func (data *PacketMotionExData) GetHeader() PacketHeader { return data.Header }
 

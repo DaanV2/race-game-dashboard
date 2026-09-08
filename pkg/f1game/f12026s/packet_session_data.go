@@ -98,6 +98,9 @@ type PacketSessionData struct {
 	RecurringRewindPrompt           uint8                                                  // 0 = Off, 1 = On
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketSessionData) GetPacketID() PacketID { return PACKET_ID_SESSION }
+
 // GetHeader returns the Header of *PacketSessionData
 func (data *PacketSessionData) GetHeader() PacketHeader { return data.Header }
 

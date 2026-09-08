@@ -11,6 +11,9 @@ type PacketTyreSetsData struct {
 	FittedIdx   uint8                             // Index into array of fitted tyre
 }
 
+// GetPacketID returns the identification of this packet
+func (data *PacketTyreSetsData) GetPacketID() PacketID { return PACKET_ID_TYRE_SETS }
+
 // GetHeader returns the Header of *PacketTyreSetsData
 func (data *PacketTyreSetsData) GetHeader() PacketHeader { return data.Header }
 
