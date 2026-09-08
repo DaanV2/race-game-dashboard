@@ -12,5 +12,4 @@ type EventDataRaceWinner struct {
 
 func (data *EventDataRaceWinner) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
-
 }

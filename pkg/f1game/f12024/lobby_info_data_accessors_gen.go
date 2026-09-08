@@ -2,6 +2,10 @@
 
 package f12024
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetAiControlled returns [LobbyInfoData.AiControlled]
 func (data *LobbyInfoData) GetAiControlled() uint8 { return data.AiControlled }
 
@@ -9,10 +13,10 @@ func (data *LobbyInfoData) GetAiControlled() uint8 { return data.AiControlled }
 func (data *LobbyInfoData) SetAiControlled(v uint8) { data.AiControlled = v }
 
 // GetTeamId returns [LobbyInfoData.TeamId]
-func (data *LobbyInfoData) GetTeamId() uint8 { return data.TeamId }
+func (data *LobbyInfoData) GetTeamId() f1common.TeamID { return data.TeamId }
 
 // SetTeamId stores [LobbyInfoData.TeamId]
-func (data *LobbyInfoData) SetTeamId(v uint8) { data.TeamId = v }
+func (data *LobbyInfoData) SetTeamId(v f1common.TeamID) { data.TeamId = v }
 
 // GetNationality returns [LobbyInfoData.Nationality]
 func (data *LobbyInfoData) GetNationality() uint8 { return data.Nationality }

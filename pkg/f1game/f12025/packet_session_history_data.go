@@ -51,5 +51,4 @@ func (data *PacketSessionHistoryData) Parse(header *PacketHeader, reader *xbinar
 	for i := range data.TyreStintsHistoryData {
 		data.TyreStintsHistoryData[i].Parse(reader)
 	}
-
 }

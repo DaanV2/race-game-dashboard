@@ -14,5 +14,4 @@ type EventDataRetirement struct {
 func (data *EventDataRetirement) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
 	data.Reason = reader.ReadUint8()
-
 }

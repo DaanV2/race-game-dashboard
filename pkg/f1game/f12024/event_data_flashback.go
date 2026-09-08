@@ -14,5 +14,4 @@ type EventDataFlashback struct {
 func (data *EventDataFlashback) Parse(reader *xbinary.LittleEndianReader) {
 	data.FlashbackFrameIdentifier = reader.ReadUint32()
 	data.FlashbackSessionTime = reader.ReadFloat32()
-
 }

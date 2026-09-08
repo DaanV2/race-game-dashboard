@@ -84,5 +84,4 @@ func (data *PacketMotionExData) Parse(header *PacketHeader, reader *xbinary.Litt
 	data.ChassisPitch = reader.ReadFloat32()
 	data.WheelCamber = reader.ReadFloat32x4()
 	data.WheelCamberGain = reader.ReadFloat32x4()
-
 }

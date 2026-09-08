@@ -54,5 +54,4 @@ func (data *CarDamageData) Parse(reader *xbinary.LittleEndianReader) {
 	data.EngineTCWear = reader.ReadUint8()
 	data.EngineBlown = reader.ReadUint8()
 	data.EngineSeized = reader.ReadUint8()
-
 }

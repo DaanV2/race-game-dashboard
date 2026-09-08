@@ -1,41 +1,41 @@
 package f12025
 
-import "github.com/daanv2/race-game-dashboard/pkg/f1game/common"
+import "github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
 
 type TrackID int
 
 var (
-	TRACK_ID_ABU_DHABI           = common.NewTrack(14, "Abu Dhabi")
-	TRACK_ID_AUSTRIA             = common.NewTrack(17, "Austria")
-	TRACK_ID_AUSTRIA_REVERSE     = common.NewTrack(40, "Austria (Reverse)")
-	TRACK_ID_BAKU                = common.NewTrack(20, "Baku (Azerbaijan)")
-	TRACK_ID_BRAZIL              = common.NewTrack(16, "Brazil")
-	TRACK_ID_CATALUNYA           = common.NewTrack(4, "Catalunya")
-	TRACK_ID_HUNGARORING         = common.NewTrack(9, "Hungaroring")
-	TRACK_ID_IMOLA               = common.NewTrack(27, "Imola")
-	TRACK_ID_JEDDAH              = common.NewTrack(29, "Jeddah")
-	TRACK_ID_LAS_VEGAS           = common.NewTrack(31, "Las Vegas")
-	TRACK_ID_LOSAIL              = common.NewTrack(32, "Losail")
-	TRACK_ID_MELBOURNE           = common.NewTrack(0, "Melbourne")
-	TRACK_ID_MEXICO              = common.NewTrack(19, "Mexico")
-	TRACK_ID_MIAMI               = common.NewTrack(30, "Miami")
-	TRACK_ID_MONACO              = common.NewTrack(5, "Monaco")
-	TRACK_ID_MONTREAL            = common.NewTrack(6, "Montreal")
-	TRACK_ID_MONZA               = common.NewTrack(11, "Monza")
-	TRACK_ID_SAKHIR              = common.NewTrack(3, "Sakhir (Bahrain)")
-	TRACK_ID_SHANGHAI            = common.NewTrack(2, "Shanghai")
-	TRACK_ID_SILVERSTONE         = common.NewTrack(7, "Silverstone")
-	TRACK_ID_SILVERSTONE_REVERSE = common.NewTrack(39, "Silverstone (Reverse)")
-	TRACK_ID_SINGAPORE           = common.NewTrack(12, "Singapore")
-	TRACK_ID_SPA                 = common.NewTrack(10, "Spa")
-	TRACK_ID_SUZUKA              = common.NewTrack(13, "Suzuka")
-	TRACK_ID_TEXAS               = common.NewTrack(15, "Texas")
-	TRACK_ID_ZANDVOORT           = common.NewTrack(26, "Zandvoort")
-	TRACK_ID_ZANDVOORT_REVERSE   = common.NewTrack(41, "Zandvoort (Reverse)")
+	TRACK_ID_ABU_DHABI           = f1common.NewTrack(14, "Abu Dhabi")
+	TRACK_ID_AUSTRIA             = f1common.NewTrack(17, "Austria")
+	TRACK_ID_AUSTRIA_REVERSE     = f1common.NewTrack(40, "Austria (Reverse)")
+	TRACK_ID_BAKU                = f1common.NewTrack(20, "Baku (Azerbaijan)")
+	TRACK_ID_BRAZIL              = f1common.NewTrack(16, "Brazil")
+	TRACK_ID_CATALUNYA           = f1common.NewTrack(4, "Catalunya")
+	TRACK_ID_HUNGARORING         = f1common.NewTrack(9, "Hungaroring")
+	TRACK_ID_IMOLA               = f1common.NewTrack(27, "Imola")
+	TRACK_ID_JEDDAH              = f1common.NewTrack(29, "Jeddah")
+	TRACK_ID_LAS_VEGAS           = f1common.NewTrack(31, "Las Vegas")
+	TRACK_ID_LOSAIL              = f1common.NewTrack(32, "Losail")
+	TRACK_ID_MELBOURNE           = f1common.NewTrack(0, "Melbourne")
+	TRACK_ID_MEXICO              = f1common.NewTrack(19, "Mexico")
+	TRACK_ID_MIAMI               = f1common.NewTrack(30, "Miami")
+	TRACK_ID_MONACO              = f1common.NewTrack(5, "Monaco")
+	TRACK_ID_MONTREAL            = f1common.NewTrack(6, "Montreal")
+	TRACK_ID_MONZA               = f1common.NewTrack(11, "Monza")
+	TRACK_ID_SAKHIR              = f1common.NewTrack(3, "Sakhir (Bahrain)")
+	TRACK_ID_SHANGHAI            = f1common.NewTrack(2, "Shanghai")
+	TRACK_ID_SILVERSTONE         = f1common.NewTrack(7, "Silverstone")
+	TRACK_ID_SILVERSTONE_REVERSE = f1common.NewTrack(39, "Silverstone (Reverse)")
+	TRACK_ID_SINGAPORE           = f1common.NewTrack(12, "Singapore")
+	TRACK_ID_SPA                 = f1common.NewTrack(10, "Spa")
+	TRACK_ID_SUZUKA              = f1common.NewTrack(13, "Suzuka")
+	TRACK_ID_TEXAS               = f1common.NewTrack(15, "Texas")
+	TRACK_ID_ZANDVOORT           = f1common.NewTrack(26, "Zandvoort")
+	TRACK_ID_ZANDVOORT_REVERSE   = f1common.NewTrack(41, "Zandvoort (Reverse)")
 )
 
-func TrackData() []common.Track {
-	return []common.Track{
+func TrackData() []f1common.Track {
+	return []f1common.Track{
 		TRACK_ID_ABU_DHABI,
 		TRACK_ID_AUSTRIA,
 		TRACK_ID_AUSTRIA_REVERSE,
@@ -66,8 +66,8 @@ func TrackData() []common.Track {
 	}
 }
 
-func TrackMap() map[int]common.Track {
-	result := map[int]common.Track{}
+func TrackMap() map[int]f1common.Track {
+	result := map[int]f1common.Track{}
 
 	for _, t := range TrackData() {
 		result[t.ID] = t

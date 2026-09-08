@@ -24,5 +24,4 @@ func (data *EventDataPenalty) Parse(reader *xbinary.LittleEndianReader) {
 	data.Time = reader.ReadUint8()
 	data.LapNum = reader.ReadUint8()
 	data.PlacesGained = reader.ReadUint8()
-
 }

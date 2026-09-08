@@ -35,9 +35,6 @@ type PacketMotionExData struct {
 	FrontRollAngle         float32           // Roll angle of the front suspension
 	RearRollAngle          float32           // Roll angle of the rear suspension
 	ChassisYaw             float32           // Yaw angle of the chassis relative to the direction  of motion - radians
-	ChassisPitch           float32           // Pitch angle of the chassis relative to the  direction of motion – radians
-	WheelCamber            WheelMap[float32] // Camber of each wheel in radians
-	WheelCamberGain        WheelMap[float32] // Camber gain for each wheel in radians, difference  between active camber and dynamic camber
 }
 
 // GetPacketID returns the identification of this packet
@@ -81,8 +78,4 @@ func (data *PacketMotionExData) Parse(header *PacketHeader, reader *xbinary.Litt
 	data.FrontRollAngle = reader.ReadFloat32()
 	data.RearRollAngle = reader.ReadFloat32()
 	data.ChassisYaw = reader.ReadFloat32()
-	data.ChassisPitch = reader.ReadFloat32()
-	data.WheelCamber = reader.ReadFloat32x4()
-	data.WheelCamberGain = reader.ReadFloat32x4()
-
 }

@@ -41,5 +41,4 @@ func (data *PacketLapData) Parse(header *PacketHeader, reader *xbinary.LittleEnd
 
 	data.TimeTrialPBCarIdx = reader.ReadUint8()
 	data.TimeTrialRivalCarIdx = reader.ReadUint8()
-
 }

@@ -60,5 +60,4 @@ func (data *CarSetupData) Parse(reader *xbinary.LittleEndianReader) {
 	data.FrontRightTyrePressure = reader.ReadFloat32()
 	data.Ballast = reader.ReadUint8()
 	data.FuelLoad = reader.ReadFloat32()
-
 }

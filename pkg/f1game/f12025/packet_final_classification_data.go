@@ -43,5 +43,4 @@ func (data *PacketFinalClassificationData) Parse(header *PacketHeader, reader *x
 	for i := range data.ClassificationData {
 		data.ClassificationData[i].Parse(reader)
 	}
-
 }

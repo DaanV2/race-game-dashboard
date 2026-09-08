@@ -60,5 +60,4 @@ func (data *CarMotionData) Parse(reader *xbinary.LittleEndianReader) {
 	data.Yaw = reader.ReadFloat32()
 	data.Pitch = reader.ReadFloat32()
 	data.Roll = reader.ReadFloat32()
-
 }

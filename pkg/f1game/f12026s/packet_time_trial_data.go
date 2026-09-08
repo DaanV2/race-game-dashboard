@@ -22,5 +22,4 @@ func (data *PacketTimeTrialData) Parse(header *PacketHeader, reader *xbinary.Lit
 	data.PlayerSessionBestDataSet.Parse(reader)
 	data.PersonalBestDataSet.Parse(reader)
 	data.RivalDataSet.Parse(reader)
-
 }

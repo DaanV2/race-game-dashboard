@@ -14,5 +14,4 @@ type ActiveAeroZone struct {
 func (data *ActiveAeroZone) Parse(reader *xbinary.LittleEndianReader) {
 	data.ZoneStart = reader.ReadFloat32()
 	data.ZoneEnd = reader.ReadFloat32()
-
 }

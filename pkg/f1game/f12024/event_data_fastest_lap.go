@@ -14,5 +14,4 @@ type EventDataFastestLap struct {
 func (data *EventDataFastestLap) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
 	data.LapTime = reader.ReadFloat32()
-
 }

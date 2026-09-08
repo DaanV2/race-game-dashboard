@@ -236,5 +236,4 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.DynamicRacingLineHiVis = reader.ReadUint8()
 	data.DynamicRacingLineColourBlind = reader.ReadUint8()
 	data.RecurringRewindPrompt = reader.ReadUint8()
-
 }

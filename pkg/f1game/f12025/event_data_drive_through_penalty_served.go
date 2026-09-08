@@ -12,5 +12,4 @@ type EventDataDriveThroughPenaltyServed struct {
 
 func (data *EventDataDriveThroughPenaltyServed) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
-
 }

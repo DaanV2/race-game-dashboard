@@ -14,5 +14,4 @@ type EventDataOvertake struct {
 func (data *EventDataOvertake) Parse(reader *xbinary.LittleEndianReader) {
 	data.OvertakingVehicleIdx = reader.ReadUint8()
 	data.BeingOvertakenVehicleIdx = reader.ReadUint8()
-
 }

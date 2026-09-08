@@ -22,5 +22,4 @@ func (data *EventDataSpeedTrap) Parse(reader *xbinary.LittleEndianReader) {
 	data.IsDriverFastestInSession = reader.ReadUint8()
 	data.FastestVehicleIdxInSession = reader.ReadUint8()
 	data.FastestSpeedInSession = reader.ReadFloat32()
-
 }

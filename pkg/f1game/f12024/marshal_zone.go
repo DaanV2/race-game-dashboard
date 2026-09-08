@@ -14,5 +14,4 @@ type MarshalZone struct {
 func (data *MarshalZone) Parse(reader *xbinary.LittleEndianReader) {
 	data.ZoneStart = reader.ReadFloat32()
 	data.ZoneFlag = reader.ReadInt8()
-
 }

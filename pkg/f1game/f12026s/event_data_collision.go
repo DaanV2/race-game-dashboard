@@ -16,5 +16,4 @@ func (data *EventDataCollision) Parse(reader *xbinary.LittleEndianReader) {
 	data.Vehicle1Idx = reader.ReadUint8()
 	data.Vehicle2Idx = reader.ReadUint8()
 	data.Severity = reader.ReadUint8()
-
 }

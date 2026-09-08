@@ -12,7 +12,7 @@ type EventDataSpeedTrap struct {
 	IsOverallFastestInSession  uint8   // Overall fastest speed in session = 1, otherwise 0
 	IsDriverFastestInSession   uint8   // Fastest speed for driver in session = 1, otherwise 0
 	FastestVehicleIdxInSession uint8   // Vehicle index of the vehicle that is the fastest  in this session
-	FastestSpeedInSession      float32 // Speed of the vehicle that is the fastest  in this session
+	FastestSpeedInSession      float32 // Speed of the vehicle that is the fastest in this session
 }
 
 func (data *EventDataSpeedTrap) Parse(reader *xbinary.LittleEndianReader) {
@@ -22,5 +22,4 @@ func (data *EventDataSpeedTrap) Parse(reader *xbinary.LittleEndianReader) {
 	data.IsDriverFastestInSession = reader.ReadUint8()
 	data.FastestVehicleIdxInSession = reader.ReadUint8()
 	data.FastestSpeedInSession = reader.ReadFloat32()
-
 }

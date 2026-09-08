@@ -12,5 +12,4 @@ type EventDataStartLights struct {
 
 func (data *EventDataStartLights) Parse(reader *xbinary.LittleEndianReader) {
 	data.NumLights = reader.ReadUint8()
-
 }

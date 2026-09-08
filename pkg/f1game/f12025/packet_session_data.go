@@ -200,5 +200,4 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	reader.Read(data.WeekendStructure[:])
 	data.Sector2LapDistanceStart = reader.ReadFloat32()
 	data.Sector3LapDistanceStart = reader.ReadFloat32()
-
 }

@@ -40,5 +40,4 @@ func (data *PacketLobbyInfoData) Parse(header *PacketHeader, reader *xbinary.Lit
 	for i := range data.LobbyPlayers {
 		data.LobbyPlayers[i].Parse(reader)
 	}
-
 }

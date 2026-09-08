@@ -44,7 +44,7 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 	case EVENT_CODE_DRIVE_THROUGH_SERVED:
 		event = &EventDataDriveThroughPenaltyServed{}
 	case EVENT_CODE_DRS_DISABLED:
-		event = &EventDataDRSDisabled{}
+		event = nil
 	case EVENT_CODE_DRS_ENABLED:
 		event = nil
 	case EVENT_CODE_FASTEST_LAP:

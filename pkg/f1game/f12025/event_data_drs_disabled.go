@@ -12,5 +12,4 @@ type EventDataDRSDisabled struct {
 
 func (data *EventDataDRSDisabled) Parse(reader *xbinary.LittleEndianReader) {
 	data.Reason = reader.ReadUint8()
-
 }

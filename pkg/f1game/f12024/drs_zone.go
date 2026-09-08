@@ -14,5 +14,4 @@ type DRSZone struct {
 func (data *DRSZone) Parse(reader *xbinary.LittleEndianReader) {
 	data.ZoneStart = reader.ReadFloat32()
 	data.ZoneEnd = reader.ReadFloat32()
-
 }

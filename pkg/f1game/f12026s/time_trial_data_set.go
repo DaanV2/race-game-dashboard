@@ -34,5 +34,4 @@ func (data *TimeTrialDataSet) Parse(reader *xbinary.LittleEndianReader) {
 	data.EqualCarPerformance = reader.ReadUint8()
 	data.CustomSetup = reader.ReadUint8()
 	data.Valid = reader.ReadUint8()
-
 }

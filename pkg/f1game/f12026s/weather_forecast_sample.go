@@ -26,5 +26,4 @@ func (data *WeatherForecastSample) Parse(reader *xbinary.LittleEndianReader) {
 	data.AirTemperature = reader.ReadInt8()
 	data.AirTemperatureChange = reader.ReadInt8()
 	data.RainPercentage = reader.ReadUint8()
-
 }

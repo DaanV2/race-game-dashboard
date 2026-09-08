@@ -2,6 +2,7 @@ package f12024
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type CarTelemetryData
@@ -23,6 +24,10 @@ type CarTelemetryData struct {
 	EngineTemperature       uint16            // Engine temperature (celsius)
 	TyresPressure           WheelMap[float32] // Tyres pressure (PSI)
 	SurfaceType             WheelMap[uint8]   // Driving surface, see appendices
+}
+
+func (data *CarTelemetryData) SurfaceTypeID() WheelMap[f1common.SurfaceTypeID] {
+	return TransformWheelMap[uint8, f1common.SurfaceTypeID](data.SurfaceType)
 }
 
 func (data *CarTelemetryData) Parse(reader *xbinary.LittleEndianReader) {

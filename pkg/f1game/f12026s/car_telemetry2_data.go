@@ -26,5 +26,4 @@ func (data *CarTelemetry2Data) Parse(reader *xbinary.LittleEndianReader) {
 	data.OvertakeActivationDistance = reader.ReadUint16()
 	data.Regulations2026 = reader.ReadUint8()
 	data.DrivingWrongWay = reader.ReadUint8()
-
 }

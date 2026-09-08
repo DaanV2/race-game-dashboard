@@ -56,17 +56,17 @@ func (data *CarDamageData) GetSidepodDamage() uint8 { return data.SidepodDamage 
 // SetSidepodDamage stores [CarDamageData.SidepodDamage]
 func (data *CarDamageData) SetSidepodDamage(v uint8) { data.SidepodDamage = v }
 
-// GetDrsFault returns [CarDamageData.DrsFault]
-func (data *CarDamageData) GetDrsFault() uint8 { return data.DrsFault }
+// GetDRSFault returns [CarDamageData.DRSFault]
+func (data *CarDamageData) GetDRSFault() uint8 { return data.DRSFault }
 
-// SetDrsFault stores [CarDamageData.DrsFault]
-func (data *CarDamageData) SetDrsFault(v uint8) { data.DrsFault = v }
+// SetDRSFault stores [CarDamageData.DRSFault]
+func (data *CarDamageData) SetDRSFault(v uint8) { data.DRSFault = v }
 
-// GetErsFault returns [CarDamageData.ErsFault]
-func (data *CarDamageData) GetErsFault() uint8 { return data.ErsFault }
+// GetERSFault returns [CarDamageData.ERSFault]
+func (data *CarDamageData) GetERSFault() uint8 { return data.ERSFault }
 
-// SetErsFault stores [CarDamageData.ErsFault]
-func (data *CarDamageData) SetErsFault(v uint8) { data.ErsFault = v }
+// SetERSFault stores [CarDamageData.ERSFault]
+func (data *CarDamageData) SetERSFault(v uint8) { data.ERSFault = v }
 
 // GetGearBoxDamage returns [CarDamageData.GearBoxDamage]
 func (data *CarDamageData) GetGearBoxDamage() uint8 { return data.GearBoxDamage }

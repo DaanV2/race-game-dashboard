@@ -16,5 +16,4 @@ func (data *TyreStintHistoryData) Parse(reader *xbinary.LittleEndianReader) {
 	data.EndLap = reader.ReadUint8()
 	data.TyreActualCompound = reader.ReadUint8()
 	data.TyreVisualCompound = reader.ReadUint8()
-
 }

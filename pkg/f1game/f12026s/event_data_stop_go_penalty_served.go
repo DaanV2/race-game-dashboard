@@ -14,5 +14,4 @@ type EventDataStopGoPenaltyServed struct {
 func (data *EventDataStopGoPenaltyServed) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
 	data.StopTime = reader.ReadFloat32()
-
 }

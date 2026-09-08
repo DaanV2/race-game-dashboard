@@ -62,5 +62,4 @@ func (data *CarStatusData) Parse(reader *xbinary.LittleEndianReader) {
 	data.ERSHarvestedLimitPerLap = reader.ReadFloat32()
 	data.ERSDeployedThisLap = reader.ReadFloat32()
 	data.NetworkPaused = reader.ReadUint8()
-
 }

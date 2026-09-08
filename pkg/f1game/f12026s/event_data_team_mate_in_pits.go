@@ -12,5 +12,4 @@ type EventDataTeamMateInPits struct {
 
 func (data *EventDataTeamMateInPits) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleIdx = reader.ReadUint8()
-
 }

@@ -3,13 +3,14 @@ package f12024
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 	xstrings "github.com/daanv2/race-game-dashboard/pkg/extensions/strings"
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type LobbyInfoData -ignore-field Name
 
 type LobbyInfoData struct {
 	AiControlled    uint8                             // Whether the vehicle is AI (1) or Human (0) controlled
-	TeamId          uint8                             // Team id - see appendix (255 if no team currently selected)
+	TeamId          f1common.TeamID                   // Team id (uint8) - see appendix (255 if no team currently selected)
 	Nationality     uint8                             // Nationality of the driver
 	Platform        uint8                             // 1 = Steam, 3 = PlayStation, 4 = Xbox, 6 = Origin, 255 = unknown
 	Name            [CS_MAX_PARTICIPANT_NAME_LEN]byte // Name of participant in UTF-8 format – null terminated  Will be truncated with ... (U+2026) if too long
@@ -34,7 +35,7 @@ func (data *LobbyInfoData) SetName(v string) {
 
 func (data *LobbyInfoData) Parse(reader *xbinary.LittleEndianReader) {
 	data.AiControlled = reader.ReadUint8()
-	data.TeamId = reader.ReadUint8()
+	data.TeamId = f1common.TeamID(reader.ReadUint8())
 	data.Nationality = reader.ReadUint8()
 	data.Platform = reader.ReadUint8()
 	reader.Read(data.Name[:])
@@ -43,5 +44,4 @@ func (data *LobbyInfoData) Parse(reader *xbinary.LittleEndianReader) {
 	data.ShowOnlineNames = reader.ReadUint8()
 	data.TechLevel = reader.ReadUint16()
 	data.ReadyStatus = reader.ReadUint8()
-
 }

@@ -27,5 +27,4 @@ func (data *LiveryColour) Parse(reader *xbinary.LittleEndianReader) {
 	data.Red = reader.ReadUint8()
 	data.Green = reader.ReadUint8()
 	data.Blue = reader.ReadUint8()
-
 }

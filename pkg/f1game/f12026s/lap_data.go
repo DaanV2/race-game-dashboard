@@ -76,5 +76,4 @@ func (data *LapData) Parse(reader *xbinary.LittleEndianReader) {
 	data.PitStopShouldServePen = reader.ReadUint8()
 	data.SpeedTrapFastestSpeed = reader.ReadFloat32()
 	data.SpeedTrapFastestLap = reader.ReadUint8()
-
 }

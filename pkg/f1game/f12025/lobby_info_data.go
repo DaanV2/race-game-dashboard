@@ -43,5 +43,4 @@ func (data *LobbyInfoData) Parse(reader *xbinary.LittleEndianReader) {
 	data.ShowOnlineNames = reader.ReadUint8()
 	data.TechLevel = reader.ReadUint16()
 	data.ReadyStatus = reader.ReadUint8()
-
 }

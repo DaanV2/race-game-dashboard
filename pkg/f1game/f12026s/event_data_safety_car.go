@@ -14,5 +14,4 @@ type EventDataSafetyCar struct {
 func (data *EventDataSafetyCar) Parse(reader *xbinary.LittleEndianReader) {
 	data.SafetyCarType = reader.ReadUint8()
 	data.EventType = reader.ReadUint8()
-
 }
