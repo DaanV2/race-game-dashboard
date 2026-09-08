@@ -45,7 +45,7 @@ func parsePacket[T Packet](header *PacketHeader, reader *xbinary.LittleEndianRea
 }
 
 // Example:
-//	hand := &f12026s.PacketHandler{}
+//	hand := &f12025.PacketHandler{}
 type PacketHandler struct {
 	Motion              PacketPipeline[*PacketMotionData]
 	Session             PacketPipeline[*PacketSessionData]

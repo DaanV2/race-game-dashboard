@@ -125,7 +125,7 @@ func run(filename string, only map[string]bool, ignoreFields []string) error {
 
 	outFile := strings.TrimSuffix(filename, filepath.Ext(filename)) + "_accessors_gen.go"
 
-	return os.WriteFile(outFile, formatted, 0o644)
+	return os.WriteFile(outFile, formatted, 0o644) // nolint:gosec // Its for a tool, so ignoring file permissions
 }
 
 // writeStructAccessors writes Get/Set methods for every exported, named field

@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketCarDamageData -ignore-field CarDamageData
+
 type PacketCarDamageData struct {
 	Header        PacketHeader                   // Header
 	CarDamageData [CS_MAX_NUM_CARS]CarDamageData //
@@ -11,12 +13,6 @@ type PacketCarDamageData struct {
 
 // GetPacketID returns the identification of this packet
 func (data *PacketCarDamageData) GetPacketID() PacketID { return PACKET_ID_CAR_DAMAGE }
-
-// GetHeader returns the Header of *PacketCarDamageData
-func (data *PacketCarDamageData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketCarDamageData
-func (data *PacketCarDamageData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarDamageData returns the CarDamageData of *PacketCarDamageData
 func (data *PacketCarDamageData) GetCarDamageData(car int) CarDamageData {
@@ -29,15 +25,11 @@ func (data *PacketCarDamageData) SetCarDamageData(car int, v CarDamageData) {
 }
 
 func (data *PacketCarDamageData) GetPlayerData() CarDamageData {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.CarDamageData[carIndex]
+	return data.CarDamageData[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketCarDamageData) GetSecondPlayerData() CarDamageData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.CarDamageData[carIndex]
+	return data.CarDamageData[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

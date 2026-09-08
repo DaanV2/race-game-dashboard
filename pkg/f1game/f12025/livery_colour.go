@@ -1,8 +1,12 @@
 package f12025 // nolint:dupl // Don't care about dupl here
 
 import (
+	"image/color"
+
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
+
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type LiveryColour
 
 type LiveryColour struct {
 	Red   uint8 //
@@ -10,23 +14,14 @@ type LiveryColour struct {
 	Blue  uint8 //
 }
 
-// GetRed returns the Red of *LiveryColour
-func (data *LiveryColour) GetRed() uint8 { return data.Red }
-
-// SetRed stores the Red of *LiveryColour
-func (data *LiveryColour) SetRed(v uint8) { data.Red = v }
-
-// GetGreen returns the Green of *LiveryColour
-func (data *LiveryColour) GetGreen() uint8 { return data.Green }
-
-// SetGreen stores the Green of *LiveryColour
-func (data *LiveryColour) SetGreen(v uint8) { data.Green = v }
-
-// GetBlue returns the Blue of *LiveryColour
-func (data *LiveryColour) GetBlue() uint8 { return data.Blue }
-
-// SetBlue stores the Blue of *LiveryColour
-func (data *LiveryColour) SetBlue(v uint8) { data.Blue = v }
+func (data *LiveryColour) ToRGB() color.RGBA {
+	return color.RGBA{
+		R: data.Red,
+		G: data.Green,
+		B: data.Blue,
+		A: 255,
+	}
+}
 
 func (data *LiveryColour) Parse(reader *xbinary.LittleEndianReader) {
 	data.Red = reader.ReadUint8()

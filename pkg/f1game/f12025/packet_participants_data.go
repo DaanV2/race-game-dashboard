@@ -4,26 +4,16 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketParticipantsData -ignore-field Participants
+
 type PacketParticipantsData struct {
 	Header        PacketHeader                     // Header
-	NumActiveCars uint8                            // Number of active cars in the data – should match number of cars on HUD
+	NumActiveCars uint8                            // Number of active cars in the data – should match number of  cars on HUD
 	Participants  [CS_MAX_NUM_CARS]ParticipantData //
 }
 
 // GetPacketID returns the identification of this packet
 func (data *PacketParticipantsData) GetPacketID() PacketID { return PACKET_ID_PARTICIPANTS }
-
-// GetHeader returns the Header of *PacketParticipantsData
-func (data *PacketParticipantsData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketParticipantsData
-func (data *PacketParticipantsData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetNumActiveCars returns the NumActiveCars of *PacketParticipantsData
-func (data *PacketParticipantsData) GetNumActiveCars() uint8 { return data.NumActiveCars }
-
-// SetNumActiveCars stores the NumActiveCars of *PacketParticipantsData
-func (data *PacketParticipantsData) SetNumActiveCars(v uint8) { data.NumActiveCars = v }
 
 // GetParticipants returns the Participants of *PacketParticipantsData
 func (data *PacketParticipantsData) GetParticipants(participant int) ParticipantData {
@@ -36,15 +26,13 @@ func (data *PacketParticipantsData) SetParticipants(participant int, v Participa
 }
 
 func (data *PacketParticipantsData) GetPlayerData() ParticipantData {
-	carIndex := data.Header.GetPlayerCarIndex()
 
-	return data.Participants[carIndex]
+	return data.Participants[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketParticipantsData) GetSecondPlayerData() ParticipantData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
 
-	return data.Participants[carIndex]
+	return data.Participants[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketEventData
+
 type PacketEventData struct {
 	Header          PacketHeader     // Header
 	EventStringCode EventCode        // Event string code, see below
@@ -16,24 +18,6 @@ type EventDataDetails interface {
 
 // GetPacketID returns the identification of this packet
 func (data *PacketEventData) GetPacketID() PacketID { return PACKET_ID_EVENT }
-
-// GetHeader returns the Header of *PacketEventData
-func (data *PacketEventData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketEventData
-func (data *PacketEventData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetEventStringCode returns the EventStringCode of *PacketEventData
-func (data *PacketEventData) GetEventStringCode() EventCode { return data.EventStringCode }
-
-// SetEventStringCode stores the EventStringCode of *PacketEventData
-func (data *PacketEventData) SetEventStringCode(v EventCode) { data.EventStringCode = v }
-
-// GetEventDetails returns the EventDetails of *PacketEventData, returns any of the EvenData* structs
-func (data *PacketEventData) GetEventDetails() EventDataDetails { return data.EventDetails }
-
-// SetEventDetails stores the EventDetails of *PacketEventData
-func (data *PacketEventData) SetEventDetails(v EventDataDetails) { data.EventDetails = v }
 
 type parsable interface {
 	Parse(reader *xbinary.LittleEndianReader)
@@ -53,26 +37,38 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 	switch data.EventStringCode {
 	case EVENT_CODE_BUTTON_STATUS:
 		event = &EventDataButtons{}
+	case EVENT_CODE_CHEQUERED_FLAG:
+		event = nil
 	case EVENT_CODE_COLLISION:
 		event = &EventDataCollision{}
 	case EVENT_CODE_DRIVE_THROUGH_SERVED:
 		event = &EventDataDriveThroughPenaltyServed{}
 	case EVENT_CODE_DRS_DISABLED:
 		event = &EventDataDRSDisabled{}
+	case EVENT_CODE_DRS_ENABLED:
+		event = nil
 	case EVENT_CODE_FASTEST_LAP:
 		event = &EventDataFastestLap{}
 	case EVENT_CODE_FLASHBACK:
 		event = &EventDataFlashback{}
+	case EVENT_CODE_LIGHTS_OUT:
+		event = nil
 	case EVENT_CODE_OVERTAKE:
 		event = &EventDataOvertake{}
 	case EVENT_CODE_PENALTY_ISSUED:
 		event = &EventDataPenalty{}
 	case EVENT_CODE_RACE_WINNER:
 		event = &EventDataRaceWinner{}
+	case EVENT_CODE_RED_FLAG:
+		event = nil
 	case EVENT_CODE_RETIREMENT:
 		event = &EventDataRetirement{}
 	case EVENT_CODE_SAFETY_CAR:
 		event = &EventDataSafetyCar{}
+	case EVENT_CODE_SESSION_ENDED:
+		event = nil
+	case EVENT_CODE_SESSION_STARTED:
+		event = nil
 	case EVENT_CODE_SPEED_TRAP_TRIGGERED:
 		event = &EventDataSpeedTrap{}
 	case EVENT_CODE_START_LIGHTS:
@@ -81,14 +77,6 @@ func (data *PacketEventData) Parse(header *PacketHeader, reader *xbinary.LittleE
 		event = &EventDataStopGoPenaltyServed{}
 	case EVENT_CODE_TEAM_MATE_IN_PITS:
 		event = &EventDataTeamMateInPits{}
-
-		// nill
-	case EVENT_CODE_CHEQUERED_FLAG:
-	case EVENT_CODE_DRS_ENABLED:
-	case EVENT_CODE_LIGHTS_OUT:
-	case EVENT_CODE_RED_FLAG:
-	case EVENT_CODE_SESSION_ENDED:
-	case EVENT_CODE_SESSION_STARTED:
 	}
 
 	if event != nil {

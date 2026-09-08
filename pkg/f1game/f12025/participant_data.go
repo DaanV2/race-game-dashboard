@@ -5,6 +5,8 @@ import (
 	xstrings "github.com/daanv2/race-game-dashboard/pkg/extensions/strings"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type ParticipantData -ignore-field Name
+
 type ParticipantData struct {
 	AiControlled    uint8                             // Whether the vehicle is AI (1) or Human (0) controlled
 	DriverId        uint16                            // Driver id - see appendix, 65535 if network human
@@ -22,99 +24,17 @@ type ParticipantData struct {
 	LiveryColours   [4]LiveryColour                   // Colours for the car
 }
 
-// GetAiControlled returns the AiControlled of *ParticipantData
-func (data *ParticipantData) GetAiControlled() uint8 { return data.AiControlled }
-
-// SetAiControlled stores the AiControlled of *ParticipantData
-func (data *ParticipantData) SetAiControlled(v uint8) { data.AiControlled = v }
-
-// GetDriverId returns the DriverId of *ParticipantData
-func (data *ParticipantData) GetDriverId() uint16 { return data.DriverId }
-
-// SetDriverId stores the DriverId of *ParticipantData
-func (data *ParticipantData) SetDriverId(v uint16) { data.DriverId = v }
-
-// GetNetworkId returns the NetworkId of *ParticipantData
-func (data *ParticipantData) GetNetworkId() uint16 { return data.NetworkId }
-
-// SetNetworkId stores the NetworkId of *ParticipantData
-func (data *ParticipantData) SetNetworkId(v uint16) { data.NetworkId = v }
-
-// GetTeamId returns the TeamId of *ParticipantData
-func (data *ParticipantData) GetTeamId() uint16 { return data.TeamId }
-
-// SetTeamId stores the TeamId of *ParticipantData
-func (data *ParticipantData) SetTeamId(v uint16) { data.TeamId = v }
-
-// GetMyTeam returns the MyTeam of *ParticipantData
-func (data *ParticipantData) GetMyTeam() uint8 { return data.MyTeam }
-
-// SetMyTeam stores the MyTeam of *ParticipantData
-func (data *ParticipantData) SetMyTeam(v uint8) { data.MyTeam = v }
-
-// GetRaceNumber returns the RaceNumber of *ParticipantData
-func (data *ParticipantData) GetRaceNumber() uint8 { return data.RaceNumber }
-
-// SetRaceNumber stores the RaceNumber of *ParticipantData
-func (data *ParticipantData) SetRaceNumber(v uint8) { data.RaceNumber = v }
-
-// GetNationality returns the Nationality of *ParticipantData
-func (data *ParticipantData) GetNationality() uint8 { return data.Nationality }
-
-// SetNationality stores the Nationality of *ParticipantData
-func (data *ParticipantData) SetNationality(v uint8) { data.Nationality = v }
-
 // GetName returns the Name of *LobbyInfoData
 func (data *ParticipantData) GetName() string { return xstrings.NullTerminated(data.Name[:]) }
 
 // SetName stores the Name of *LobbyInfoData
 func (data *ParticipantData) SetName(v string) {
 	var result [CS_MAX_PARTICIPANT_NAME_LEN]byte
-
-	if len(v) >= CS_EVENT_STRING_CODE_LEN {
-		v = v[:CS_EVENT_STRING_CODE_LEN-1] + "…"
-	}
 	b := []byte(v)
 
 	copy(result[:], b)
 	data.Name = result
 }
-
-// GetYourTelemetry returns the YourTelemetry of *ParticipantData
-func (data *ParticipantData) GetYourTelemetry() uint8 { return data.YourTelemetry }
-
-// SetYourTelemetry stores the YourTelemetry of *ParticipantData
-func (data *ParticipantData) SetYourTelemetry(v uint8) { data.YourTelemetry = v }
-
-// GetShowOnlineNames returns the ShowOnlineNames of *ParticipantData
-func (data *ParticipantData) GetShowOnlineNames() uint8 { return data.ShowOnlineNames }
-
-// SetShowOnlineNames stores the ShowOnlineNames of *ParticipantData
-func (data *ParticipantData) SetShowOnlineNames(v uint8) { data.ShowOnlineNames = v }
-
-// GetTechLevel returns the TechLevel of *ParticipantData
-func (data *ParticipantData) GetTechLevel() uint16 { return data.TechLevel }
-
-// SetTechLevel stores the TechLevel of *ParticipantData
-func (data *ParticipantData) SetTechLevel(v uint16) { data.TechLevel = v }
-
-// GetPlatform returns the Platform of *ParticipantData
-func (data *ParticipantData) GetPlatform() uint8 { return data.Platform }
-
-// SetPlatform stores the Platform of *ParticipantData
-func (data *ParticipantData) SetPlatform(v uint8) { data.Platform = v }
-
-// GetNumColours returns the NumColours of *ParticipantData
-func (data *ParticipantData) GetNumColours() uint8 { return data.NumColours }
-
-// SetNumColours stores the NumColours of *ParticipantData
-func (data *ParticipantData) SetNumColours(v uint8) { data.NumColours = v }
-
-// GetLiveryColours returns the LiveryColours of *ParticipantData
-func (data *ParticipantData) GetLiveryColours() [4]LiveryColour { return data.LiveryColours }
-
-// SetLiveryColours stores the LiveryColours of *ParticipantData
-func (data *ParticipantData) SetLiveryColours(v [4]LiveryColour) { data.LiveryColours = v }
 
 func (data *ParticipantData) Parse(reader *xbinary.LittleEndianReader) {
 	data.AiControlled = reader.ReadUint8()
