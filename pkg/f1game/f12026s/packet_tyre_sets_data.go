@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketTyreSetsData -ignore-field TyreSetData
+
 type PacketTyreSetsData struct {
 	Header      PacketHeader                      // Header
 	CarIdx      uint8                             // Index of the car this data relates to
@@ -14,18 +16,6 @@ type PacketTyreSetsData struct {
 // GetPacketID returns the identification of this packet
 func (data *PacketTyreSetsData) GetPacketID() PacketID { return PACKET_ID_TYRE_SETS }
 
-// GetHeader returns the Header of *PacketTyreSetsData
-func (data *PacketTyreSetsData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketTyreSetsData
-func (data *PacketTyreSetsData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetCarIdx returns the CarIdx of *PacketTyreSetsData
-func (data *PacketTyreSetsData) GetCarIdx() uint8 { return data.CarIdx }
-
-// SetCarIdx stores the CarIdx of *PacketTyreSetsData
-func (data *PacketTyreSetsData) SetCarIdx(v uint8) { data.CarIdx = v }
-
 // GetTyreSetData returns the TyreSetData of *PacketTyreSetsData
 func (data *PacketTyreSetsData) GetTyreSetData(tyreSet int) TyreSetData {
 	return data.TyreSetData[tyreSet]
@@ -35,12 +25,6 @@ func (data *PacketTyreSetsData) GetTyreSetData(tyreSet int) TyreSetData {
 func (data *PacketTyreSetsData) SetTyreSetData(tyreSet int, v TyreSetData) {
 	data.TyreSetData[tyreSet] = v
 }
-
-// GetFittedIdx returns the FittedIdx of *PacketTyreSetsData
-func (data *PacketTyreSetsData) GetFittedIdx() uint8 { return data.FittedIdx }
-
-// SetFittedIdx stores the FittedIdx of *PacketTyreSetsData
-func (data *PacketTyreSetsData) SetFittedIdx(v uint8) { data.FittedIdx = v }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketTyreSetsData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

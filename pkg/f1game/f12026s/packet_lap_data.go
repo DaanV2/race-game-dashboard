@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketLapData -ignore-field LapData
+
 type PacketLapData struct {
 	Header               PacketHeader             // Header
 	LapData              [CS_MAX_NUM_CARS]LapData // Lap data for all cars on track
@@ -14,12 +16,6 @@ type PacketLapData struct {
 // GetPacketID returns the identification of this packet
 func (data *PacketLapData) GetPacketID() PacketID { return PACKET_ID_LAP_DATA }
 
-// GetHeader returns the Header of *PacketLapData
-func (data *PacketLapData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketLapData
-func (data *PacketLapData) SetHeader(v PacketHeader) { data.Header = v }
-
 // GetLapData returns the LapData of *PacketLapData
 func (data *PacketLapData) GetLapData(lap int) LapData { return data.LapData[lap] }
 
@@ -27,28 +23,13 @@ func (data *PacketLapData) GetLapData(lap int) LapData { return data.LapData[lap
 func (data *PacketLapData) SetLapData(lap int, v LapData) { data.LapData[lap] = v }
 
 func (data *PacketLapData) GetPlayerData() LapData {
-	carIndex := data.Header.GetPlayerCarIndex()
 
-	return data.LapData[carIndex]
+	return data.LapData[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketLapData) GetSecondPlayerData() LapData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.LapData[carIndex]
+	return data.LapData[data.Header.GetSecondaryPlayerCarIndex()]
 }
-
-// GetTimeTrialPBCarIdx returns the TimeTrialPBCarIdx of *PacketLapData
-func (data *PacketLapData) GetTimeTrialPBCarIdx() uint8 { return data.TimeTrialPBCarIdx }
-
-// SetTimeTrialPBCarIdx stores the TimeTrialPBCarIdx of *PacketLapData
-func (data *PacketLapData) SetTimeTrialPBCarIdx(v uint8) { data.TimeTrialPBCarIdx = v }
-
-// GetTimeTrialRivalCarIdx returns the TimeTrialRivalCarIdx of *PacketLapData
-func (data *PacketLapData) GetTimeTrialRivalCarIdx() uint8 { return data.TimeTrialRivalCarIdx }
-
-// SetTimeTrialRivalCarIdx stores the TimeTrialRivalCarIdx of *PacketLapData
-func (data *PacketLapData) SetTimeTrialRivalCarIdx(v uint8) { data.TimeTrialRivalCarIdx = v }
 
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketLapData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {

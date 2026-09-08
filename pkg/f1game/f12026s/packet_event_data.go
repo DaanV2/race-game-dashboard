@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketEventData
+
 type PacketEventData struct {
 	Header          PacketHeader     // Header
 	EventStringCode EventCode        // Event string code, see below
@@ -16,24 +18,6 @@ type EventDataDetails interface {
 
 // GetPacketID returns the identification of this packet
 func (data *PacketEventData) GetPacketID() PacketID { return PACKET_ID_EVENT }
-
-// GetHeader returns the Header of *PacketEventData
-func (data *PacketEventData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketEventData
-func (data *PacketEventData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetEventStringCode returns the EventStringCode of *PacketEventData
-func (data *PacketEventData) GetEventStringCode() EventCode { return data.EventStringCode }
-
-// SetEventStringCode stores the EventStringCode of *PacketEventData
-func (data *PacketEventData) SetEventStringCode(v EventCode) { data.EventStringCode = v }
-
-// GetEventDetails returns the EventDetails of *PacketEventData, returns any of the EvenData* structs
-func (data *PacketEventData) GetEventDetails() EventDataDetails { return data.EventDetails }
-
-// SetEventDetails stores the EventDetails of *PacketEventData
-func (data *PacketEventData) SetEventDetails(v EventDataDetails) { data.EventDetails = v }
 
 type parsable interface {
 	Parse(reader *xbinary.LittleEndianReader)

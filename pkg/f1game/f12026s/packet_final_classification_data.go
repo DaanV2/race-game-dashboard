@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketFinalClassificationData -ignore-field ClassificationData
+
 type PacketFinalClassificationData struct {
 	Header             PacketHeader                             // Header
 	NumCars            uint8                                    // Number of cars in the final classification
@@ -11,19 +13,9 @@ type PacketFinalClassificationData struct {
 }
 
 // GetPacketID returns the identification of this packet
-func (data *PacketFinalClassificationData) GetPacketID() PacketID { return PACKET_ID_FINAL_CLASSIFICATION }
-
-// GetHeader returns the Header of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetNumCars returns the NumCars of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) GetNumCars() uint8 { return data.NumCars }
-
-// SetNumCars stores the NumCars of *PacketFinalClassificationData
-func (data *PacketFinalClassificationData) SetNumCars(v uint8) { data.NumCars = v }
+func (data *PacketFinalClassificationData) GetPacketID() PacketID {
+	return PACKET_ID_FINAL_CLASSIFICATION
+}
 
 // GetClassificationData returns the ClassificationData of *PacketFinalClassificationData
 func (data *PacketFinalClassificationData) GetClassificationData(car int) FinalClassificationData {
@@ -36,15 +28,11 @@ func (data *PacketFinalClassificationData) SetClassificationData(car int, v Fina
 }
 
 func (data *PacketFinalClassificationData) GetPlayerData() FinalClassificationData {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.ClassificationData[carIndex]
+	return data.ClassificationData[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketFinalClassificationData) GetSecondPlayerData() FinalClassificationData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.ClassificationData[carIndex]
+	return data.ClassificationData[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

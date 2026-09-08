@@ -4,19 +4,14 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketMotionData -ignore-field CarMotionData
+
 type PacketMotionData struct {
 	Header        PacketHeader                   // Header
 	CarMotionData [CS_MAX_NUM_CARS]CarMotionData // Data for all cars on track
 }
 
-// GetPacketID returns the identification of this packet
 func (data *PacketMotionData) GetPacketID() PacketID { return PACKET_ID_MOTION }
-
-// GetHeader returns the Header of *PacketMotionData
-func (data *PacketMotionData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketMotionData
-func (data *PacketMotionData) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarMotionData returns the CarMotionData of *PacketMotionData
 func (data *PacketMotionData) GetCarMotionData(car int) CarMotionData { return data.CarMotionData[car] }
@@ -25,15 +20,11 @@ func (data *PacketMotionData) GetCarMotionData(car int) CarMotionData { return d
 func (data *PacketMotionData) SetCarMotionData(car int, v CarMotionData) { data.CarMotionData[car] = v }
 
 func (data *PacketMotionData) GetPlayerData() CarMotionData {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.CarMotionData[carIndex]
+	return data.CarMotionData[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketMotionData) GetSecondPlayerData() CarMotionData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.CarMotionData[carIndex]
+	return data.CarMotionData[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

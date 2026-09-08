@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketCarTelemetry2Data -ignore-field CarTelemetry2Data
+
 type PacketCarTelemetry2Data struct {
 	Header            PacketHeader                       // Header
 	CarTelemetry2Data [CS_MAX_NUM_CARS]CarTelemetry2Data //
@@ -11,12 +13,6 @@ type PacketCarTelemetry2Data struct {
 
 // GetPacketID returns the identification of this packet
 func (data *PacketCarTelemetry2Data) GetPacketID() PacketID { return PACKET_ID_CAR_TELEMETRY_2 }
-
-// GetHeader returns the Header of *PacketCarTelemetry2Data
-func (data *PacketCarTelemetry2Data) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketCarTelemetry2Data
-func (data *PacketCarTelemetry2Data) SetHeader(v PacketHeader) { data.Header = v }
 
 // GetCarTelemetry2Data returns the CarTelemetry2Data of *PacketCarTelemetry2Data
 func (data *PacketCarTelemetry2Data) GetCarTelemetry2Data(car int) CarTelemetry2Data {
@@ -29,15 +25,11 @@ func (data *PacketCarTelemetry2Data) SetCarTelemetry2Data(car int, v CarTelemetr
 }
 
 func (data *PacketCarTelemetry2Data) GetPlayerData() CarTelemetry2Data {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.CarTelemetry2Data[carIndex]
+	return data.CarTelemetry2Data[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketCarTelemetry2Data) GetSecondPlayerData() CarTelemetry2Data {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.CarTelemetry2Data[carIndex]
+	return data.CarTelemetry2Data[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

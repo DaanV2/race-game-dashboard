@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketCarSetupData -ignore-field CarSetups
+
 type PacketCarSetupData struct {
 	Header             PacketHeader                  // Header
 	CarSetups          [CS_MAX_NUM_CARS]CarSetupData //
@@ -13,34 +15,18 @@ type PacketCarSetupData struct {
 // GetPacketID returns the identification of this packet
 func (data *PacketCarSetupData) GetPacketID() PacketID { return PACKET_ID_CAR_SETUPS }
 
-// GetHeader returns the Header of *PacketCarSetupData
-func (data *PacketCarSetupData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketCarSetupData
-func (data *PacketCarSetupData) SetHeader(v PacketHeader) { data.Header = v }
-
 // GetCarSetups returns the CarSetups of *PacketCarSetupData
 func (data *PacketCarSetupData) GetCarSetups(car int) CarSetupData { return data.CarSetups[car] }
 
 // SetCarSetups stores the CarSetups of *PacketCarSetupData
 func (data *PacketCarSetupData) SetCarSetups(car int, v CarSetupData) { data.CarSetups[car] = v }
 
-// GetNextFrontWingValue returns the NextFrontWingValue of *PacketCarSetupData
-func (data *PacketCarSetupData) GetNextFrontWingValue() float32 { return data.NextFrontWingValue }
-
-// SetNextFrontWingValue stores the NextFrontWingValue of *PacketCarSetupData
-func (data *PacketCarSetupData) SetNextFrontWingValue(v float32) { data.NextFrontWingValue = v }
-
 func (data *PacketCarSetupData) GetPlayerData() CarSetupData {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.CarSetups[carIndex]
+	return data.CarSetups[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketCarSetupData) GetSecondPlayerData() CarSetupData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.CarSetups[carIndex]
+	return data.CarSetups[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

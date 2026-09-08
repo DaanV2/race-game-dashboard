@@ -4,26 +4,15 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketLobbyInfoData -ignore-field LobbyPlayers
+
 type PacketLobbyInfoData struct {
 	Header       PacketHeader                   // Header  Packet specific data
 	NumPlayers   uint8                          // Number of players in the lobby data
 	LobbyPlayers [CS_MAX_NUM_CARS]LobbyInfoData //
 }
 
-// GetPacketID returns the identification of this packet
 func (data *PacketLobbyInfoData) GetPacketID() PacketID { return PACKET_ID_LOBBY_INFO }
-
-// GetHeader returns the Header of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetNumPlayers returns the NumPlayers of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) GetNumPlayers() uint8 { return data.NumPlayers }
-
-// SetNumPlayers stores the NumPlayers of *PacketLobbyInfoData
-func (data *PacketLobbyInfoData) SetNumPlayers(v uint8) { data.NumPlayers = v }
 
 // GetLobbyPlayers returns the LobbyPlayers of *PacketLobbyInfoData
 func (data *PacketLobbyInfoData) GetLobbyPlayers(participant int) LobbyInfoData {
@@ -36,15 +25,11 @@ func (data *PacketLobbyInfoData) SetLobbyPlayers(participant int, v LobbyInfoDat
 }
 
 func (data *PacketLobbyInfoData) GetPlayerData() LobbyInfoData {
-	carIndex := data.Header.GetPlayerCarIndex()
-
-	return data.LobbyPlayers[carIndex]
+	return data.LobbyPlayers[data.Header.GetPlayerCarIndex()]
 }
 
 func (data *PacketLobbyInfoData) GetSecondPlayerData() LobbyInfoData {
-	carIndex := data.Header.GetSecondaryPlayerCarIndex()
-
-	return data.LobbyPlayers[carIndex]
+	return data.LobbyPlayers[data.Header.GetSecondaryPlayerCarIndex()]
 }
 
 // Parse assumes the header as already been read, and only the rest needs to be done

@@ -4,6 +4,8 @@ import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 )
 
+//go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketLapPositionsData -ignore-field PositionForVehicleIdx
+
 type PacketLapPositionsData struct {
 	Header                PacketHeader                                                            // Header  Packet specific data
 	NumLaps               uint8                                                                   // Number of laps in the data
@@ -13,24 +15,6 @@ type PacketLapPositionsData struct {
 
 // GetPacketID returns the identification of this packet
 func (data *PacketLapPositionsData) GetPacketID() PacketID { return PACKET_ID_LAP_POSITIONS }
-
-// GetHeader returns the Header of *PacketLapPositionsData
-func (data *PacketLapPositionsData) GetHeader() PacketHeader { return data.Header }
-
-// SetHeader stores the Header of *PacketLapPositionsData
-func (data *PacketLapPositionsData) SetHeader(v PacketHeader) { data.Header = v }
-
-// GetNumLaps returns the NumLaps of *PacketLapPositionsData
-func (data *PacketLapPositionsData) GetNumLaps() uint8 { return data.NumLaps }
-
-// SetNumLaps stores the NumLaps of *PacketLapPositionsData
-func (data *PacketLapPositionsData) SetNumLaps(v uint8) { data.NumLaps = v }
-
-// GetLapStart returns the LapStart of *PacketLapPositionsData
-func (data *PacketLapPositionsData) GetLapStart() uint8 { return data.LapStart }
-
-// SetLapStart stores the LapStart of *PacketLapPositionsData
-func (data *PacketLapPositionsData) SetLapStart(v uint8) { data.LapStart = v }
 
 // GetPositionForVehicleIdx returns the PositionForVehicleIdx of *PacketLapPositionsData
 func (data *PacketLapPositionsData) GetPositionForVehicleIdx(lap int) [CS_MAX_NUM_CARS]uint8 {
