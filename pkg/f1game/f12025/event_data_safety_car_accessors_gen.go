@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetSafetyCarType returns the SafetyCarType of [EventDataSafetyCar]
+// GetSafetyCarType returns [EventDataSafetyCar.SafetyCarType]
 func (data *EventDataSafetyCar) GetSafetyCarType() uint8 { return data.SafetyCarType }
 
-// SetSafetyCarType stores the SafetyCarType of [EventDataSafetyCar]
+// SetSafetyCarType stores [EventDataSafetyCar.SafetyCarType]
 func (data *EventDataSafetyCar) SetSafetyCarType(v uint8) { data.SafetyCarType = v }
 
-// GetEventType returns the EventType of [EventDataSafetyCar]
+// GetEventType returns [EventDataSafetyCar.EventType]
 func (data *EventDataSafetyCar) GetEventType() uint8 { return data.EventType }
 
-// SetEventType stores the EventType of [EventDataSafetyCar]
+// SetEventType stores [EventDataSafetyCar.EventType]
 func (data *EventDataSafetyCar) SetEventType(v uint8) { data.EventType = v }

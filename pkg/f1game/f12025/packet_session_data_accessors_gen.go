@@ -2,498 +2,498 @@
 
 package f12025
 
-// GetHeader returns the Header of [PacketSessionData]
+// GetHeader returns [PacketSessionData.Header]
 func (data *PacketSessionData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketSessionData]
+// SetHeader stores [PacketSessionData.Header]
 func (data *PacketSessionData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetWeather returns the Weather of [PacketSessionData]
+// GetWeather returns [PacketSessionData.Weather]
 func (data *PacketSessionData) GetWeather() uint8 { return data.Weather }
 
-// SetWeather stores the Weather of [PacketSessionData]
+// SetWeather stores [PacketSessionData.Weather]
 func (data *PacketSessionData) SetWeather(v uint8) { data.Weather = v }
 
-// GetTrackTemperature returns the TrackTemperature of [PacketSessionData]
+// GetTrackTemperature returns [PacketSessionData.TrackTemperature]
 func (data *PacketSessionData) GetTrackTemperature() int8 { return data.TrackTemperature }
 
-// SetTrackTemperature stores the TrackTemperature of [PacketSessionData]
+// SetTrackTemperature stores [PacketSessionData.TrackTemperature]
 func (data *PacketSessionData) SetTrackTemperature(v int8) { data.TrackTemperature = v }
 
-// GetAirTemperature returns the AirTemperature of [PacketSessionData]
+// GetAirTemperature returns [PacketSessionData.AirTemperature]
 func (data *PacketSessionData) GetAirTemperature() int8 { return data.AirTemperature }
 
-// SetAirTemperature stores the AirTemperature of [PacketSessionData]
+// SetAirTemperature stores [PacketSessionData.AirTemperature]
 func (data *PacketSessionData) SetAirTemperature(v int8) { data.AirTemperature = v }
 
-// GetTotalLaps returns the TotalLaps of [PacketSessionData]
+// GetTotalLaps returns [PacketSessionData.TotalLaps]
 func (data *PacketSessionData) GetTotalLaps() uint8 { return data.TotalLaps }
 
-// SetTotalLaps stores the TotalLaps of [PacketSessionData]
+// SetTotalLaps stores [PacketSessionData.TotalLaps]
 func (data *PacketSessionData) SetTotalLaps(v uint8) { data.TotalLaps = v }
 
-// GetTrackLength returns the TrackLength of [PacketSessionData]
+// GetTrackLength returns [PacketSessionData.TrackLength]
 func (data *PacketSessionData) GetTrackLength() uint16 { return data.TrackLength }
 
-// SetTrackLength stores the TrackLength of [PacketSessionData]
+// SetTrackLength stores [PacketSessionData.TrackLength]
 func (data *PacketSessionData) SetTrackLength(v uint16) { data.TrackLength = v }
 
-// GetSessionType returns the SessionType of [PacketSessionData]
+// GetSessionType returns [PacketSessionData.SessionType]
 func (data *PacketSessionData) GetSessionType() uint8 { return data.SessionType }
 
-// SetSessionType stores the SessionType of [PacketSessionData]
+// SetSessionType stores [PacketSessionData.SessionType]
 func (data *PacketSessionData) SetSessionType(v uint8) { data.SessionType = v }
 
-// GetTrackId returns the TrackId of [PacketSessionData]
+// GetTrackId returns [PacketSessionData.TrackId]
 func (data *PacketSessionData) GetTrackId() int8 { return data.TrackId }
 
-// SetTrackId stores the TrackId of [PacketSessionData]
+// SetTrackId stores [PacketSessionData.TrackId]
 func (data *PacketSessionData) SetTrackId(v int8) { data.TrackId = v }
 
-// GetFormula returns the Formula of [PacketSessionData]
+// GetFormula returns [PacketSessionData.Formula]
 func (data *PacketSessionData) GetFormula() uint8 { return data.Formula }
 
-// SetFormula stores the Formula of [PacketSessionData]
+// SetFormula stores [PacketSessionData.Formula]
 func (data *PacketSessionData) SetFormula(v uint8) { data.Formula = v }
 
-// GetSessionTimeLeft returns the SessionTimeLeft of [PacketSessionData]
+// GetSessionTimeLeft returns [PacketSessionData.SessionTimeLeft]
 func (data *PacketSessionData) GetSessionTimeLeft() uint16 { return data.SessionTimeLeft }
 
-// SetSessionTimeLeft stores the SessionTimeLeft of [PacketSessionData]
+// SetSessionTimeLeft stores [PacketSessionData.SessionTimeLeft]
 func (data *PacketSessionData) SetSessionTimeLeft(v uint16) { data.SessionTimeLeft = v }
 
-// GetSessionDuration returns the SessionDuration of [PacketSessionData]
+// GetSessionDuration returns [PacketSessionData.SessionDuration]
 func (data *PacketSessionData) GetSessionDuration() uint16 { return data.SessionDuration }
 
-// SetSessionDuration stores the SessionDuration of [PacketSessionData]
+// SetSessionDuration stores [PacketSessionData.SessionDuration]
 func (data *PacketSessionData) SetSessionDuration(v uint16) { data.SessionDuration = v }
 
-// GetPitSpeedLimit returns the PitSpeedLimit of [PacketSessionData]
+// GetPitSpeedLimit returns [PacketSessionData.PitSpeedLimit]
 func (data *PacketSessionData) GetPitSpeedLimit() uint8 { return data.PitSpeedLimit }
 
-// SetPitSpeedLimit stores the PitSpeedLimit of [PacketSessionData]
+// SetPitSpeedLimit stores [PacketSessionData.PitSpeedLimit]
 func (data *PacketSessionData) SetPitSpeedLimit(v uint8) { data.PitSpeedLimit = v }
 
-// GetGamePaused returns the GamePaused of [PacketSessionData]
+// GetGamePaused returns [PacketSessionData.GamePaused]
 func (data *PacketSessionData) GetGamePaused() uint8 { return data.GamePaused }
 
-// SetGamePaused stores the GamePaused of [PacketSessionData]
+// SetGamePaused stores [PacketSessionData.GamePaused]
 func (data *PacketSessionData) SetGamePaused(v uint8) { data.GamePaused = v }
 
-// GetIsSpectating returns the IsSpectating of [PacketSessionData]
+// GetIsSpectating returns [PacketSessionData.IsSpectating]
 func (data *PacketSessionData) GetIsSpectating() uint8 { return data.IsSpectating }
 
-// SetIsSpectating stores the IsSpectating of [PacketSessionData]
+// SetIsSpectating stores [PacketSessionData.IsSpectating]
 func (data *PacketSessionData) SetIsSpectating(v uint8) { data.IsSpectating = v }
 
-// GetSpectatorCarIndex returns the SpectatorCarIndex of [PacketSessionData]
+// GetSpectatorCarIndex returns [PacketSessionData.SpectatorCarIndex]
 func (data *PacketSessionData) GetSpectatorCarIndex() uint8 { return data.SpectatorCarIndex }
 
-// SetSpectatorCarIndex stores the SpectatorCarIndex of [PacketSessionData]
+// SetSpectatorCarIndex stores [PacketSessionData.SpectatorCarIndex]
 func (data *PacketSessionData) SetSpectatorCarIndex(v uint8) { data.SpectatorCarIndex = v }
 
-// GetSliProNativeSupport returns the SliProNativeSupport of [PacketSessionData]
+// GetSliProNativeSupport returns [PacketSessionData.SliProNativeSupport]
 func (data *PacketSessionData) GetSliProNativeSupport() uint8 { return data.SliProNativeSupport }
 
-// SetSliProNativeSupport stores the SliProNativeSupport of [PacketSessionData]
+// SetSliProNativeSupport stores [PacketSessionData.SliProNativeSupport]
 func (data *PacketSessionData) SetSliProNativeSupport(v uint8) { data.SliProNativeSupport = v }
 
-// GetNumMarshalZones returns the NumMarshalZones of [PacketSessionData]
+// GetNumMarshalZones returns [PacketSessionData.NumMarshalZones]
 func (data *PacketSessionData) GetNumMarshalZones() uint8 { return data.NumMarshalZones }
 
-// SetNumMarshalZones stores the NumMarshalZones of [PacketSessionData]
+// SetNumMarshalZones stores [PacketSessionData.NumMarshalZones]
 func (data *PacketSessionData) SetNumMarshalZones(v uint8) { data.NumMarshalZones = v }
 
-// GetSafetyCarStatus returns the SafetyCarStatus of [PacketSessionData]
+// GetSafetyCarStatus returns [PacketSessionData.SafetyCarStatus]
 func (data *PacketSessionData) GetSafetyCarStatus() uint8 { return data.SafetyCarStatus }
 
-// SetSafetyCarStatus stores the SafetyCarStatus of [PacketSessionData]
+// SetSafetyCarStatus stores [PacketSessionData.SafetyCarStatus]
 func (data *PacketSessionData) SetSafetyCarStatus(v uint8) { data.SafetyCarStatus = v }
 
-// GetNetworkGame returns the NetworkGame of [PacketSessionData]
+// GetNetworkGame returns [PacketSessionData.NetworkGame]
 func (data *PacketSessionData) GetNetworkGame() uint8 { return data.NetworkGame }
 
-// SetNetworkGame stores the NetworkGame of [PacketSessionData]
+// SetNetworkGame stores [PacketSessionData.NetworkGame]
 func (data *PacketSessionData) SetNetworkGame(v uint8) { data.NetworkGame = v }
 
-// GetNumWeatherForecastSamples returns the NumWeatherForecastSamples of [PacketSessionData]
+// GetNumWeatherForecastSamples returns [PacketSessionData.NumWeatherForecastSamples]
 func (data *PacketSessionData) GetNumWeatherForecastSamples() uint8 {
 	return data.NumWeatherForecastSamples
 }
 
-// SetNumWeatherForecastSamples stores the NumWeatherForecastSamples of [PacketSessionData]
+// SetNumWeatherForecastSamples stores [PacketSessionData.NumWeatherForecastSamples]
 func (data *PacketSessionData) SetNumWeatherForecastSamples(v uint8) {
 	data.NumWeatherForecastSamples = v
 }
 
-// GetForecastAccuracy returns the ForecastAccuracy of [PacketSessionData]
+// GetForecastAccuracy returns [PacketSessionData.ForecastAccuracy]
 func (data *PacketSessionData) GetForecastAccuracy() uint8 { return data.ForecastAccuracy }
 
-// SetForecastAccuracy stores the ForecastAccuracy of [PacketSessionData]
+// SetForecastAccuracy stores [PacketSessionData.ForecastAccuracy]
 func (data *PacketSessionData) SetForecastAccuracy(v uint8) { data.ForecastAccuracy = v }
 
-// GetAiDifficulty returns the AiDifficulty of [PacketSessionData]
+// GetAiDifficulty returns [PacketSessionData.AiDifficulty]
 func (data *PacketSessionData) GetAiDifficulty() uint8 { return data.AiDifficulty }
 
-// SetAiDifficulty stores the AiDifficulty of [PacketSessionData]
+// SetAiDifficulty stores [PacketSessionData.AiDifficulty]
 func (data *PacketSessionData) SetAiDifficulty(v uint8) { data.AiDifficulty = v }
 
-// GetSeasonLinkIdentifier returns the SeasonLinkIdentifier of [PacketSessionData]
+// GetSeasonLinkIdentifier returns [PacketSessionData.SeasonLinkIdentifier]
 func (data *PacketSessionData) GetSeasonLinkIdentifier() uint32 { return data.SeasonLinkIdentifier }
 
-// SetSeasonLinkIdentifier stores the SeasonLinkIdentifier of [PacketSessionData]
+// SetSeasonLinkIdentifier stores [PacketSessionData.SeasonLinkIdentifier]
 func (data *PacketSessionData) SetSeasonLinkIdentifier(v uint32) { data.SeasonLinkIdentifier = v }
 
-// GetWeekendLinkIdentifier returns the WeekendLinkIdentifier of [PacketSessionData]
+// GetWeekendLinkIdentifier returns [PacketSessionData.WeekendLinkIdentifier]
 func (data *PacketSessionData) GetWeekendLinkIdentifier() uint32 { return data.WeekendLinkIdentifier }
 
-// SetWeekendLinkIdentifier stores the WeekendLinkIdentifier of [PacketSessionData]
+// SetWeekendLinkIdentifier stores [PacketSessionData.WeekendLinkIdentifier]
 func (data *PacketSessionData) SetWeekendLinkIdentifier(v uint32) { data.WeekendLinkIdentifier = v }
 
-// GetSessionLinkIdentifier returns the SessionLinkIdentifier of [PacketSessionData]
+// GetSessionLinkIdentifier returns [PacketSessionData.SessionLinkIdentifier]
 func (data *PacketSessionData) GetSessionLinkIdentifier() uint32 { return data.SessionLinkIdentifier }
 
-// SetSessionLinkIdentifier stores the SessionLinkIdentifier of [PacketSessionData]
+// SetSessionLinkIdentifier stores [PacketSessionData.SessionLinkIdentifier]
 func (data *PacketSessionData) SetSessionLinkIdentifier(v uint32) { data.SessionLinkIdentifier = v }
 
-// GetPitStopWindowIdealLap returns the PitStopWindowIdealLap of [PacketSessionData]
+// GetPitStopWindowIdealLap returns [PacketSessionData.PitStopWindowIdealLap]
 func (data *PacketSessionData) GetPitStopWindowIdealLap() uint8 { return data.PitStopWindowIdealLap }
 
-// SetPitStopWindowIdealLap stores the PitStopWindowIdealLap of [PacketSessionData]
+// SetPitStopWindowIdealLap stores [PacketSessionData.PitStopWindowIdealLap]
 func (data *PacketSessionData) SetPitStopWindowIdealLap(v uint8) { data.PitStopWindowIdealLap = v }
 
-// GetPitStopWindowLatestLap returns the PitStopWindowLatestLap of [PacketSessionData]
+// GetPitStopWindowLatestLap returns [PacketSessionData.PitStopWindowLatestLap]
 func (data *PacketSessionData) GetPitStopWindowLatestLap() uint8 { return data.PitStopWindowLatestLap }
 
-// SetPitStopWindowLatestLap stores the PitStopWindowLatestLap of [PacketSessionData]
+// SetPitStopWindowLatestLap stores [PacketSessionData.PitStopWindowLatestLap]
 func (data *PacketSessionData) SetPitStopWindowLatestLap(v uint8) { data.PitStopWindowLatestLap = v }
 
-// GetPitStopRejoinPosition returns the PitStopRejoinPosition of [PacketSessionData]
+// GetPitStopRejoinPosition returns [PacketSessionData.PitStopRejoinPosition]
 func (data *PacketSessionData) GetPitStopRejoinPosition() uint8 { return data.PitStopRejoinPosition }
 
-// SetPitStopRejoinPosition stores the PitStopRejoinPosition of [PacketSessionData]
+// SetPitStopRejoinPosition stores [PacketSessionData.PitStopRejoinPosition]
 func (data *PacketSessionData) SetPitStopRejoinPosition(v uint8) { data.PitStopRejoinPosition = v }
 
-// GetSteeringAssist returns the SteeringAssist of [PacketSessionData]
+// GetSteeringAssist returns [PacketSessionData.SteeringAssist]
 func (data *PacketSessionData) GetSteeringAssist() uint8 { return data.SteeringAssist }
 
-// SetSteeringAssist stores the SteeringAssist of [PacketSessionData]
+// SetSteeringAssist stores [PacketSessionData.SteeringAssist]
 func (data *PacketSessionData) SetSteeringAssist(v uint8) { data.SteeringAssist = v }
 
-// GetBrakingAssist returns the BrakingAssist of [PacketSessionData]
+// GetBrakingAssist returns [PacketSessionData.BrakingAssist]
 func (data *PacketSessionData) GetBrakingAssist() uint8 { return data.BrakingAssist }
 
-// SetBrakingAssist stores the BrakingAssist of [PacketSessionData]
+// SetBrakingAssist stores [PacketSessionData.BrakingAssist]
 func (data *PacketSessionData) SetBrakingAssist(v uint8) { data.BrakingAssist = v }
 
-// GetGearboxAssist returns the GearboxAssist of [PacketSessionData]
+// GetGearboxAssist returns [PacketSessionData.GearboxAssist]
 func (data *PacketSessionData) GetGearboxAssist() uint8 { return data.GearboxAssist }
 
-// SetGearboxAssist stores the GearboxAssist of [PacketSessionData]
+// SetGearboxAssist stores [PacketSessionData.GearboxAssist]
 func (data *PacketSessionData) SetGearboxAssist(v uint8) { data.GearboxAssist = v }
 
-// GetPitAssist returns the PitAssist of [PacketSessionData]
+// GetPitAssist returns [PacketSessionData.PitAssist]
 func (data *PacketSessionData) GetPitAssist() uint8 { return data.PitAssist }
 
-// SetPitAssist stores the PitAssist of [PacketSessionData]
+// SetPitAssist stores [PacketSessionData.PitAssist]
 func (data *PacketSessionData) SetPitAssist(v uint8) { data.PitAssist = v }
 
-// GetPitReleaseAssist returns the PitReleaseAssist of [PacketSessionData]
+// GetPitReleaseAssist returns [PacketSessionData.PitReleaseAssist]
 func (data *PacketSessionData) GetPitReleaseAssist() uint8 { return data.PitReleaseAssist }
 
-// SetPitReleaseAssist stores the PitReleaseAssist of [PacketSessionData]
+// SetPitReleaseAssist stores [PacketSessionData.PitReleaseAssist]
 func (data *PacketSessionData) SetPitReleaseAssist(v uint8) { data.PitReleaseAssist = v }
 
-// GetERSAssist returns the ERSAssist of [PacketSessionData]
+// GetERSAssist returns [PacketSessionData.ERSAssist]
 func (data *PacketSessionData) GetERSAssist() uint8 { return data.ERSAssist }
 
-// SetERSAssist stores the ERSAssist of [PacketSessionData]
+// SetERSAssist stores [PacketSessionData.ERSAssist]
 func (data *PacketSessionData) SetERSAssist(v uint8) { data.ERSAssist = v }
 
-// GetDRSAssist returns the DRSAssist of [PacketSessionData]
+// GetDRSAssist returns [PacketSessionData.DRSAssist]
 func (data *PacketSessionData) GetDRSAssist() uint8 { return data.DRSAssist }
 
-// SetDRSAssist stores the DRSAssist of [PacketSessionData]
+// SetDRSAssist stores [PacketSessionData.DRSAssist]
 func (data *PacketSessionData) SetDRSAssist(v uint8) { data.DRSAssist = v }
 
-// GetDynamicRacingLine returns the DynamicRacingLine of [PacketSessionData]
+// GetDynamicRacingLine returns [PacketSessionData.DynamicRacingLine]
 func (data *PacketSessionData) GetDynamicRacingLine() uint8 { return data.DynamicRacingLine }
 
-// SetDynamicRacingLine stores the DynamicRacingLine of [PacketSessionData]
+// SetDynamicRacingLine stores [PacketSessionData.DynamicRacingLine]
 func (data *PacketSessionData) SetDynamicRacingLine(v uint8) { data.DynamicRacingLine = v }
 
-// GetDynamicRacingLineType returns the DynamicRacingLineType of [PacketSessionData]
+// GetDynamicRacingLineType returns [PacketSessionData.DynamicRacingLineType]
 func (data *PacketSessionData) GetDynamicRacingLineType() uint8 { return data.DynamicRacingLineType }
 
-// SetDynamicRacingLineType stores the DynamicRacingLineType of [PacketSessionData]
+// SetDynamicRacingLineType stores [PacketSessionData.DynamicRacingLineType]
 func (data *PacketSessionData) SetDynamicRacingLineType(v uint8) { data.DynamicRacingLineType = v }
 
-// GetGameMode returns the GameMode of [PacketSessionData]
+// GetGameMode returns [PacketSessionData.GameMode]
 func (data *PacketSessionData) GetGameMode() uint8 { return data.GameMode }
 
-// SetGameMode stores the GameMode of [PacketSessionData]
+// SetGameMode stores [PacketSessionData.GameMode]
 func (data *PacketSessionData) SetGameMode(v uint8) { data.GameMode = v }
 
-// GetRuleSet returns the RuleSet of [PacketSessionData]
+// GetRuleSet returns [PacketSessionData.RuleSet]
 func (data *PacketSessionData) GetRuleSet() uint8 { return data.RuleSet }
 
-// SetRuleSet stores the RuleSet of [PacketSessionData]
+// SetRuleSet stores [PacketSessionData.RuleSet]
 func (data *PacketSessionData) SetRuleSet(v uint8) { data.RuleSet = v }
 
-// GetTimeOfDay returns the TimeOfDay of [PacketSessionData]
+// GetTimeOfDay returns [PacketSessionData.TimeOfDay]
 func (data *PacketSessionData) GetTimeOfDay() uint32 { return data.TimeOfDay }
 
-// SetTimeOfDay stores the TimeOfDay of [PacketSessionData]
+// SetTimeOfDay stores [PacketSessionData.TimeOfDay]
 func (data *PacketSessionData) SetTimeOfDay(v uint32) { data.TimeOfDay = v }
 
-// GetSessionLength returns the SessionLength of [PacketSessionData]
+// GetSessionLength returns [PacketSessionData.SessionLength]
 func (data *PacketSessionData) GetSessionLength() uint8 { return data.SessionLength }
 
-// SetSessionLength stores the SessionLength of [PacketSessionData]
+// SetSessionLength stores [PacketSessionData.SessionLength]
 func (data *PacketSessionData) SetSessionLength(v uint8) { data.SessionLength = v }
 
-// GetSpeedUnitsLeadPlayer returns the SpeedUnitsLeadPlayer of [PacketSessionData]
+// GetSpeedUnitsLeadPlayer returns [PacketSessionData.SpeedUnitsLeadPlayer]
 func (data *PacketSessionData) GetSpeedUnitsLeadPlayer() uint8 { return data.SpeedUnitsLeadPlayer }
 
-// SetSpeedUnitsLeadPlayer stores the SpeedUnitsLeadPlayer of [PacketSessionData]
+// SetSpeedUnitsLeadPlayer stores [PacketSessionData.SpeedUnitsLeadPlayer]
 func (data *PacketSessionData) SetSpeedUnitsLeadPlayer(v uint8) { data.SpeedUnitsLeadPlayer = v }
 
-// GetTemperatureUnitsLeadPlayer returns the TemperatureUnitsLeadPlayer of [PacketSessionData]
+// GetTemperatureUnitsLeadPlayer returns [PacketSessionData.TemperatureUnitsLeadPlayer]
 func (data *PacketSessionData) GetTemperatureUnitsLeadPlayer() uint8 {
 	return data.TemperatureUnitsLeadPlayer
 }
 
-// SetTemperatureUnitsLeadPlayer stores the TemperatureUnitsLeadPlayer of [PacketSessionData]
+// SetTemperatureUnitsLeadPlayer stores [PacketSessionData.TemperatureUnitsLeadPlayer]
 func (data *PacketSessionData) SetTemperatureUnitsLeadPlayer(v uint8) {
 	data.TemperatureUnitsLeadPlayer = v
 }
 
-// GetSpeedUnitsSecondaryPlayer returns the SpeedUnitsSecondaryPlayer of [PacketSessionData]
+// GetSpeedUnitsSecondaryPlayer returns [PacketSessionData.SpeedUnitsSecondaryPlayer]
 func (data *PacketSessionData) GetSpeedUnitsSecondaryPlayer() uint8 {
 	return data.SpeedUnitsSecondaryPlayer
 }
 
-// SetSpeedUnitsSecondaryPlayer stores the SpeedUnitsSecondaryPlayer of [PacketSessionData]
+// SetSpeedUnitsSecondaryPlayer stores [PacketSessionData.SpeedUnitsSecondaryPlayer]
 func (data *PacketSessionData) SetSpeedUnitsSecondaryPlayer(v uint8) {
 	data.SpeedUnitsSecondaryPlayer = v
 }
 
-// GetTemperatureUnitsSecondaryPlayer returns the TemperatureUnitsSecondaryPlayer of [PacketSessionData]
+// GetTemperatureUnitsSecondaryPlayer returns [PacketSessionData.TemperatureUnitsSecondaryPlayer]
 func (data *PacketSessionData) GetTemperatureUnitsSecondaryPlayer() uint8 {
 	return data.TemperatureUnitsSecondaryPlayer
 }
 
-// SetTemperatureUnitsSecondaryPlayer stores the TemperatureUnitsSecondaryPlayer of [PacketSessionData]
+// SetTemperatureUnitsSecondaryPlayer stores [PacketSessionData.TemperatureUnitsSecondaryPlayer]
 func (data *PacketSessionData) SetTemperatureUnitsSecondaryPlayer(v uint8) {
 	data.TemperatureUnitsSecondaryPlayer = v
 }
 
-// GetNumSafetyCarPeriods returns the NumSafetyCarPeriods of [PacketSessionData]
+// GetNumSafetyCarPeriods returns [PacketSessionData.NumSafetyCarPeriods]
 func (data *PacketSessionData) GetNumSafetyCarPeriods() uint8 { return data.NumSafetyCarPeriods }
 
-// SetNumSafetyCarPeriods stores the NumSafetyCarPeriods of [PacketSessionData]
+// SetNumSafetyCarPeriods stores [PacketSessionData.NumSafetyCarPeriods]
 func (data *PacketSessionData) SetNumSafetyCarPeriods(v uint8) { data.NumSafetyCarPeriods = v }
 
-// GetNumVirtualSafetyCarPeriods returns the NumVirtualSafetyCarPeriods of [PacketSessionData]
+// GetNumVirtualSafetyCarPeriods returns [PacketSessionData.NumVirtualSafetyCarPeriods]
 func (data *PacketSessionData) GetNumVirtualSafetyCarPeriods() uint8 {
 	return data.NumVirtualSafetyCarPeriods
 }
 
-// SetNumVirtualSafetyCarPeriods stores the NumVirtualSafetyCarPeriods of [PacketSessionData]
+// SetNumVirtualSafetyCarPeriods stores [PacketSessionData.NumVirtualSafetyCarPeriods]
 func (data *PacketSessionData) SetNumVirtualSafetyCarPeriods(v uint8) {
 	data.NumVirtualSafetyCarPeriods = v
 }
 
-// GetNumRedFlagPeriods returns the NumRedFlagPeriods of [PacketSessionData]
+// GetNumRedFlagPeriods returns [PacketSessionData.NumRedFlagPeriods]
 func (data *PacketSessionData) GetNumRedFlagPeriods() uint8 { return data.NumRedFlagPeriods }
 
-// SetNumRedFlagPeriods stores the NumRedFlagPeriods of [PacketSessionData]
+// SetNumRedFlagPeriods stores [PacketSessionData.NumRedFlagPeriods]
 func (data *PacketSessionData) SetNumRedFlagPeriods(v uint8) { data.NumRedFlagPeriods = v }
 
-// GetEqualCarPerformance returns the EqualCarPerformance of [PacketSessionData]
+// GetEqualCarPerformance returns [PacketSessionData.EqualCarPerformance]
 func (data *PacketSessionData) GetEqualCarPerformance() uint8 { return data.EqualCarPerformance }
 
-// SetEqualCarPerformance stores the EqualCarPerformance of [PacketSessionData]
+// SetEqualCarPerformance stores [PacketSessionData.EqualCarPerformance]
 func (data *PacketSessionData) SetEqualCarPerformance(v uint8) { data.EqualCarPerformance = v }
 
-// GetRecoveryMode returns the RecoveryMode of [PacketSessionData]
+// GetRecoveryMode returns [PacketSessionData.RecoveryMode]
 func (data *PacketSessionData) GetRecoveryMode() uint8 { return data.RecoveryMode }
 
-// SetRecoveryMode stores the RecoveryMode of [PacketSessionData]
+// SetRecoveryMode stores [PacketSessionData.RecoveryMode]
 func (data *PacketSessionData) SetRecoveryMode(v uint8) { data.RecoveryMode = v }
 
-// GetFlashbackLimit returns the FlashbackLimit of [PacketSessionData]
+// GetFlashbackLimit returns [PacketSessionData.FlashbackLimit]
 func (data *PacketSessionData) GetFlashbackLimit() uint8 { return data.FlashbackLimit }
 
-// SetFlashbackLimit stores the FlashbackLimit of [PacketSessionData]
+// SetFlashbackLimit stores [PacketSessionData.FlashbackLimit]
 func (data *PacketSessionData) SetFlashbackLimit(v uint8) { data.FlashbackLimit = v }
 
-// GetSurfaceType returns the SurfaceType of [PacketSessionData]
+// GetSurfaceType returns [PacketSessionData.SurfaceType]
 func (data *PacketSessionData) GetSurfaceType() uint8 { return data.SurfaceType }
 
-// SetSurfaceType stores the SurfaceType of [PacketSessionData]
+// SetSurfaceType stores [PacketSessionData.SurfaceType]
 func (data *PacketSessionData) SetSurfaceType(v uint8) { data.SurfaceType = v }
 
-// GetLowFuelMode returns the LowFuelMode of [PacketSessionData]
+// GetLowFuelMode returns [PacketSessionData.LowFuelMode]
 func (data *PacketSessionData) GetLowFuelMode() uint8 { return data.LowFuelMode }
 
-// SetLowFuelMode stores the LowFuelMode of [PacketSessionData]
+// SetLowFuelMode stores [PacketSessionData.LowFuelMode]
 func (data *PacketSessionData) SetLowFuelMode(v uint8) { data.LowFuelMode = v }
 
-// GetRaceStarts returns the RaceStarts of [PacketSessionData]
+// GetRaceStarts returns [PacketSessionData.RaceStarts]
 func (data *PacketSessionData) GetRaceStarts() uint8 { return data.RaceStarts }
 
-// SetRaceStarts stores the RaceStarts of [PacketSessionData]
+// SetRaceStarts stores [PacketSessionData.RaceStarts]
 func (data *PacketSessionData) SetRaceStarts(v uint8) { data.RaceStarts = v }
 
-// GetTyreTemperature returns the TyreTemperature of [PacketSessionData]
+// GetTyreTemperature returns [PacketSessionData.TyreTemperature]
 func (data *PacketSessionData) GetTyreTemperature() uint8 { return data.TyreTemperature }
 
-// SetTyreTemperature stores the TyreTemperature of [PacketSessionData]
+// SetTyreTemperature stores [PacketSessionData.TyreTemperature]
 func (data *PacketSessionData) SetTyreTemperature(v uint8) { data.TyreTemperature = v }
 
-// GetPitLaneTyreSim returns the PitLaneTyreSim of [PacketSessionData]
+// GetPitLaneTyreSim returns [PacketSessionData.PitLaneTyreSim]
 func (data *PacketSessionData) GetPitLaneTyreSim() uint8 { return data.PitLaneTyreSim }
 
-// SetPitLaneTyreSim stores the PitLaneTyreSim of [PacketSessionData]
+// SetPitLaneTyreSim stores [PacketSessionData.PitLaneTyreSim]
 func (data *PacketSessionData) SetPitLaneTyreSim(v uint8) { data.PitLaneTyreSim = v }
 
-// GetCarDamage returns the CarDamage of [PacketSessionData]
+// GetCarDamage returns [PacketSessionData.CarDamage]
 func (data *PacketSessionData) GetCarDamage() uint8 { return data.CarDamage }
 
-// SetCarDamage stores the CarDamage of [PacketSessionData]
+// SetCarDamage stores [PacketSessionData.CarDamage]
 func (data *PacketSessionData) SetCarDamage(v uint8) { data.CarDamage = v }
 
-// GetCarDamageRate returns the CarDamageRate of [PacketSessionData]
+// GetCarDamageRate returns [PacketSessionData.CarDamageRate]
 func (data *PacketSessionData) GetCarDamageRate() uint8 { return data.CarDamageRate }
 
-// SetCarDamageRate stores the CarDamageRate of [PacketSessionData]
+// SetCarDamageRate stores [PacketSessionData.CarDamageRate]
 func (data *PacketSessionData) SetCarDamageRate(v uint8) { data.CarDamageRate = v }
 
-// GetCollisions returns the Collisions of [PacketSessionData]
+// GetCollisions returns [PacketSessionData.Collisions]
 func (data *PacketSessionData) GetCollisions() uint8 { return data.Collisions }
 
-// SetCollisions stores the Collisions of [PacketSessionData]
+// SetCollisions stores [PacketSessionData.Collisions]
 func (data *PacketSessionData) SetCollisions(v uint8) { data.Collisions = v }
 
-// GetCollisionsOffForFirstLapOnly returns the CollisionsOffForFirstLapOnly of [PacketSessionData]
+// GetCollisionsOffForFirstLapOnly returns [PacketSessionData.CollisionsOffForFirstLapOnly]
 func (data *PacketSessionData) GetCollisionsOffForFirstLapOnly() uint8 {
 	return data.CollisionsOffForFirstLapOnly
 }
 
-// SetCollisionsOffForFirstLapOnly stores the CollisionsOffForFirstLapOnly of [PacketSessionData]
+// SetCollisionsOffForFirstLapOnly stores [PacketSessionData.CollisionsOffForFirstLapOnly]
 func (data *PacketSessionData) SetCollisionsOffForFirstLapOnly(v uint8) {
 	data.CollisionsOffForFirstLapOnly = v
 }
 
-// GetMpUnsafePitRelease returns the MpUnsafePitRelease of [PacketSessionData]
+// GetMpUnsafePitRelease returns [PacketSessionData.MpUnsafePitRelease]
 func (data *PacketSessionData) GetMpUnsafePitRelease() uint8 { return data.MpUnsafePitRelease }
 
-// SetMpUnsafePitRelease stores the MpUnsafePitRelease of [PacketSessionData]
+// SetMpUnsafePitRelease stores [PacketSessionData.MpUnsafePitRelease]
 func (data *PacketSessionData) SetMpUnsafePitRelease(v uint8) { data.MpUnsafePitRelease = v }
 
-// GetMpOffForGriefing returns the MpOffForGriefing of [PacketSessionData]
+// GetMpOffForGriefing returns [PacketSessionData.MpOffForGriefing]
 func (data *PacketSessionData) GetMpOffForGriefing() uint8 { return data.MpOffForGriefing }
 
-// SetMpOffForGriefing stores the MpOffForGriefing of [PacketSessionData]
+// SetMpOffForGriefing stores [PacketSessionData.MpOffForGriefing]
 func (data *PacketSessionData) SetMpOffForGriefing(v uint8) { data.MpOffForGriefing = v }
 
-// GetCornerCuttingStringency returns the CornerCuttingStringency of [PacketSessionData]
+// GetCornerCuttingStringency returns [PacketSessionData.CornerCuttingStringency]
 func (data *PacketSessionData) GetCornerCuttingStringency() uint8 {
 	return data.CornerCuttingStringency
 }
 
-// SetCornerCuttingStringency stores the CornerCuttingStringency of [PacketSessionData]
+// SetCornerCuttingStringency stores [PacketSessionData.CornerCuttingStringency]
 func (data *PacketSessionData) SetCornerCuttingStringency(v uint8) { data.CornerCuttingStringency = v }
 
-// GetParcFermeRules returns the ParcFermeRules of [PacketSessionData]
+// GetParcFermeRules returns [PacketSessionData.ParcFermeRules]
 func (data *PacketSessionData) GetParcFermeRules() uint8 { return data.ParcFermeRules }
 
-// SetParcFermeRules stores the ParcFermeRules of [PacketSessionData]
+// SetParcFermeRules stores [PacketSessionData.ParcFermeRules]
 func (data *PacketSessionData) SetParcFermeRules(v uint8) { data.ParcFermeRules = v }
 
-// GetPitStopExperience returns the PitStopExperience of [PacketSessionData]
+// GetPitStopExperience returns [PacketSessionData.PitStopExperience]
 func (data *PacketSessionData) GetPitStopExperience() uint8 { return data.PitStopExperience }
 
-// SetPitStopExperience stores the PitStopExperience of [PacketSessionData]
+// SetPitStopExperience stores [PacketSessionData.PitStopExperience]
 func (data *PacketSessionData) SetPitStopExperience(v uint8) { data.PitStopExperience = v }
 
-// GetSafetyCar returns the SafetyCar of [PacketSessionData]
+// GetSafetyCar returns [PacketSessionData.SafetyCar]
 func (data *PacketSessionData) GetSafetyCar() uint8 { return data.SafetyCar }
 
-// SetSafetyCar stores the SafetyCar of [PacketSessionData]
+// SetSafetyCar stores [PacketSessionData.SafetyCar]
 func (data *PacketSessionData) SetSafetyCar(v uint8) { data.SafetyCar = v }
 
-// GetSafetyCarExperience returns the SafetyCarExperience of [PacketSessionData]
+// GetSafetyCarExperience returns [PacketSessionData.SafetyCarExperience]
 func (data *PacketSessionData) GetSafetyCarExperience() uint8 { return data.SafetyCarExperience }
 
-// SetSafetyCarExperience stores the SafetyCarExperience of [PacketSessionData]
+// SetSafetyCarExperience stores [PacketSessionData.SafetyCarExperience]
 func (data *PacketSessionData) SetSafetyCarExperience(v uint8) { data.SafetyCarExperience = v }
 
-// GetFormationLap returns the FormationLap of [PacketSessionData]
+// GetFormationLap returns [PacketSessionData.FormationLap]
 func (data *PacketSessionData) GetFormationLap() uint8 { return data.FormationLap }
 
-// SetFormationLap stores the FormationLap of [PacketSessionData]
+// SetFormationLap stores [PacketSessionData.FormationLap]
 func (data *PacketSessionData) SetFormationLap(v uint8) { data.FormationLap = v }
 
-// GetFormationLapExperience returns the FormationLapExperience of [PacketSessionData]
+// GetFormationLapExperience returns [PacketSessionData.FormationLapExperience]
 func (data *PacketSessionData) GetFormationLapExperience() uint8 { return data.FormationLapExperience }
 
-// SetFormationLapExperience stores the FormationLapExperience of [PacketSessionData]
+// SetFormationLapExperience stores [PacketSessionData.FormationLapExperience]
 func (data *PacketSessionData) SetFormationLapExperience(v uint8) { data.FormationLapExperience = v }
 
-// GetRedFlags returns the RedFlags of [PacketSessionData]
+// GetRedFlags returns [PacketSessionData.RedFlags]
 func (data *PacketSessionData) GetRedFlags() uint8 { return data.RedFlags }
 
-// SetRedFlags stores the RedFlags of [PacketSessionData]
+// SetRedFlags stores [PacketSessionData.RedFlags]
 func (data *PacketSessionData) SetRedFlags(v uint8) { data.RedFlags = v }
 
-// GetAffectsLicenceLevelSolo returns the AffectsLicenceLevelSolo of [PacketSessionData]
+// GetAffectsLicenceLevelSolo returns [PacketSessionData.AffectsLicenceLevelSolo]
 func (data *PacketSessionData) GetAffectsLicenceLevelSolo() uint8 {
 	return data.AffectsLicenceLevelSolo
 }
 
-// SetAffectsLicenceLevelSolo stores the AffectsLicenceLevelSolo of [PacketSessionData]
+// SetAffectsLicenceLevelSolo stores [PacketSessionData.AffectsLicenceLevelSolo]
 func (data *PacketSessionData) SetAffectsLicenceLevelSolo(v uint8) { data.AffectsLicenceLevelSolo = v }
 
-// GetAffectsLicenceLevelMP returns the AffectsLicenceLevelMP of [PacketSessionData]
+// GetAffectsLicenceLevelMP returns [PacketSessionData.AffectsLicenceLevelMP]
 func (data *PacketSessionData) GetAffectsLicenceLevelMP() uint8 { return data.AffectsLicenceLevelMP }
 
-// SetAffectsLicenceLevelMP stores the AffectsLicenceLevelMP of [PacketSessionData]
+// SetAffectsLicenceLevelMP stores [PacketSessionData.AffectsLicenceLevelMP]
 func (data *PacketSessionData) SetAffectsLicenceLevelMP(v uint8) { data.AffectsLicenceLevelMP = v }
 
-// GetNumSessionsInWeekend returns the NumSessionsInWeekend of [PacketSessionData]
+// GetNumSessionsInWeekend returns [PacketSessionData.NumSessionsInWeekend]
 func (data *PacketSessionData) GetNumSessionsInWeekend() uint8 { return data.NumSessionsInWeekend }
 
-// SetNumSessionsInWeekend stores the NumSessionsInWeekend of [PacketSessionData]
+// SetNumSessionsInWeekend stores [PacketSessionData.NumSessionsInWeekend]
 func (data *PacketSessionData) SetNumSessionsInWeekend(v uint8) { data.NumSessionsInWeekend = v }
 
-// GetWeekendStructure returns the WeekendStructure element of [PacketSessionData] at index
+// GetWeekendStructure returns the element of [PacketSessionData.WeekendStructure] at index
 func (data *PacketSessionData) GetWeekendStructure(index int) uint8 {
 	return data.WeekendStructure[index]
 }
 
-// SetWeekendStructure stores the WeekendStructure element of [PacketSessionData] at index
+// SetWeekendStructure stores the element of [PacketSessionData.WeekendStructure] at index
 func (data *PacketSessionData) SetWeekendStructure(index int, v uint8) {
 	data.WeekendStructure[index] = v
 }
 
-// GetSector2LapDistanceStart returns the Sector2LapDistanceStart of [PacketSessionData]
+// GetSector2LapDistanceStart returns [PacketSessionData.Sector2LapDistanceStart]
 func (data *PacketSessionData) GetSector2LapDistanceStart() float32 {
 	return data.Sector2LapDistanceStart
 }
 
-// SetSector2LapDistanceStart stores the Sector2LapDistanceStart of [PacketSessionData]
+// SetSector2LapDistanceStart stores [PacketSessionData.Sector2LapDistanceStart]
 func (data *PacketSessionData) SetSector2LapDistanceStart(v float32) {
 	data.Sector2LapDistanceStart = v
 }
 
-// GetSector3LapDistanceStart returns the Sector3LapDistanceStart of [PacketSessionData]
+// GetSector3LapDistanceStart returns [PacketSessionData.Sector3LapDistanceStart]
 func (data *PacketSessionData) GetSector3LapDistanceStart() float32 {
 	return data.Sector3LapDistanceStart
 }
 
-// SetSector3LapDistanceStart stores the Sector3LapDistanceStart of [PacketSessionData]
+// SetSector3LapDistanceStart stores [PacketSessionData.Sector3LapDistanceStart]
 func (data *PacketSessionData) SetSector3LapDistanceStart(v float32) {
 	data.Sector3LapDistanceStart = v
 }

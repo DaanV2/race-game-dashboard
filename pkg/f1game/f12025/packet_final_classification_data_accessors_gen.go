@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetHeader returns the Header of [PacketFinalClassificationData]
+// GetHeader returns [PacketFinalClassificationData.Header]
 func (data *PacketFinalClassificationData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketFinalClassificationData]
+// SetHeader stores [PacketFinalClassificationData.Header]
 func (data *PacketFinalClassificationData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetNumCars returns the NumCars of [PacketFinalClassificationData]
+// GetNumCars returns [PacketFinalClassificationData.NumCars]
 func (data *PacketFinalClassificationData) GetNumCars() uint8 { return data.NumCars }
 
-// SetNumCars stores the NumCars of [PacketFinalClassificationData]
+// SetNumCars stores [PacketFinalClassificationData.NumCars]
 func (data *PacketFinalClassificationData) SetNumCars(v uint8) { data.NumCars = v }

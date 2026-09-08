@@ -2,84 +2,84 @@
 
 package f12025
 
-// GetAiControlled returns the AiControlled of [ParticipantData]
+// GetAiControlled returns [ParticipantData.AiControlled]
 func (data *ParticipantData) GetAiControlled() uint8 { return data.AiControlled }
 
-// SetAiControlled stores the AiControlled of [ParticipantData]
+// SetAiControlled stores [ParticipantData.AiControlled]
 func (data *ParticipantData) SetAiControlled(v uint8) { data.AiControlled = v }
 
-// GetDriverId returns the DriverId of [ParticipantData]
+// GetDriverId returns [ParticipantData.DriverId]
 func (data *ParticipantData) GetDriverId() uint16 { return data.DriverId }
 
-// SetDriverId stores the DriverId of [ParticipantData]
+// SetDriverId stores [ParticipantData.DriverId]
 func (data *ParticipantData) SetDriverId(v uint16) { data.DriverId = v }
 
-// GetNetworkId returns the NetworkId of [ParticipantData]
+// GetNetworkId returns [ParticipantData.NetworkId]
 func (data *ParticipantData) GetNetworkId() uint16 { return data.NetworkId }
 
-// SetNetworkId stores the NetworkId of [ParticipantData]
+// SetNetworkId stores [ParticipantData.NetworkId]
 func (data *ParticipantData) SetNetworkId(v uint16) { data.NetworkId = v }
 
-// GetTeamId returns the TeamId of [ParticipantData]
+// GetTeamId returns [ParticipantData.TeamId]
 func (data *ParticipantData) GetTeamId() uint16 { return data.TeamId }
 
-// SetTeamId stores the TeamId of [ParticipantData]
+// SetTeamId stores [ParticipantData.TeamId]
 func (data *ParticipantData) SetTeamId(v uint16) { data.TeamId = v }
 
-// GetMyTeam returns the MyTeam of [ParticipantData]
+// GetMyTeam returns [ParticipantData.MyTeam]
 func (data *ParticipantData) GetMyTeam() uint8 { return data.MyTeam }
 
-// SetMyTeam stores the MyTeam of [ParticipantData]
+// SetMyTeam stores [ParticipantData.MyTeam]
 func (data *ParticipantData) SetMyTeam(v uint8) { data.MyTeam = v }
 
-// GetRaceNumber returns the RaceNumber of [ParticipantData]
+// GetRaceNumber returns [ParticipantData.RaceNumber]
 func (data *ParticipantData) GetRaceNumber() uint8 { return data.RaceNumber }
 
-// SetRaceNumber stores the RaceNumber of [ParticipantData]
+// SetRaceNumber stores [ParticipantData.RaceNumber]
 func (data *ParticipantData) SetRaceNumber(v uint8) { data.RaceNumber = v }
 
-// GetNationality returns the Nationality of [ParticipantData]
+// GetNationality returns [ParticipantData.Nationality]
 func (data *ParticipantData) GetNationality() uint8 { return data.Nationality }
 
-// SetNationality stores the Nationality of [ParticipantData]
+// SetNationality stores [ParticipantData.Nationality]
 func (data *ParticipantData) SetNationality(v uint8) { data.Nationality = v }
 
-// GetYourTelemetry returns the YourTelemetry of [ParticipantData]
+// GetYourTelemetry returns [ParticipantData.YourTelemetry]
 func (data *ParticipantData) GetYourTelemetry() uint8 { return data.YourTelemetry }
 
-// SetYourTelemetry stores the YourTelemetry of [ParticipantData]
+// SetYourTelemetry stores [ParticipantData.YourTelemetry]
 func (data *ParticipantData) SetYourTelemetry(v uint8) { data.YourTelemetry = v }
 
-// GetShowOnlineNames returns the ShowOnlineNames of [ParticipantData]
+// GetShowOnlineNames returns [ParticipantData.ShowOnlineNames]
 func (data *ParticipantData) GetShowOnlineNames() uint8 { return data.ShowOnlineNames }
 
-// SetShowOnlineNames stores the ShowOnlineNames of [ParticipantData]
+// SetShowOnlineNames stores [ParticipantData.ShowOnlineNames]
 func (data *ParticipantData) SetShowOnlineNames(v uint8) { data.ShowOnlineNames = v }
 
-// GetTechLevel returns the TechLevel of [ParticipantData]
+// GetTechLevel returns [ParticipantData.TechLevel]
 func (data *ParticipantData) GetTechLevel() uint16 { return data.TechLevel }
 
-// SetTechLevel stores the TechLevel of [ParticipantData]
+// SetTechLevel stores [ParticipantData.TechLevel]
 func (data *ParticipantData) SetTechLevel(v uint16) { data.TechLevel = v }
 
-// GetPlatform returns the Platform of [ParticipantData]
+// GetPlatform returns [ParticipantData.Platform]
 func (data *ParticipantData) GetPlatform() uint8 { return data.Platform }
 
-// SetPlatform stores the Platform of [ParticipantData]
+// SetPlatform stores [ParticipantData.Platform]
 func (data *ParticipantData) SetPlatform(v uint8) { data.Platform = v }
 
-// GetNumColours returns the NumColours of [ParticipantData]
+// GetNumColours returns [ParticipantData.NumColours]
 func (data *ParticipantData) GetNumColours() uint8 { return data.NumColours }
 
-// SetNumColours stores the NumColours of [ParticipantData]
+// SetNumColours stores [ParticipantData.NumColours]
 func (data *ParticipantData) SetNumColours(v uint8) { data.NumColours = v }
 
-// GetLiveryColours returns the LiveryColours element of [ParticipantData] at index
+// GetLiveryColours returns the element of [ParticipantData.LiveryColours] at index
 func (data *ParticipantData) GetLiveryColours(index int) LiveryColour {
 	return data.LiveryColours[index]
 }
 
-// SetLiveryColours stores the LiveryColours element of [ParticipantData] at index
+// SetLiveryColours stores the element of [ParticipantData.LiveryColours] at index
 func (data *ParticipantData) SetLiveryColours(index int, v LiveryColour) {
 	data.LiveryColours[index] = v
 }

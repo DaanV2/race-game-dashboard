@@ -2,30 +2,30 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketCarTelemetryData]
+// GetHeader returns [PacketCarTelemetryData.Header]
 func (data *PacketCarTelemetryData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketCarTelemetryData]
+// SetHeader stores [PacketCarTelemetryData.Header]
 func (data *PacketCarTelemetryData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetMfdPanelIndex returns the MfdPanelIndex of [PacketCarTelemetryData]
+// GetMfdPanelIndex returns [PacketCarTelemetryData.MfdPanelIndex]
 func (data *PacketCarTelemetryData) GetMfdPanelIndex() uint8 { return data.MfdPanelIndex }
 
-// SetMfdPanelIndex stores the MfdPanelIndex of [PacketCarTelemetryData]
+// SetMfdPanelIndex stores [PacketCarTelemetryData.MfdPanelIndex]
 func (data *PacketCarTelemetryData) SetMfdPanelIndex(v uint8) { data.MfdPanelIndex = v }
 
-// GetMfdPanelIndexSecondaryPlayer returns the MfdPanelIndexSecondaryPlayer of [PacketCarTelemetryData]
+// GetMfdPanelIndexSecondaryPlayer returns [PacketCarTelemetryData.MfdPanelIndexSecondaryPlayer]
 func (data *PacketCarTelemetryData) GetMfdPanelIndexSecondaryPlayer() uint8 {
 	return data.MfdPanelIndexSecondaryPlayer
 }
 
-// SetMfdPanelIndexSecondaryPlayer stores the MfdPanelIndexSecondaryPlayer of [PacketCarTelemetryData]
+// SetMfdPanelIndexSecondaryPlayer stores [PacketCarTelemetryData.MfdPanelIndexSecondaryPlayer]
 func (data *PacketCarTelemetryData) SetMfdPanelIndexSecondaryPlayer(v uint8) {
 	data.MfdPanelIndexSecondaryPlayer = v
 }
 
-// GetSuggestedGear returns the SuggestedGear of [PacketCarTelemetryData]
+// GetSuggestedGear returns [PacketCarTelemetryData.SuggestedGear]
 func (data *PacketCarTelemetryData) GetSuggestedGear() int8 { return data.SuggestedGear }
 
-// SetSuggestedGear stores the SuggestedGear of [PacketCarTelemetryData]
+// SetSuggestedGear stores [PacketCarTelemetryData.SuggestedGear]
 func (data *PacketCarTelemetryData) SetSuggestedGear(v int8) { data.SuggestedGear = v }

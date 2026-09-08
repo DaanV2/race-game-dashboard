@@ -2,8 +2,8 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketMotionData]
+// GetHeader returns [PacketMotionData.Header]
 func (data *PacketMotionData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketMotionData]
+// SetHeader stores [PacketMotionData.Header]
 func (data *PacketMotionData) SetHeader(v PacketHeader) { data.Header = v }

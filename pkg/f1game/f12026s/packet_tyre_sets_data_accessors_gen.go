@@ -2,20 +2,20 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketTyreSetsData]
+// GetHeader returns [PacketTyreSetsData.Header]
 func (data *PacketTyreSetsData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketTyreSetsData]
+// SetHeader stores [PacketTyreSetsData.Header]
 func (data *PacketTyreSetsData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetCarIdx returns the CarIdx of [PacketTyreSetsData]
+// GetCarIdx returns [PacketTyreSetsData.CarIdx]
 func (data *PacketTyreSetsData) GetCarIdx() uint8 { return data.CarIdx }
 
-// SetCarIdx stores the CarIdx of [PacketTyreSetsData]
+// SetCarIdx stores [PacketTyreSetsData.CarIdx]
 func (data *PacketTyreSetsData) SetCarIdx(v uint8) { data.CarIdx = v }
 
-// GetFittedIdx returns the FittedIdx of [PacketTyreSetsData]
+// GetFittedIdx returns [PacketTyreSetsData.FittedIdx]
 func (data *PacketTyreSetsData) GetFittedIdx() uint8 { return data.FittedIdx }
 
-// SetFittedIdx stores the FittedIdx of [PacketTyreSetsData]
+// SetFittedIdx stores [PacketTyreSetsData.FittedIdx]
 func (data *PacketTyreSetsData) SetFittedIdx(v uint8) { data.FittedIdx = v }

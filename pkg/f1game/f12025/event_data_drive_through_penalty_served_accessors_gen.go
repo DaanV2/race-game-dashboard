@@ -2,8 +2,8 @@
 
 package f12025
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataDriveThroughPenaltyServed]
+// GetVehicleIdx returns [EventDataDriveThroughPenaltyServed.VehicleIdx]
 func (data *EventDataDriveThroughPenaltyServed) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataDriveThroughPenaltyServed]
+// SetVehicleIdx stores [EventDataDriveThroughPenaltyServed.VehicleIdx]
 func (data *EventDataDriveThroughPenaltyServed) SetVehicleIdx(v uint8) { data.VehicleIdx = v }

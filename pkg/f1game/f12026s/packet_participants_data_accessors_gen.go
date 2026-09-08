@@ -2,14 +2,14 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketParticipantsData]
+// GetHeader returns [PacketParticipantsData.Header]
 func (data *PacketParticipantsData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketParticipantsData]
+// SetHeader stores [PacketParticipantsData.Header]
 func (data *PacketParticipantsData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetNumActiveCars returns the NumActiveCars of [PacketParticipantsData]
+// GetNumActiveCars returns [PacketParticipantsData.NumActiveCars]
 func (data *PacketParticipantsData) GetNumActiveCars() uint8 { return data.NumActiveCars }
 
-// SetNumActiveCars stores the NumActiveCars of [PacketParticipantsData]
+// SetNumActiveCars stores [PacketParticipantsData.NumActiveCars]
 func (data *PacketParticipantsData) SetNumActiveCars(v uint8) { data.NumActiveCars = v }

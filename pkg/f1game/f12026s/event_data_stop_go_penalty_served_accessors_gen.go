@@ -2,14 +2,14 @@
 
 package f12026s
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataStopGoPenaltyServed]
+// GetVehicleIdx returns [EventDataStopGoPenaltyServed.VehicleIdx]
 func (data *EventDataStopGoPenaltyServed) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataStopGoPenaltyServed]
+// SetVehicleIdx stores [EventDataStopGoPenaltyServed.VehicleIdx]
 func (data *EventDataStopGoPenaltyServed) SetVehicleIdx(v uint8) { data.VehicleIdx = v }
 
-// GetStopTime returns the StopTime of [EventDataStopGoPenaltyServed]
+// GetStopTime returns [EventDataStopGoPenaltyServed.StopTime]
 func (data *EventDataStopGoPenaltyServed) GetStopTime() float32 { return data.StopTime }
 
-// SetStopTime stores the StopTime of [EventDataStopGoPenaltyServed]
+// SetStopTime stores [EventDataStopGoPenaltyServed.StopTime]
 func (data *EventDataStopGoPenaltyServed) SetStopTime(v float32) { data.StopTime = v }

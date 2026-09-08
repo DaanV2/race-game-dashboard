@@ -2,20 +2,20 @@
 
 package f12025
 
-// GetEndLap returns the EndLap of [TyreStintHistoryData]
+// GetEndLap returns [TyreStintHistoryData.EndLap]
 func (data *TyreStintHistoryData) GetEndLap() uint8 { return data.EndLap }
 
-// SetEndLap stores the EndLap of [TyreStintHistoryData]
+// SetEndLap stores [TyreStintHistoryData.EndLap]
 func (data *TyreStintHistoryData) SetEndLap(v uint8) { data.EndLap = v }
 
-// GetTyreActualCompound returns the TyreActualCompound of [TyreStintHistoryData]
+// GetTyreActualCompound returns [TyreStintHistoryData.TyreActualCompound]
 func (data *TyreStintHistoryData) GetTyreActualCompound() uint8 { return data.TyreActualCompound }
 
-// SetTyreActualCompound stores the TyreActualCompound of [TyreStintHistoryData]
+// SetTyreActualCompound stores [TyreStintHistoryData.TyreActualCompound]
 func (data *TyreStintHistoryData) SetTyreActualCompound(v uint8) { data.TyreActualCompound = v }
 
-// GetTyreVisualCompound returns the TyreVisualCompound of [TyreStintHistoryData]
+// GetTyreVisualCompound returns [TyreStintHistoryData.TyreVisualCompound]
 func (data *TyreStintHistoryData) GetTyreVisualCompound() uint8 { return data.TyreVisualCompound }
 
-// SetTyreVisualCompound stores the TyreVisualCompound of [TyreStintHistoryData]
+// SetTyreVisualCompound stores [TyreStintHistoryData.TyreVisualCompound]
 func (data *TyreStintHistoryData) SetTyreVisualCompound(v uint8) { data.TyreVisualCompound = v }

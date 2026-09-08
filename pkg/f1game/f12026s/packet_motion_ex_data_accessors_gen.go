@@ -2,190 +2,190 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketMotionExData]
+// GetHeader returns [PacketMotionExData.Header]
 func (data *PacketMotionExData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketMotionExData]
+// SetHeader stores [PacketMotionExData.Header]
 func (data *PacketMotionExData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetSuspensionPosition returns the SuspensionPosition of [PacketMotionExData]
+// GetSuspensionPosition returns [PacketMotionExData.SuspensionPosition]
 func (data *PacketMotionExData) GetSuspensionPosition() WheelMap[float32] {
 	return data.SuspensionPosition
 }
 
-// SetSuspensionPosition stores the SuspensionPosition of [PacketMotionExData]
+// SetSuspensionPosition stores [PacketMotionExData.SuspensionPosition]
 func (data *PacketMotionExData) SetSuspensionPosition(v WheelMap[float32]) {
 	data.SuspensionPosition = v
 }
 
-// GetSuspensionVelocity returns the SuspensionVelocity of [PacketMotionExData]
+// GetSuspensionVelocity returns [PacketMotionExData.SuspensionVelocity]
 func (data *PacketMotionExData) GetSuspensionVelocity() WheelMap[float32] {
 	return data.SuspensionVelocity
 }
 
-// SetSuspensionVelocity stores the SuspensionVelocity of [PacketMotionExData]
+// SetSuspensionVelocity stores [PacketMotionExData.SuspensionVelocity]
 func (data *PacketMotionExData) SetSuspensionVelocity(v WheelMap[float32]) {
 	data.SuspensionVelocity = v
 }
 
-// GetSuspensionAcceleration returns the SuspensionAcceleration of [PacketMotionExData]
+// GetSuspensionAcceleration returns [PacketMotionExData.SuspensionAcceleration]
 func (data *PacketMotionExData) GetSuspensionAcceleration() WheelMap[float32] {
 	return data.SuspensionAcceleration
 }
 
-// SetSuspensionAcceleration stores the SuspensionAcceleration of [PacketMotionExData]
+// SetSuspensionAcceleration stores [PacketMotionExData.SuspensionAcceleration]
 func (data *PacketMotionExData) SetSuspensionAcceleration(v WheelMap[float32]) {
 	data.SuspensionAcceleration = v
 }
 
-// GetWheelSpeed returns the WheelSpeed of [PacketMotionExData]
+// GetWheelSpeed returns [PacketMotionExData.WheelSpeed]
 func (data *PacketMotionExData) GetWheelSpeed() WheelMap[float32] { return data.WheelSpeed }
 
-// SetWheelSpeed stores the WheelSpeed of [PacketMotionExData]
+// SetWheelSpeed stores [PacketMotionExData.WheelSpeed]
 func (data *PacketMotionExData) SetWheelSpeed(v WheelMap[float32]) { data.WheelSpeed = v }
 
-// GetWheelSlipRatio returns the WheelSlipRatio of [PacketMotionExData]
+// GetWheelSlipRatio returns [PacketMotionExData.WheelSlipRatio]
 func (data *PacketMotionExData) GetWheelSlipRatio() WheelMap[float32] { return data.WheelSlipRatio }
 
-// SetWheelSlipRatio stores the WheelSlipRatio of [PacketMotionExData]
+// SetWheelSlipRatio stores [PacketMotionExData.WheelSlipRatio]
 func (data *PacketMotionExData) SetWheelSlipRatio(v WheelMap[float32]) { data.WheelSlipRatio = v }
 
-// GetWheelSlipAngle returns the WheelSlipAngle of [PacketMotionExData]
+// GetWheelSlipAngle returns [PacketMotionExData.WheelSlipAngle]
 func (data *PacketMotionExData) GetWheelSlipAngle() WheelMap[float32] { return data.WheelSlipAngle }
 
-// SetWheelSlipAngle stores the WheelSlipAngle of [PacketMotionExData]
+// SetWheelSlipAngle stores [PacketMotionExData.WheelSlipAngle]
 func (data *PacketMotionExData) SetWheelSlipAngle(v WheelMap[float32]) { data.WheelSlipAngle = v }
 
-// GetWheelLatForce returns the WheelLatForce of [PacketMotionExData]
+// GetWheelLatForce returns [PacketMotionExData.WheelLatForce]
 func (data *PacketMotionExData) GetWheelLatForce() WheelMap[float32] { return data.WheelLatForce }
 
-// SetWheelLatForce stores the WheelLatForce of [PacketMotionExData]
+// SetWheelLatForce stores [PacketMotionExData.WheelLatForce]
 func (data *PacketMotionExData) SetWheelLatForce(v WheelMap[float32]) { data.WheelLatForce = v }
 
-// GetWheelLongForce returns the WheelLongForce of [PacketMotionExData]
+// GetWheelLongForce returns [PacketMotionExData.WheelLongForce]
 func (data *PacketMotionExData) GetWheelLongForce() WheelMap[float32] { return data.WheelLongForce }
 
-// SetWheelLongForce stores the WheelLongForce of [PacketMotionExData]
+// SetWheelLongForce stores [PacketMotionExData.WheelLongForce]
 func (data *PacketMotionExData) SetWheelLongForce(v WheelMap[float32]) { data.WheelLongForce = v }
 
-// GetHeightOfCOGAboveGround returns the HeightOfCOGAboveGround of [PacketMotionExData]
+// GetHeightOfCOGAboveGround returns [PacketMotionExData.HeightOfCOGAboveGround]
 func (data *PacketMotionExData) GetHeightOfCOGAboveGround() float32 {
 	return data.HeightOfCOGAboveGround
 }
 
-// SetHeightOfCOGAboveGround stores the HeightOfCOGAboveGround of [PacketMotionExData]
+// SetHeightOfCOGAboveGround stores [PacketMotionExData.HeightOfCOGAboveGround]
 func (data *PacketMotionExData) SetHeightOfCOGAboveGround(v float32) { data.HeightOfCOGAboveGround = v }
 
-// GetLocalVelocityX returns the LocalVelocityX of [PacketMotionExData]
+// GetLocalVelocityX returns [PacketMotionExData.LocalVelocityX]
 func (data *PacketMotionExData) GetLocalVelocityX() float32 { return data.LocalVelocityX }
 
-// SetLocalVelocityX stores the LocalVelocityX of [PacketMotionExData]
+// SetLocalVelocityX stores [PacketMotionExData.LocalVelocityX]
 func (data *PacketMotionExData) SetLocalVelocityX(v float32) { data.LocalVelocityX = v }
 
-// GetLocalVelocityY returns the LocalVelocityY of [PacketMotionExData]
+// GetLocalVelocityY returns [PacketMotionExData.LocalVelocityY]
 func (data *PacketMotionExData) GetLocalVelocityY() float32 { return data.LocalVelocityY }
 
-// SetLocalVelocityY stores the LocalVelocityY of [PacketMotionExData]
+// SetLocalVelocityY stores [PacketMotionExData.LocalVelocityY]
 func (data *PacketMotionExData) SetLocalVelocityY(v float32) { data.LocalVelocityY = v }
 
-// GetLocalVelocityZ returns the LocalVelocityZ of [PacketMotionExData]
+// GetLocalVelocityZ returns [PacketMotionExData.LocalVelocityZ]
 func (data *PacketMotionExData) GetLocalVelocityZ() float32 { return data.LocalVelocityZ }
 
-// SetLocalVelocityZ stores the LocalVelocityZ of [PacketMotionExData]
+// SetLocalVelocityZ stores [PacketMotionExData.LocalVelocityZ]
 func (data *PacketMotionExData) SetLocalVelocityZ(v float32) { data.LocalVelocityZ = v }
 
-// GetAngularVelocityX returns the AngularVelocityX of [PacketMotionExData]
+// GetAngularVelocityX returns [PacketMotionExData.AngularVelocityX]
 func (data *PacketMotionExData) GetAngularVelocityX() float32 { return data.AngularVelocityX }
 
-// SetAngularVelocityX stores the AngularVelocityX of [PacketMotionExData]
+// SetAngularVelocityX stores [PacketMotionExData.AngularVelocityX]
 func (data *PacketMotionExData) SetAngularVelocityX(v float32) { data.AngularVelocityX = v }
 
-// GetAngularVelocityY returns the AngularVelocityY of [PacketMotionExData]
+// GetAngularVelocityY returns [PacketMotionExData.AngularVelocityY]
 func (data *PacketMotionExData) GetAngularVelocityY() float32 { return data.AngularVelocityY }
 
-// SetAngularVelocityY stores the AngularVelocityY of [PacketMotionExData]
+// SetAngularVelocityY stores [PacketMotionExData.AngularVelocityY]
 func (data *PacketMotionExData) SetAngularVelocityY(v float32) { data.AngularVelocityY = v }
 
-// GetAngularVelocityZ returns the AngularVelocityZ of [PacketMotionExData]
+// GetAngularVelocityZ returns [PacketMotionExData.AngularVelocityZ]
 func (data *PacketMotionExData) GetAngularVelocityZ() float32 { return data.AngularVelocityZ }
 
-// SetAngularVelocityZ stores the AngularVelocityZ of [PacketMotionExData]
+// SetAngularVelocityZ stores [PacketMotionExData.AngularVelocityZ]
 func (data *PacketMotionExData) SetAngularVelocityZ(v float32) { data.AngularVelocityZ = v }
 
-// GetAngularAccelerationX returns the AngularAccelerationX of [PacketMotionExData]
+// GetAngularAccelerationX returns [PacketMotionExData.AngularAccelerationX]
 func (data *PacketMotionExData) GetAngularAccelerationX() float32 { return data.AngularAccelerationX }
 
-// SetAngularAccelerationX stores the AngularAccelerationX of [PacketMotionExData]
+// SetAngularAccelerationX stores [PacketMotionExData.AngularAccelerationX]
 func (data *PacketMotionExData) SetAngularAccelerationX(v float32) { data.AngularAccelerationX = v }
 
-// GetAngularAccelerationY returns the AngularAccelerationY of [PacketMotionExData]
+// GetAngularAccelerationY returns [PacketMotionExData.AngularAccelerationY]
 func (data *PacketMotionExData) GetAngularAccelerationY() float32 { return data.AngularAccelerationY }
 
-// SetAngularAccelerationY stores the AngularAccelerationY of [PacketMotionExData]
+// SetAngularAccelerationY stores [PacketMotionExData.AngularAccelerationY]
 func (data *PacketMotionExData) SetAngularAccelerationY(v float32) { data.AngularAccelerationY = v }
 
-// GetAngularAccelerationZ returns the AngularAccelerationZ of [PacketMotionExData]
+// GetAngularAccelerationZ returns [PacketMotionExData.AngularAccelerationZ]
 func (data *PacketMotionExData) GetAngularAccelerationZ() float32 { return data.AngularAccelerationZ }
 
-// SetAngularAccelerationZ stores the AngularAccelerationZ of [PacketMotionExData]
+// SetAngularAccelerationZ stores [PacketMotionExData.AngularAccelerationZ]
 func (data *PacketMotionExData) SetAngularAccelerationZ(v float32) { data.AngularAccelerationZ = v }
 
-// GetFrontWheelsAngle returns the FrontWheelsAngle of [PacketMotionExData]
+// GetFrontWheelsAngle returns [PacketMotionExData.FrontWheelsAngle]
 func (data *PacketMotionExData) GetFrontWheelsAngle() float32 { return data.FrontWheelsAngle }
 
-// SetFrontWheelsAngle stores the FrontWheelsAngle of [PacketMotionExData]
+// SetFrontWheelsAngle stores [PacketMotionExData.FrontWheelsAngle]
 func (data *PacketMotionExData) SetFrontWheelsAngle(v float32) { data.FrontWheelsAngle = v }
 
-// GetWheelVertForce returns the WheelVertForce of [PacketMotionExData]
+// GetWheelVertForce returns [PacketMotionExData.WheelVertForce]
 func (data *PacketMotionExData) GetWheelVertForce() WheelMap[float32] { return data.WheelVertForce }
 
-// SetWheelVertForce stores the WheelVertForce of [PacketMotionExData]
+// SetWheelVertForce stores [PacketMotionExData.WheelVertForce]
 func (data *PacketMotionExData) SetWheelVertForce(v WheelMap[float32]) { data.WheelVertForce = v }
 
-// GetFrontAeroHeight returns the FrontAeroHeight of [PacketMotionExData]
+// GetFrontAeroHeight returns [PacketMotionExData.FrontAeroHeight]
 func (data *PacketMotionExData) GetFrontAeroHeight() float32 { return data.FrontAeroHeight }
 
-// SetFrontAeroHeight stores the FrontAeroHeight of [PacketMotionExData]
+// SetFrontAeroHeight stores [PacketMotionExData.FrontAeroHeight]
 func (data *PacketMotionExData) SetFrontAeroHeight(v float32) { data.FrontAeroHeight = v }
 
-// GetRearAeroHeight returns the RearAeroHeight of [PacketMotionExData]
+// GetRearAeroHeight returns [PacketMotionExData.RearAeroHeight]
 func (data *PacketMotionExData) GetRearAeroHeight() float32 { return data.RearAeroHeight }
 
-// SetRearAeroHeight stores the RearAeroHeight of [PacketMotionExData]
+// SetRearAeroHeight stores [PacketMotionExData.RearAeroHeight]
 func (data *PacketMotionExData) SetRearAeroHeight(v float32) { data.RearAeroHeight = v }
 
-// GetFrontRollAngle returns the FrontRollAngle of [PacketMotionExData]
+// GetFrontRollAngle returns [PacketMotionExData.FrontRollAngle]
 func (data *PacketMotionExData) GetFrontRollAngle() float32 { return data.FrontRollAngle }
 
-// SetFrontRollAngle stores the FrontRollAngle of [PacketMotionExData]
+// SetFrontRollAngle stores [PacketMotionExData.FrontRollAngle]
 func (data *PacketMotionExData) SetFrontRollAngle(v float32) { data.FrontRollAngle = v }
 
-// GetRearRollAngle returns the RearRollAngle of [PacketMotionExData]
+// GetRearRollAngle returns [PacketMotionExData.RearRollAngle]
 func (data *PacketMotionExData) GetRearRollAngle() float32 { return data.RearRollAngle }
 
-// SetRearRollAngle stores the RearRollAngle of [PacketMotionExData]
+// SetRearRollAngle stores [PacketMotionExData.RearRollAngle]
 func (data *PacketMotionExData) SetRearRollAngle(v float32) { data.RearRollAngle = v }
 
-// GetChassisYaw returns the ChassisYaw of [PacketMotionExData]
+// GetChassisYaw returns [PacketMotionExData.ChassisYaw]
 func (data *PacketMotionExData) GetChassisYaw() float32 { return data.ChassisYaw }
 
-// SetChassisYaw stores the ChassisYaw of [PacketMotionExData]
+// SetChassisYaw stores [PacketMotionExData.ChassisYaw]
 func (data *PacketMotionExData) SetChassisYaw(v float32) { data.ChassisYaw = v }
 
-// GetChassisPitch returns the ChassisPitch of [PacketMotionExData]
+// GetChassisPitch returns [PacketMotionExData.ChassisPitch]
 func (data *PacketMotionExData) GetChassisPitch() float32 { return data.ChassisPitch }
 
-// SetChassisPitch stores the ChassisPitch of [PacketMotionExData]
+// SetChassisPitch stores [PacketMotionExData.ChassisPitch]
 func (data *PacketMotionExData) SetChassisPitch(v float32) { data.ChassisPitch = v }
 
-// GetWheelCamber returns the WheelCamber of [PacketMotionExData]
+// GetWheelCamber returns [PacketMotionExData.WheelCamber]
 func (data *PacketMotionExData) GetWheelCamber() WheelMap[float32] { return data.WheelCamber }
 
-// SetWheelCamber stores the WheelCamber of [PacketMotionExData]
+// SetWheelCamber stores [PacketMotionExData.WheelCamber]
 func (data *PacketMotionExData) SetWheelCamber(v WheelMap[float32]) { data.WheelCamber = v }
 
-// GetWheelCamberGain returns the WheelCamberGain of [PacketMotionExData]
+// GetWheelCamberGain returns [PacketMotionExData.WheelCamberGain]
 func (data *PacketMotionExData) GetWheelCamberGain() WheelMap[float32] { return data.WheelCamberGain }
 
-// SetWheelCamberGain stores the WheelCamberGain of [PacketMotionExData]
+// SetWheelCamberGain stores [PacketMotionExData.WheelCamberGain]
 func (data *PacketMotionExData) SetWheelCamberGain(v WheelMap[float32]) { data.WheelCamberGain = v }

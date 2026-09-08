@@ -2,58 +2,58 @@
 
 package f12026s
 
-// GetActiveAeroMode returns the ActiveAeroMode of [CarTelemetry2Data]
+// GetActiveAeroMode returns [CarTelemetry2Data.ActiveAeroMode]
 func (data *CarTelemetry2Data) GetActiveAeroMode() uint8 { return data.ActiveAeroMode }
 
-// SetActiveAeroMode stores the ActiveAeroMode of [CarTelemetry2Data]
+// SetActiveAeroMode stores [CarTelemetry2Data.ActiveAeroMode]
 func (data *CarTelemetry2Data) SetActiveAeroMode(v uint8) { data.ActiveAeroMode = v }
 
-// GetActiveAeroAvailable returns the ActiveAeroAvailable of [CarTelemetry2Data]
+// GetActiveAeroAvailable returns [CarTelemetry2Data.ActiveAeroAvailable]
 func (data *CarTelemetry2Data) GetActiveAeroAvailable() uint8 { return data.ActiveAeroAvailable }
 
-// SetActiveAeroAvailable stores the ActiveAeroAvailable of [CarTelemetry2Data]
+// SetActiveAeroAvailable stores [CarTelemetry2Data.ActiveAeroAvailable]
 func (data *CarTelemetry2Data) SetActiveAeroAvailable(v uint8) { data.ActiveAeroAvailable = v }
 
-// GetActiveAeroActivationDistance returns the ActiveAeroActivationDistance of [CarTelemetry2Data]
+// GetActiveAeroActivationDistance returns [CarTelemetry2Data.ActiveAeroActivationDistance]
 func (data *CarTelemetry2Data) GetActiveAeroActivationDistance() uint16 {
 	return data.ActiveAeroActivationDistance
 }
 
-// SetActiveAeroActivationDistance stores the ActiveAeroActivationDistance of [CarTelemetry2Data]
+// SetActiveAeroActivationDistance stores [CarTelemetry2Data.ActiveAeroActivationDistance]
 func (data *CarTelemetry2Data) SetActiveAeroActivationDistance(v uint16) {
 	data.ActiveAeroActivationDistance = v
 }
 
-// GetOvertakeAvailable returns the OvertakeAvailable of [CarTelemetry2Data]
+// GetOvertakeAvailable returns [CarTelemetry2Data.OvertakeAvailable]
 func (data *CarTelemetry2Data) GetOvertakeAvailable() uint8 { return data.OvertakeAvailable }
 
-// SetOvertakeAvailable stores the OvertakeAvailable of [CarTelemetry2Data]
+// SetOvertakeAvailable stores [CarTelemetry2Data.OvertakeAvailable]
 func (data *CarTelemetry2Data) SetOvertakeAvailable(v uint8) { data.OvertakeAvailable = v }
 
-// GetOvertakeActive returns the OvertakeActive of [CarTelemetry2Data]
+// GetOvertakeActive returns [CarTelemetry2Data.OvertakeActive]
 func (data *CarTelemetry2Data) GetOvertakeActive() uint8 { return data.OvertakeActive }
 
-// SetOvertakeActive stores the OvertakeActive of [CarTelemetry2Data]
+// SetOvertakeActive stores [CarTelemetry2Data.OvertakeActive]
 func (data *CarTelemetry2Data) SetOvertakeActive(v uint8) { data.OvertakeActive = v }
 
-// GetOvertakeActivationDistance returns the OvertakeActivationDistance of [CarTelemetry2Data]
+// GetOvertakeActivationDistance returns [CarTelemetry2Data.OvertakeActivationDistance]
 func (data *CarTelemetry2Data) GetOvertakeActivationDistance() uint16 {
 	return data.OvertakeActivationDistance
 }
 
-// SetOvertakeActivationDistance stores the OvertakeActivationDistance of [CarTelemetry2Data]
+// SetOvertakeActivationDistance stores [CarTelemetry2Data.OvertakeActivationDistance]
 func (data *CarTelemetry2Data) SetOvertakeActivationDistance(v uint16) {
 	data.OvertakeActivationDistance = v
 }
 
-// GetRegulations2026 returns the Regulations2026 of [CarTelemetry2Data]
+// GetRegulations2026 returns [CarTelemetry2Data.Regulations2026]
 func (data *CarTelemetry2Data) GetRegulations2026() uint8 { return data.Regulations2026 }
 
-// SetRegulations2026 stores the Regulations2026 of [CarTelemetry2Data]
+// SetRegulations2026 stores [CarTelemetry2Data.Regulations2026]
 func (data *CarTelemetry2Data) SetRegulations2026(v uint8) { data.Regulations2026 = v }
 
-// GetDrivingWrongWay returns the DrivingWrongWay of [CarTelemetry2Data]
+// GetDrivingWrongWay returns [CarTelemetry2Data.DrivingWrongWay]
 func (data *CarTelemetry2Data) GetDrivingWrongWay() uint8 { return data.DrivingWrongWay }
 
-// SetDrivingWrongWay stores the DrivingWrongWay of [CarTelemetry2Data]
+// SetDrivingWrongWay stores [CarTelemetry2Data.DrivingWrongWay]
 func (data *CarTelemetry2Data) SetDrivingWrongWay(v uint8) { data.DrivingWrongWay = v }

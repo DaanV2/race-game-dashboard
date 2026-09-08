@@ -2,106 +2,106 @@
 
 package f12026s
 
-// GetSpeed returns the Speed of [CarTelemetryData]
+// GetSpeed returns [CarTelemetryData.Speed]
 func (data *CarTelemetryData) GetSpeed() uint16 { return data.Speed }
 
-// SetSpeed stores the Speed of [CarTelemetryData]
+// SetSpeed stores [CarTelemetryData.Speed]
 func (data *CarTelemetryData) SetSpeed(v uint16) { data.Speed = v }
 
-// GetThrottle returns the Throttle of [CarTelemetryData]
+// GetThrottle returns [CarTelemetryData.Throttle]
 func (data *CarTelemetryData) GetThrottle() float32 { return data.Throttle }
 
-// SetThrottle stores the Throttle of [CarTelemetryData]
+// SetThrottle stores [CarTelemetryData.Throttle]
 func (data *CarTelemetryData) SetThrottle(v float32) { data.Throttle = v }
 
-// GetSteer returns the Steer of [CarTelemetryData]
+// GetSteer returns [CarTelemetryData.Steer]
 func (data *CarTelemetryData) GetSteer() float32 { return data.Steer }
 
-// SetSteer stores the Steer of [CarTelemetryData]
+// SetSteer stores [CarTelemetryData.Steer]
 func (data *CarTelemetryData) SetSteer(v float32) { data.Steer = v }
 
-// GetBrake returns the Brake of [CarTelemetryData]
+// GetBrake returns [CarTelemetryData.Brake]
 func (data *CarTelemetryData) GetBrake() float32 { return data.Brake }
 
-// SetBrake stores the Brake of [CarTelemetryData]
+// SetBrake stores [CarTelemetryData.Brake]
 func (data *CarTelemetryData) SetBrake(v float32) { data.Brake = v }
 
-// GetClutch returns the Clutch of [CarTelemetryData]
+// GetClutch returns [CarTelemetryData.Clutch]
 func (data *CarTelemetryData) GetClutch() uint8 { return data.Clutch }
 
-// SetClutch stores the Clutch of [CarTelemetryData]
+// SetClutch stores [CarTelemetryData.Clutch]
 func (data *CarTelemetryData) SetClutch(v uint8) { data.Clutch = v }
 
-// GetGear returns the Gear of [CarTelemetryData]
+// GetGear returns [CarTelemetryData.Gear]
 func (data *CarTelemetryData) GetGear() int8 { return data.Gear }
 
-// SetGear stores the Gear of [CarTelemetryData]
+// SetGear stores [CarTelemetryData.Gear]
 func (data *CarTelemetryData) SetGear(v int8) { data.Gear = v }
 
-// GetEngineRPM returns the EngineRPM of [CarTelemetryData]
+// GetEngineRPM returns [CarTelemetryData.EngineRPM]
 func (data *CarTelemetryData) GetEngineRPM() uint16 { return data.EngineRPM }
 
-// SetEngineRPM stores the EngineRPM of [CarTelemetryData]
+// SetEngineRPM stores [CarTelemetryData.EngineRPM]
 func (data *CarTelemetryData) SetEngineRPM(v uint16) { data.EngineRPM = v }
 
-// GetDRS returns the DRS of [CarTelemetryData]
+// GetDRS returns [CarTelemetryData.DRS]
 func (data *CarTelemetryData) GetDRS() uint8 { return data.DRS }
 
-// SetDRS stores the DRS of [CarTelemetryData]
+// SetDRS stores [CarTelemetryData.DRS]
 func (data *CarTelemetryData) SetDRS(v uint8) { data.DRS = v }
 
-// GetRevLightsPercent returns the RevLightsPercent of [CarTelemetryData]
+// GetRevLightsPercent returns [CarTelemetryData.RevLightsPercent]
 func (data *CarTelemetryData) GetRevLightsPercent() uint8 { return data.RevLightsPercent }
 
-// SetRevLightsPercent stores the RevLightsPercent of [CarTelemetryData]
+// SetRevLightsPercent stores [CarTelemetryData.RevLightsPercent]
 func (data *CarTelemetryData) SetRevLightsPercent(v uint8) { data.RevLightsPercent = v }
 
-// GetRevLightsBitValue returns the RevLightsBitValue of [CarTelemetryData]
+// GetRevLightsBitValue returns [CarTelemetryData.RevLightsBitValue]
 func (data *CarTelemetryData) GetRevLightsBitValue() uint16 { return data.RevLightsBitValue }
 
-// SetRevLightsBitValue stores the RevLightsBitValue of [CarTelemetryData]
+// SetRevLightsBitValue stores [CarTelemetryData.RevLightsBitValue]
 func (data *CarTelemetryData) SetRevLightsBitValue(v uint16) { data.RevLightsBitValue = v }
 
-// GetBrakesTemperature returns the BrakesTemperature of [CarTelemetryData]
+// GetBrakesTemperature returns [CarTelemetryData.BrakesTemperature]
 func (data *CarTelemetryData) GetBrakesTemperature() WheelMap[uint16] { return data.BrakesTemperature }
 
-// SetBrakesTemperature stores the BrakesTemperature of [CarTelemetryData]
+// SetBrakesTemperature stores [CarTelemetryData.BrakesTemperature]
 func (data *CarTelemetryData) SetBrakesTemperature(v WheelMap[uint16]) { data.BrakesTemperature = v }
 
-// GetTyresSurfaceTemperature returns the TyresSurfaceTemperature of [CarTelemetryData]
+// GetTyresSurfaceTemperature returns [CarTelemetryData.TyresSurfaceTemperature]
 func (data *CarTelemetryData) GetTyresSurfaceTemperature() WheelMap[uint8] {
 	return data.TyresSurfaceTemperature
 }
 
-// SetTyresSurfaceTemperature stores the TyresSurfaceTemperature of [CarTelemetryData]
+// SetTyresSurfaceTemperature stores [CarTelemetryData.TyresSurfaceTemperature]
 func (data *CarTelemetryData) SetTyresSurfaceTemperature(v WheelMap[uint8]) {
 	data.TyresSurfaceTemperature = v
 }
 
-// GetTyresInnerTemperature returns the TyresInnerTemperature of [CarTelemetryData]
+// GetTyresInnerTemperature returns [CarTelemetryData.TyresInnerTemperature]
 func (data *CarTelemetryData) GetTyresInnerTemperature() WheelMap[uint8] {
 	return data.TyresInnerTemperature
 }
 
-// SetTyresInnerTemperature stores the TyresInnerTemperature of [CarTelemetryData]
+// SetTyresInnerTemperature stores [CarTelemetryData.TyresInnerTemperature]
 func (data *CarTelemetryData) SetTyresInnerTemperature(v WheelMap[uint8]) {
 	data.TyresInnerTemperature = v
 }
 
-// GetEngineTemperature returns the EngineTemperature of [CarTelemetryData]
+// GetEngineTemperature returns [CarTelemetryData.EngineTemperature]
 func (data *CarTelemetryData) GetEngineTemperature() uint8 { return data.EngineTemperature }
 
-// SetEngineTemperature stores the EngineTemperature of [CarTelemetryData]
+// SetEngineTemperature stores [CarTelemetryData.EngineTemperature]
 func (data *CarTelemetryData) SetEngineTemperature(v uint8) { data.EngineTemperature = v }
 
-// GetTyresPressure returns the TyresPressure of [CarTelemetryData]
+// GetTyresPressure returns [CarTelemetryData.TyresPressure]
 func (data *CarTelemetryData) GetTyresPressure() WheelMap[float32] { return data.TyresPressure }
 
-// SetTyresPressure stores the TyresPressure of [CarTelemetryData]
+// SetTyresPressure stores [CarTelemetryData.TyresPressure]
 func (data *CarTelemetryData) SetTyresPressure(v WheelMap[float32]) { data.TyresPressure = v }
 
-// GetSurfaceType returns the SurfaceType of [CarTelemetryData]
+// GetSurfaceType returns [CarTelemetryData.SurfaceType]
 func (data *CarTelemetryData) GetSurfaceType() WheelMap[uint8] { return data.SurfaceType }
 
-// SetSurfaceType stores the SurfaceType of [CarTelemetryData]
+// SetSurfaceType stores [CarTelemetryData.SurfaceType]
 func (data *CarTelemetryData) SetSurfaceType(v WheelMap[uint8]) { data.SurfaceType = v }

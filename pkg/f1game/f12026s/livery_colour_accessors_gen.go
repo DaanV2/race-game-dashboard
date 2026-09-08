@@ -2,20 +2,20 @@
 
 package f12026s
 
-// GetRed returns the Red of [LiveryColour]
+// GetRed returns [LiveryColour.Red]
 func (data *LiveryColour) GetRed() uint8 { return data.Red }
 
-// SetRed stores the Red of [LiveryColour]
+// SetRed stores [LiveryColour.Red]
 func (data *LiveryColour) SetRed(v uint8) { data.Red = v }
 
-// GetGreen returns the Green of [LiveryColour]
+// GetGreen returns [LiveryColour.Green]
 func (data *LiveryColour) GetGreen() uint8 { return data.Green }
 
-// SetGreen stores the Green of [LiveryColour]
+// SetGreen stores [LiveryColour.Green]
 func (data *LiveryColour) SetGreen(v uint8) { data.Green = v }
 
-// GetBlue returns the Blue of [LiveryColour]
+// GetBlue returns [LiveryColour.Blue]
 func (data *LiveryColour) GetBlue() uint8 { return data.Blue }
 
-// SetBlue stores the Blue of [LiveryColour]
+// SetBlue stores [LiveryColour.Blue]
 func (data *LiveryColour) SetBlue(v uint8) { data.Blue = v }

@@ -2,18 +2,18 @@
 
 package f12025
 
-// GetOvertakingVehicleIdx returns the OvertakingVehicleIdx of [EventDataOvertake]
+// GetOvertakingVehicleIdx returns [EventDataOvertake.OvertakingVehicleIdx]
 func (data *EventDataOvertake) GetOvertakingVehicleIdx() uint8 { return data.OvertakingVehicleIdx }
 
-// SetOvertakingVehicleIdx stores the OvertakingVehicleIdx of [EventDataOvertake]
+// SetOvertakingVehicleIdx stores [EventDataOvertake.OvertakingVehicleIdx]
 func (data *EventDataOvertake) SetOvertakingVehicleIdx(v uint8) { data.OvertakingVehicleIdx = v }
 
-// GetBeingOvertakenVehicleIdx returns the BeingOvertakenVehicleIdx of [EventDataOvertake]
+// GetBeingOvertakenVehicleIdx returns [EventDataOvertake.BeingOvertakenVehicleIdx]
 func (data *EventDataOvertake) GetBeingOvertakenVehicleIdx() uint8 {
 	return data.BeingOvertakenVehicleIdx
 }
 
-// SetBeingOvertakenVehicleIdx stores the BeingOvertakenVehicleIdx of [EventDataOvertake]
+// SetBeingOvertakenVehicleIdx stores [EventDataOvertake.BeingOvertakenVehicleIdx]
 func (data *EventDataOvertake) SetBeingOvertakenVehicleIdx(v uint8) {
 	data.BeingOvertakenVehicleIdx = v
 }

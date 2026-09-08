@@ -2,104 +2,104 @@
 
 package f12026s
 
-// GetPosition returns the Position of [FinalClassificationData]
+// GetPosition returns [FinalClassificationData.Position]
 func (data *FinalClassificationData) GetPosition() uint8 { return data.Position }
 
-// SetPosition stores the Position of [FinalClassificationData]
+// SetPosition stores [FinalClassificationData.Position]
 func (data *FinalClassificationData) SetPosition(v uint8) { data.Position = v }
 
-// GetNumLaps returns the NumLaps of [FinalClassificationData]
+// GetNumLaps returns [FinalClassificationData.NumLaps]
 func (data *FinalClassificationData) GetNumLaps() uint8 { return data.NumLaps }
 
-// SetNumLaps stores the NumLaps of [FinalClassificationData]
+// SetNumLaps stores [FinalClassificationData.NumLaps]
 func (data *FinalClassificationData) SetNumLaps(v uint8) { data.NumLaps = v }
 
-// GetGridPosition returns the GridPosition of [FinalClassificationData]
+// GetGridPosition returns [FinalClassificationData.GridPosition]
 func (data *FinalClassificationData) GetGridPosition() uint8 { return data.GridPosition }
 
-// SetGridPosition stores the GridPosition of [FinalClassificationData]
+// SetGridPosition stores [FinalClassificationData.GridPosition]
 func (data *FinalClassificationData) SetGridPosition(v uint8) { data.GridPosition = v }
 
-// GetPoints returns the Points of [FinalClassificationData]
+// GetPoints returns [FinalClassificationData.Points]
 func (data *FinalClassificationData) GetPoints() uint8 { return data.Points }
 
-// SetPoints stores the Points of [FinalClassificationData]
+// SetPoints stores [FinalClassificationData.Points]
 func (data *FinalClassificationData) SetPoints(v uint8) { data.Points = v }
 
-// GetNumPitStops returns the NumPitStops of [FinalClassificationData]
+// GetNumPitStops returns [FinalClassificationData.NumPitStops]
 func (data *FinalClassificationData) GetNumPitStops() uint8 { return data.NumPitStops }
 
-// SetNumPitStops stores the NumPitStops of [FinalClassificationData]
+// SetNumPitStops stores [FinalClassificationData.NumPitStops]
 func (data *FinalClassificationData) SetNumPitStops(v uint8) { data.NumPitStops = v }
 
-// GetResultStatus returns the ResultStatus of [FinalClassificationData]
+// GetResultStatus returns [FinalClassificationData.ResultStatus]
 func (data *FinalClassificationData) GetResultStatus() uint8 { return data.ResultStatus }
 
-// SetResultStatus stores the ResultStatus of [FinalClassificationData]
+// SetResultStatus stores [FinalClassificationData.ResultStatus]
 func (data *FinalClassificationData) SetResultStatus(v uint8) { data.ResultStatus = v }
 
-// GetResultReason returns the ResultReason of [FinalClassificationData]
+// GetResultReason returns [FinalClassificationData.ResultReason]
 func (data *FinalClassificationData) GetResultReason() uint8 { return data.ResultReason }
 
-// SetResultReason stores the ResultReason of [FinalClassificationData]
+// SetResultReason stores [FinalClassificationData.ResultReason]
 func (data *FinalClassificationData) SetResultReason(v uint8) { data.ResultReason = v }
 
-// GetBestLapTimeInMS returns the BestLapTimeInMS of [FinalClassificationData]
+// GetBestLapTimeInMS returns [FinalClassificationData.BestLapTimeInMS]
 func (data *FinalClassificationData) GetBestLapTimeInMS() uint32 { return data.BestLapTimeInMS }
 
-// SetBestLapTimeInMS stores the BestLapTimeInMS of [FinalClassificationData]
+// SetBestLapTimeInMS stores [FinalClassificationData.BestLapTimeInMS]
 func (data *FinalClassificationData) SetBestLapTimeInMS(v uint32) { data.BestLapTimeInMS = v }
 
-// GetTotalRaceTime returns the TotalRaceTime of [FinalClassificationData]
+// GetTotalRaceTime returns [FinalClassificationData.TotalRaceTime]
 func (data *FinalClassificationData) GetTotalRaceTime() float64 { return data.TotalRaceTime }
 
-// SetTotalRaceTime stores the TotalRaceTime of [FinalClassificationData]
+// SetTotalRaceTime stores [FinalClassificationData.TotalRaceTime]
 func (data *FinalClassificationData) SetTotalRaceTime(v float64) { data.TotalRaceTime = v }
 
-// GetPenaltiesTime returns the PenaltiesTime of [FinalClassificationData]
+// GetPenaltiesTime returns [FinalClassificationData.PenaltiesTime]
 func (data *FinalClassificationData) GetPenaltiesTime() uint8 { return data.PenaltiesTime }
 
-// SetPenaltiesTime stores the PenaltiesTime of [FinalClassificationData]
+// SetPenaltiesTime stores [FinalClassificationData.PenaltiesTime]
 func (data *FinalClassificationData) SetPenaltiesTime(v uint8) { data.PenaltiesTime = v }
 
-// GetNumPenalties returns the NumPenalties of [FinalClassificationData]
+// GetNumPenalties returns [FinalClassificationData.NumPenalties]
 func (data *FinalClassificationData) GetNumPenalties() uint8 { return data.NumPenalties }
 
-// SetNumPenalties stores the NumPenalties of [FinalClassificationData]
+// SetNumPenalties stores [FinalClassificationData.NumPenalties]
 func (data *FinalClassificationData) SetNumPenalties(v uint8) { data.NumPenalties = v }
 
-// GetNumTyreStints returns the NumTyreStints of [FinalClassificationData]
+// GetNumTyreStints returns [FinalClassificationData.NumTyreStints]
 func (data *FinalClassificationData) GetNumTyreStints() uint8 { return data.NumTyreStints }
 
-// SetNumTyreStints stores the NumTyreStints of [FinalClassificationData]
+// SetNumTyreStints stores [FinalClassificationData.NumTyreStints]
 func (data *FinalClassificationData) SetNumTyreStints(v uint8) { data.NumTyreStints = v }
 
-// GetTyreStintsActual returns the TyreStintsActual element of [FinalClassificationData] at index
+// GetTyreStintsActual returns the element of [FinalClassificationData.TyreStintsActual] at index
 func (data *FinalClassificationData) GetTyreStintsActual(index int) uint8 {
 	return data.TyreStintsActual[index]
 }
 
-// SetTyreStintsActual stores the TyreStintsActual element of [FinalClassificationData] at index
+// SetTyreStintsActual stores the element of [FinalClassificationData.TyreStintsActual] at index
 func (data *FinalClassificationData) SetTyreStintsActual(index int, v uint8) {
 	data.TyreStintsActual[index] = v
 }
 
-// GetTyreStintsVisual returns the TyreStintsVisual element of [FinalClassificationData] at index
+// GetTyreStintsVisual returns the element of [FinalClassificationData.TyreStintsVisual] at index
 func (data *FinalClassificationData) GetTyreStintsVisual(index int) uint8 {
 	return data.TyreStintsVisual[index]
 }
 
-// SetTyreStintsVisual stores the TyreStintsVisual element of [FinalClassificationData] at index
+// SetTyreStintsVisual stores the element of [FinalClassificationData.TyreStintsVisual] at index
 func (data *FinalClassificationData) SetTyreStintsVisual(index int, v uint8) {
 	data.TyreStintsVisual[index] = v
 }
 
-// GetTyreStintsEndLaps returns the TyreStintsEndLaps element of [FinalClassificationData] at index
+// GetTyreStintsEndLaps returns the element of [FinalClassificationData.TyreStintsEndLaps] at index
 func (data *FinalClassificationData) GetTyreStintsEndLaps(index int) uint8 {
 	return data.TyreStintsEndLaps[index]
 }
 
-// SetTyreStintsEndLaps stores the TyreStintsEndLaps element of [FinalClassificationData] at index
+// SetTyreStintsEndLaps stores the element of [FinalClassificationData.TyreStintsEndLaps] at index
 func (data *FinalClassificationData) SetTyreStintsEndLaps(index int, v uint8) {
 	data.TyreStintsEndLaps[index] = v
 }

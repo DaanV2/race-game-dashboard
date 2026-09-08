@@ -2,204 +2,204 @@
 
 package f12025
 
-// GetLastLapTimeInMS returns the LastLapTimeInMS of [LapData]
+// GetLastLapTimeInMS returns [LapData.LastLapTimeInMS]
 func (data *LapData) GetLastLapTimeInMS() uint32 { return data.LastLapTimeInMS }
 
-// SetLastLapTimeInMS stores the LastLapTimeInMS of [LapData]
+// SetLastLapTimeInMS stores [LapData.LastLapTimeInMS]
 func (data *LapData) SetLastLapTimeInMS(v uint32) { data.LastLapTimeInMS = v }
 
-// GetCurrentLapTimeInMS returns the CurrentLapTimeInMS of [LapData]
+// GetCurrentLapTimeInMS returns [LapData.CurrentLapTimeInMS]
 func (data *LapData) GetCurrentLapTimeInMS() uint32 { return data.CurrentLapTimeInMS }
 
-// SetCurrentLapTimeInMS stores the CurrentLapTimeInMS of [LapData]
+// SetCurrentLapTimeInMS stores [LapData.CurrentLapTimeInMS]
 func (data *LapData) SetCurrentLapTimeInMS(v uint32) { data.CurrentLapTimeInMS = v }
 
-// GetSector1TimeMSPart returns the Sector1TimeMSPart of [LapData]
+// GetSector1TimeMSPart returns [LapData.Sector1TimeMSPart]
 func (data *LapData) GetSector1TimeMSPart() uint16 { return data.Sector1TimeMSPart }
 
-// SetSector1TimeMSPart stores the Sector1TimeMSPart of [LapData]
+// SetSector1TimeMSPart stores [LapData.Sector1TimeMSPart]
 func (data *LapData) SetSector1TimeMSPart(v uint16) { data.Sector1TimeMSPart = v }
 
-// GetSector1TimeMinutesPart returns the Sector1TimeMinutesPart of [LapData]
+// GetSector1TimeMinutesPart returns [LapData.Sector1TimeMinutesPart]
 func (data *LapData) GetSector1TimeMinutesPart() uint8 { return data.Sector1TimeMinutesPart }
 
-// SetSector1TimeMinutesPart stores the Sector1TimeMinutesPart of [LapData]
+// SetSector1TimeMinutesPart stores [LapData.Sector1TimeMinutesPart]
 func (data *LapData) SetSector1TimeMinutesPart(v uint8) { data.Sector1TimeMinutesPart = v }
 
-// GetSector2TimeMSPart returns the Sector2TimeMSPart of [LapData]
+// GetSector2TimeMSPart returns [LapData.Sector2TimeMSPart]
 func (data *LapData) GetSector2TimeMSPart() uint16 { return data.Sector2TimeMSPart }
 
-// SetSector2TimeMSPart stores the Sector2TimeMSPart of [LapData]
+// SetSector2TimeMSPart stores [LapData.Sector2TimeMSPart]
 func (data *LapData) SetSector2TimeMSPart(v uint16) { data.Sector2TimeMSPart = v }
 
-// GetSector2TimeMinutesPart returns the Sector2TimeMinutesPart of [LapData]
+// GetSector2TimeMinutesPart returns [LapData.Sector2TimeMinutesPart]
 func (data *LapData) GetSector2TimeMinutesPart() uint8 { return data.Sector2TimeMinutesPart }
 
-// SetSector2TimeMinutesPart stores the Sector2TimeMinutesPart of [LapData]
+// SetSector2TimeMinutesPart stores [LapData.Sector2TimeMinutesPart]
 func (data *LapData) SetSector2TimeMinutesPart(v uint8) { data.Sector2TimeMinutesPart = v }
 
-// GetDeltaToCarInFrontMSPart returns the DeltaToCarInFrontMSPart of [LapData]
+// GetDeltaToCarInFrontMSPart returns [LapData.DeltaToCarInFrontMSPart]
 func (data *LapData) GetDeltaToCarInFrontMSPart() uint16 { return data.DeltaToCarInFrontMSPart }
 
-// SetDeltaToCarInFrontMSPart stores the DeltaToCarInFrontMSPart of [LapData]
+// SetDeltaToCarInFrontMSPart stores [LapData.DeltaToCarInFrontMSPart]
 func (data *LapData) SetDeltaToCarInFrontMSPart(v uint16) { data.DeltaToCarInFrontMSPart = v }
 
-// GetDeltaToCarInFrontMinutesPart returns the DeltaToCarInFrontMinutesPart of [LapData]
+// GetDeltaToCarInFrontMinutesPart returns [LapData.DeltaToCarInFrontMinutesPart]
 func (data *LapData) GetDeltaToCarInFrontMinutesPart() uint8 {
 	return data.DeltaToCarInFrontMinutesPart
 }
 
-// SetDeltaToCarInFrontMinutesPart stores the DeltaToCarInFrontMinutesPart of [LapData]
+// SetDeltaToCarInFrontMinutesPart stores [LapData.DeltaToCarInFrontMinutesPart]
 func (data *LapData) SetDeltaToCarInFrontMinutesPart(v uint8) { data.DeltaToCarInFrontMinutesPart = v }
 
-// GetDeltaToRaceLeaderMSPart returns the DeltaToRaceLeaderMSPart of [LapData]
+// GetDeltaToRaceLeaderMSPart returns [LapData.DeltaToRaceLeaderMSPart]
 func (data *LapData) GetDeltaToRaceLeaderMSPart() uint16 { return data.DeltaToRaceLeaderMSPart }
 
-// SetDeltaToRaceLeaderMSPart stores the DeltaToRaceLeaderMSPart of [LapData]
+// SetDeltaToRaceLeaderMSPart stores [LapData.DeltaToRaceLeaderMSPart]
 func (data *LapData) SetDeltaToRaceLeaderMSPart(v uint16) { data.DeltaToRaceLeaderMSPart = v }
 
-// GetDeltaToRaceLeaderMinutesPart returns the DeltaToRaceLeaderMinutesPart of [LapData]
+// GetDeltaToRaceLeaderMinutesPart returns [LapData.DeltaToRaceLeaderMinutesPart]
 func (data *LapData) GetDeltaToRaceLeaderMinutesPart() uint8 {
 	return data.DeltaToRaceLeaderMinutesPart
 }
 
-// SetDeltaToRaceLeaderMinutesPart stores the DeltaToRaceLeaderMinutesPart of [LapData]
+// SetDeltaToRaceLeaderMinutesPart stores [LapData.DeltaToRaceLeaderMinutesPart]
 func (data *LapData) SetDeltaToRaceLeaderMinutesPart(v uint8) { data.DeltaToRaceLeaderMinutesPart = v }
 
-// GetLapDistance returns the LapDistance of [LapData]
+// GetLapDistance returns [LapData.LapDistance]
 func (data *LapData) GetLapDistance() float32 { return data.LapDistance }
 
-// SetLapDistance stores the LapDistance of [LapData]
+// SetLapDistance stores [LapData.LapDistance]
 func (data *LapData) SetLapDistance(v float32) { data.LapDistance = v }
 
-// GetTotalDistance returns the TotalDistance of [LapData]
+// GetTotalDistance returns [LapData.TotalDistance]
 func (data *LapData) GetTotalDistance() float32 { return data.TotalDistance }
 
-// SetTotalDistance stores the TotalDistance of [LapData]
+// SetTotalDistance stores [LapData.TotalDistance]
 func (data *LapData) SetTotalDistance(v float32) { data.TotalDistance = v }
 
-// GetSafetyCarDelta returns the SafetyCarDelta of [LapData]
+// GetSafetyCarDelta returns [LapData.SafetyCarDelta]
 func (data *LapData) GetSafetyCarDelta() float32 { return data.SafetyCarDelta }
 
-// SetSafetyCarDelta stores the SafetyCarDelta of [LapData]
+// SetSafetyCarDelta stores [LapData.SafetyCarDelta]
 func (data *LapData) SetSafetyCarDelta(v float32) { data.SafetyCarDelta = v }
 
-// GetCarPosition returns the CarPosition of [LapData]
+// GetCarPosition returns [LapData.CarPosition]
 func (data *LapData) GetCarPosition() uint8 { return data.CarPosition }
 
-// SetCarPosition stores the CarPosition of [LapData]
+// SetCarPosition stores [LapData.CarPosition]
 func (data *LapData) SetCarPosition(v uint8) { data.CarPosition = v }
 
-// GetCurrentLapNum returns the CurrentLapNum of [LapData]
+// GetCurrentLapNum returns [LapData.CurrentLapNum]
 func (data *LapData) GetCurrentLapNum() uint8 { return data.CurrentLapNum }
 
-// SetCurrentLapNum stores the CurrentLapNum of [LapData]
+// SetCurrentLapNum stores [LapData.CurrentLapNum]
 func (data *LapData) SetCurrentLapNum(v uint8) { data.CurrentLapNum = v }
 
-// GetPitStatus returns the PitStatus of [LapData]
+// GetPitStatus returns [LapData.PitStatus]
 func (data *LapData) GetPitStatus() uint8 { return data.PitStatus }
 
-// SetPitStatus stores the PitStatus of [LapData]
+// SetPitStatus stores [LapData.PitStatus]
 func (data *LapData) SetPitStatus(v uint8) { data.PitStatus = v }
 
-// GetNumPitStops returns the NumPitStops of [LapData]
+// GetNumPitStops returns [LapData.NumPitStops]
 func (data *LapData) GetNumPitStops() uint8 { return data.NumPitStops }
 
-// SetNumPitStops stores the NumPitStops of [LapData]
+// SetNumPitStops stores [LapData.NumPitStops]
 func (data *LapData) SetNumPitStops(v uint8) { data.NumPitStops = v }
 
-// GetSector returns the Sector of [LapData]
+// GetSector returns [LapData.Sector]
 func (data *LapData) GetSector() uint8 { return data.Sector }
 
-// SetSector stores the Sector of [LapData]
+// SetSector stores [LapData.Sector]
 func (data *LapData) SetSector(v uint8) { data.Sector = v }
 
-// GetCurrentLapInvalid returns the CurrentLapInvalid of [LapData]
+// GetCurrentLapInvalid returns [LapData.CurrentLapInvalid]
 func (data *LapData) GetCurrentLapInvalid() uint8 { return data.CurrentLapInvalid }
 
-// SetCurrentLapInvalid stores the CurrentLapInvalid of [LapData]
+// SetCurrentLapInvalid stores [LapData.CurrentLapInvalid]
 func (data *LapData) SetCurrentLapInvalid(v uint8) { data.CurrentLapInvalid = v }
 
-// GetPenalties returns the Penalties of [LapData]
+// GetPenalties returns [LapData.Penalties]
 func (data *LapData) GetPenalties() uint8 { return data.Penalties }
 
-// SetPenalties stores the Penalties of [LapData]
+// SetPenalties stores [LapData.Penalties]
 func (data *LapData) SetPenalties(v uint8) { data.Penalties = v }
 
-// GetTotalWarnings returns the TotalWarnings of [LapData]
+// GetTotalWarnings returns [LapData.TotalWarnings]
 func (data *LapData) GetTotalWarnings() uint8 { return data.TotalWarnings }
 
-// SetTotalWarnings stores the TotalWarnings of [LapData]
+// SetTotalWarnings stores [LapData.TotalWarnings]
 func (data *LapData) SetTotalWarnings(v uint8) { data.TotalWarnings = v }
 
-// GetCornerCuttingWarnings returns the CornerCuttingWarnings of [LapData]
+// GetCornerCuttingWarnings returns [LapData.CornerCuttingWarnings]
 func (data *LapData) GetCornerCuttingWarnings() uint8 { return data.CornerCuttingWarnings }
 
-// SetCornerCuttingWarnings stores the CornerCuttingWarnings of [LapData]
+// SetCornerCuttingWarnings stores [LapData.CornerCuttingWarnings]
 func (data *LapData) SetCornerCuttingWarnings(v uint8) { data.CornerCuttingWarnings = v }
 
-// GetNumUnservedDriveThroughPens returns the NumUnservedDriveThroughPens of [LapData]
+// GetNumUnservedDriveThroughPens returns [LapData.NumUnservedDriveThroughPens]
 func (data *LapData) GetNumUnservedDriveThroughPens() uint8 { return data.NumUnservedDriveThroughPens }
 
-// SetNumUnservedDriveThroughPens stores the NumUnservedDriveThroughPens of [LapData]
+// SetNumUnservedDriveThroughPens stores [LapData.NumUnservedDriveThroughPens]
 func (data *LapData) SetNumUnservedDriveThroughPens(v uint8) { data.NumUnservedDriveThroughPens = v }
 
-// GetNumUnservedStopGoPens returns the NumUnservedStopGoPens of [LapData]
+// GetNumUnservedStopGoPens returns [LapData.NumUnservedStopGoPens]
 func (data *LapData) GetNumUnservedStopGoPens() uint8 { return data.NumUnservedStopGoPens }
 
-// SetNumUnservedStopGoPens stores the NumUnservedStopGoPens of [LapData]
+// SetNumUnservedStopGoPens stores [LapData.NumUnservedStopGoPens]
 func (data *LapData) SetNumUnservedStopGoPens(v uint8) { data.NumUnservedStopGoPens = v }
 
-// GetGridPosition returns the GridPosition of [LapData]
+// GetGridPosition returns [LapData.GridPosition]
 func (data *LapData) GetGridPosition() uint8 { return data.GridPosition }
 
-// SetGridPosition stores the GridPosition of [LapData]
+// SetGridPosition stores [LapData.GridPosition]
 func (data *LapData) SetGridPosition(v uint8) { data.GridPosition = v }
 
-// GetDriverStatus returns the DriverStatus of [LapData]
+// GetDriverStatus returns [LapData.DriverStatus]
 func (data *LapData) GetDriverStatus() uint8 { return data.DriverStatus }
 
-// SetDriverStatus stores the DriverStatus of [LapData]
+// SetDriverStatus stores [LapData.DriverStatus]
 func (data *LapData) SetDriverStatus(v uint8) { data.DriverStatus = v }
 
-// GetResultStatus returns the ResultStatus of [LapData]
+// GetResultStatus returns [LapData.ResultStatus]
 func (data *LapData) GetResultStatus() uint8 { return data.ResultStatus }
 
-// SetResultStatus stores the ResultStatus of [LapData]
+// SetResultStatus stores [LapData.ResultStatus]
 func (data *LapData) SetResultStatus(v uint8) { data.ResultStatus = v }
 
-// GetPitLaneTimerActive returns the PitLaneTimerActive of [LapData]
+// GetPitLaneTimerActive returns [LapData.PitLaneTimerActive]
 func (data *LapData) GetPitLaneTimerActive() uint8 { return data.PitLaneTimerActive }
 
-// SetPitLaneTimerActive stores the PitLaneTimerActive of [LapData]
+// SetPitLaneTimerActive stores [LapData.PitLaneTimerActive]
 func (data *LapData) SetPitLaneTimerActive(v uint8) { data.PitLaneTimerActive = v }
 
-// GetPitLaneTimeInLaneInMS returns the PitLaneTimeInLaneInMS of [LapData]
+// GetPitLaneTimeInLaneInMS returns [LapData.PitLaneTimeInLaneInMS]
 func (data *LapData) GetPitLaneTimeInLaneInMS() uint16 { return data.PitLaneTimeInLaneInMS }
 
-// SetPitLaneTimeInLaneInMS stores the PitLaneTimeInLaneInMS of [LapData]
+// SetPitLaneTimeInLaneInMS stores [LapData.PitLaneTimeInLaneInMS]
 func (data *LapData) SetPitLaneTimeInLaneInMS(v uint16) { data.PitLaneTimeInLaneInMS = v }
 
-// GetPitStopTimerInMS returns the PitStopTimerInMS of [LapData]
+// GetPitStopTimerInMS returns [LapData.PitStopTimerInMS]
 func (data *LapData) GetPitStopTimerInMS() uint16 { return data.PitStopTimerInMS }
 
-// SetPitStopTimerInMS stores the PitStopTimerInMS of [LapData]
+// SetPitStopTimerInMS stores [LapData.PitStopTimerInMS]
 func (data *LapData) SetPitStopTimerInMS(v uint16) { data.PitStopTimerInMS = v }
 
-// GetPitStopShouldServePen returns the PitStopShouldServePen of [LapData]
+// GetPitStopShouldServePen returns [LapData.PitStopShouldServePen]
 func (data *LapData) GetPitStopShouldServePen() uint8 { return data.PitStopShouldServePen }
 
-// SetPitStopShouldServePen stores the PitStopShouldServePen of [LapData]
+// SetPitStopShouldServePen stores [LapData.PitStopShouldServePen]
 func (data *LapData) SetPitStopShouldServePen(v uint8) { data.PitStopShouldServePen = v }
 
-// GetSpeedTrapFastestSpeed returns the SpeedTrapFastestSpeed of [LapData]
+// GetSpeedTrapFastestSpeed returns [LapData.SpeedTrapFastestSpeed]
 func (data *LapData) GetSpeedTrapFastestSpeed() float32 { return data.SpeedTrapFastestSpeed }
 
-// SetSpeedTrapFastestSpeed stores the SpeedTrapFastestSpeed of [LapData]
+// SetSpeedTrapFastestSpeed stores [LapData.SpeedTrapFastestSpeed]
 func (data *LapData) SetSpeedTrapFastestSpeed(v float32) { data.SpeedTrapFastestSpeed = v }
 
-// GetSpeedTrapFastestLap returns the SpeedTrapFastestLap of [LapData]
+// GetSpeedTrapFastestLap returns [LapData.SpeedTrapFastestLap]
 func (data *LapData) GetSpeedTrapFastestLap() uint8 { return data.SpeedTrapFastestLap }
 
-// SetSpeedTrapFastestLap stores the SpeedTrapFastestLap of [LapData]
+// SetSpeedTrapFastestLap stores [LapData.SpeedTrapFastestLap]
 func (data *LapData) SetSpeedTrapFastestLap(v uint8) { data.SpeedTrapFastestLap = v }

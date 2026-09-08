@@ -2,14 +2,14 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketCarSetupData]
+// GetHeader returns [PacketCarSetupData.Header]
 func (data *PacketCarSetupData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketCarSetupData]
+// SetHeader stores [PacketCarSetupData.Header]
 func (data *PacketCarSetupData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetNextFrontWingValue returns the NextFrontWingValue of [PacketCarSetupData]
+// GetNextFrontWingValue returns [PacketCarSetupData.NextFrontWingValue]
 func (data *PacketCarSetupData) GetNextFrontWingValue() float32 { return data.NextFrontWingValue }
 
-// SetNextFrontWingValue stores the NextFrontWingValue of [PacketCarSetupData]
+// SetNextFrontWingValue stores [PacketCarSetupData.NextFrontWingValue]
 func (data *PacketCarSetupData) SetNextFrontWingValue(v float32) { data.NextFrontWingValue = v }

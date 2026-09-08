@@ -2,152 +2,152 @@
 
 package f12025
 
-// GetTractionControl returns the TractionControl of [CarStatusData]
+// GetTractionControl returns [CarStatusData.TractionControl]
 func (data *CarStatusData) GetTractionControl() uint8 { return data.TractionControl }
 
-// SetTractionControl stores the TractionControl of [CarStatusData]
+// SetTractionControl stores [CarStatusData.TractionControl]
 func (data *CarStatusData) SetTractionControl(v uint8) { data.TractionControl = v }
 
-// GetAntiLockBrakes returns the AntiLockBrakes of [CarStatusData]
+// GetAntiLockBrakes returns [CarStatusData.AntiLockBrakes]
 func (data *CarStatusData) GetAntiLockBrakes() uint8 { return data.AntiLockBrakes }
 
-// SetAntiLockBrakes stores the AntiLockBrakes of [CarStatusData]
+// SetAntiLockBrakes stores [CarStatusData.AntiLockBrakes]
 func (data *CarStatusData) SetAntiLockBrakes(v uint8) { data.AntiLockBrakes = v }
 
-// GetFuelMix returns the FuelMix of [CarStatusData]
+// GetFuelMix returns [CarStatusData.FuelMix]
 func (data *CarStatusData) GetFuelMix() uint8 { return data.FuelMix }
 
-// SetFuelMix stores the FuelMix of [CarStatusData]
+// SetFuelMix stores [CarStatusData.FuelMix]
 func (data *CarStatusData) SetFuelMix(v uint8) { data.FuelMix = v }
 
-// GetFrontBrakeBias returns the FrontBrakeBias of [CarStatusData]
+// GetFrontBrakeBias returns [CarStatusData.FrontBrakeBias]
 func (data *CarStatusData) GetFrontBrakeBias() uint8 { return data.FrontBrakeBias }
 
-// SetFrontBrakeBias stores the FrontBrakeBias of [CarStatusData]
+// SetFrontBrakeBias stores [CarStatusData.FrontBrakeBias]
 func (data *CarStatusData) SetFrontBrakeBias(v uint8) { data.FrontBrakeBias = v }
 
-// GetPitLimiterStatus returns the PitLimiterStatus of [CarStatusData]
+// GetPitLimiterStatus returns [CarStatusData.PitLimiterStatus]
 func (data *CarStatusData) GetPitLimiterStatus() uint8 { return data.PitLimiterStatus }
 
-// SetPitLimiterStatus stores the PitLimiterStatus of [CarStatusData]
+// SetPitLimiterStatus stores [CarStatusData.PitLimiterStatus]
 func (data *CarStatusData) SetPitLimiterStatus(v uint8) { data.PitLimiterStatus = v }
 
-// GetFuelInTank returns the FuelInTank of [CarStatusData]
+// GetFuelInTank returns [CarStatusData.FuelInTank]
 func (data *CarStatusData) GetFuelInTank() float32 { return data.FuelInTank }
 
-// SetFuelInTank stores the FuelInTank of [CarStatusData]
+// SetFuelInTank stores [CarStatusData.FuelInTank]
 func (data *CarStatusData) SetFuelInTank(v float32) { data.FuelInTank = v }
 
-// GetFuelCapacity returns the FuelCapacity of [CarStatusData]
+// GetFuelCapacity returns [CarStatusData.FuelCapacity]
 func (data *CarStatusData) GetFuelCapacity() float32 { return data.FuelCapacity }
 
-// SetFuelCapacity stores the FuelCapacity of [CarStatusData]
+// SetFuelCapacity stores [CarStatusData.FuelCapacity]
 func (data *CarStatusData) SetFuelCapacity(v float32) { data.FuelCapacity = v }
 
-// GetFuelRemainingLaps returns the FuelRemainingLaps of [CarStatusData]
+// GetFuelRemainingLaps returns [CarStatusData.FuelRemainingLaps]
 func (data *CarStatusData) GetFuelRemainingLaps() float32 { return data.FuelRemainingLaps }
 
-// SetFuelRemainingLaps stores the FuelRemainingLaps of [CarStatusData]
+// SetFuelRemainingLaps stores [CarStatusData.FuelRemainingLaps]
 func (data *CarStatusData) SetFuelRemainingLaps(v float32) { data.FuelRemainingLaps = v }
 
-// GetMaxRPM returns the MaxRPM of [CarStatusData]
+// GetMaxRPM returns [CarStatusData.MaxRPM]
 func (data *CarStatusData) GetMaxRPM() uint16 { return data.MaxRPM }
 
-// SetMaxRPM stores the MaxRPM of [CarStatusData]
+// SetMaxRPM stores [CarStatusData.MaxRPM]
 func (data *CarStatusData) SetMaxRPM(v uint16) { data.MaxRPM = v }
 
-// GetIdleRPM returns the IdleRPM of [CarStatusData]
+// GetIdleRPM returns [CarStatusData.IdleRPM]
 func (data *CarStatusData) GetIdleRPM() uint16 { return data.IdleRPM }
 
-// SetIdleRPM stores the IdleRPM of [CarStatusData]
+// SetIdleRPM stores [CarStatusData.IdleRPM]
 func (data *CarStatusData) SetIdleRPM(v uint16) { data.IdleRPM = v }
 
-// GetMaxGears returns the MaxGears of [CarStatusData]
+// GetMaxGears returns [CarStatusData.MaxGears]
 func (data *CarStatusData) GetMaxGears() uint8 { return data.MaxGears }
 
-// SetMaxGears stores the MaxGears of [CarStatusData]
+// SetMaxGears stores [CarStatusData.MaxGears]
 func (data *CarStatusData) SetMaxGears(v uint8) { data.MaxGears = v }
 
-// GetDrsAllowed returns the DrsAllowed of [CarStatusData]
+// GetDrsAllowed returns [CarStatusData.DrsAllowed]
 func (data *CarStatusData) GetDrsAllowed() uint8 { return data.DrsAllowed }
 
-// SetDrsAllowed stores the DrsAllowed of [CarStatusData]
+// SetDrsAllowed stores [CarStatusData.DrsAllowed]
 func (data *CarStatusData) SetDrsAllowed(v uint8) { data.DrsAllowed = v }
 
-// GetDrsActivationDistance returns the DrsActivationDistance of [CarStatusData]
+// GetDrsActivationDistance returns [CarStatusData.DrsActivationDistance]
 func (data *CarStatusData) GetDrsActivationDistance() uint16 { return data.DrsActivationDistance }
 
-// SetDrsActivationDistance stores the DrsActivationDistance of [CarStatusData]
+// SetDrsActivationDistance stores [CarStatusData.DrsActivationDistance]
 func (data *CarStatusData) SetDrsActivationDistance(v uint16) { data.DrsActivationDistance = v }
 
-// GetActualTyreCompound returns the ActualTyreCompound of [CarStatusData]
+// GetActualTyreCompound returns [CarStatusData.ActualTyreCompound]
 func (data *CarStatusData) GetActualTyreCompound() uint8 { return data.ActualTyreCompound }
 
-// SetActualTyreCompound stores the ActualTyreCompound of [CarStatusData]
+// SetActualTyreCompound stores [CarStatusData.ActualTyreCompound]
 func (data *CarStatusData) SetActualTyreCompound(v uint8) { data.ActualTyreCompound = v }
 
-// GetVisualTyreCompound returns the VisualTyreCompound of [CarStatusData]
+// GetVisualTyreCompound returns [CarStatusData.VisualTyreCompound]
 func (data *CarStatusData) GetVisualTyreCompound() uint8 { return data.VisualTyreCompound }
 
-// SetVisualTyreCompound stores the VisualTyreCompound of [CarStatusData]
+// SetVisualTyreCompound stores [CarStatusData.VisualTyreCompound]
 func (data *CarStatusData) SetVisualTyreCompound(v uint8) { data.VisualTyreCompound = v }
 
-// GetTyresAgeLaps returns the TyresAgeLaps of [CarStatusData]
+// GetTyresAgeLaps returns [CarStatusData.TyresAgeLaps]
 func (data *CarStatusData) GetTyresAgeLaps() uint8 { return data.TyresAgeLaps }
 
-// SetTyresAgeLaps stores the TyresAgeLaps of [CarStatusData]
+// SetTyresAgeLaps stores [CarStatusData.TyresAgeLaps]
 func (data *CarStatusData) SetTyresAgeLaps(v uint8) { data.TyresAgeLaps = v }
 
-// GetVehicleFiaFlags returns the VehicleFiaFlags of [CarStatusData]
+// GetVehicleFiaFlags returns [CarStatusData.VehicleFiaFlags]
 func (data *CarStatusData) GetVehicleFiaFlags() int8 { return data.VehicleFiaFlags }
 
-// SetVehicleFiaFlags stores the VehicleFiaFlags of [CarStatusData]
+// SetVehicleFiaFlags stores [CarStatusData.VehicleFiaFlags]
 func (data *CarStatusData) SetVehicleFiaFlags(v int8) { data.VehicleFiaFlags = v }
 
-// GetEnginePowerICE returns the EnginePowerICE of [CarStatusData]
+// GetEnginePowerICE returns [CarStatusData.EnginePowerICE]
 func (data *CarStatusData) GetEnginePowerICE() float32 { return data.EnginePowerICE }
 
-// SetEnginePowerICE stores the EnginePowerICE of [CarStatusData]
+// SetEnginePowerICE stores [CarStatusData.EnginePowerICE]
 func (data *CarStatusData) SetEnginePowerICE(v float32) { data.EnginePowerICE = v }
 
-// GetEnginePowerMGUK returns the EnginePowerMGUK of [CarStatusData]
+// GetEnginePowerMGUK returns [CarStatusData.EnginePowerMGUK]
 func (data *CarStatusData) GetEnginePowerMGUK() float32 { return data.EnginePowerMGUK }
 
-// SetEnginePowerMGUK stores the EnginePowerMGUK of [CarStatusData]
+// SetEnginePowerMGUK stores [CarStatusData.EnginePowerMGUK]
 func (data *CarStatusData) SetEnginePowerMGUK(v float32) { data.EnginePowerMGUK = v }
 
-// GetERSStoreEnergy returns the ERSStoreEnergy of [CarStatusData]
+// GetERSStoreEnergy returns [CarStatusData.ERSStoreEnergy]
 func (data *CarStatusData) GetERSStoreEnergy() float32 { return data.ERSStoreEnergy }
 
-// SetERSStoreEnergy stores the ERSStoreEnergy of [CarStatusData]
+// SetERSStoreEnergy stores [CarStatusData.ERSStoreEnergy]
 func (data *CarStatusData) SetERSStoreEnergy(v float32) { data.ERSStoreEnergy = v }
 
-// GetERSDeployMode returns the ERSDeployMode of [CarStatusData]
+// GetERSDeployMode returns [CarStatusData.ERSDeployMode]
 func (data *CarStatusData) GetERSDeployMode() uint8 { return data.ERSDeployMode }
 
-// SetERSDeployMode stores the ERSDeployMode of [CarStatusData]
+// SetERSDeployMode stores [CarStatusData.ERSDeployMode]
 func (data *CarStatusData) SetERSDeployMode(v uint8) { data.ERSDeployMode = v }
 
-// GetERSHarvestedThisLapMGUK returns the ERSHarvestedThisLapMGUK of [CarStatusData]
+// GetERSHarvestedThisLapMGUK returns [CarStatusData.ERSHarvestedThisLapMGUK]
 func (data *CarStatusData) GetERSHarvestedThisLapMGUK() float32 { return data.ERSHarvestedThisLapMGUK }
 
-// SetERSHarvestedThisLapMGUK stores the ERSHarvestedThisLapMGUK of [CarStatusData]
+// SetERSHarvestedThisLapMGUK stores [CarStatusData.ERSHarvestedThisLapMGUK]
 func (data *CarStatusData) SetERSHarvestedThisLapMGUK(v float32) { data.ERSHarvestedThisLapMGUK = v }
 
-// GetERSHarvestedThisLapMGUH returns the ERSHarvestedThisLapMGUH of [CarStatusData]
+// GetERSHarvestedThisLapMGUH returns [CarStatusData.ERSHarvestedThisLapMGUH]
 func (data *CarStatusData) GetERSHarvestedThisLapMGUH() float32 { return data.ERSHarvestedThisLapMGUH }
 
-// SetERSHarvestedThisLapMGUH stores the ERSHarvestedThisLapMGUH of [CarStatusData]
+// SetERSHarvestedThisLapMGUH stores [CarStatusData.ERSHarvestedThisLapMGUH]
 func (data *CarStatusData) SetERSHarvestedThisLapMGUH(v float32) { data.ERSHarvestedThisLapMGUH = v }
 
-// GetERSDeployedThisLap returns the ERSDeployedThisLap of [CarStatusData]
+// GetERSDeployedThisLap returns [CarStatusData.ERSDeployedThisLap]
 func (data *CarStatusData) GetERSDeployedThisLap() float32 { return data.ERSDeployedThisLap }
 
-// SetERSDeployedThisLap stores the ERSDeployedThisLap of [CarStatusData]
+// SetERSDeployedThisLap stores [CarStatusData.ERSDeployedThisLap]
 func (data *CarStatusData) SetERSDeployedThisLap(v float32) { data.ERSDeployedThisLap = v }
 
-// GetNetworkPaused returns the NetworkPaused of [CarStatusData]
+// GetNetworkPaused returns [CarStatusData.NetworkPaused]
 func (data *CarStatusData) GetNetworkPaused() uint8 { return data.NetworkPaused }
 
-// SetNetworkPaused stores the NetworkPaused of [CarStatusData]
+// SetNetworkPaused stores [CarStatusData.NetworkPaused]
 func (data *CarStatusData) SetNetworkPaused(v uint8) { data.NetworkPaused = v }

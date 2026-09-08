@@ -2,50 +2,50 @@
 
 package f12026s
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataSpeedTrap]
+// GetVehicleIdx returns [EventDataSpeedTrap.VehicleIdx]
 func (data *EventDataSpeedTrap) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataSpeedTrap]
+// SetVehicleIdx stores [EventDataSpeedTrap.VehicleIdx]
 func (data *EventDataSpeedTrap) SetVehicleIdx(v uint8) { data.VehicleIdx = v }
 
-// GetSpeed returns the Speed of [EventDataSpeedTrap]
+// GetSpeed returns [EventDataSpeedTrap.Speed]
 func (data *EventDataSpeedTrap) GetSpeed() float32 { return data.Speed }
 
-// SetSpeed stores the Speed of [EventDataSpeedTrap]
+// SetSpeed stores [EventDataSpeedTrap.Speed]
 func (data *EventDataSpeedTrap) SetSpeed(v float32) { data.Speed = v }
 
-// GetIsOverallFastestInSession returns the IsOverallFastestInSession of [EventDataSpeedTrap]
+// GetIsOverallFastestInSession returns [EventDataSpeedTrap.IsOverallFastestInSession]
 func (data *EventDataSpeedTrap) GetIsOverallFastestInSession() uint8 {
 	return data.IsOverallFastestInSession
 }
 
-// SetIsOverallFastestInSession stores the IsOverallFastestInSession of [EventDataSpeedTrap]
+// SetIsOverallFastestInSession stores [EventDataSpeedTrap.IsOverallFastestInSession]
 func (data *EventDataSpeedTrap) SetIsOverallFastestInSession(v uint8) {
 	data.IsOverallFastestInSession = v
 }
 
-// GetIsDriverFastestInSession returns the IsDriverFastestInSession of [EventDataSpeedTrap]
+// GetIsDriverFastestInSession returns [EventDataSpeedTrap.IsDriverFastestInSession]
 func (data *EventDataSpeedTrap) GetIsDriverFastestInSession() uint8 {
 	return data.IsDriverFastestInSession
 }
 
-// SetIsDriverFastestInSession stores the IsDriverFastestInSession of [EventDataSpeedTrap]
+// SetIsDriverFastestInSession stores [EventDataSpeedTrap.IsDriverFastestInSession]
 func (data *EventDataSpeedTrap) SetIsDriverFastestInSession(v uint8) {
 	data.IsDriverFastestInSession = v
 }
 
-// GetFastestVehicleIdxInSession returns the FastestVehicleIdxInSession of [EventDataSpeedTrap]
+// GetFastestVehicleIdxInSession returns [EventDataSpeedTrap.FastestVehicleIdxInSession]
 func (data *EventDataSpeedTrap) GetFastestVehicleIdxInSession() uint8 {
 	return data.FastestVehicleIdxInSession
 }
 
-// SetFastestVehicleIdxInSession stores the FastestVehicleIdxInSession of [EventDataSpeedTrap]
+// SetFastestVehicleIdxInSession stores [EventDataSpeedTrap.FastestVehicleIdxInSession]
 func (data *EventDataSpeedTrap) SetFastestVehicleIdxInSession(v uint8) {
 	data.FastestVehicleIdxInSession = v
 }
 
-// GetFastestSpeedInSession returns the FastestSpeedInSession of [EventDataSpeedTrap]
+// GetFastestSpeedInSession returns [EventDataSpeedTrap.FastestSpeedInSession]
 func (data *EventDataSpeedTrap) GetFastestSpeedInSession() float32 { return data.FastestSpeedInSession }
 
-// SetFastestSpeedInSession stores the FastestSpeedInSession of [EventDataSpeedTrap]
+// SetFastestSpeedInSession stores [EventDataSpeedTrap.FastestSpeedInSession]
 func (data *EventDataSpeedTrap) SetFastestSpeedInSession(v float32) { data.FastestSpeedInSession = v }

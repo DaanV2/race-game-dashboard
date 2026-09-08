@@ -2,8 +2,8 @@
 
 package f12026s
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataTeamMateInPits]
+// GetVehicleIdx returns [EventDataTeamMateInPits.VehicleIdx]
 func (data *EventDataTeamMateInPits) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataTeamMateInPits]
+// SetVehicleIdx stores [EventDataTeamMateInPits.VehicleIdx]
 func (data *EventDataTeamMateInPits) SetVehicleIdx(v uint8) { data.VehicleIdx = v }

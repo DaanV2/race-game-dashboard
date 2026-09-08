@@ -2,56 +2,56 @@
 
 package f12025
 
-// GetAiControlled returns the AiControlled of [LobbyInfoData]
+// GetAiControlled returns [LobbyInfoData.AiControlled]
 func (data *LobbyInfoData) GetAiControlled() uint8 { return data.AiControlled }
 
-// SetAiControlled stores the AiControlled of [LobbyInfoData]
+// SetAiControlled stores [LobbyInfoData.AiControlled]
 func (data *LobbyInfoData) SetAiControlled(v uint8) { data.AiControlled = v }
 
-// GetTeamId returns the TeamId of [LobbyInfoData]
+// GetTeamId returns [LobbyInfoData.TeamId]
 func (data *LobbyInfoData) GetTeamId() uint16 { return data.TeamId }
 
-// SetTeamId stores the TeamId of [LobbyInfoData]
+// SetTeamId stores [LobbyInfoData.TeamId]
 func (data *LobbyInfoData) SetTeamId(v uint16) { data.TeamId = v }
 
-// GetNationality returns the Nationality of [LobbyInfoData]
+// GetNationality returns [LobbyInfoData.Nationality]
 func (data *LobbyInfoData) GetNationality() uint8 { return data.Nationality }
 
-// SetNationality stores the Nationality of [LobbyInfoData]
+// SetNationality stores [LobbyInfoData.Nationality]
 func (data *LobbyInfoData) SetNationality(v uint8) { data.Nationality = v }
 
-// GetPlatform returns the Platform of [LobbyInfoData]
+// GetPlatform returns [LobbyInfoData.Platform]
 func (data *LobbyInfoData) GetPlatform() uint8 { return data.Platform }
 
-// SetPlatform stores the Platform of [LobbyInfoData]
+// SetPlatform stores [LobbyInfoData.Platform]
 func (data *LobbyInfoData) SetPlatform(v uint8) { data.Platform = v }
 
-// GetCarNumber returns the CarNumber of [LobbyInfoData]
+// GetCarNumber returns [LobbyInfoData.CarNumber]
 func (data *LobbyInfoData) GetCarNumber() uint8 { return data.CarNumber }
 
-// SetCarNumber stores the CarNumber of [LobbyInfoData]
+// SetCarNumber stores [LobbyInfoData.CarNumber]
 func (data *LobbyInfoData) SetCarNumber(v uint8) { data.CarNumber = v }
 
-// GetYourTelemetry returns the YourTelemetry of [LobbyInfoData]
+// GetYourTelemetry returns [LobbyInfoData.YourTelemetry]
 func (data *LobbyInfoData) GetYourTelemetry() uint8 { return data.YourTelemetry }
 
-// SetYourTelemetry stores the YourTelemetry of [LobbyInfoData]
+// SetYourTelemetry stores [LobbyInfoData.YourTelemetry]
 func (data *LobbyInfoData) SetYourTelemetry(v uint8) { data.YourTelemetry = v }
 
-// GetShowOnlineNames returns the ShowOnlineNames of [LobbyInfoData]
+// GetShowOnlineNames returns [LobbyInfoData.ShowOnlineNames]
 func (data *LobbyInfoData) GetShowOnlineNames() uint8 { return data.ShowOnlineNames }
 
-// SetShowOnlineNames stores the ShowOnlineNames of [LobbyInfoData]
+// SetShowOnlineNames stores [LobbyInfoData.ShowOnlineNames]
 func (data *LobbyInfoData) SetShowOnlineNames(v uint8) { data.ShowOnlineNames = v }
 
-// GetTechLevel returns the TechLevel of [LobbyInfoData]
+// GetTechLevel returns [LobbyInfoData.TechLevel]
 func (data *LobbyInfoData) GetTechLevel() uint16 { return data.TechLevel }
 
-// SetTechLevel stores the TechLevel of [LobbyInfoData]
+// SetTechLevel stores [LobbyInfoData.TechLevel]
 func (data *LobbyInfoData) SetTechLevel(v uint16) { data.TechLevel = v }
 
-// GetReadyStatus returns the ReadyStatus of [LobbyInfoData]
+// GetReadyStatus returns [LobbyInfoData.ReadyStatus]
 func (data *LobbyInfoData) GetReadyStatus() uint8 { return data.ReadyStatus }
 
-// SetReadyStatus stores the ReadyStatus of [LobbyInfoData]
+// SetReadyStatus stores [LobbyInfoData.ReadyStatus]
 func (data *LobbyInfoData) SetReadyStatus(v uint8) { data.ReadyStatus = v }

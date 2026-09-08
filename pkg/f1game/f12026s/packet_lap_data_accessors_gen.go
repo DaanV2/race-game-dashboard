@@ -2,20 +2,20 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketLapData]
+// GetHeader returns [PacketLapData.Header]
 func (data *PacketLapData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketLapData]
+// SetHeader stores [PacketLapData.Header]
 func (data *PacketLapData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetTimeTrialPBCarIdx returns the TimeTrialPBCarIdx of [PacketLapData]
+// GetTimeTrialPBCarIdx returns [PacketLapData.TimeTrialPBCarIdx]
 func (data *PacketLapData) GetTimeTrialPBCarIdx() uint8 { return data.TimeTrialPBCarIdx }
 
-// SetTimeTrialPBCarIdx stores the TimeTrialPBCarIdx of [PacketLapData]
+// SetTimeTrialPBCarIdx stores [PacketLapData.TimeTrialPBCarIdx]
 func (data *PacketLapData) SetTimeTrialPBCarIdx(v uint8) { data.TimeTrialPBCarIdx = v }
 
-// GetTimeTrialRivalCarIdx returns the TimeTrialRivalCarIdx of [PacketLapData]
+// GetTimeTrialRivalCarIdx returns [PacketLapData.TimeTrialRivalCarIdx]
 func (data *PacketLapData) GetTimeTrialRivalCarIdx() uint8 { return data.TimeTrialRivalCarIdx }
 
-// SetTimeTrialRivalCarIdx stores the TimeTrialRivalCarIdx of [PacketLapData]
+// SetTimeTrialRivalCarIdx stores [PacketLapData.TimeTrialRivalCarIdx]
 func (data *PacketLapData) SetTimeTrialRivalCarIdx(v uint8) { data.TimeTrialRivalCarIdx = v }

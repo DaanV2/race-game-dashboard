@@ -2,34 +2,34 @@
 
 package f12025
 
-// GetHeader returns the Header of [PacketTimeTrialData]
+// GetHeader returns [PacketTimeTrialData.Header]
 func (data *PacketTimeTrialData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketTimeTrialData]
+// SetHeader stores [PacketTimeTrialData.Header]
 func (data *PacketTimeTrialData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetPlayerSessionBestDataSet returns the PlayerSessionBestDataSet of [PacketTimeTrialData]
+// GetPlayerSessionBestDataSet returns [PacketTimeTrialData.PlayerSessionBestDataSet]
 func (data *PacketTimeTrialData) GetPlayerSessionBestDataSet() TimeTrialDataSet {
 	return data.PlayerSessionBestDataSet
 }
 
-// SetPlayerSessionBestDataSet stores the PlayerSessionBestDataSet of [PacketTimeTrialData]
+// SetPlayerSessionBestDataSet stores [PacketTimeTrialData.PlayerSessionBestDataSet]
 func (data *PacketTimeTrialData) SetPlayerSessionBestDataSet(v TimeTrialDataSet) {
 	data.PlayerSessionBestDataSet = v
 }
 
-// GetPersonalBestDataSet returns the PersonalBestDataSet of [PacketTimeTrialData]
+// GetPersonalBestDataSet returns [PacketTimeTrialData.PersonalBestDataSet]
 func (data *PacketTimeTrialData) GetPersonalBestDataSet() TimeTrialDataSet {
 	return data.PersonalBestDataSet
 }
 
-// SetPersonalBestDataSet stores the PersonalBestDataSet of [PacketTimeTrialData]
+// SetPersonalBestDataSet stores [PacketTimeTrialData.PersonalBestDataSet]
 func (data *PacketTimeTrialData) SetPersonalBestDataSet(v TimeTrialDataSet) {
 	data.PersonalBestDataSet = v
 }
 
-// GetRivalDataSet returns the RivalDataSet of [PacketTimeTrialData]
+// GetRivalDataSet returns [PacketTimeTrialData.RivalDataSet]
 func (data *PacketTimeTrialData) GetRivalDataSet() TimeTrialDataSet { return data.RivalDataSet }
 
-// SetRivalDataSet stores the RivalDataSet of [PacketTimeTrialData]
+// SetRivalDataSet stores [PacketTimeTrialData.RivalDataSet]
 func (data *PacketTimeTrialData) SetRivalDataSet(v TimeTrialDataSet) { data.RivalDataSet = v }

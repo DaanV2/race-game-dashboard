@@ -2,20 +2,20 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketLapPositionsData]
+// GetHeader returns [PacketLapPositionsData.Header]
 func (data *PacketLapPositionsData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketLapPositionsData]
+// SetHeader stores [PacketLapPositionsData.Header]
 func (data *PacketLapPositionsData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetNumLaps returns the NumLaps of [PacketLapPositionsData]
+// GetNumLaps returns [PacketLapPositionsData.NumLaps]
 func (data *PacketLapPositionsData) GetNumLaps() uint8 { return data.NumLaps }
 
-// SetNumLaps stores the NumLaps of [PacketLapPositionsData]
+// SetNumLaps stores [PacketLapPositionsData.NumLaps]
 func (data *PacketLapPositionsData) SetNumLaps(v uint8) { data.NumLaps = v }
 
-// GetLapStart returns the LapStart of [PacketLapPositionsData]
+// GetLapStart returns [PacketLapPositionsData.LapStart]
 func (data *PacketLapPositionsData) GetLapStart() uint8 { return data.LapStart }
 
-// SetLapStart stores the LapStart of [PacketLapPositionsData]
+// SetLapStart stores [PacketLapPositionsData.LapStart]
 func (data *PacketLapPositionsData) SetLapStart(v uint8) { data.LapStart = v }

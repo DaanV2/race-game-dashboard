@@ -2,110 +2,110 @@
 
 package f12025
 
-// GetWorldPositionX returns the WorldPositionX of [CarMotionData]
+// GetWorldPositionX returns [CarMotionData.WorldPositionX]
 func (data *CarMotionData) GetWorldPositionX() float32 { return data.WorldPositionX }
 
-// SetWorldPositionX stores the WorldPositionX of [CarMotionData]
+// SetWorldPositionX stores [CarMotionData.WorldPositionX]
 func (data *CarMotionData) SetWorldPositionX(v float32) { data.WorldPositionX = v }
 
-// GetWorldPositionY returns the WorldPositionY of [CarMotionData]
+// GetWorldPositionY returns [CarMotionData.WorldPositionY]
 func (data *CarMotionData) GetWorldPositionY() float32 { return data.WorldPositionY }
 
-// SetWorldPositionY stores the WorldPositionY of [CarMotionData]
+// SetWorldPositionY stores [CarMotionData.WorldPositionY]
 func (data *CarMotionData) SetWorldPositionY(v float32) { data.WorldPositionY = v }
 
-// GetWorldPositionZ returns the WorldPositionZ of [CarMotionData]
+// GetWorldPositionZ returns [CarMotionData.WorldPositionZ]
 func (data *CarMotionData) GetWorldPositionZ() float32 { return data.WorldPositionZ }
 
-// SetWorldPositionZ stores the WorldPositionZ of [CarMotionData]
+// SetWorldPositionZ stores [CarMotionData.WorldPositionZ]
 func (data *CarMotionData) SetWorldPositionZ(v float32) { data.WorldPositionZ = v }
 
-// GetWorldVelocityX returns the WorldVelocityX of [CarMotionData]
+// GetWorldVelocityX returns [CarMotionData.WorldVelocityX]
 func (data *CarMotionData) GetWorldVelocityX() float32 { return data.WorldVelocityX }
 
-// SetWorldVelocityX stores the WorldVelocityX of [CarMotionData]
+// SetWorldVelocityX stores [CarMotionData.WorldVelocityX]
 func (data *CarMotionData) SetWorldVelocityX(v float32) { data.WorldVelocityX = v }
 
-// GetWorldVelocityY returns the WorldVelocityY of [CarMotionData]
+// GetWorldVelocityY returns [CarMotionData.WorldVelocityY]
 func (data *CarMotionData) GetWorldVelocityY() float32 { return data.WorldVelocityY }
 
-// SetWorldVelocityY stores the WorldVelocityY of [CarMotionData]
+// SetWorldVelocityY stores [CarMotionData.WorldVelocityY]
 func (data *CarMotionData) SetWorldVelocityY(v float32) { data.WorldVelocityY = v }
 
-// GetWorldVelocityZ returns the WorldVelocityZ of [CarMotionData]
+// GetWorldVelocityZ returns [CarMotionData.WorldVelocityZ]
 func (data *CarMotionData) GetWorldVelocityZ() float32 { return data.WorldVelocityZ }
 
-// SetWorldVelocityZ stores the WorldVelocityZ of [CarMotionData]
+// SetWorldVelocityZ stores [CarMotionData.WorldVelocityZ]
 func (data *CarMotionData) SetWorldVelocityZ(v float32) { data.WorldVelocityZ = v }
 
-// GetWorldForwardDirX returns the WorldForwardDirX of [CarMotionData]
+// GetWorldForwardDirX returns [CarMotionData.WorldForwardDirX]
 func (data *CarMotionData) GetWorldForwardDirX() int16 { return data.WorldForwardDirX }
 
-// SetWorldForwardDirX stores the WorldForwardDirX of [CarMotionData]
+// SetWorldForwardDirX stores [CarMotionData.WorldForwardDirX]
 func (data *CarMotionData) SetWorldForwardDirX(v int16) { data.WorldForwardDirX = v }
 
-// GetWorldForwardDirY returns the WorldForwardDirY of [CarMotionData]
+// GetWorldForwardDirY returns [CarMotionData.WorldForwardDirY]
 func (data *CarMotionData) GetWorldForwardDirY() int16 { return data.WorldForwardDirY }
 
-// SetWorldForwardDirY stores the WorldForwardDirY of [CarMotionData]
+// SetWorldForwardDirY stores [CarMotionData.WorldForwardDirY]
 func (data *CarMotionData) SetWorldForwardDirY(v int16) { data.WorldForwardDirY = v }
 
-// GetWorldForwardDirZ returns the WorldForwardDirZ of [CarMotionData]
+// GetWorldForwardDirZ returns [CarMotionData.WorldForwardDirZ]
 func (data *CarMotionData) GetWorldForwardDirZ() int16 { return data.WorldForwardDirZ }
 
-// SetWorldForwardDirZ stores the WorldForwardDirZ of [CarMotionData]
+// SetWorldForwardDirZ stores [CarMotionData.WorldForwardDirZ]
 func (data *CarMotionData) SetWorldForwardDirZ(v int16) { data.WorldForwardDirZ = v }
 
-// GetWorldRightDirX returns the WorldRightDirX of [CarMotionData]
+// GetWorldRightDirX returns [CarMotionData.WorldRightDirX]
 func (data *CarMotionData) GetWorldRightDirX() int16 { return data.WorldRightDirX }
 
-// SetWorldRightDirX stores the WorldRightDirX of [CarMotionData]
+// SetWorldRightDirX stores [CarMotionData.WorldRightDirX]
 func (data *CarMotionData) SetWorldRightDirX(v int16) { data.WorldRightDirX = v }
 
-// GetWorldRightDirY returns the WorldRightDirY of [CarMotionData]
+// GetWorldRightDirY returns [CarMotionData.WorldRightDirY]
 func (data *CarMotionData) GetWorldRightDirY() int16 { return data.WorldRightDirY }
 
-// SetWorldRightDirY stores the WorldRightDirY of [CarMotionData]
+// SetWorldRightDirY stores [CarMotionData.WorldRightDirY]
 func (data *CarMotionData) SetWorldRightDirY(v int16) { data.WorldRightDirY = v }
 
-// GetWorldRightDirZ returns the WorldRightDirZ of [CarMotionData]
+// GetWorldRightDirZ returns [CarMotionData.WorldRightDirZ]
 func (data *CarMotionData) GetWorldRightDirZ() int16 { return data.WorldRightDirZ }
 
-// SetWorldRightDirZ stores the WorldRightDirZ of [CarMotionData]
+// SetWorldRightDirZ stores [CarMotionData.WorldRightDirZ]
 func (data *CarMotionData) SetWorldRightDirZ(v int16) { data.WorldRightDirZ = v }
 
-// GetGForceLateral returns the GForceLateral of [CarMotionData]
+// GetGForceLateral returns [CarMotionData.GForceLateral]
 func (data *CarMotionData) GetGForceLateral() int16 { return data.GForceLateral }
 
-// SetGForceLateral stores the GForceLateral of [CarMotionData]
+// SetGForceLateral stores [CarMotionData.GForceLateral]
 func (data *CarMotionData) SetGForceLateral(v int16) { data.GForceLateral = v }
 
-// GetGForceLongitudinal returns the GForceLongitudinal of [CarMotionData]
+// GetGForceLongitudinal returns [CarMotionData.GForceLongitudinal]
 func (data *CarMotionData) GetGForceLongitudinal() int16 { return data.GForceLongitudinal }
 
-// SetGForceLongitudinal stores the GForceLongitudinal of [CarMotionData]
+// SetGForceLongitudinal stores [CarMotionData.GForceLongitudinal]
 func (data *CarMotionData) SetGForceLongitudinal(v int16) { data.GForceLongitudinal = v }
 
-// GetGForceVertical returns the GForceVertical of [CarMotionData]
+// GetGForceVertical returns [CarMotionData.GForceVertical]
 func (data *CarMotionData) GetGForceVertical() int16 { return data.GForceVertical }
 
-// SetGForceVertical stores the GForceVertical of [CarMotionData]
+// SetGForceVertical stores [CarMotionData.GForceVertical]
 func (data *CarMotionData) SetGForceVertical(v int16) { data.GForceVertical = v }
 
-// GetYaw returns the Yaw of [CarMotionData]
+// GetYaw returns [CarMotionData.Yaw]
 func (data *CarMotionData) GetYaw() float32 { return data.Yaw }
 
-// SetYaw stores the Yaw of [CarMotionData]
+// SetYaw stores [CarMotionData.Yaw]
 func (data *CarMotionData) SetYaw(v float32) { data.Yaw = v }
 
-// GetPitch returns the Pitch of [CarMotionData]
+// GetPitch returns [CarMotionData.Pitch]
 func (data *CarMotionData) GetPitch() float32 { return data.Pitch }
 
-// SetPitch stores the Pitch of [CarMotionData]
+// SetPitch stores [CarMotionData.Pitch]
 func (data *CarMotionData) SetPitch(v float32) { data.Pitch = v }
 
-// GetRoll returns the Roll of [CarMotionData]
+// GetRoll returns [CarMotionData.Roll]
 func (data *CarMotionData) GetRoll() float32 { return data.Roll }
 
-// SetRoll stores the Roll of [CarMotionData]
+// SetRoll stores [CarMotionData.Roll]
 func (data *CarMotionData) SetRoll(v float32) { data.Roll = v }

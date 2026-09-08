@@ -2,14 +2,14 @@
 
 package f12026s
 
-// GetZoneStart returns the ZoneStart of [ActiveAeroZone]
+// GetZoneStart returns [ActiveAeroZone.ZoneStart]
 func (data *ActiveAeroZone) GetZoneStart() float32 { return data.ZoneStart }
 
-// SetZoneStart stores the ZoneStart of [ActiveAeroZone]
+// SetZoneStart stores [ActiveAeroZone.ZoneStart]
 func (data *ActiveAeroZone) SetZoneStart(v float32) { data.ZoneStart = v }
 
-// GetZoneEnd returns the ZoneEnd of [ActiveAeroZone]
+// GetZoneEnd returns [ActiveAeroZone.ZoneEnd]
 func (data *ActiveAeroZone) GetZoneEnd() float32 { return data.ZoneEnd }
 
-// SetZoneEnd stores the ZoneEnd of [ActiveAeroZone]
+// SetZoneEnd stores [ActiveAeroZone.ZoneEnd]
 func (data *ActiveAeroZone) SetZoneEnd(v float32) { data.ZoneEnd = v }

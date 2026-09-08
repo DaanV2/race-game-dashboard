@@ -2,140 +2,140 @@
 
 package f12026s
 
-// GetFrontWing returns the FrontWing of [CarSetupData]
+// GetFrontWing returns [CarSetupData.FrontWing]
 func (data *CarSetupData) GetFrontWing() uint8 { return data.FrontWing }
 
-// SetFrontWing stores the FrontWing of [CarSetupData]
+// SetFrontWing stores [CarSetupData.FrontWing]
 func (data *CarSetupData) SetFrontWing(v uint8) { data.FrontWing = v }
 
-// GetRearWing returns the RearWing of [CarSetupData]
+// GetRearWing returns [CarSetupData.RearWing]
 func (data *CarSetupData) GetRearWing() uint8 { return data.RearWing }
 
-// SetRearWing stores the RearWing of [CarSetupData]
+// SetRearWing stores [CarSetupData.RearWing]
 func (data *CarSetupData) SetRearWing(v uint8) { data.RearWing = v }
 
-// GetOnThrottle returns the OnThrottle of [CarSetupData]
+// GetOnThrottle returns [CarSetupData.OnThrottle]
 func (data *CarSetupData) GetOnThrottle() uint8 { return data.OnThrottle }
 
-// SetOnThrottle stores the OnThrottle of [CarSetupData]
+// SetOnThrottle stores [CarSetupData.OnThrottle]
 func (data *CarSetupData) SetOnThrottle(v uint8) { data.OnThrottle = v }
 
-// GetOffThrottle returns the OffThrottle of [CarSetupData]
+// GetOffThrottle returns [CarSetupData.OffThrottle]
 func (data *CarSetupData) GetOffThrottle() uint8 { return data.OffThrottle }
 
-// SetOffThrottle stores the OffThrottle of [CarSetupData]
+// SetOffThrottle stores [CarSetupData.OffThrottle]
 func (data *CarSetupData) SetOffThrottle(v uint8) { data.OffThrottle = v }
 
-// GetFrontCamber returns the FrontCamber of [CarSetupData]
+// GetFrontCamber returns [CarSetupData.FrontCamber]
 func (data *CarSetupData) GetFrontCamber() float32 { return data.FrontCamber }
 
-// SetFrontCamber stores the FrontCamber of [CarSetupData]
+// SetFrontCamber stores [CarSetupData.FrontCamber]
 func (data *CarSetupData) SetFrontCamber(v float32) { data.FrontCamber = v }
 
-// GetRearCamber returns the RearCamber of [CarSetupData]
+// GetRearCamber returns [CarSetupData.RearCamber]
 func (data *CarSetupData) GetRearCamber() float32 { return data.RearCamber }
 
-// SetRearCamber stores the RearCamber of [CarSetupData]
+// SetRearCamber stores [CarSetupData.RearCamber]
 func (data *CarSetupData) SetRearCamber(v float32) { data.RearCamber = v }
 
-// GetFrontToe returns the FrontToe of [CarSetupData]
+// GetFrontToe returns [CarSetupData.FrontToe]
 func (data *CarSetupData) GetFrontToe() float32 { return data.FrontToe }
 
-// SetFrontToe stores the FrontToe of [CarSetupData]
+// SetFrontToe stores [CarSetupData.FrontToe]
 func (data *CarSetupData) SetFrontToe(v float32) { data.FrontToe = v }
 
-// GetRearToe returns the RearToe of [CarSetupData]
+// GetRearToe returns [CarSetupData.RearToe]
 func (data *CarSetupData) GetRearToe() float32 { return data.RearToe }
 
-// SetRearToe stores the RearToe of [CarSetupData]
+// SetRearToe stores [CarSetupData.RearToe]
 func (data *CarSetupData) SetRearToe(v float32) { data.RearToe = v }
 
-// GetFrontSuspension returns the FrontSuspension of [CarSetupData]
+// GetFrontSuspension returns [CarSetupData.FrontSuspension]
 func (data *CarSetupData) GetFrontSuspension() uint8 { return data.FrontSuspension }
 
-// SetFrontSuspension stores the FrontSuspension of [CarSetupData]
+// SetFrontSuspension stores [CarSetupData.FrontSuspension]
 func (data *CarSetupData) SetFrontSuspension(v uint8) { data.FrontSuspension = v }
 
-// GetRearSuspension returns the RearSuspension of [CarSetupData]
+// GetRearSuspension returns [CarSetupData.RearSuspension]
 func (data *CarSetupData) GetRearSuspension() uint8 { return data.RearSuspension }
 
-// SetRearSuspension stores the RearSuspension of [CarSetupData]
+// SetRearSuspension stores [CarSetupData.RearSuspension]
 func (data *CarSetupData) SetRearSuspension(v uint8) { data.RearSuspension = v }
 
-// GetFrontAntiRollBar returns the FrontAntiRollBar of [CarSetupData]
+// GetFrontAntiRollBar returns [CarSetupData.FrontAntiRollBar]
 func (data *CarSetupData) GetFrontAntiRollBar() uint8 { return data.FrontAntiRollBar }
 
-// SetFrontAntiRollBar stores the FrontAntiRollBar of [CarSetupData]
+// SetFrontAntiRollBar stores [CarSetupData.FrontAntiRollBar]
 func (data *CarSetupData) SetFrontAntiRollBar(v uint8) { data.FrontAntiRollBar = v }
 
-// GetRearAntiRollBar returns the RearAntiRollBar of [CarSetupData]
+// GetRearAntiRollBar returns [CarSetupData.RearAntiRollBar]
 func (data *CarSetupData) GetRearAntiRollBar() uint8 { return data.RearAntiRollBar }
 
-// SetRearAntiRollBar stores the RearAntiRollBar of [CarSetupData]
+// SetRearAntiRollBar stores [CarSetupData.RearAntiRollBar]
 func (data *CarSetupData) SetRearAntiRollBar(v uint8) { data.RearAntiRollBar = v }
 
-// GetFrontSuspensionHeight returns the FrontSuspensionHeight of [CarSetupData]
+// GetFrontSuspensionHeight returns [CarSetupData.FrontSuspensionHeight]
 func (data *CarSetupData) GetFrontSuspensionHeight() uint8 { return data.FrontSuspensionHeight }
 
-// SetFrontSuspensionHeight stores the FrontSuspensionHeight of [CarSetupData]
+// SetFrontSuspensionHeight stores [CarSetupData.FrontSuspensionHeight]
 func (data *CarSetupData) SetFrontSuspensionHeight(v uint8) { data.FrontSuspensionHeight = v }
 
-// GetRearSuspensionHeight returns the RearSuspensionHeight of [CarSetupData]
+// GetRearSuspensionHeight returns [CarSetupData.RearSuspensionHeight]
 func (data *CarSetupData) GetRearSuspensionHeight() uint8 { return data.RearSuspensionHeight }
 
-// SetRearSuspensionHeight stores the RearSuspensionHeight of [CarSetupData]
+// SetRearSuspensionHeight stores [CarSetupData.RearSuspensionHeight]
 func (data *CarSetupData) SetRearSuspensionHeight(v uint8) { data.RearSuspensionHeight = v }
 
-// GetBrakePressure returns the BrakePressure of [CarSetupData]
+// GetBrakePressure returns [CarSetupData.BrakePressure]
 func (data *CarSetupData) GetBrakePressure() uint8 { return data.BrakePressure }
 
-// SetBrakePressure stores the BrakePressure of [CarSetupData]
+// SetBrakePressure stores [CarSetupData.BrakePressure]
 func (data *CarSetupData) SetBrakePressure(v uint8) { data.BrakePressure = v }
 
-// GetBrakeBias returns the BrakeBias of [CarSetupData]
+// GetBrakeBias returns [CarSetupData.BrakeBias]
 func (data *CarSetupData) GetBrakeBias() uint8 { return data.BrakeBias }
 
-// SetBrakeBias stores the BrakeBias of [CarSetupData]
+// SetBrakeBias stores [CarSetupData.BrakeBias]
 func (data *CarSetupData) SetBrakeBias(v uint8) { data.BrakeBias = v }
 
-// GetEngineBraking returns the EngineBraking of [CarSetupData]
+// GetEngineBraking returns [CarSetupData.EngineBraking]
 func (data *CarSetupData) GetEngineBraking() uint8 { return data.EngineBraking }
 
-// SetEngineBraking stores the EngineBraking of [CarSetupData]
+// SetEngineBraking stores [CarSetupData.EngineBraking]
 func (data *CarSetupData) SetEngineBraking(v uint8) { data.EngineBraking = v }
 
-// GetRearLeftTyrePressure returns the RearLeftTyrePressure of [CarSetupData]
+// GetRearLeftTyrePressure returns [CarSetupData.RearLeftTyrePressure]
 func (data *CarSetupData) GetRearLeftTyrePressure() float32 { return data.RearLeftTyrePressure }
 
-// SetRearLeftTyrePressure stores the RearLeftTyrePressure of [CarSetupData]
+// SetRearLeftTyrePressure stores [CarSetupData.RearLeftTyrePressure]
 func (data *CarSetupData) SetRearLeftTyrePressure(v float32) { data.RearLeftTyrePressure = v }
 
-// GetRearRightTyrePressure returns the RearRightTyrePressure of [CarSetupData]
+// GetRearRightTyrePressure returns [CarSetupData.RearRightTyrePressure]
 func (data *CarSetupData) GetRearRightTyrePressure() float32 { return data.RearRightTyrePressure }
 
-// SetRearRightTyrePressure stores the RearRightTyrePressure of [CarSetupData]
+// SetRearRightTyrePressure stores [CarSetupData.RearRightTyrePressure]
 func (data *CarSetupData) SetRearRightTyrePressure(v float32) { data.RearRightTyrePressure = v }
 
-// GetFrontLeftTyrePressure returns the FrontLeftTyrePressure of [CarSetupData]
+// GetFrontLeftTyrePressure returns [CarSetupData.FrontLeftTyrePressure]
 func (data *CarSetupData) GetFrontLeftTyrePressure() float32 { return data.FrontLeftTyrePressure }
 
-// SetFrontLeftTyrePressure stores the FrontLeftTyrePressure of [CarSetupData]
+// SetFrontLeftTyrePressure stores [CarSetupData.FrontLeftTyrePressure]
 func (data *CarSetupData) SetFrontLeftTyrePressure(v float32) { data.FrontLeftTyrePressure = v }
 
-// GetFrontRightTyrePressure returns the FrontRightTyrePressure of [CarSetupData]
+// GetFrontRightTyrePressure returns [CarSetupData.FrontRightTyrePressure]
 func (data *CarSetupData) GetFrontRightTyrePressure() float32 { return data.FrontRightTyrePressure }
 
-// SetFrontRightTyrePressure stores the FrontRightTyrePressure of [CarSetupData]
+// SetFrontRightTyrePressure stores [CarSetupData.FrontRightTyrePressure]
 func (data *CarSetupData) SetFrontRightTyrePressure(v float32) { data.FrontRightTyrePressure = v }
 
-// GetBallast returns the Ballast of [CarSetupData]
+// GetBallast returns [CarSetupData.Ballast]
 func (data *CarSetupData) GetBallast() uint8 { return data.Ballast }
 
-// SetBallast stores the Ballast of [CarSetupData]
+// SetBallast stores [CarSetupData.Ballast]
 func (data *CarSetupData) SetBallast(v uint8) { data.Ballast = v }
 
-// GetFuelLoad returns the FuelLoad of [CarSetupData]
+// GetFuelLoad returns [CarSetupData.FuelLoad]
 func (data *CarSetupData) GetFuelLoad() float32 { return data.FuelLoad }
 
-// SetFuelLoad stores the FuelLoad of [CarSetupData]
+// SetFuelLoad stores [CarSetupData.FuelLoad]
 func (data *CarSetupData) SetFuelLoad(v float32) { data.FuelLoad = v }

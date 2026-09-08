@@ -2,8 +2,8 @@
 
 package f12025
 
-// GetReason returns the Reason of [EventDataDRSDisabled]
+// GetReason returns [EventDataDRSDisabled.Reason]
 func (data *EventDataDRSDisabled) GetReason() uint8 { return data.Reason }
 
-// SetReason stores the Reason of [EventDataDRSDisabled]
+// SetReason stores [EventDataDRSDisabled.Reason]
 func (data *EventDataDRSDisabled) SetReason(v uint8) { data.Reason = v }

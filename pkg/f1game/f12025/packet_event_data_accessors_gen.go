@@ -2,20 +2,20 @@
 
 package f12025
 
-// GetHeader returns the Header of [PacketEventData]
+// GetHeader returns [PacketEventData.Header]
 func (data *PacketEventData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketEventData]
+// SetHeader stores [PacketEventData.Header]
 func (data *PacketEventData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetEventStringCode returns the EventStringCode of [PacketEventData]
+// GetEventStringCode returns [PacketEventData.EventStringCode]
 func (data *PacketEventData) GetEventStringCode() EventCode { return data.EventStringCode }
 
-// SetEventStringCode stores the EventStringCode of [PacketEventData]
+// SetEventStringCode stores [PacketEventData.EventStringCode]
 func (data *PacketEventData) SetEventStringCode(v EventCode) { data.EventStringCode = v }
 
-// GetEventDetails returns the EventDetails of [PacketEventData]
+// GetEventDetails returns [PacketEventData.EventDetails]
 func (data *PacketEventData) GetEventDetails() EventDataDetails { return data.EventDetails }
 
-// SetEventDetails stores the EventDetails of [PacketEventData]
+// SetEventDetails stores [PacketEventData.EventDetails]
 func (data *PacketEventData) SetEventDetails(v EventDataDetails) { data.EventDetails = v }

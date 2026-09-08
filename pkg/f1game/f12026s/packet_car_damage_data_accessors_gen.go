@@ -2,8 +2,8 @@
 
 package f12026s
 
-// GetHeader returns the Header of [PacketCarDamageData]
+// GetHeader returns [PacketCarDamageData.Header]
 func (data *PacketCarDamageData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketCarDamageData]
+// SetHeader stores [PacketCarDamageData.Header]
 func (data *PacketCarDamageData) SetHeader(v PacketHeader) { data.Header = v }

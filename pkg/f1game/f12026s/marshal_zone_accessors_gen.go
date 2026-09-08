@@ -2,14 +2,14 @@
 
 package f12026s
 
-// GetZoneStart returns the ZoneStart of [MarshalZone]
+// GetZoneStart returns [MarshalZone.ZoneStart]
 func (data *MarshalZone) GetZoneStart() float32 { return data.ZoneStart }
 
-// SetZoneStart stores the ZoneStart of [MarshalZone]
+// SetZoneStart stores [MarshalZone.ZoneStart]
 func (data *MarshalZone) SetZoneStart(v float32) { data.ZoneStart = v }
 
-// GetZoneFlag returns the ZoneFlag of [MarshalZone]
+// GetZoneFlag returns [MarshalZone.ZoneFlag]
 func (data *MarshalZone) GetZoneFlag() int8 { return data.ZoneFlag }
 
-// SetZoneFlag stores the ZoneFlag of [MarshalZone]
+// SetZoneFlag stores [MarshalZone.ZoneFlag]
 func (data *MarshalZone) SetZoneFlag(v int8) { data.ZoneFlag = v }

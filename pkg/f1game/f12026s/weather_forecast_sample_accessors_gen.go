@@ -2,52 +2,52 @@
 
 package f12026s
 
-// GetSessionType returns the SessionType of [WeatherForecastSample]
+// GetSessionType returns [WeatherForecastSample.SessionType]
 func (data *WeatherForecastSample) GetSessionType() uint8 { return data.SessionType }
 
-// SetSessionType stores the SessionType of [WeatherForecastSample]
+// SetSessionType stores [WeatherForecastSample.SessionType]
 func (data *WeatherForecastSample) SetSessionType(v uint8) { data.SessionType = v }
 
-// GetTimeOffset returns the TimeOffset of [WeatherForecastSample]
+// GetTimeOffset returns [WeatherForecastSample.TimeOffset]
 func (data *WeatherForecastSample) GetTimeOffset() uint8 { return data.TimeOffset }
 
-// SetTimeOffset stores the TimeOffset of [WeatherForecastSample]
+// SetTimeOffset stores [WeatherForecastSample.TimeOffset]
 func (data *WeatherForecastSample) SetTimeOffset(v uint8) { data.TimeOffset = v }
 
-// GetWeather returns the Weather of [WeatherForecastSample]
+// GetWeather returns [WeatherForecastSample.Weather]
 func (data *WeatherForecastSample) GetWeather() uint8 { return data.Weather }
 
-// SetWeather stores the Weather of [WeatherForecastSample]
+// SetWeather stores [WeatherForecastSample.Weather]
 func (data *WeatherForecastSample) SetWeather(v uint8) { data.Weather = v }
 
-// GetTrackTemperature returns the TrackTemperature of [WeatherForecastSample]
+// GetTrackTemperature returns [WeatherForecastSample.TrackTemperature]
 func (data *WeatherForecastSample) GetTrackTemperature() int8 { return data.TrackTemperature }
 
-// SetTrackTemperature stores the TrackTemperature of [WeatherForecastSample]
+// SetTrackTemperature stores [WeatherForecastSample.TrackTemperature]
 func (data *WeatherForecastSample) SetTrackTemperature(v int8) { data.TrackTemperature = v }
 
-// GetTrackTemperatureChange returns the TrackTemperatureChange of [WeatherForecastSample]
+// GetTrackTemperatureChange returns [WeatherForecastSample.TrackTemperatureChange]
 func (data *WeatherForecastSample) GetTrackTemperatureChange() int8 {
 	return data.TrackTemperatureChange
 }
 
-// SetTrackTemperatureChange stores the TrackTemperatureChange of [WeatherForecastSample]
+// SetTrackTemperatureChange stores [WeatherForecastSample.TrackTemperatureChange]
 func (data *WeatherForecastSample) SetTrackTemperatureChange(v int8) { data.TrackTemperatureChange = v }
 
-// GetAirTemperature returns the AirTemperature of [WeatherForecastSample]
+// GetAirTemperature returns [WeatherForecastSample.AirTemperature]
 func (data *WeatherForecastSample) GetAirTemperature() int8 { return data.AirTemperature }
 
-// SetAirTemperature stores the AirTemperature of [WeatherForecastSample]
+// SetAirTemperature stores [WeatherForecastSample.AirTemperature]
 func (data *WeatherForecastSample) SetAirTemperature(v int8) { data.AirTemperature = v }
 
-// GetAirTemperatureChange returns the AirTemperatureChange of [WeatherForecastSample]
+// GetAirTemperatureChange returns [WeatherForecastSample.AirTemperatureChange]
 func (data *WeatherForecastSample) GetAirTemperatureChange() int8 { return data.AirTemperatureChange }
 
-// SetAirTemperatureChange stores the AirTemperatureChange of [WeatherForecastSample]
+// SetAirTemperatureChange stores [WeatherForecastSample.AirTemperatureChange]
 func (data *WeatherForecastSample) SetAirTemperatureChange(v int8) { data.AirTemperatureChange = v }
 
-// GetRainPercentage returns the RainPercentage of [WeatherForecastSample]
+// GetRainPercentage returns [WeatherForecastSample.RainPercentage]
 func (data *WeatherForecastSample) GetRainPercentage() uint8 { return data.RainPercentage }
 
-// SetRainPercentage stores the RainPercentage of [WeatherForecastSample]
+// SetRainPercentage stores [WeatherForecastSample.RainPercentage]
 func (data *WeatherForecastSample) SetRainPercentage(v uint8) { data.RainPercentage = v }

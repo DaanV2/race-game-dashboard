@@ -2,8 +2,8 @@
 
 package f12026s
 
-// GetNumLights returns the NumLights of [EventDataStartLights]
+// GetNumLights returns [EventDataStartLights.NumLights]
 func (data *EventDataStartLights) GetNumLights() uint8 { return data.NumLights }
 
-// SetNumLights stores the NumLights of [EventDataStartLights]
+// SetNumLights stores [EventDataStartLights.NumLights]
 func (data *EventDataStartLights) SetNumLights(v uint8) { data.NumLights = v }

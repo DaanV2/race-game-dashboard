@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataFastestLap]
+// GetVehicleIdx returns [EventDataFastestLap.VehicleIdx]
 func (data *EventDataFastestLap) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataFastestLap]
+// SetVehicleIdx stores [EventDataFastestLap.VehicleIdx]
 func (data *EventDataFastestLap) SetVehicleIdx(v uint8) { data.VehicleIdx = v }
 
-// GetLapTime returns the LapTime of [EventDataFastestLap]
+// GetLapTime returns [EventDataFastestLap.LapTime]
 func (data *EventDataFastestLap) GetLapTime() float32 { return data.LapTime }
 
-// SetLapTime stores the LapTime of [EventDataFastestLap]
+// SetLapTime stores [EventDataFastestLap.LapTime]
 func (data *EventDataFastestLap) SetLapTime(v float32) { data.LapTime = v }

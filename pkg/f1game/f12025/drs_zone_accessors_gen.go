@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetZoneStart returns the ZoneStart of [DRSZone]
+// GetZoneStart returns [DRSZone.ZoneStart]
 func (data *DRSZone) GetZoneStart() float32 { return data.ZoneStart }
 
-// SetZoneStart stores the ZoneStart of [DRSZone]
+// SetZoneStart stores [DRSZone.ZoneStart]
 func (data *DRSZone) SetZoneStart(v float32) { data.ZoneStart = v }
 
-// GetZoneEnd returns the ZoneEnd of [DRSZone]
+// GetZoneEnd returns [DRSZone.ZoneEnd]
 func (data *DRSZone) GetZoneEnd() float32 { return data.ZoneEnd }
 
-// SetZoneEnd stores the ZoneEnd of [DRSZone]
+// SetZoneEnd stores [DRSZone.ZoneEnd]
 func (data *DRSZone) SetZoneEnd(v float32) { data.ZoneEnd = v }

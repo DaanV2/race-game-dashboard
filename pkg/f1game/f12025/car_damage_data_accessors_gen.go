@@ -2,134 +2,134 @@
 
 package f12025
 
-// GetTyresWear returns the TyresWear of [CarDamageData]
+// GetTyresWear returns [CarDamageData.TyresWear]
 func (data *CarDamageData) GetTyresWear() WheelMap[float32] { return data.TyresWear }
 
-// SetTyresWear stores the TyresWear of [CarDamageData]
+// SetTyresWear stores [CarDamageData.TyresWear]
 func (data *CarDamageData) SetTyresWear(v WheelMap[float32]) { data.TyresWear = v }
 
-// GetTyresDamage returns the TyresDamage of [CarDamageData]
+// GetTyresDamage returns [CarDamageData.TyresDamage]
 func (data *CarDamageData) GetTyresDamage() WheelMap[uint8] { return data.TyresDamage }
 
-// SetTyresDamage stores the TyresDamage of [CarDamageData]
+// SetTyresDamage stores [CarDamageData.TyresDamage]
 func (data *CarDamageData) SetTyresDamage(v WheelMap[uint8]) { data.TyresDamage = v }
 
-// GetBrakesDamage returns the BrakesDamage of [CarDamageData]
+// GetBrakesDamage returns [CarDamageData.BrakesDamage]
 func (data *CarDamageData) GetBrakesDamage() WheelMap[uint8] { return data.BrakesDamage }
 
-// SetBrakesDamage stores the BrakesDamage of [CarDamageData]
+// SetBrakesDamage stores [CarDamageData.BrakesDamage]
 func (data *CarDamageData) SetBrakesDamage(v WheelMap[uint8]) { data.BrakesDamage = v }
 
-// GetTyreBlisters returns the TyreBlisters of [CarDamageData]
+// GetTyreBlisters returns [CarDamageData.TyreBlisters]
 func (data *CarDamageData) GetTyreBlisters() WheelMap[uint8] { return data.TyreBlisters }
 
-// SetTyreBlisters stores the TyreBlisters of [CarDamageData]
+// SetTyreBlisters stores [CarDamageData.TyreBlisters]
 func (data *CarDamageData) SetTyreBlisters(v WheelMap[uint8]) { data.TyreBlisters = v }
 
-// GetFrontLeftWingDamage returns the FrontLeftWingDamage of [CarDamageData]
+// GetFrontLeftWingDamage returns [CarDamageData.FrontLeftWingDamage]
 func (data *CarDamageData) GetFrontLeftWingDamage() uint8 { return data.FrontLeftWingDamage }
 
-// SetFrontLeftWingDamage stores the FrontLeftWingDamage of [CarDamageData]
+// SetFrontLeftWingDamage stores [CarDamageData.FrontLeftWingDamage]
 func (data *CarDamageData) SetFrontLeftWingDamage(v uint8) { data.FrontLeftWingDamage = v }
 
-// GetFrontRightWingDamage returns the FrontRightWingDamage of [CarDamageData]
+// GetFrontRightWingDamage returns [CarDamageData.FrontRightWingDamage]
 func (data *CarDamageData) GetFrontRightWingDamage() uint8 { return data.FrontRightWingDamage }
 
-// SetFrontRightWingDamage stores the FrontRightWingDamage of [CarDamageData]
+// SetFrontRightWingDamage stores [CarDamageData.FrontRightWingDamage]
 func (data *CarDamageData) SetFrontRightWingDamage(v uint8) { data.FrontRightWingDamage = v }
 
-// GetRearWingDamage returns the RearWingDamage of [CarDamageData]
+// GetRearWingDamage returns [CarDamageData.RearWingDamage]
 func (data *CarDamageData) GetRearWingDamage() uint8 { return data.RearWingDamage }
 
-// SetRearWingDamage stores the RearWingDamage of [CarDamageData]
+// SetRearWingDamage stores [CarDamageData.RearWingDamage]
 func (data *CarDamageData) SetRearWingDamage(v uint8) { data.RearWingDamage = v }
 
-// GetFloorDamage returns the FloorDamage of [CarDamageData]
+// GetFloorDamage returns [CarDamageData.FloorDamage]
 func (data *CarDamageData) GetFloorDamage() uint8 { return data.FloorDamage }
 
-// SetFloorDamage stores the FloorDamage of [CarDamageData]
+// SetFloorDamage stores [CarDamageData.FloorDamage]
 func (data *CarDamageData) SetFloorDamage(v uint8) { data.FloorDamage = v }
 
-// GetDiffuserDamage returns the DiffuserDamage of [CarDamageData]
+// GetDiffuserDamage returns [CarDamageData.DiffuserDamage]
 func (data *CarDamageData) GetDiffuserDamage() uint8 { return data.DiffuserDamage }
 
-// SetDiffuserDamage stores the DiffuserDamage of [CarDamageData]
+// SetDiffuserDamage stores [CarDamageData.DiffuserDamage]
 func (data *CarDamageData) SetDiffuserDamage(v uint8) { data.DiffuserDamage = v }
 
-// GetSidepodDamage returns the SidepodDamage of [CarDamageData]
+// GetSidepodDamage returns [CarDamageData.SidepodDamage]
 func (data *CarDamageData) GetSidepodDamage() uint8 { return data.SidepodDamage }
 
-// SetSidepodDamage stores the SidepodDamage of [CarDamageData]
+// SetSidepodDamage stores [CarDamageData.SidepodDamage]
 func (data *CarDamageData) SetSidepodDamage(v uint8) { data.SidepodDamage = v }
 
-// GetDrsFault returns the DrsFault of [CarDamageData]
+// GetDrsFault returns [CarDamageData.DrsFault]
 func (data *CarDamageData) GetDrsFault() uint8 { return data.DrsFault }
 
-// SetDrsFault stores the DrsFault of [CarDamageData]
+// SetDrsFault stores [CarDamageData.DrsFault]
 func (data *CarDamageData) SetDrsFault(v uint8) { data.DrsFault = v }
 
-// GetErsFault returns the ErsFault of [CarDamageData]
+// GetErsFault returns [CarDamageData.ErsFault]
 func (data *CarDamageData) GetErsFault() uint8 { return data.ErsFault }
 
-// SetErsFault stores the ErsFault of [CarDamageData]
+// SetErsFault stores [CarDamageData.ErsFault]
 func (data *CarDamageData) SetErsFault(v uint8) { data.ErsFault = v }
 
-// GetGearBoxDamage returns the GearBoxDamage of [CarDamageData]
+// GetGearBoxDamage returns [CarDamageData.GearBoxDamage]
 func (data *CarDamageData) GetGearBoxDamage() uint8 { return data.GearBoxDamage }
 
-// SetGearBoxDamage stores the GearBoxDamage of [CarDamageData]
+// SetGearBoxDamage stores [CarDamageData.GearBoxDamage]
 func (data *CarDamageData) SetGearBoxDamage(v uint8) { data.GearBoxDamage = v }
 
-// GetEngineDamage returns the EngineDamage of [CarDamageData]
+// GetEngineDamage returns [CarDamageData.EngineDamage]
 func (data *CarDamageData) GetEngineDamage() uint8 { return data.EngineDamage }
 
-// SetEngineDamage stores the EngineDamage of [CarDamageData]
+// SetEngineDamage stores [CarDamageData.EngineDamage]
 func (data *CarDamageData) SetEngineDamage(v uint8) { data.EngineDamage = v }
 
-// GetEngineMGUHWear returns the EngineMGUHWear of [CarDamageData]
+// GetEngineMGUHWear returns [CarDamageData.EngineMGUHWear]
 func (data *CarDamageData) GetEngineMGUHWear() uint8 { return data.EngineMGUHWear }
 
-// SetEngineMGUHWear stores the EngineMGUHWear of [CarDamageData]
+// SetEngineMGUHWear stores [CarDamageData.EngineMGUHWear]
 func (data *CarDamageData) SetEngineMGUHWear(v uint8) { data.EngineMGUHWear = v }
 
-// GetEngineESWear returns the EngineESWear of [CarDamageData]
+// GetEngineESWear returns [CarDamageData.EngineESWear]
 func (data *CarDamageData) GetEngineESWear() uint8 { return data.EngineESWear }
 
-// SetEngineESWear stores the EngineESWear of [CarDamageData]
+// SetEngineESWear stores [CarDamageData.EngineESWear]
 func (data *CarDamageData) SetEngineESWear(v uint8) { data.EngineESWear = v }
 
-// GetEngineCEWear returns the EngineCEWear of [CarDamageData]
+// GetEngineCEWear returns [CarDamageData.EngineCEWear]
 func (data *CarDamageData) GetEngineCEWear() uint8 { return data.EngineCEWear }
 
-// SetEngineCEWear stores the EngineCEWear of [CarDamageData]
+// SetEngineCEWear stores [CarDamageData.EngineCEWear]
 func (data *CarDamageData) SetEngineCEWear(v uint8) { data.EngineCEWear = v }
 
-// GetEngineICEWear returns the EngineICEWear of [CarDamageData]
+// GetEngineICEWear returns [CarDamageData.EngineICEWear]
 func (data *CarDamageData) GetEngineICEWear() uint8 { return data.EngineICEWear }
 
-// SetEngineICEWear stores the EngineICEWear of [CarDamageData]
+// SetEngineICEWear stores [CarDamageData.EngineICEWear]
 func (data *CarDamageData) SetEngineICEWear(v uint8) { data.EngineICEWear = v }
 
-// GetEngineMGUKWear returns the EngineMGUKWear of [CarDamageData]
+// GetEngineMGUKWear returns [CarDamageData.EngineMGUKWear]
 func (data *CarDamageData) GetEngineMGUKWear() uint8 { return data.EngineMGUKWear }
 
-// SetEngineMGUKWear stores the EngineMGUKWear of [CarDamageData]
+// SetEngineMGUKWear stores [CarDamageData.EngineMGUKWear]
 func (data *CarDamageData) SetEngineMGUKWear(v uint8) { data.EngineMGUKWear = v }
 
-// GetEngineTCWear returns the EngineTCWear of [CarDamageData]
+// GetEngineTCWear returns [CarDamageData.EngineTCWear]
 func (data *CarDamageData) GetEngineTCWear() uint8 { return data.EngineTCWear }
 
-// SetEngineTCWear stores the EngineTCWear of [CarDamageData]
+// SetEngineTCWear stores [CarDamageData.EngineTCWear]
 func (data *CarDamageData) SetEngineTCWear(v uint8) { data.EngineTCWear = v }
 
-// GetEngineBlown returns the EngineBlown of [CarDamageData]
+// GetEngineBlown returns [CarDamageData.EngineBlown]
 func (data *CarDamageData) GetEngineBlown() uint8 { return data.EngineBlown }
 
-// SetEngineBlown stores the EngineBlown of [CarDamageData]
+// SetEngineBlown stores [CarDamageData.EngineBlown]
 func (data *CarDamageData) SetEngineBlown(v uint8) { data.EngineBlown = v }
 
-// GetEngineSeized returns the EngineSeized of [CarDamageData]
+// GetEngineSeized returns [CarDamageData.EngineSeized]
 func (data *CarDamageData) GetEngineSeized() uint8 { return data.EngineSeized }
 
-// SetEngineSeized stores the EngineSeized of [CarDamageData]
+// SetEngineSeized stores [CarDamageData.EngineSeized]
 func (data *CarDamageData) SetEngineSeized(v uint8) { data.EngineSeized = v }

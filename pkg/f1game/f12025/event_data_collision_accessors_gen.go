@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetVehicle1Idx returns the Vehicle1Idx of [EventDataCollision]
+// GetVehicle1Idx returns [EventDataCollision.Vehicle1Idx]
 func (data *EventDataCollision) GetVehicle1Idx() uint8 { return data.Vehicle1Idx }
 
-// SetVehicle1Idx stores the Vehicle1Idx of [EventDataCollision]
+// SetVehicle1Idx stores [EventDataCollision.Vehicle1Idx]
 func (data *EventDataCollision) SetVehicle1Idx(v uint8) { data.Vehicle1Idx = v }
 
-// GetVehicle2Idx returns the Vehicle2Idx of [EventDataCollision]
+// GetVehicle2Idx returns [EventDataCollision.Vehicle2Idx]
 func (data *EventDataCollision) GetVehicle2Idx() uint8 { return data.Vehicle2Idx }
 
-// SetVehicle2Idx stores the Vehicle2Idx of [EventDataCollision]
+// SetVehicle2Idx stores [EventDataCollision.Vehicle2Idx]
 func (data *EventDataCollision) SetVehicle2Idx(v uint8) { data.Vehicle2Idx = v }

@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetHeader returns the Header of [PacketLobbyInfoData]
+// GetHeader returns [PacketLobbyInfoData.Header]
 func (data *PacketLobbyInfoData) GetHeader() PacketHeader { return data.Header }
 
-// SetHeader stores the Header of [PacketLobbyInfoData]
+// SetHeader stores [PacketLobbyInfoData.Header]
 func (data *PacketLobbyInfoData) SetHeader(v PacketHeader) { data.Header = v }
 
-// GetNumPlayers returns the NumPlayers of [PacketLobbyInfoData]
+// GetNumPlayers returns [PacketLobbyInfoData.NumPlayers]
 func (data *PacketLobbyInfoData) GetNumPlayers() uint8 { return data.NumPlayers }
 
-// SetNumPlayers stores the NumPlayers of [PacketLobbyInfoData]
+// SetNumPlayers stores [PacketLobbyInfoData.NumPlayers]
 func (data *PacketLobbyInfoData) SetNumPlayers(v uint8) { data.NumPlayers = v }

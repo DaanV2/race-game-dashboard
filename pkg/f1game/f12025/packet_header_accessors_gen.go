@@ -2,74 +2,74 @@
 
 package f12025
 
-// GetPacketFormat returns the PacketFormat of [PacketHeader]
+// GetPacketFormat returns [PacketHeader.PacketFormat]
 func (data *PacketHeader) GetPacketFormat() uint16 { return data.PacketFormat }
 
-// SetPacketFormat stores the PacketFormat of [PacketHeader]
+// SetPacketFormat stores [PacketHeader.PacketFormat]
 func (data *PacketHeader) SetPacketFormat(v uint16) { data.PacketFormat = v }
 
-// GetGameYear returns the GameYear of [PacketHeader]
+// GetGameYear returns [PacketHeader.GameYear]
 func (data *PacketHeader) GetGameYear() uint8 { return data.GameYear }
 
-// SetGameYear stores the GameYear of [PacketHeader]
+// SetGameYear stores [PacketHeader.GameYear]
 func (data *PacketHeader) SetGameYear(v uint8) { data.GameYear = v }
 
-// GetGameMajorVersion returns the GameMajorVersion of [PacketHeader]
+// GetGameMajorVersion returns [PacketHeader.GameMajorVersion]
 func (data *PacketHeader) GetGameMajorVersion() uint8 { return data.GameMajorVersion }
 
-// SetGameMajorVersion stores the GameMajorVersion of [PacketHeader]
+// SetGameMajorVersion stores [PacketHeader.GameMajorVersion]
 func (data *PacketHeader) SetGameMajorVersion(v uint8) { data.GameMajorVersion = v }
 
-// GetGameMinorVersion returns the GameMinorVersion of [PacketHeader]
+// GetGameMinorVersion returns [PacketHeader.GameMinorVersion]
 func (data *PacketHeader) GetGameMinorVersion() uint8 { return data.GameMinorVersion }
 
-// SetGameMinorVersion stores the GameMinorVersion of [PacketHeader]
+// SetGameMinorVersion stores [PacketHeader.GameMinorVersion]
 func (data *PacketHeader) SetGameMinorVersion(v uint8) { data.GameMinorVersion = v }
 
-// GetPacketVersion returns the PacketVersion of [PacketHeader]
+// GetPacketVersion returns [PacketHeader.PacketVersion]
 func (data *PacketHeader) GetPacketVersion() uint8 { return data.PacketVersion }
 
-// SetPacketVersion stores the PacketVersion of [PacketHeader]
+// SetPacketVersion stores [PacketHeader.PacketVersion]
 func (data *PacketHeader) SetPacketVersion(v uint8) { data.PacketVersion = v }
 
-// GetPacketId returns the PacketId of [PacketHeader]
+// GetPacketId returns [PacketHeader.PacketId]
 func (data *PacketHeader) GetPacketId() PacketID { return data.PacketId }
 
-// SetPacketId stores the PacketId of [PacketHeader]
+// SetPacketId stores [PacketHeader.PacketId]
 func (data *PacketHeader) SetPacketId(v PacketID) { data.PacketId = v }
 
-// GetSessionUID returns the SessionUID of [PacketHeader]
+// GetSessionUID returns [PacketHeader.SessionUID]
 func (data *PacketHeader) GetSessionUID() uint64 { return data.SessionUID }
 
-// SetSessionUID stores the SessionUID of [PacketHeader]
+// SetSessionUID stores [PacketHeader.SessionUID]
 func (data *PacketHeader) SetSessionUID(v uint64) { data.SessionUID = v }
 
-// GetSessionTime returns the SessionTime of [PacketHeader]
+// GetSessionTime returns [PacketHeader.SessionTime]
 func (data *PacketHeader) GetSessionTime() float32 { return data.SessionTime }
 
-// SetSessionTime stores the SessionTime of [PacketHeader]
+// SetSessionTime stores [PacketHeader.SessionTime]
 func (data *PacketHeader) SetSessionTime(v float32) { data.SessionTime = v }
 
-// GetFrameIdentifier returns the FrameIdentifier of [PacketHeader]
+// GetFrameIdentifier returns [PacketHeader.FrameIdentifier]
 func (data *PacketHeader) GetFrameIdentifier() uint32 { return data.FrameIdentifier }
 
-// SetFrameIdentifier stores the FrameIdentifier of [PacketHeader]
+// SetFrameIdentifier stores [PacketHeader.FrameIdentifier]
 func (data *PacketHeader) SetFrameIdentifier(v uint32) { data.FrameIdentifier = v }
 
-// GetOverallFrameIdentifier returns the OverallFrameIdentifier of [PacketHeader]
+// GetOverallFrameIdentifier returns [PacketHeader.OverallFrameIdentifier]
 func (data *PacketHeader) GetOverallFrameIdentifier() uint32 { return data.OverallFrameIdentifier }
 
-// SetOverallFrameIdentifier stores the OverallFrameIdentifier of [PacketHeader]
+// SetOverallFrameIdentifier stores [PacketHeader.OverallFrameIdentifier]
 func (data *PacketHeader) SetOverallFrameIdentifier(v uint32) { data.OverallFrameIdentifier = v }
 
-// GetPlayerCarIndex returns the PlayerCarIndex of [PacketHeader]
+// GetPlayerCarIndex returns [PacketHeader.PlayerCarIndex]
 func (data *PacketHeader) GetPlayerCarIndex() uint8 { return data.PlayerCarIndex }
 
-// SetPlayerCarIndex stores the PlayerCarIndex of [PacketHeader]
+// SetPlayerCarIndex stores [PacketHeader.PlayerCarIndex]
 func (data *PacketHeader) SetPlayerCarIndex(v uint8) { data.PlayerCarIndex = v }
 
-// GetSecondaryPlayerCarIndex returns the SecondaryPlayerCarIndex of [PacketHeader]
+// GetSecondaryPlayerCarIndex returns [PacketHeader.SecondaryPlayerCarIndex]
 func (data *PacketHeader) GetSecondaryPlayerCarIndex() uint8 { return data.SecondaryPlayerCarIndex }
 
-// SetSecondaryPlayerCarIndex stores the SecondaryPlayerCarIndex of [PacketHeader]
+// SetSecondaryPlayerCarIndex stores [PacketHeader.SecondaryPlayerCarIndex]
 func (data *PacketHeader) SetSecondaryPlayerCarIndex(v uint8) { data.SecondaryPlayerCarIndex = v }

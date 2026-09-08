@@ -2,44 +2,44 @@
 
 package f12025
 
-// GetPenaltyType returns the PenaltyType of [EventDataPenalty]
+// GetPenaltyType returns [EventDataPenalty.PenaltyType]
 func (data *EventDataPenalty) GetPenaltyType() uint8 { return data.PenaltyType }
 
-// SetPenaltyType stores the PenaltyType of [EventDataPenalty]
+// SetPenaltyType stores [EventDataPenalty.PenaltyType]
 func (data *EventDataPenalty) SetPenaltyType(v uint8) { data.PenaltyType = v }
 
-// GetInfringementType returns the InfringementType of [EventDataPenalty]
+// GetInfringementType returns [EventDataPenalty.InfringementType]
 func (data *EventDataPenalty) GetInfringementType() uint8 { return data.InfringementType }
 
-// SetInfringementType stores the InfringementType of [EventDataPenalty]
+// SetInfringementType stores [EventDataPenalty.InfringementType]
 func (data *EventDataPenalty) SetInfringementType(v uint8) { data.InfringementType = v }
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataPenalty]
+// GetVehicleIdx returns [EventDataPenalty.VehicleIdx]
 func (data *EventDataPenalty) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataPenalty]
+// SetVehicleIdx stores [EventDataPenalty.VehicleIdx]
 func (data *EventDataPenalty) SetVehicleIdx(v uint8) { data.VehicleIdx = v }
 
-// GetOtherVehicleIdx returns the OtherVehicleIdx of [EventDataPenalty]
+// GetOtherVehicleIdx returns [EventDataPenalty.OtherVehicleIdx]
 func (data *EventDataPenalty) GetOtherVehicleIdx() uint8 { return data.OtherVehicleIdx }
 
-// SetOtherVehicleIdx stores the OtherVehicleIdx of [EventDataPenalty]
+// SetOtherVehicleIdx stores [EventDataPenalty.OtherVehicleIdx]
 func (data *EventDataPenalty) SetOtherVehicleIdx(v uint8) { data.OtherVehicleIdx = v }
 
-// GetTime returns the Time of [EventDataPenalty]
+// GetTime returns [EventDataPenalty.Time]
 func (data *EventDataPenalty) GetTime() uint8 { return data.Time }
 
-// SetTime stores the Time of [EventDataPenalty]
+// SetTime stores [EventDataPenalty.Time]
 func (data *EventDataPenalty) SetTime(v uint8) { data.Time = v }
 
-// GetLapNum returns the LapNum of [EventDataPenalty]
+// GetLapNum returns [EventDataPenalty.LapNum]
 func (data *EventDataPenalty) GetLapNum() uint8 { return data.LapNum }
 
-// SetLapNum stores the LapNum of [EventDataPenalty]
+// SetLapNum stores [EventDataPenalty.LapNum]
 func (data *EventDataPenalty) SetLapNum(v uint8) { data.LapNum = v }
 
-// GetPlacesGained returns the PlacesGained of [EventDataPenalty]
+// GetPlacesGained returns [EventDataPenalty.PlacesGained]
 func (data *EventDataPenalty) GetPlacesGained() uint8 { return data.PlacesGained }
 
-// SetPlacesGained stores the PlacesGained of [EventDataPenalty]
+// SetPlacesGained stores [EventDataPenalty.PlacesGained]
 func (data *EventDataPenalty) SetPlacesGained(v uint8) { data.PlacesGained = v }

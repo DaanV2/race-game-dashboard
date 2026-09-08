@@ -2,14 +2,14 @@
 
 package f12025
 
-// GetVehicleIdx returns the VehicleIdx of [EventDataRetirement]
+// GetVehicleIdx returns [EventDataRetirement.VehicleIdx]
 func (data *EventDataRetirement) GetVehicleIdx() uint8 { return data.VehicleIdx }
 
-// SetVehicleIdx stores the VehicleIdx of [EventDataRetirement]
+// SetVehicleIdx stores [EventDataRetirement.VehicleIdx]
 func (data *EventDataRetirement) SetVehicleIdx(v uint8) { data.VehicleIdx = v }
 
-// GetReason returns the Reason of [EventDataRetirement]
+// GetReason returns [EventDataRetirement.Reason]
 func (data *EventDataRetirement) GetReason() uint8 { return data.Reason }
 
-// SetReason stores the Reason of [EventDataRetirement]
+// SetReason stores [EventDataRetirement.Reason]
 func (data *EventDataRetirement) SetReason(v uint8) { data.Reason = v }

@@ -2,18 +2,18 @@
 
 package f12025
 
-// GetFlashbackFrameIdentifier returns the FlashbackFrameIdentifier of [EventDataFlashback]
+// GetFlashbackFrameIdentifier returns [EventDataFlashback.FlashbackFrameIdentifier]
 func (data *EventDataFlashback) GetFlashbackFrameIdentifier() uint32 {
 	return data.FlashbackFrameIdentifier
 }
 
-// SetFlashbackFrameIdentifier stores the FlashbackFrameIdentifier of [EventDataFlashback]
+// SetFlashbackFrameIdentifier stores [EventDataFlashback.FlashbackFrameIdentifier]
 func (data *EventDataFlashback) SetFlashbackFrameIdentifier(v uint32) {
 	data.FlashbackFrameIdentifier = v
 }
 
-// GetFlashbackSessionTime returns the FlashbackSessionTime of [EventDataFlashback]
+// GetFlashbackSessionTime returns [EventDataFlashback.FlashbackSessionTime]
 func (data *EventDataFlashback) GetFlashbackSessionTime() float32 { return data.FlashbackSessionTime }
 
-// SetFlashbackSessionTime stores the FlashbackSessionTime of [EventDataFlashback]
+// SetFlashbackSessionTime stores [EventDataFlashback.FlashbackSessionTime]
 func (data *EventDataFlashback) SetFlashbackSessionTime(v float32) { data.FlashbackSessionTime = v }

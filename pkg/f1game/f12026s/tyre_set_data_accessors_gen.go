@@ -2,56 +2,56 @@
 
 package f12026s
 
-// GetActualTyreCompound returns the ActualTyreCompound of [TyreSetData]
+// GetActualTyreCompound returns [TyreSetData.ActualTyreCompound]
 func (data *TyreSetData) GetActualTyreCompound() uint8 { return data.ActualTyreCompound }
 
-// SetActualTyreCompound stores the ActualTyreCompound of [TyreSetData]
+// SetActualTyreCompound stores [TyreSetData.ActualTyreCompound]
 func (data *TyreSetData) SetActualTyreCompound(v uint8) { data.ActualTyreCompound = v }
 
-// GetVisualTyreCompound returns the VisualTyreCompound of [TyreSetData]
+// GetVisualTyreCompound returns [TyreSetData.VisualTyreCompound]
 func (data *TyreSetData) GetVisualTyreCompound() uint8 { return data.VisualTyreCompound }
 
-// SetVisualTyreCompound stores the VisualTyreCompound of [TyreSetData]
+// SetVisualTyreCompound stores [TyreSetData.VisualTyreCompound]
 func (data *TyreSetData) SetVisualTyreCompound(v uint8) { data.VisualTyreCompound = v }
 
-// GetWear returns the Wear of [TyreSetData]
+// GetWear returns [TyreSetData.Wear]
 func (data *TyreSetData) GetWear() uint8 { return data.Wear }
 
-// SetWear stores the Wear of [TyreSetData]
+// SetWear stores [TyreSetData.Wear]
 func (data *TyreSetData) SetWear(v uint8) { data.Wear = v }
 
-// GetAvailable returns the Available of [TyreSetData]
+// GetAvailable returns [TyreSetData.Available]
 func (data *TyreSetData) GetAvailable() uint8 { return data.Available }
 
-// SetAvailable stores the Available of [TyreSetData]
+// SetAvailable stores [TyreSetData.Available]
 func (data *TyreSetData) SetAvailable(v uint8) { data.Available = v }
 
-// GetRecommendedSession returns the RecommendedSession of [TyreSetData]
+// GetRecommendedSession returns [TyreSetData.RecommendedSession]
 func (data *TyreSetData) GetRecommendedSession() uint8 { return data.RecommendedSession }
 
-// SetRecommendedSession stores the RecommendedSession of [TyreSetData]
+// SetRecommendedSession stores [TyreSetData.RecommendedSession]
 func (data *TyreSetData) SetRecommendedSession(v uint8) { data.RecommendedSession = v }
 
-// GetLifeSpan returns the LifeSpan of [TyreSetData]
+// GetLifeSpan returns [TyreSetData.LifeSpan]
 func (data *TyreSetData) GetLifeSpan() uint8 { return data.LifeSpan }
 
-// SetLifeSpan stores the LifeSpan of [TyreSetData]
+// SetLifeSpan stores [TyreSetData.LifeSpan]
 func (data *TyreSetData) SetLifeSpan(v uint8) { data.LifeSpan = v }
 
-// GetUsableLife returns the UsableLife of [TyreSetData]
+// GetUsableLife returns [TyreSetData.UsableLife]
 func (data *TyreSetData) GetUsableLife() uint8 { return data.UsableLife }
 
-// SetUsableLife stores the UsableLife of [TyreSetData]
+// SetUsableLife stores [TyreSetData.UsableLife]
 func (data *TyreSetData) SetUsableLife(v uint8) { data.UsableLife = v }
 
-// GetLapDeltaTime returns the LapDeltaTime of [TyreSetData]
+// GetLapDeltaTime returns [TyreSetData.LapDeltaTime]
 func (data *TyreSetData) GetLapDeltaTime() int16 { return data.LapDeltaTime }
 
-// SetLapDeltaTime stores the LapDeltaTime of [TyreSetData]
+// SetLapDeltaTime stores [TyreSetData.LapDeltaTime]
 func (data *TyreSetData) SetLapDeltaTime(v int16) { data.LapDeltaTime = v }
 
-// GetFitted returns the Fitted of [TyreSetData]
+// GetFitted returns [TyreSetData.Fitted]
 func (data *TyreSetData) GetFitted() uint8 { return data.Fitted }
 
-// SetFitted stores the Fitted of [TyreSetData]
+// SetFitted stores [TyreSetData.Fitted]
 func (data *TyreSetData) SetFitted(v uint8) { data.Fitted = v }
