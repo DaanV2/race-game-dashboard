@@ -1,5 +1,5 @@
 package f1common
 
-type SurfaceTypeID int
+type SurfaceTypeID uint8
 
 type SurfaceTypes = DataSet[SurfaceTypeID, string]

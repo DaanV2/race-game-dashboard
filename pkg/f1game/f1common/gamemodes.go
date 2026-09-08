@@ -1,5 +1,5 @@
 package f1common
 
-type GamemodeID int
+type GamemodeID uint8
 
 type Gamemodes = DataSet[GamemodeID, string]

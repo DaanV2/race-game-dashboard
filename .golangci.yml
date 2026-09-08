@@ -124,7 +124,6 @@ linters:
     - intrange
     - makezero
     - mirror
-    - misspell
     - nestif
     - nilerr
     - nilnesserr

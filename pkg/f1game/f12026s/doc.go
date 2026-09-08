@@ -1,4 +1,4 @@
-// This package contains all the models needed to read the telemetry data from f1 game: f12026
+// This package contains all the models needed to read the telemetry data from f1 game: f12026s
 //
 // Either use the [PacketHandler] (see example) to setup a pipeline of events or manually:
 //

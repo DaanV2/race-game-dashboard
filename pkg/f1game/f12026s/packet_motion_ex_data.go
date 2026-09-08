@@ -8,7 +8,8 @@ import (
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketMotionExData
 
 type PacketMotionExData struct {
-	Header                 PacketHeader      // Header  Extra player car ONLY data
+	Header PacketHeader // Header  Extra player car ONLY data
+
 	SuspensionPosition     WheelMap[float32] // Note: All wheel arrays have the following order:
 	SuspensionVelocity     WheelMap[float32] // RL, RR, FL, FR
 	SuspensionAcceleration WheelMap[float32] // RL, RR, FL, FR

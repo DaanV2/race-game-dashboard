@@ -3,15 +3,16 @@ package f12026s
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 	xstrings "github.com/daanv2/race-game-dashboard/pkg/extensions/strings"
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type ParticipantData -ignore-field Name
 
 type ParticipantData struct {
 	AiControlled    uint8                             // Whether the vehicle is AI (1) or Human (0) controlled
-	DriverId        uint16                            // Driver id - see appendix, 65535 if network human
+	DriverId        f1common.DriverID                 // Driver id  (uint16) - see appendix, 65535 if network human
 	NetworkId       uint16                            // Network id – unique identifier for network players
-	TeamId          uint16                            // Team id - see appendix
+	TeamId          f1common.TeamID                   // Team id (uint16) - see appendix
 	MyTeam          uint8                             // My team flag – 1 = My Team, 0 = otherwise
 	RaceNumber      uint8                             // Race number of the car
 	Nationality     uint8                             // Nationality of the driver
@@ -38,9 +39,9 @@ func (data *ParticipantData) SetName(v string) {
 
 func (data *ParticipantData) Parse(reader *xbinary.LittleEndianReader) {
 	data.AiControlled = reader.ReadUint8()
-	data.DriverId = reader.ReadUint16()
+	data.DriverId = f1common.DriverID(reader.ReadUint16())
 	data.NetworkId = reader.ReadUint16()
-	data.TeamId = reader.ReadUint16()
+	data.TeamId = f1common.TeamID(reader.ReadUint16())
 	data.MyTeam = reader.ReadUint8()
 	data.RaceNumber = reader.ReadUint8()
 	data.Nationality = reader.ReadUint8()

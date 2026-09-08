@@ -1,5 +1,5 @@
 package f1common
 
-type InfringementTypeID int
+type InfringementTypeID uint8
 
 type InfringementTypes = DataSet[InfringementTypeID, string]

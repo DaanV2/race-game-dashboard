@@ -1,5 +1,5 @@
 package f1common
 
-type SessionTypeID int
+type SessionTypeID uint8
 
 type SessionTypes = DataSet[SessionTypeID, string]

@@ -2,35 +2,38 @@ package f12026s
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+	"github.com/daanv2/race-game-dashboard/pkg/generics"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketSessionData -ignore-field MarshalZones,WeatherForecastSamples
 
 type PacketSessionData struct {
-	Header                          PacketHeader                                           // Header
-	Weather                         uint8                                                  // Weather - 0 = clear, 1 = light cloud, 2 = overcast  3 = light rain, 4 = heavy rain, 5 = storm
+	Header PacketHeader // Header
+
+	Weather                         uint8                                                  // Weather - 0 = clear, 1 = light cloud, 2 = overcast, 3 = light rain, 4 = heavy rain, 5 = storm
 	TrackTemperature                int8                                                   // Track temp. in degrees celsius
 	AirTemperature                  int8                                                   // Air temp. in degrees celsius
 	TotalLaps                       uint8                                                  // Total number of laps in this race
 	TrackLength                     uint16                                                 // Track length in metres
-	SessionType                     uint8                                                  // 0 = unknown, see appendix
-	TrackId                         int8                                                   // -1 for unknown, see appendix
-	Formula                         uint8                                                  // Formula, 0 = F1 Modern, 1 = F1 Classic, 2 = F2,  3 = F1 Generic, 4 = Beta, 6 = Esports  8 = F1 World, 9 = F1 Elimination, 13 = F1 26
+	SessionType                     f1common.SessionTypeID                                 // (uint8) 0 = unknown, see appendix
+	TrackId                         f1common.TrackID                                       // (int8) -1 for unknown, see appendix
+	Formula                         uint8                                                  // Formula, 0 = F1 Modern, 1 = F1 Classic, 2 = F2, 3 = F1 Generic, 4 = Beta, 6 = Esports, 8 = F1 World, 9 = F1 Elimination, 13 = F1 26
 	SessionTimeLeft                 uint16                                                 // Time left in session in seconds
 	SessionDuration                 uint16                                                 // Session duration in seconds
 	PitSpeedLimit                   uint8                                                  // Pit speed limit in kilometres per hour
-	GamePaused                      uint8                                                  // Whether the game is paused – network game only
+	GamePaused                      uint8                                                  // Whether the game is paused - network game only
 	IsSpectating                    uint8                                                  // Whether the player is spectating
 	SpectatorCarIndex               uint8                                                  // Index of the car being spectated
 	SliProNativeSupport             uint8                                                  // SLI Pro support, 0 = inactive, 1 = active
 	NumMarshalZones                 uint8                                                  // Number of marshal zones to follow
-	MarshalZones                    [CS_MAX_MARSHALS_ZONE_PER_LAP]MarshalZone              // List of marshal zones – max 21
-	SafetyCarStatus                 uint8                                                  // 0 = no safety car, 1 = full  2 = virtual, 3 = formation lap
+	MarshalZones                    [CS_MAX_MARSHALS_ZONE_PER_LAP]MarshalZone              // List of marshal zones - max 21
+	SafetyCarStatus                 uint8                                                  // 0 = no safety car, 1 = full, 2 = virtual, 3 = formation lap
 	NetworkGame                     uint8                                                  // 0 = offline, 1 = online
 	NumWeatherForecastSamples       uint8                                                  // Number of weather samples to follow
 	WeatherForecastSamples          [CS_MAX_WEATHER_FORECAST_SAMPLES]WeatherForecastSample // Array of weather forecast samples
 	ForecastAccuracy                uint8                                                  // 0 = Perfect, 1 = Approximate
-	AiDifficulty                    uint8                                                  // AI Difficulty rating – 0-110
+	AiDifficulty                    uint8                                                  // AI difficulty rating - 0-110
 	SeasonLinkIdentifier            uint32                                                 // Identifier for season - persists across saves
 	WeekendLinkIdentifier           uint32                                                 // Identifier for weekend - persists across saves
 	SessionLinkIdentifier           uint32                                                 // Identifier for session - persists across saves
@@ -46,16 +49,16 @@ type PacketSessionData struct {
 	DRSAssist                       uint8                                                  // 0 = off, 1 = on
 	DynamicRacingLine               uint8                                                  // 0 = off, 1 = corners only, 2 = full
 	DynamicRacingLineType           uint8                                                  // 0 = 2D, 1 = 3D
-	GameMode                        uint8                                                  // Game mode id - see appendix
-	RuleSet                         uint8                                                  // Ruleset - see appendix
+	GameMode                        f1common.GamemodeID                                    // Game mode id (uint8) - see appendix
+	RuleSet                         f1common.RulesetID                                     // Ruleset (uint8) - see appendix
 	TimeOfDay                       uint32                                                 // Local time of day - minutes since midnight
-	SessionLength                   uint8                                                  // 0 = None, 2 = Very Short, 3 = Short, 4 = Medium  5 = Medium Long, 6 = Long, 7 = Full
+	SessionLength                   uint8                                                  // 0 = None, 2 = Very Short, 3 = Short, 4 = Medium, 5 = Medium Long, 6 = Long, 7 = Full
 	SpeedUnitsLeadPlayer            uint8                                                  // 0 = MPH, 1 = KPH
 	TemperatureUnitsLeadPlayer      uint8                                                  // 0 = Celsius, 1 = Fahrenheit
 	SpeedUnitsSecondaryPlayer       uint8                                                  // 0 = MPH, 1 = KPH
 	TemperatureUnitsSecondaryPlayer uint8                                                  // 0 = Celsius, 1 = Fahrenheit
 	NumSafetyCarPeriods             uint8                                                  // Number of safety cars called during session
-	NumVirtualSafetyCarPeriods      uint8                                                  // Number of virtual safety cars called
+	NumVirtualSafetyCarPeriods      uint8                                                  // Number of virtual safety cars called during session
 	NumRedFlagPeriods               uint8                                                  // Number of red flags called during session
 	EqualCarPerformance             uint8                                                  // 0 = Off, 1 = On
 	RecoveryMode                    uint8                                                  // 0 = None, 1 = Flashbacks, 2 = Auto-recovery
@@ -82,16 +85,16 @@ type PacketSessionData struct {
 	AffectsLicenceLevelSolo         uint8                                                  // 0 = Off, 1 = On
 	AffectsLicenceLevelMP           uint8                                                  // 0 = Off, 1 = On
 	NumSessionsInWeekend            uint8                                                  // Number of session in following array
-	WeekendStructure                [12]uint8                                              // List of session types to show weekend  structure - see appendix for types
+	WeekendStructure                [CS_MAX_SESSIONS_IN_WEEKEND]uint8                      // List of session types to show weekend structure - see appendix for types
 	Sector2LapDistanceStart         float32                                                // Distance in m around track where sector 2 starts
 	Sector3LapDistanceStart         float32                                                // Distance in m around track where sector 3 starts  Aero and DRS zones
 	ActiveAeroTrackStatus           uint8                                                  // 0 = Full, 1 = Partial
 	NumActiveAeroZonesFull          uint8                                                  // Number of Active Aero zones to follow
-	ActiveAeroZonesFull             [8]ActiveAeroZone                                      // List of Active Aero zones - max 8
+	ActiveAeroZonesFull             [CS_MAX_ACTIVE_AERO_ZONES_PER_LAP]ActiveAeroZone       // List of Active Aero zones - max 8
 	NumActiveAeroZonesPartial       uint8                                                  // Number of Active Aero zones to follow
-	ActiveAeroZonesPartial          [8]ActiveAeroZone                                      // List of Active Aero zones - max 8
+	ActiveAeroZonesPartial          [CS_MAX_ACTIVE_AERO_ZONES_PER_LAP]ActiveAeroZone       // List of Active Aero zones - max 8
 	NumDRSZones                     uint8                                                  // Number of DRS zones to follow
-	DrsZones                        [4]DRSZone                                             // List of DRS zones - max 4
+	DrsZones                        [CS_MAX_DRS_ZONES_PER_LAP]DRSZone                      // List of DRS zones - max 4
 	StartReactionTime               float32                                                // Driver start reaction time in seconds  0.0f if assisted starts
 	AntiLockBrakesAssist            uint8                                                  // 0 = Off, 1 = On
 	TractionControlAssist           uint8                                                  // 0 = Off, 1 = Medium, 2 = Full
@@ -123,6 +126,12 @@ func (data *PacketSessionData) SetWeatherForecastSamples(sample int, v WeatherFo
 	data.WeatherForecastSamples[sample] = v
 }
 
+func (data *PacketSessionData) WeekendStructureIDs() (sessions [CS_MAX_SESSIONS_IN_WEEKEND]f1common.SessionTypeID) {
+	generics.CopySlice(sessions[:], data.WeekendStructure[:])
+
+	return
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header
@@ -132,8 +141,8 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.AirTemperature = reader.ReadInt8()
 	data.TotalLaps = reader.ReadUint8()
 	data.TrackLength = reader.ReadUint16()
-	data.SessionType = reader.ReadUint8()
-	data.TrackId = reader.ReadInt8()
+	data.SessionType = f1common.SessionTypeID(reader.ReadUint8())
+	data.TrackId = f1common.TrackID(reader.ReadInt8())
 	data.Formula = reader.ReadUint8()
 	data.SessionTimeLeft = reader.ReadUint16()
 	data.SessionDuration = reader.ReadUint16()
@@ -173,8 +182,8 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.DRSAssist = reader.ReadUint8()
 	data.DynamicRacingLine = reader.ReadUint8()
 	data.DynamicRacingLineType = reader.ReadUint8()
-	data.GameMode = reader.ReadUint8()
-	data.RuleSet = reader.ReadUint8()
+	data.GameMode = f1common.GamemodeID(reader.ReadUint8())
+	data.RuleSet = f1common.RulesetID(reader.ReadUint8())
 	data.TimeOfDay = reader.ReadUint32()
 	data.SessionLength = reader.ReadUint8()
 	data.SpeedUnitsLeadPlayer = reader.ReadUint8()

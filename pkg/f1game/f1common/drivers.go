@@ -1,5 +1,5 @@
 package f1common
 
-type DriverID int
+type DriverID uint16
 
 type Drivers = DataSet[DriverID, string]
