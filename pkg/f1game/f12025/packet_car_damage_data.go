@@ -28,6 +28,18 @@ func (data *PacketCarDamageData) SetCarDamageData(car int, v CarDamageData) {
 	data.CarDamageData[car] = v
 }
 
+func (data *PacketCarDamageData) GetPlayerData() CarDamageData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.CarDamageData[carIndex]
+}
+
+func (data *PacketCarDamageData) GetSecondPlayerData() CarDamageData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.CarDamageData[carIndex]
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketCarDamageData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header

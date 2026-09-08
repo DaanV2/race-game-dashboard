@@ -29,6 +29,18 @@ func (data *PacketCarSetupData) SetCarSetups(car int, v CarSetupData) {
 	data.CarSetups[car] = v
 }
 
+func (data *PacketCarSetupData) GetPlayerData() CarSetupData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.CarSetups[carIndex]
+}
+
+func (data *PacketCarSetupData) GetSecondPlayerData() CarSetupData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.CarSetups[carIndex]
+}
+
 // GetNextFrontWingValue returns the NextFrontWingValue of *PacketCarSetupData
 func (data *PacketCarSetupData) GetNextFrontWingValue() float32 { return data.NextFrontWingValue }
 

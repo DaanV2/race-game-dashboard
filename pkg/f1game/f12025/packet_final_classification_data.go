@@ -35,6 +35,18 @@ func (data *PacketFinalClassificationData) SetClassificationData(car int, v Fina
 	data.ClassificationData[car] = v
 }
 
+func (data *PacketFinalClassificationData) GetPlayerData() FinalClassificationData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.ClassificationData[carIndex]
+}
+
+func (data *PacketFinalClassificationData) GetSecondPlayerData() FinalClassificationData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.ClassificationData[carIndex]
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketFinalClassificationData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header

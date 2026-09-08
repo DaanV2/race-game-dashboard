@@ -24,6 +24,18 @@ func (data *PacketMotionData) GetCarMotionData(car int) CarMotionData { return d
 // SetCarMotionData stores the CarMotionData of *PacketMotionData
 func (data *PacketMotionData) SetCarMotionData(car int, v CarMotionData) { data.CarMotionData[car] = v }
 
+func (data *PacketMotionData) GetPlayerData() CarMotionData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.CarMotionData[carIndex]
+}
+
+func (data *PacketMotionData) GetSecondPlayerData() CarMotionData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.CarMotionData[carIndex]
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketMotionData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header

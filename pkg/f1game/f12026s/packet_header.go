@@ -16,7 +16,7 @@ type PacketHeader struct {
 	FrameIdentifier         uint32   // Identifier for the frame the data was retrieved on
 	OverallFrameIdentifier  uint32   // Overall identifier for the frame the data was retrieved  on, doesn't go back after flashbacks
 	PlayerCarIndex          uint8    // Index of player's car in the array
-	SecondaryPlayerCarIndex uint8    // Index of secondary player's car in the array (splitscreen)  255 if no second player
+	SecondaryPlayerCarIndex uint8    // Index of secondary player's car in the array (splitscreen), 255 if no second player
 }
 
 // GetPacketFormat returns the PacketFormat of *PacketHeader
@@ -90,6 +90,9 @@ func (data *PacketHeader) GetSecondaryPlayerCarIndex() uint8 { return data.Secon
 
 // SetSecondaryPlayerCarIndex stores the SecondaryPlayerCarIndex of *PacketHeader
 func (data *PacketHeader) SetSecondaryPlayerCarIndex(v uint8) { data.SecondaryPlayerCarIndex = v }
+
+// HasSecondaryPlayerCar returns if there is a second player active
+func (data *PacketHeader) HasSecondaryPlayerCar() bool { return data.SecondaryPlayerCarIndex != 255 }
 
 func (data *PacketHeader) Parse(reader *xbinary.LittleEndianReader) {
 	data.PacketFormat = reader.ReadUint16()

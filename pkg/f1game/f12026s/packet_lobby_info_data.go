@@ -35,6 +35,18 @@ func (data *PacketLobbyInfoData) SetLobbyPlayers(participant int, v LobbyInfoDat
 	data.LobbyPlayers[participant] = v
 }
 
+func (data *PacketLobbyInfoData) GetPlayerData() LobbyInfoData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.LobbyPlayers[carIndex]
+}
+
+func (data *PacketLobbyInfoData) GetSecondPlayerData() LobbyInfoData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.LobbyPlayers[carIndex]
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketLobbyInfoData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header

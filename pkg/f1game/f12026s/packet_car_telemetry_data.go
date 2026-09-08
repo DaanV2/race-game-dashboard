@@ -31,6 +31,18 @@ func (data *PacketCarTelemetryData) SetCarTelemetryData(car int, v CarTelemetryD
 	data.CarTelemetryData[car] = v
 }
 
+func (data *PacketCarTelemetryData) GetPlayerData() CarTelemetryData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.CarTelemetryData[carIndex]
+}
+
+func (data *PacketCarTelemetryData) GetSecondPlayerData() CarTelemetryData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.CarTelemetryData[carIndex]
+}
+
 // GetMfdPanelIndex returns the MfdPanelIndex of *PacketCarTelemetryData
 func (data *PacketCarTelemetryData) GetMfdPanelIndex() uint8 { return data.MfdPanelIndex }
 

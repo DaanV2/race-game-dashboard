@@ -26,6 +26,18 @@ func (data *PacketLapData) GetLapData(lap int) LapData { return data.LapData[lap
 // SetLapData stores the LapData of *PacketLapData
 func (data *PacketLapData) SetLapData(lap int, v LapData) { data.LapData[lap] = v }
 
+func (data *PacketLapData) GetPlayerData() LapData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.LapData[carIndex]
+}
+
+func (data *PacketLapData) GetSecondPlayerData() LapData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.LapData[carIndex]
+}
+
 // GetTimeTrialPBCarIdx returns the TimeTrialPBCarIdx of *PacketLapData
 func (data *PacketLapData) GetTimeTrialPBCarIdx() uint8 { return data.TimeTrialPBCarIdx }
 

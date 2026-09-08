@@ -91,6 +91,9 @@ func (data *PacketHeader) GetSecondaryPlayerCarIndex() uint8 { return data.Secon
 // SetSecondaryPlayerCarIndex stores the SecondaryPlayerCarIndex of *PacketHeader
 func (data *PacketHeader) SetSecondaryPlayerCarIndex(v uint8) { data.SecondaryPlayerCarIndex = v }
 
+// HasSecondaryPlayerCar returns if there is a second player active
+func (data *PacketHeader) HasSecondaryPlayerCar() bool { return data.SecondaryPlayerCarIndex != 255 }
+
 func (data *PacketHeader) Parse(reader *xbinary.LittleEndianReader) {
 	data.PacketFormat = reader.ReadUint16()
 	data.GameYear = reader.ReadUint8()

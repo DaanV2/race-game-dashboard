@@ -31,6 +31,18 @@ func (data *PacketCarSetupData) GetNextFrontWingValue() float32 { return data.Ne
 // SetNextFrontWingValue stores the NextFrontWingValue of *PacketCarSetupData
 func (data *PacketCarSetupData) SetNextFrontWingValue(v float32) { data.NextFrontWingValue = v }
 
+func (data *PacketCarSetupData) GetPlayerData() CarSetupData {
+	carIndex := data.Header.GetPlayerCarIndex()
+
+	return data.CarSetups[carIndex]
+}
+
+func (data *PacketCarSetupData) GetSecondPlayerData() CarSetupData {
+	carIndex := data.Header.GetSecondaryPlayerCarIndex()
+
+	return data.CarSetups[carIndex]
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketCarSetupData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header
