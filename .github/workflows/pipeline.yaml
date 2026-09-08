@@ -14,12 +14,9 @@ on:
   merge_group:
 
 jobs:
-  proto-checks:
-    name: 🗃️ Proto
-    uses: ./.github/workflows/proto-checks.yaml
-    permissions:
-      contents: read
-      pull-requests: write
+  golang-checks:
+    name: 🐹 Golang
+    uses: ./.github/workflows/golang-checks.yaml
 
   frontend-checks:
     name: 🌐 Frontend
@@ -28,5 +25,6 @@ jobs:
   wails-checks:
     needs:
       - frontend-checks
+      - golang-checks
     name: 🖥️ Wails Desktop
     uses: ./.github/workflows/wails-checks.yaml
