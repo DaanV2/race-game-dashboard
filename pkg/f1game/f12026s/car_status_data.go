@@ -26,12 +26,12 @@ type CarStatusData struct {
 	VehicleFiaFlags         int8    // -1 = invalid/unknown, 0 = none, 1 = green  2 = blue, 3 = yellow
 	EnginePowerICE          float32 // Engine power output of ICE (W)
 	EnginePowerMGUK         float32 // Engine power output of MGU-K (W)
-	ErsStoreEnergy          float32 // ERS energy store in Joules
-	ErsDeployMode           uint8   // ERS deployment mode, 0 = none, 1 = medium  2 = hotlap, 3 = boost
-	ErsHarvestedThisLapMGUK float32 // ERS energy harvested this lap by MGU-K
-	ErsHarvestedThisLapMGUH float32 // ERS energy harvested this lap by MGU-H
-	ErsHarvestedLimitPerLap float32 // ERS energy harvest limit for this lap
-	ErsDeployedThisLap      float32 // ERS energy deployed this lap
+	ERSStoreEnergy          float32 // ERS energy store in Joules
+	ERSDeployMode           uint8   // ERS deployment mode, 0 = none, 1 = medium  2 = hotlap, 3 = boost
+	ERSHarvestedThisLapMGUK float32 // ERS energy harvested this lap by MGU-K
+	ERSHarvestedThisLapMGUH float32 // ERS energy harvested this lap by MGU-H
+	ERSHarvestedLimitPerLap float32 // ERS energy harvest limit for this lap
+	ERSDeployedThisLap      float32 // ERS energy deployed this lap
 	NetworkPaused           uint8   // Whether the car is paused in a network game
 }
 
@@ -55,12 +55,12 @@ func (data *CarStatusData) Parse(reader *xbinary.LittleEndianReader) {
 	data.VehicleFiaFlags = reader.ReadInt8()
 	data.EnginePowerICE = reader.ReadFloat32()
 	data.EnginePowerMGUK = reader.ReadFloat32()
-	data.ErsStoreEnergy = reader.ReadFloat32()
-	data.ErsDeployMode = reader.ReadUint8()
-	data.ErsHarvestedThisLapMGUK = reader.ReadFloat32()
-	data.ErsHarvestedThisLapMGUH = reader.ReadFloat32()
-	data.ErsHarvestedLimitPerLap = reader.ReadFloat32()
-	data.ErsDeployedThisLap = reader.ReadFloat32()
+	data.ERSStoreEnergy = reader.ReadFloat32()
+	data.ERSDeployMode = reader.ReadUint8()
+	data.ERSHarvestedThisLapMGUK = reader.ReadFloat32()
+	data.ERSHarvestedThisLapMGUH = reader.ReadFloat32()
+	data.ERSHarvestedLimitPerLap = reader.ReadFloat32()
+	data.ERSDeployedThisLap = reader.ReadFloat32()
 	data.NetworkPaused = reader.ReadUint8()
 
 }

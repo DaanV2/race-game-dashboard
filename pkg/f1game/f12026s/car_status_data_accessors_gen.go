@@ -116,41 +116,41 @@ func (data *CarStatusData) GetEnginePowerMGUK() float32 { return data.EnginePowe
 // SetEnginePowerMGUK stores the EnginePowerMGUK of [CarStatusData]
 func (data *CarStatusData) SetEnginePowerMGUK(v float32) { data.EnginePowerMGUK = v }
 
-// GetErsStoreEnergy returns the ErsStoreEnergy of [CarStatusData]
-func (data *CarStatusData) GetErsStoreEnergy() float32 { return data.ErsStoreEnergy }
+// GetERSStoreEnergy returns the ERSStoreEnergy of [CarStatusData]
+func (data *CarStatusData) GetERSStoreEnergy() float32 { return data.ERSStoreEnergy }
 
-// SetErsStoreEnergy stores the ErsStoreEnergy of [CarStatusData]
-func (data *CarStatusData) SetErsStoreEnergy(v float32) { data.ErsStoreEnergy = v }
+// SetERSStoreEnergy stores the ERSStoreEnergy of [CarStatusData]
+func (data *CarStatusData) SetERSStoreEnergy(v float32) { data.ERSStoreEnergy = v }
 
-// GetErsDeployMode returns the ErsDeployMode of [CarStatusData]
-func (data *CarStatusData) GetErsDeployMode() uint8 { return data.ErsDeployMode }
+// GetERSDeployMode returns the ERSDeployMode of [CarStatusData]
+func (data *CarStatusData) GetERSDeployMode() uint8 { return data.ERSDeployMode }
 
-// SetErsDeployMode stores the ErsDeployMode of [CarStatusData]
-func (data *CarStatusData) SetErsDeployMode(v uint8) { data.ErsDeployMode = v }
+// SetERSDeployMode stores the ERSDeployMode of [CarStatusData]
+func (data *CarStatusData) SetERSDeployMode(v uint8) { data.ERSDeployMode = v }
 
-// GetErsHarvestedThisLapMGUK returns the ErsHarvestedThisLapMGUK of [CarStatusData]
-func (data *CarStatusData) GetErsHarvestedThisLapMGUK() float32 { return data.ErsHarvestedThisLapMGUK }
+// GetERSHarvestedThisLapMGUK returns the ERSHarvestedThisLapMGUK of [CarStatusData]
+func (data *CarStatusData) GetERSHarvestedThisLapMGUK() float32 { return data.ERSHarvestedThisLapMGUK }
 
-// SetErsHarvestedThisLapMGUK stores the ErsHarvestedThisLapMGUK of [CarStatusData]
-func (data *CarStatusData) SetErsHarvestedThisLapMGUK(v float32) { data.ErsHarvestedThisLapMGUK = v }
+// SetERSHarvestedThisLapMGUK stores the ERSHarvestedThisLapMGUK of [CarStatusData]
+func (data *CarStatusData) SetERSHarvestedThisLapMGUK(v float32) { data.ERSHarvestedThisLapMGUK = v }
 
-// GetErsHarvestedThisLapMGUH returns the ErsHarvestedThisLapMGUH of [CarStatusData]
-func (data *CarStatusData) GetErsHarvestedThisLapMGUH() float32 { return data.ErsHarvestedThisLapMGUH }
+// GetERSHarvestedThisLapMGUH returns the ERSHarvestedThisLapMGUH of [CarStatusData]
+func (data *CarStatusData) GetERSHarvestedThisLapMGUH() float32 { return data.ERSHarvestedThisLapMGUH }
 
-// SetErsHarvestedThisLapMGUH stores the ErsHarvestedThisLapMGUH of [CarStatusData]
-func (data *CarStatusData) SetErsHarvestedThisLapMGUH(v float32) { data.ErsHarvestedThisLapMGUH = v }
+// SetERSHarvestedThisLapMGUH stores the ERSHarvestedThisLapMGUH of [CarStatusData]
+func (data *CarStatusData) SetERSHarvestedThisLapMGUH(v float32) { data.ERSHarvestedThisLapMGUH = v }
 
-// GetErsHarvestedLimitPerLap returns the ErsHarvestedLimitPerLap of [CarStatusData]
-func (data *CarStatusData) GetErsHarvestedLimitPerLap() float32 { return data.ErsHarvestedLimitPerLap }
+// GetERSHarvestedLimitPerLap returns the ERSHarvestedLimitPerLap of [CarStatusData]
+func (data *CarStatusData) GetERSHarvestedLimitPerLap() float32 { return data.ERSHarvestedLimitPerLap }
 
-// SetErsHarvestedLimitPerLap stores the ErsHarvestedLimitPerLap of [CarStatusData]
-func (data *CarStatusData) SetErsHarvestedLimitPerLap(v float32) { data.ErsHarvestedLimitPerLap = v }
+// SetERSHarvestedLimitPerLap stores the ERSHarvestedLimitPerLap of [CarStatusData]
+func (data *CarStatusData) SetERSHarvestedLimitPerLap(v float32) { data.ERSHarvestedLimitPerLap = v }
 
-// GetErsDeployedThisLap returns the ErsDeployedThisLap of [CarStatusData]
-func (data *CarStatusData) GetErsDeployedThisLap() float32 { return data.ErsDeployedThisLap }
+// GetERSDeployedThisLap returns the ERSDeployedThisLap of [CarStatusData]
+func (data *CarStatusData) GetERSDeployedThisLap() float32 { return data.ERSDeployedThisLap }
 
-// SetErsDeployedThisLap stores the ErsDeployedThisLap of [CarStatusData]
-func (data *CarStatusData) SetErsDeployedThisLap(v float32) { data.ErsDeployedThisLap = v }
+// SetERSDeployedThisLap stores the ERSDeployedThisLap of [CarStatusData]
+func (data *CarStatusData) SetERSDeployedThisLap(v float32) { data.ERSDeployedThisLap = v }
 
 // GetNetworkPaused returns the NetworkPaused of [CarStatusData]
 func (data *CarStatusData) GetNetworkPaused() uint8 { return data.NetworkPaused }
