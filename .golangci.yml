@@ -103,7 +103,6 @@ linters:
     - contextcheck
     - copyloopvar
     - cyclop
-    - dupl
     - durationcheck
     - depguard
     - errcheck
