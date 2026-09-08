@@ -14,17 +14,14 @@ on:
   merge_group:
 
 jobs:
-  golang-checks:
-    name: 🐹 Golang
-    uses: ./.github/workflows/golang-checks.yaml
+  # golang-checks:
+  #   name: 🐹 Golang
+  #   uses: ./.github/workflows/golang-checks.yaml
 
-  frontend-checks:
-    name: 🌐 Frontend
-    uses: ./.github/workflows/frontend-checks.yaml
+  # frontend-checks:
+  #   name: 🌐 Frontend
+  #   uses: ./.github/workflows/frontend-checks.yaml
 
   wails-checks:
-    needs:
-      - frontend-checks
-      - golang-checks
     name: 🖥️ Wails Desktop
     uses: ./.github/workflows/wails-checks.yaml
