@@ -1,0 +1,32 @@
+name: 🌐 Frontend
+env:
+  FORCE_COLOR: true
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    name: 📋 Checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: 📦 Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: 📥 Install Dependencies
+        run: npm ci
+
+      - name: 🛠️ Build
+        run: npm run build

@@ -7,7 +7,9 @@ import (
 	"encoding/base64"
 	"fmt"
 	"os"
+	"os/signal"
 	"path/filepath"
+	"syscall"
 
 	"github.com/daanv2/race-game-dashboard/pkg/extensions/xsync"
 	"github.com/daanv2/race-game-dashboard/pkg/f1game/f12026s"
@@ -38,6 +40,9 @@ func init() {
 }
 
 func runServer(cmd *cobra.Command, args []string) error {
+	ctx, stop := signal.NotifyContext(cmd.Context(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
+
 	hand := &f12026s.PacketHandler{}
 
 	hand.CarDamage.Register(logMsg)
@@ -106,7 +111,7 @@ func runServer(cmd *cobra.Command, args []string) error {
 		}
 	}()
 
-	<-cmd.Context().Done()
+	<-ctx.Done()
 
 	err = server.Close()
 

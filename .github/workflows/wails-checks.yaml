@@ -1,0 +1,146 @@
+name: 🖥️ Wails Desktop
+env:
+  FORCE_COLOR: true
+  # Prevent OOM during JS bundling
+  NODE_OPTIONS: "--max-old-space-size=4096"
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: 🖥️ Build Linux (amd64)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: 🏗️ Setup Golang
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: ./go.mod
+          cache-dependency-path: go.sum
+
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: desktop/frontend/package-lock.json
+
+      - name: 📦 Install Linux system dependencies
+        id: linux_deps
+        run: |
+          sudo apt-get -yq update
+          DISTRO=$(lsb_release -rs)
+          if [[ "$DISTRO" == "24.04" ]]; then
+            sudo apt-get -yq install libgtk-3-0 libwebkit2gtk-4.1-dev gcc
+            echo "extra_tags=webkit2_41" >> "$GITHUB_OUTPUT"
+          else
+            sudo apt-get -yq install libgtk-3-0 libwebkit2gtk-4.0-dev gcc
+            echo "extra_tags=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 📦 Install frontend dependencies
+        working-directory: desktop/frontend
+        run: npm ci
+
+      - name: 🏗️ Build frontend
+        working-directory: desktop/frontend
+        run: npm run build
+
+      - name: 🖥️ Build Desktop
+        run: |
+          TAGS="wails"
+          if [[ -n "${{ steps.linux_deps.outputs.extra_tags }}" ]]; then
+            TAGS="$TAGS,${{ steps.linux_deps.outputs.extra_tags }}"
+          fi
+          go tool wails build -tags "$TAGS" -platform linux/amd64 -o go-chess-desktop -s
+        shell: bash
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: go-chess-desktop-ubuntu-latest
+          path: build/bin/*
+          if-no-files-found: error
+
+  build-windows:
+    name: 🖥️ Build Windows (amd64)
+    runs-on: windows-latest
+
+    steps:
+      - name: 📦 Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: 🏗️ Setup Golang
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: ./go.mod
+          cache-dependency-path: go.sum
+
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: desktop/frontend/package-lock.json
+
+      - name: 📦 Install frontend dependencies
+        working-directory: desktop/frontend
+        run: npm ci
+
+      - name: 🏗️ Build frontend
+        working-directory: desktop/frontend
+        run: npm run build
+
+      - name: 🖥️ Build Desktop
+        run: go tool wails build -tags wails -platform windows/amd64 -o go-chess-desktop -s
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: go-chess-desktop-windows-latest
+          path: build\bin\*
+          if-no-files-found: error
+
+  build-macos:
+    name: 🖥️ Build macOS (universal)
+    runs-on: macos-latest
+
+    steps:
+      - name: 📦 Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: 🏗️ Setup Golang
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: ./go.mod
+          cache-dependency-path: go.sum
+
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: desktop/frontend/package-lock.json
+
+      - name: 📦 Install frontend dependencies
+        working-directory: desktop/frontend
+        run: npm ci
+
+      - name: 🏗️ Build frontend
+        working-directory: desktop/frontend
+        run: npm run build
+
+      - name: 🖥️ Build Desktop
+        run: go tool wails build -tags wails -platform darwin/universal -o go-chess-desktop -s
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: go-chess-desktop-macos-latest
+          path: build/bin/*
+          if-no-files-found: error

@@ -15,15 +15,18 @@ build:
 
 [group('test')]
 test:
-    go test -v ./... --cover -coverprofile=reports/coverage.out --covermode atomic --coverpkg=./...
+    go test -v ./... --cover -coverprofile="reports/coverage.out" --covermode atomic --coverpkg=./...
 
 [group('test')]
 show-coverage-report:
-    go tool cover -html=reports/coverage.out
+    go tool cover -html="reports/coverage.out"
+
+[group('test')]
+coverage-report: test show-coverage-report
 
 [group('checks')]
 lint:
-    go tool golangci-lint run -v --fix
+    golangci-lint run -v --fix
 
 [group('checks')]
 format:
