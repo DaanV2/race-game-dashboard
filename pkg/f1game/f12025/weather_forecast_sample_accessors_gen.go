@@ -2,11 +2,15 @@
 
 package f12025
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetSessionType returns [WeatherForecastSample.SessionType]
-func (data *WeatherForecastSample) GetSessionType() uint8 { return data.SessionType }
+func (data *WeatherForecastSample) GetSessionType() f1common.SessionTypeID { return data.SessionType }
 
 // SetSessionType stores [WeatherForecastSample.SessionType]
-func (data *WeatherForecastSample) SetSessionType(v uint8) { data.SessionType = v }
+func (data *WeatherForecastSample) SetSessionType(v f1common.SessionTypeID) { data.SessionType = v }
 
 // GetTimeOffset returns [WeatherForecastSample.TimeOffset]
 func (data *WeatherForecastSample) GetTimeOffset() uint8 { return data.TimeOffset }

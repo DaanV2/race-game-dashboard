@@ -3,6 +3,7 @@ package f12024
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+	"github.com/daanv2/race-game-dashboard/pkg/generics"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketSessionData -ignore-field MarshalZones,WeatherForecastSamples
@@ -113,9 +114,7 @@ func (data *PacketSessionData) SetWeatherForecastSamples(sample int, v WeatherFo
 }
 
 func (data *PacketSessionData) WeekendStructureIDs() (sessions [CS_MAX_SESSIONS_IN_WEEKEND]f1common.SessionTypeID) {
-	for i, v := range data.WeekendStructure {
-		sessions[i] = f1common.SessionTypeID(v)
-	}
+	generics.CopySlice(sessions[:], data.WeekendStructure[:])
 
 	return
 }

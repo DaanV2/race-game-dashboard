@@ -2,6 +2,10 @@
 
 package f12025
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetHeader returns [PacketSessionData.Header]
 func (data *PacketSessionData) GetHeader() PacketHeader { return data.Header }
 
@@ -39,16 +43,16 @@ func (data *PacketSessionData) GetTrackLength() uint16 { return data.TrackLength
 func (data *PacketSessionData) SetTrackLength(v uint16) { data.TrackLength = v }
 
 // GetSessionType returns [PacketSessionData.SessionType]
-func (data *PacketSessionData) GetSessionType() uint8 { return data.SessionType }
+func (data *PacketSessionData) GetSessionType() f1common.SessionTypeID { return data.SessionType }
 
 // SetSessionType stores [PacketSessionData.SessionType]
-func (data *PacketSessionData) SetSessionType(v uint8) { data.SessionType = v }
+func (data *PacketSessionData) SetSessionType(v f1common.SessionTypeID) { data.SessionType = v }
 
 // GetTrackId returns [PacketSessionData.TrackId]
-func (data *PacketSessionData) GetTrackId() int8 { return data.TrackId }
+func (data *PacketSessionData) GetTrackId() f1common.TrackID { return data.TrackId }
 
 // SetTrackId stores [PacketSessionData.TrackId]
-func (data *PacketSessionData) SetTrackId(v int8) { data.TrackId = v }
+func (data *PacketSessionData) SetTrackId(v f1common.TrackID) { data.TrackId = v }
 
 // GetFormula returns [PacketSessionData.Formula]
 func (data *PacketSessionData) GetFormula() uint8 { return data.Formula }
@@ -229,16 +233,16 @@ func (data *PacketSessionData) GetDynamicRacingLineType() uint8 { return data.Dy
 func (data *PacketSessionData) SetDynamicRacingLineType(v uint8) { data.DynamicRacingLineType = v }
 
 // GetGameMode returns [PacketSessionData.GameMode]
-func (data *PacketSessionData) GetGameMode() uint8 { return data.GameMode }
+func (data *PacketSessionData) GetGameMode() f1common.GamemodeID { return data.GameMode }
 
 // SetGameMode stores [PacketSessionData.GameMode]
-func (data *PacketSessionData) SetGameMode(v uint8) { data.GameMode = v }
+func (data *PacketSessionData) SetGameMode(v f1common.GamemodeID) { data.GameMode = v }
 
 // GetRuleSet returns [PacketSessionData.RuleSet]
-func (data *PacketSessionData) GetRuleSet() uint8 { return data.RuleSet }
+func (data *PacketSessionData) GetRuleSet() f1common.RulesetID { return data.RuleSet }
 
 // SetRuleSet stores [PacketSessionData.RuleSet]
-func (data *PacketSessionData) SetRuleSet(v uint8) { data.RuleSet = v }
+func (data *PacketSessionData) SetRuleSet(v f1common.RulesetID) { data.RuleSet = v }
 
 // GetTimeOfDay returns [PacketSessionData.TimeOfDay]
 func (data *PacketSessionData) GetTimeOfDay() uint32 { return data.TimeOfDay }

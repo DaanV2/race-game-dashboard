@@ -2,6 +2,10 @@
 
 package f12025
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetCarIdx returns [TimeTrialDataSet.CarIdx]
 func (data *TimeTrialDataSet) GetCarIdx() uint8 { return data.CarIdx }
 
@@ -9,10 +13,10 @@ func (data *TimeTrialDataSet) GetCarIdx() uint8 { return data.CarIdx }
 func (data *TimeTrialDataSet) SetCarIdx(v uint8) { data.CarIdx = v }
 
 // GetTeamId returns [TimeTrialDataSet.TeamId]
-func (data *TimeTrialDataSet) GetTeamId() uint16 { return data.TeamId }
+func (data *TimeTrialDataSet) GetTeamId() f1common.TeamID { return data.TeamId }
 
 // SetTeamId stores [TimeTrialDataSet.TeamId]
-func (data *TimeTrialDataSet) SetTeamId(v uint16) { data.TeamId = v }
+func (data *TimeTrialDataSet) SetTeamId(v f1common.TeamID) { data.TeamId = v }
 
 // GetLapTimeInMS returns [TimeTrialDataSet.LapTimeInMS]
 func (data *TimeTrialDataSet) GetLapTimeInMS() uint32 { return data.LapTimeInMS }

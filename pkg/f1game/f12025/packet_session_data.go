@@ -2,6 +2,8 @@ package f12025
 
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+	"github.com/daanv2/race-game-dashboard/pkg/generics"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type PacketSessionData -ignore-field MarshalZones,WeatherForecastSamples
@@ -14,8 +16,8 @@ type PacketSessionData struct {
 	AirTemperature                  int8                                                   // Air temp. in degrees celsius
 	TotalLaps                       uint8                                                  // Total number of laps in this race
 	TrackLength                     uint16                                                 // Track length in metres
-	SessionType                     uint8                                                  // 0 = unknown, see appendix
-	TrackId                         int8                                                   // -1 for unknown, see appendix
+	SessionType                     f1common.SessionTypeID                                 // (uint8) 0 = unknown, see appendix
+	TrackId                         f1common.TrackID                                       // (int8) -1 for unknown, see appendix
 	Formula                         uint8                                                  // Formula, 0 = F1 Modern, 1 = F1 Classic, 2 = F2, 3 = F1 Generic, 4 = Beta, 6 = Esports, 8 = F1 World, 9 = F1 Elimination
 	SessionTimeLeft                 uint16                                                 // Time left in session in seconds
 	SessionDuration                 uint16                                                 // Session duration in seconds
@@ -47,8 +49,8 @@ type PacketSessionData struct {
 	DRSAssist                       uint8                                                  // 0 = off, 1 = on
 	DynamicRacingLine               uint8                                                  // 0 = off, 1 = corners only, 2 = full
 	DynamicRacingLineType           uint8                                                  // 0 = 2D, 1 = 3D
-	GameMode                        uint8                                                  // Game mode id - see appendix
-	RuleSet                         uint8                                                  // Ruleset - see appendix
+	GameMode                        f1common.GamemodeID                                    // Game mode id (uint8) - see appendix
+	RuleSet                         f1common.RulesetID                                     // Ruleset (uint8) - see appendix
 	TimeOfDay                       uint32                                                 // Local time of day - minutes since midnight
 	SessionLength                   uint8                                                  // 0 = None, 2 = Very Short, 3 = Short, 4 = Medium, 5 = Medium Long, 6 = Long, 7 = Full
 	SpeedUnitsLeadPlayer            uint8                                                  // 0 = MPH, 1 = KPH
@@ -111,6 +113,12 @@ func (data *PacketSessionData) SetWeatherForecastSamples(sample int, v WeatherFo
 	data.WeatherForecastSamples[sample] = v
 }
 
+func (data *PacketSessionData) WeekendStructureIDs() (sessions [CS_MAX_SESSIONS_IN_WEEKEND]f1common.SessionTypeID) {
+	generics.CopySlice(sessions[:], data.WeekendStructure[:])
+
+	return
+}
+
 // Parse assumes the header as already been read, and only the rest needs to be done
 func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.LittleEndianReader) {
 	data.Header = *header
@@ -120,8 +128,8 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.AirTemperature = reader.ReadInt8()
 	data.TotalLaps = reader.ReadUint8()
 	data.TrackLength = reader.ReadUint16()
-	data.SessionType = reader.ReadUint8()
-	data.TrackId = reader.ReadInt8()
+	data.SessionType = f1common.SessionTypeID(reader.ReadUint8())
+	data.TrackId = f1common.TrackID(reader.ReadInt8())
 	data.Formula = reader.ReadUint8()
 	data.SessionTimeLeft = reader.ReadUint16()
 	data.SessionDuration = reader.ReadUint16()
@@ -161,8 +169,8 @@ func (data *PacketSessionData) Parse(header *PacketHeader, reader *xbinary.Littl
 	data.DRSAssist = reader.ReadUint8()
 	data.DynamicRacingLine = reader.ReadUint8()
 	data.DynamicRacingLineType = reader.ReadUint8()
-	data.GameMode = reader.ReadUint8()
-	data.RuleSet = reader.ReadUint8()
+	data.GameMode = f1common.GamemodeID(reader.ReadUint8())
+	data.RuleSet = f1common.RulesetID(reader.ReadUint8())
 	data.TimeOfDay = reader.ReadUint32()
 	data.SessionLength = reader.ReadUint8()
 	data.SpeedUnitsLeadPlayer = reader.ReadUint8()

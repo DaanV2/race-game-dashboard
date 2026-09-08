@@ -3,6 +3,7 @@ package f12024
 import (
 	xbinary "github.com/daanv2/race-game-dashboard/pkg/extensions/binary"
 	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+	"github.com/daanv2/race-game-dashboard/pkg/generics"
 )
 
 //go:generate go run github.com/daanv2/race-game-dashboard/tools/gen/accessors -type CarTelemetryData
@@ -26,8 +27,10 @@ type CarTelemetryData struct {
 	SurfaceType             WheelMap[uint8]   // Driving surface, see appendices
 }
 
-func (data *CarTelemetryData) SurfaceTypeID() WheelMap[f1common.SurfaceTypeID] {
-	return TransformWheelMap[uint8, f1common.SurfaceTypeID](data.SurfaceType)
+func (data *CarTelemetryData) SurfaceTypeID() (surfaces WheelMap[f1common.SurfaceTypeID]) {
+	generics.CopySlice(surfaces[:], data.SurfaceType[:])
+
+	return
 }
 
 func (data *CarTelemetryData) Parse(reader *xbinary.LittleEndianReader) {

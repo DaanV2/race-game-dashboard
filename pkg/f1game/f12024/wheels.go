@@ -1,9 +1,5 @@
 package f12024
 
-import (
-	"golang.org/x/exp/constraints"
-)
-
 const (
 	WHEEL_INDEX_REAR_LEFT   = 0
 	WHEEL_INDEX_REAR_RIGHT  = 1
@@ -25,13 +21,4 @@ func NewWheelMap[T any](rear_left, rear_right, front_left, front_right T) (resul
 	result[WHEEL_INDEX_FRONT_RIGHT] = front_right
 
 	return
-}
-
-func TransformWheelMap[TSrc, TDest constraints.Integer | constraints.Float](src WheelMap[TSrc]) WheelMap[TDest] {
-	return WheelMap[TDest]{
-		TDest(src[0]),
-		TDest(src[1]),
-		TDest(src[2]),
-		TDest(src[3]),
-	}
 }

@@ -2,17 +2,25 @@
 
 package f12025
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetPenaltyType returns [EventDataPenalty.PenaltyType]
-func (data *EventDataPenalty) GetPenaltyType() uint8 { return data.PenaltyType }
+func (data *EventDataPenalty) GetPenaltyType() f1common.PenaltyType { return data.PenaltyType }
 
 // SetPenaltyType stores [EventDataPenalty.PenaltyType]
-func (data *EventDataPenalty) SetPenaltyType(v uint8) { data.PenaltyType = v }
+func (data *EventDataPenalty) SetPenaltyType(v f1common.PenaltyType) { data.PenaltyType = v }
 
 // GetInfringementType returns [EventDataPenalty.InfringementType]
-func (data *EventDataPenalty) GetInfringementType() uint8 { return data.InfringementType }
+func (data *EventDataPenalty) GetInfringementType() f1common.InfringementTypeID {
+	return data.InfringementType
+}
 
 // SetInfringementType stores [EventDataPenalty.InfringementType]
-func (data *EventDataPenalty) SetInfringementType(v uint8) { data.InfringementType = v }
+func (data *EventDataPenalty) SetInfringementType(v f1common.InfringementTypeID) {
+	data.InfringementType = v
+}
 
 // GetVehicleIdx returns [EventDataPenalty.VehicleIdx]
 func (data *EventDataPenalty) GetVehicleIdx() uint8 { return data.VehicleIdx }

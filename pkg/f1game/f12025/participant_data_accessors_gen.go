@@ -2,6 +2,10 @@
 
 package f12025
 
+import (
+	"github.com/daanv2/race-game-dashboard/pkg/f1game/f1common"
+)
+
 // GetAiControlled returns [ParticipantData.AiControlled]
 func (data *ParticipantData) GetAiControlled() uint8 { return data.AiControlled }
 
@@ -9,10 +13,10 @@ func (data *ParticipantData) GetAiControlled() uint8 { return data.AiControlled 
 func (data *ParticipantData) SetAiControlled(v uint8) { data.AiControlled = v }
 
 // GetDriverId returns [ParticipantData.DriverId]
-func (data *ParticipantData) GetDriverId() uint16 { return data.DriverId }
+func (data *ParticipantData) GetDriverId() f1common.DriverID { return data.DriverId }
 
 // SetDriverId stores [ParticipantData.DriverId]
-func (data *ParticipantData) SetDriverId(v uint16) { data.DriverId = v }
+func (data *ParticipantData) SetDriverId(v f1common.DriverID) { data.DriverId = v }
 
 // GetNetworkId returns [ParticipantData.NetworkId]
 func (data *ParticipantData) GetNetworkId() uint16 { return data.NetworkId }
@@ -21,10 +25,10 @@ func (data *ParticipantData) GetNetworkId() uint16 { return data.NetworkId }
 func (data *ParticipantData) SetNetworkId(v uint16) { data.NetworkId = v }
 
 // GetTeamId returns [ParticipantData.TeamId]
-func (data *ParticipantData) GetTeamId() uint16 { return data.TeamId }
+func (data *ParticipantData) GetTeamId() f1common.TeamID { return data.TeamId }
 
 // SetTeamId stores [ParticipantData.TeamId]
-func (data *ParticipantData) SetTeamId(v uint16) { data.TeamId = v }
+func (data *ParticipantData) SetTeamId(v f1common.TeamID) { data.TeamId = v }
 
 // GetMyTeam returns [ParticipantData.MyTeam]
 func (data *ParticipantData) GetMyTeam() uint8 { return data.MyTeam }
