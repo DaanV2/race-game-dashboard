@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"syscall"
 
+	udp "github.com/daanv2/race-game-dashboard/infrastructure/transport/upd"
 	"github.com/daanv2/race-game-dashboard/pkg/extensions/xsync"
 	"github.com/daanv2/race-game-dashboard/pkg/f1game/f12026s"
-	udp "github.com/daanv2/race-game-dashboard/pkg/transport/upd"
 	"github.com/spf13/cobra"
 )
 
